@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="theme-color" content="#ff0000">
+    <link rel="apple-touch-icon" href="images/logo.webp">
+
+    <title>Servicios Dentales | Clínica Dental Hitachi Barcelona</title>
+    <meta name="description" content="Descubre todos nuestros servicios dentales: ortodoncia, implantes, estética dental, limpieza profesional y más. Tecnología de vanguardia en Barcelona.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preload" href="style.css" as="style">
+
+    <meta name="author" content="Impresiones Barcelona">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clinicadentalhitachi.com/servicios.html">
+    <meta property="og:title" content="Servicios Dentales - Clínica Dental Hitachi">
+    <meta property="og:description" content="Servicios dentales completos con tecnología de vanguardia">
+    <meta property="og:image" content="https://clinicadentalhitachi.com/images/logo.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://clinicadentalhitachi.com/servicios.html">
+    <meta property="twitter:title" content="Servicios Dentales - Clínica Dental Hitachi">
+    <meta property="twitter:description" content="Servicios dentales completos con tecnología de vanguardia">
+    <meta property="twitter:image" content="https://clinicadentalhitachi.com/images/logo.webp">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://clinicadentalhitachi.com/servicios.html">
+    <link rel="icon" type="image/png" href="images/logo.webp">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW71SH6H7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FW71SH6H7M');
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="fonts/icons-linear.css">
+    <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
+
+    <!-- Styles - ORDEN IMPORTANTE -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
+    <link rel="stylesheet" href="servicios-style.css">
+
+    <!-- Scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/menuscript.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Clinica Dental Hitachi",
+        "image": "images/logo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Rosa de Alejandria n24",
+          "addressLocality": "Barcelona",
+          "postalCode": "08906",
+          "addressCountry": "ES"
+        },
+        "priceRange": "€€",
+        "telephone": "+34931479829",
+        "openingHours": "Mo-Fr 09:30-13:30,16:00-20:00"
+    }
+    </script>
+</head>
+
+<body id="home">
+
+    <!-- HEADER -->
+    <header>
+        <div class="container psr">
+            <div class="header_default">
+                <div class="site-branding">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.webp" alt="Clínica Dental Hitachi Logo" class="logo-1">
+                        <img src="images/logo.webp" alt="Clínica Dental Hitachi Logo" class="logo-2">
+                    </a>
+                </div>
+
+                <div class="header-right">
+                    <div class="site-navwrap">
+                        <div class="navicons">
+                            <a href="javascript:void;" class="navshow">
+                                <span class="lnr lnr-menu"></span>
+                            </a>
+                            <a href="javascript:void;" class="navhide">
+                                <span class="lnr lnr-cross"></span>
+                            </a>
+                        </div>
+
+                        <div class="sitenav" id="sitenav">
+                            <div class="navwrap">
+                                <div class="navouter">
+                                    <nav class="headermenu leftmenu" id="headnav" role="navigation">
+                                        <ul>
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="nosotros.html">Nosotros</a></li>
+                                            <li class="active"><a href="servicios.html">Servicios</a></li>
+                                            <li><a href="instalaciones.html">Instalaciones</a></li>
+                                            <li><a href="contacto.html">Contacto</a></li>
+                                            <li class="blog"><a href="blog.html">Blog</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <a href="tel:931479829">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- HERO SERVICIOS -->
+    <section class="servicios-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag" data-animate="fadeUp">Excelencia Dental</span>
+                <h1 data-animate="fadeUp" data-delay="0.1">Nuestros Servicios</h1>
+                <p data-animate="fadeUp" data-delay="0.2">Tecnología de vanguardia al servicio de tu sonrisa</p>
+                <div class="hero-breadcrumb" data-animate="fadeUp" data-delay="0.3">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Servicios</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- SERVICIOS DESTACADOS -->
+    <section class="servicios-destacados">
+        <div class="container">
+            <div class="section-intro" data-animate="fadeUp">
+                <span class="section-tag">Lo que hacemos</span>
+                <h2>Servicios Principales</h2>
+                <p>Tratamientos dentales con los más altos estándares de calidad</p>
+            </div>
+
+            <div class="servicios-grid">
+                <!-- Servicio 1: Odontología General -->
+                <article class="servicio-card" data-animate="fadeUp" data-delay="0.1">
+                    <div class="servicio-image">
+                        <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Odontología General">
+                        <div class="servicio-overlay">
+                            <span class="servicio-icon">
+                                <i class="fas fa-tooth"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="servicio-content">
+                        <span class="servicio-category">Prevención</span>
+                        <h3>Odontología General</h3>
+                        <p>Cuidado integral de tu salud bucal con revisiones periódicas, limpiezas profesionales y tratamientos preventivos.</p>
+                        <ul class="servicio-features">
+                            <li><i class="fas fa-check"></i> Revisiones completas</li>
+                            <li><i class="fas fa-check"></i> Limpieza dental profunda</li>
+                            <li><i class="fas fa-check"></i> Prevención de caries</li>
+                            <li><i class="fas fa-check"></i> Diagnóstico precoz</li>
+                        </ul>
+                        <a href="#consulta" class="servicio-btn">
+                            <span>Solicitar cita</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Servicio 2: Ortodoncia -->
+                <article class="servicio-card" data-animate="fadeUp" data-delay="0.2">
+                    <div class="servicio-image">
+                        <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia">
+                        <div class="servicio-overlay">
+                            <span class="servicio-icon">
+                                <i class="fas fa-smile"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="servicio-content">
+                        <span class="servicio-category">Estética</span>
+                        <h3>Ortodoncia</h3>
+                        <p>Alineación dental perfecta con brackets tradicionales o Invisalign. Soluciones personalizadas para cada caso.</p>
+                        <ul class="servicio-features">
+                            <li><i class="fas fa-check"></i> Brackets metálicos</li>
+                            <li><i class="fas fa-check"></i> Brackets estéticos</li>
+                            <li><i class="fas fa-check"></i> Invisalign</li>
+                            <li><i class="fas fa-check"></i> Seguimiento digital</li>
+                        </ul>
+                        <a href="#consulta" class="servicio-btn">
+                            <span>Solicitar cita</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Servicio 3: Estética Dental -->
+                <article class="servicio-card" data-animate="fadeUp" data-delay="0.3">
+                    <div class="servicio-image">
+                        <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Estética Dental">
+                        <div class="servicio-overlay">
+                            <span class="servicio-icon">
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="servicio-content">
+                        <span class="servicio-category">Belleza</span>
+                        <h3>Estética Dental</h3>
+                        <p>Mejora la apariencia de tu sonrisa con tratamientos de blanqueamiento y diseño estético personalizado.</p>
+                        <ul class="servicio-features">
+                            <li><i class="fas fa-check"></i> Blanqueamiento profesional</li>
+                            <li><i class="fas fa-check"></i> Carillas dentales</li>
+                            <li><i class="fas fa-check"></i> Diseño de sonrisa</li>
+                            <li><i class="fas fa-check"></i> Resultados duraderos</li>
+                        </ul>
+                        <a href="#consulta" class="servicio-btn">
+                            <span>Solicitar cita</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Servicio 4: Implantes Dentales -->
+                <article class="servicio-card" data-animate="fadeUp" data-delay="0.1">
+                    <div class="servicio-image">
+                        <img src="images/empastes-centrodentalhitachi.jpg" alt="Implantes Dentales">
+                        <div class="servicio-overlay">
+                            <span class="servicio-icon">
+                                <i class="fas fa-teeth-open"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="servicio-content">
+                        <span class="servicio-category">Restauración</span>
+                        <h3>Implantes Dentales</h3>
+                        <p>Recupera la funcionalidad y estética de tu sonrisa con implantes de última generación y materiales biocompatibles.</p>
+                        <ul class="servicio-features">
+                            <li><i class="fas fa-check"></i> Implantes titanio</li>
+                            <li><i class="fas fa-check"></i> Carga inmediata</li>
+                            <li><i class="fas fa-check"></i> Prótesis sobre implantes</li>
+                            <li><i class="fas fa-check"></i> Garantía extendida</li>
+                        </ul>
+                        <a href="#consulta" class="servicio-btn">
+                            <span>Solicitar cita</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Servicio 5: Radiología Digital -->
+                <article class="servicio-card" data-animate="fadeUp" data-delay="0.2">
+                    <div class="servicio-image">
+                        <img src="images/radio.png" alt="Radiología Digital">
+                        <div class="servicio-overlay">
+                            <span class="servicio-icon">
+                                <i class="fas fa-x-ray"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="servicio-content">
+                        <span class="servicio-category">Diagnóstico</span>
+                        <h3>Radiología Digital</h3>
+                        <p>Diagnóstico preciso y seguro con tecnología de radiología digital de última generación con mínima radiación.</p>
+                        <ul class="servicio-features">
+                            <li><i class="fas fa-check"></i> Radiografías digitales</li>
+                            <li><i class="fas fa-check"></i> Ortopantomografía</li>
+                            <li><i class="fas fa-check"></i> Baja radiación</li>
+                            <li><i class="fas fa-check"></i> Resultados inmediatos</li>
+                        </ul>
+                        <a href="#consulta" class="servicio-btn">
+                            <span>Solicitar cita</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Servicio 6: Urgencias -->
+                <article class="servicio-card" data-animate="fadeUp" data-delay="0.3">
+                    <div class="servicio-image">
+                        <img src="images/atencióninmediata.jpg" alt="Urgencias Dentales">
+                        <div class="servicio-overlay">
+                            <span class="servicio-icon">
+                                <i class="fas fa-ambulance"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="servicio-content">
+                        <span class="servicio-category">Emergencias</span>
+                        <h3>Urgencias Dentales</h3>
+                        <p>Atención inmediata para emergencias dentales. Estamos aquí cuando más nos necesitas.</p>
+                        <ul class="servicio-features">
+                            <li><i class="fas fa-check"></i> Atención rápida</li>
+                            <li><i class="fas fa-check"></i> Alivio del dolor</li>
+                            <li><i class="fas fa-check"></i> Soluciones inmediatas</li>
+                            <li><i class="fas fa-check"></i> Disponibilidad extendida</li>
+                        </ul>
+                        <a href="tel:931479829" class="servicio-btn servicio-btn-urgent">
+                            <span>Llamar ahora</span>
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESO DE TRATAMIENTO -->
+    <section class="proceso-tratamiento">
+        <div class="container">
+            <div class="section-intro" data-animate="fadeUp">
+                <span class="section-tag">Cómo trabajamos</span>
+                <h2>Nuestro Proceso</h2>
+                <p>Cada tratamiento sigue un proceso cuidadoso y personalizado</p>
+            </div>
+
+            <div class="proceso-timeline">
+                <div class="proceso-step" data-animate="fadeLeft" data-delay="0.1">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Primera Consulta</h3>
+                        <p>Evaluación inicial completa y diagnóstico detallado de tu caso. Escuchamos tus necesidades y preocupaciones.</p>
+                    </div>
+                </div>
+
+                <div class="proceso-step" data-animate="fadeLeft" data-delay="0.2">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Plan de Tratamiento</h3>
+                        <p>Diseñamos un plan personalizado con todas las opciones disponibles, tiempos y presupuesto detallado.</p>
+                    </div>
+                </div>
+
+                <div class="proceso-step" data-animate="fadeLeft" data-delay="0.3">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Tratamiento</h3>
+                        <p>Realizamos el tratamiento con la máxima precisión, cuidado y utilizando tecnología de vanguardia.</p>
+                    </div>
+                </div>
+
+                <div class="proceso-step" data-animate="fadeLeft" data-delay="0.4">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Seguimiento</h3>
+                        <p>Seguimiento continuo para asegurar resultados óptimos y durabilidad del tratamiento realizado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECNOLOGÍA -->
+    <section class="tecnologia-section">
+        <div class="container">
+            <div class="tecnologia-content">
+                <div class="tecnologia-text" data-animate="fadeRight">
+                    <span class="section-tag">Innovación</span>
+                    <h2>Tecnología de Vanguardia</h2>
+                    <p>En Clínica Dental Hitachi invertimos constantemente en la última tecnología para ofrecer tratamientos más precisos, seguros y confortables.</p>
+                    
+                    <div class="tech-features">
+                        <div class="tech-feature">
+                            <i class="fas fa-microscope"></i>
+                            <div>
+                                <h4>Diagnóstico Digital</h4>
+                                <p>Radiografías digitales con 90% menos radiación</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <i class="fas fa-desktop"></i>
+                            <div>
+                                <h4>Planificación 3D</h4>
+                                <p>Visualización previa de resultados</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Materiales Premium</h4>
+                                <p>Los más altos estándares de calidad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tecnologia-image" data-animate="fadeLeft">
+                    <img src="images/equipo_de_Ortopantomografia.png" alt="Tecnología Dental">
+                    <div class="tech-badge">
+                        <span>+7</span>
+                        <p>Años de<br>experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINANCIACIÓN -->
+    <section class="financiacion-section">
+        <div class="container">
+            <div class="financiacion-content" data-animate="fadeUp">
+                <div class="financiacion-text">
+                    <span class="section-tag">Facilidades de pago</span>
+                    <h2>Financia tu Tratamiento</h2>
+                    <p>No dejes que el precio sea un obstáculo para tu salud dental. Ofrecemos planes de financiación flexibles sin intereses para que puedas acceder a todos nuestros tratamientos.</p>
+                    <ul class="financiacion-benefits">
+                        <li><i class="fas fa-check-circle"></i> Hasta 24 meses sin intereses</li>
+                        <li><i class="fas fa-check-circle"></i> Aprobación inmediata</li>
+                        <li><i class="fas fa-check-circle"></i> Sin pago inicial</li>
+                        <li><i class="fas fa-check-circle"></i> Proceso 100% online</li>
+                    </ul>
+                </div>
+                <div class="financiacion-logos">
+                    <img src="images/pepper-logo.png" alt="Pepper Money">
+                    <img src="images/kutxabank-logo.webp" alt="Kutxabank">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA CONSULTA -->
+    <section class="cta-consulta" id="consulta">
+        <div class="container">
+            <div class="cta-content" data-animate="zoomIn">
+                <h2>¿Listo para mejorar tu sonrisa?</h2>
+                <p>Agenda tu primera consulta gratuita y descubre cómo podemos ayudarte</p>
+                <div class="cta-buttons">
+                    <a href="contacto.html" class="btn-primary">
+                        <span>Pedir cita</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:931479829" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>931 479 829</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <img src="images/logo.webp" alt="Logo Clínica Dental Hitachi" class="footer-logo">
+                        <div class="footer-contact">
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">
+                                    Calle Rosa de Alejandría Nº24, Local 3 / 08906
+                                </a>
+                            </p>
+                            <p><i class="fa-solid fa-phone"></i><a href="tel:931479829">931479829</a></p>
+                            <p><i class="fa-solid fa-phone"></i><a href="tel:622819008">622819008</a></p>
+                            <p><i class="fa-regular fa-clock"></i> L-V: 9:30-13:30 / 16:00-20:00</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Enlaces rápidos</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="instalaciones.html">Instalaciones</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="servicios.html#odontologia">Odontología General</a></li>
+                            <li><a href="servicios.html#ortodoncia">Ortodoncia</a></li>
+                            <li><a href="servicios.html#implantes">Implantes</a></li>
+                            <li><a href="servicios.html#estetica">Estética Dental</a></li>
+                            <li><a href="servicios.html#urgencias">Urgencias</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacidad.html">Política de Privacidad</a></li>
+                            <li><a href="cookies.html">Política de Cookies</a></li>
+                            <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                            <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2025 Clínica Dental Hitachi. Todos los derechos reservados.</p>
+                    <div class="social-links">
+                        <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Base Scripts -->
+    <script src="js/bliss.js"></script>
+
+    <!-- GSAP ANIMATIONS -->
+    <script>
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Page load animation
+        window.addEventListener('load', function() {
+            gsap.from('header', {
+                y: -100,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            });
+        });
+
+        // Hero animations
+        gsap.from('.hero-content [data-animate="fadeUp"]', {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out',
+            delay: 0.3
+        });
+
+        // Scroll indicator animation
+        gsap.to('.hero-scroll-indicator span', {
+            y: 10,
+            opacity: 0.5,
+            duration: 1.5,
+            repeat: -1,
+            yoyo: true,
+            ease: 'power1.inOut'
+        });
+
+        // Animate elements on scroll
+        document.querySelectorAll('[data-animate]').forEach(element => {
+            const animation = element.dataset.animate;
+            const delay = element.dataset.delay || 0;
+
+            let animationProps = {};
+
+            switch(animation) {
+                case 'fadeUp':
+                    animationProps = { y: 60, opacity: 0 };
+                    break;
+                case 'fadeLeft':
+                    animationProps = { x: -60, opacity: 0 };
+                    break;
+                case 'fadeRight':
+                    animationProps = { x: 60, opacity: 0 };
+                    break;
+                case 'zoomIn':
+                    animationProps = { scale: 0.8, opacity: 0 };
+                    break;
+            }
+
+            gsap.from(element, {
+                ...animationProps,
+                duration: 1,
+                delay: delay,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        // Service cards hover effect
+        document.querySelectorAll('.servicio-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    y: -10,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+                gsap.to(this.querySelector('.servicio-overlay'), {
+                    opacity: 1,
+                    duration: 0.3
+                });
+            });
+
+            card.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    y: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+                gsap.to(this.querySelector('.servicio-overlay'), {
+                    opacity: 0,
+                    duration: 0.3
+                });
+            });
+        });
+
+        // Scroll to top button
+        const scrollBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Parallax effect for hero
+        gsap.to('.servicios-hero', {
+            backgroundPosition: '50% 100%',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.servicios-hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+    </script>
+
+</body>
+</html>
