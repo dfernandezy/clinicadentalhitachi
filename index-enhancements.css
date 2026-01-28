@@ -535,8 +535,10 @@ html {
    ============================================= */
 .quick-links-section {
     background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
-    padding: 50px 20px;
-    margin-top: -20px;
+    padding: 60px 20px;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .quick-links-grid {
