@@ -671,49 +671,69 @@
     <script src="js/bliss.js"></script>
 
     <script>
+        // Inicializar el Swiper PERO sin autoplay
         var swiper = new Swiper(".mySwiper", {
-            // Efecto de desvanecimiento
-            effect: "fadeIn", // Cambiado a "fade" para una transición más suave
+            effect: "fadeIn",
+            
+            // Autoplay DESACTIVADO al inicio
+            autoplay: false,
 
-            // Autoplay
-            autoplay: {
-                delay: 1000, // 2 segundos entre cada slide
-                disableOnInteraction: false, // Continúa el autoplay incluso después de la interacción del usuario
-                pauseOnMouseEnter: true // Pausa cuando el mouse está sobre el slider
-            },
-
-            // Loop
             loop: false,
+            speed: 1500, // Velocidad de transición más suave
 
-            // Velocidad de transición
-            speed: 2000, // 1 segundo para la transición
-
-            // Navegación
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
 
-            // Paginación
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
-                dynamicBullets: true // Hace que los bullets sean dinámicos
+                dynamicBullets: true
             },
 
-            // Efectos adicionales
             fadeEffect: {
-                crossFade: true // Asegura una transición suave entre slides
+                crossFade: true
             }
         });
 
-        // Opcional: Pausar al hover
+        // Intersection Observer para activar el slider cuando sea visible
+        const swiperObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Cuando el slider es visible, ACTIVAR autoplay
+                    swiper.params.autoplay = {
+                        delay: 4000, // 4 segundos entre cada slide (antes era 1 segundo)
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    };
+                    swiper.autoplay.start();
+                    
+                    // Dejar de observar después de activarlo (solo se activa una vez)
+                    swiperObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3 // Se activa cuando el 30% del slider es visible
+        });
+
+        // Observar el elemento del swiper
+        const swiperElement = document.querySelector('.mySwiper');
+        if (swiperElement) {
+            swiperObserver.observe(swiperElement);
+        }
+
+        // Pausar/reanudar al hover (solo funciona después de que se active)
         document.querySelector('.mySwiper').addEventListener('mouseenter', function () {
-            swiper.autoplay.stop();
+            if (swiper.autoplay.running) {
+                swiper.autoplay.stop();
+            }
         });
 
         document.querySelector('.mySwiper').addEventListener('mouseleave', function () {
-            swiper.autoplay.start();
+            if (swiper.params.autoplay) {
+                swiper.autoplay.start();
+            }
         });
     </script>
 
