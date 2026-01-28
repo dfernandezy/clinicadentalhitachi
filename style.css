@@ -298,7 +298,7 @@ header.fixed .contact-info a {
 	color: #000;
 }
 
-/* -- HEADER CSS ENDS -- */
+/* -- HEADER CSS ENDS --
 
 
 
@@ -387,6 +387,119 @@ header.fixed .contact-info a {
 /* -- BANNER CSS ENDS -- */
 
 
+/* -- FINANCIACION SECTION STARTS -- */
+.financiacion-dental {
+	float: left;
+	width: 100%;
+	background: #f9f9f9;
+	padding: 80px 0;
+	margin: 0;
+}
+
+.financiacion-dental .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.titulo-financiacion {
+	color: #ff0000;
+	font-size: 48px;
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
+}
+
+.descripcion-financiacion {
+	color: #333;
+	font-size: 18px;
+	line-height: 1.8;
+	margin-bottom: 40px;
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.logos-financieras {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+	flex-wrap: wrap;
+	padding: 20px 0;
+}
+
+.logo-financiera {
+	max-height: 80px;
+	max-width: 200px;
+	object-fit: contain;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	opacity: 0.85;
+	filter: grayscale(20%);
+}
+
+.logo-financiera:hover {
+	transform: scale(1.08);
+	opacity: 1;
+	filter: grayscale(0%);
+}
+
+/* Responsive para Financiación */
+@media (max-width: 992px) {
+	.financiacion-dental {
+		padding: 60px 0;
+	}
+	
+	.titulo-financiacion {
+		font-size: 36px;
+	}
+	
+	.descripcion-financiacion {
+		font-size: 16px;
+	}
+	
+	.logos-financieras {
+		gap: 30px;
+	}
+	
+	.logo-financiera {
+		max-height: 60px;
+		max-width: 150px;
+	}
+}
+
+@media (max-width: 576px) {
+	.financiacion-dental {
+		padding: 50px 0;
+	}
+	
+	.titulo-financiacion {
+		font-size: 28px;
+		margin-bottom: 15px;
+	}
+	
+	.descripcion-financiacion {
+		font-size: 15px;
+		margin-bottom: 30px;
+		padding: 0 15px;
+	}
+	
+	.logos-financieras {
+		gap: 20px;
+		flex-direction: column;
+	}
+	
+	.logo-financiera {
+		max-height: 50px;
+		max-width: 180px;
+	}
+}
+/* -- FINANCIACION SECTION ENDS -- */
+
+
 /* carousel */
 .imagearea .swiper {
 	width: 100%;
@@ -432,80 +545,159 @@ header.fixed .contact-info a {
 	float: left;
 	width: 100%;
 	margin: 0 0 0 0;
-	padding: 80px 0;
+	margin: 100px 0;
 }
 
 .about .contentinline {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	flex-direction: row-reverse;
+	gap: 60px;
 }
 
 .about .imagearea {
-	width: 50%;
+	width: 48%;
 	margin: 0 0 0 0;
 	overflow: hidden;
+	height: auto;
+	flex-shrink: 0;
 }
 
 .imagearea {
 	border-radius: 25px;
 	box-shadow: 0 4px 10px rgba(227, 4, 4, 0.2);
-
 }
 
 .about .imagearea img {
 	float: left;
 	width: 100%;
-	height: auto;
-	aspect-ratio: 2/1.75;
-	object-fit: fill;
+	height: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
 	object-position: center;
 }
 
 .about .text {
-	width: 45%;
+	width: 48%;
 	margin: 0 0 0 0;
 }
 
 .about .text h3 {
 	text-align: left;
 	color: #000;
-	font-size: 90px;
+	font-size: 60px;
 	font-family: 'Poppins';
-	margin-bottom: 10px;
+	margin-bottom: 15px;
+	line-height: 1.1;
+	font-weight: 700;
 }
 
 .about .text h4 {
 	text-align: left;
 	color: #ff0000;
-	font-size: 30px;
+	font-size: 24px;
 	font-family: 'Poppins';
-	font-weight: normal;
+	font-weight: 500;
 	font-style: normal;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 	position: relative;
 }
 
 .about .text p {
 	text-align: left;
-	color: #000;
-	font-size: 18px;
-	line-height: 170%;
+	color: #333;
+	font-size: 16px;
+	line-height: 1.8;
 	font-family: 'Poppins';
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 }
 
 .about .text ul {
-	list-style: disc;
-	padding-left: 18px;
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 30px;
 }
 
 .about .text ul li {
 	text-align: left;
-	color: #000;
-	font-size: 18px;
+	color: #333;
+	font-size: 16px;
 	font-family: 'Poppins';
-	margin-bottom: 5px;
+	margin-bottom: 12px;
+	padding-left: 30px;
+	position: relative;
+}
+
+.about .text ul li:before {
+	content: '✓';
+	position: absolute;
+	left: 0;
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/* Responsive para la sección About */
+@media (max-width: 992px) {
+	.about {
+		padding: 80px 0;
+	}
+	
+	.about .contentinline {
+		flex-direction: column;
+		gap: 40px;
+	}
+	
+	.about .imagearea,
+	.about .text {
+		width: 100%;
+	}
+	
+	.about .text h3 {
+		font-size: 48px;
+		text-align: center;
+	}
+	
+	.about .text h4 {
+		font-size: 20px;
+		text-align: center;
+	}
+	
+	.about .text p {
+		text-align: center;
+	}
+	
+	.about .text ul li {
+		text-align: left;
+	}
+}
+
+@media (max-width: 576px) {
+	.about {
+		padding: 60px 0;
+	}
+	
+	.about .contentinline {
+		gap: 30px;
+	}
+	
+	.about .text h3 {
+		font-size: 36px;
+	}
+	
+	.about .text h4 {
+		font-size: 18px;
+	}
+	
+	.about .text p {
+		font-size: 15px;
+	}
+	
+	.about .text ul li {
+		font-size: 15px;
+		padding-left: 25px;
+	}
 }
 
 /* -- ABOUT CSS ENDS -- */
@@ -848,6 +1040,130 @@ header.fixed .contact-info a {
 	background: #cc0000;
 	border: none;
 	text-transform: uppercase;
+}
+
+/* Responsive para Contact Section */
+@media (max-width: 992px) {
+	.contactsection {
+		padding: 80px 0;
+	}
+	
+	.contactsection h3 {
+		font-size: 60px;
+		text-align: center;
+	}
+	
+	.contactsection h4 {
+		font-size: 19px;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	
+	.contactform form input[type="text"],
+	.contactform form input[type="email"] {
+		width: 100%;
+		float: none;
+		margin-bottom: 15px;
+	}
+	
+	.contactform form input[type="email"] {
+		float: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.contactsection {
+		padding: 60px 0;
+	}
+	
+	.contactsection h3 {
+		font-size: 48px;
+	}
+	
+	.contactsection h4 {
+		font-size: 18px;
+		margin-bottom: 40px;
+	}
+	
+	.contactform form input[type="text"],
+	.contactform form input[type="email"],
+	.contactform form textarea {
+		font-size: 16px;
+		height: 60px;
+		padding-left: 20px;
+	}
+	
+	.contactform form textarea {
+		height: 130px;
+		padding: 20px;
+	}
+	
+	.contactform form input[type="submit"] {
+		height: 70px;
+		font-size: 15px;
+		padding: 0 35px;
+	}
+}
+
+@media (max-width: 576px) {
+	.contactsection {
+		padding: 50px 0;
+	}
+	
+	.contactsection h3 {
+		font-size: 36px;
+	}
+	
+	.contactsection h4 {
+		font-size: 16px;
+		margin-bottom: 30px;
+		padding: 0 15px;
+	}
+	
+	.contactsection p {
+		font-size: 12px;
+		text-align: center;
+	}
+	
+	.contactform form input[type="text"],
+	.contactform form input[type="email"],
+	.contactform form textarea {
+		font-size: 15px;
+		height: 55px;
+		padding-left: 15px;
+	}
+	
+	.contactform form textarea {
+		height: 120px;
+		padding: 15px;
+	}
+	
+	.contactform form input[type="submit"] {
+		width: 100%;
+		height: 60px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 400px) {
+	.contactsection h3 {
+		font-size: 32px;
+	}
+	
+	.contactsection h4 {
+		font-size: 15px;
+	}
+	
+	.contactform form input[type="text"],
+	.contactform form input[type="email"] {
+		height: 50px;
+		font-size: 14px;
+	}
+	
+	.contactform form textarea {
+		height: 100px;
+		font-size: 14px;
+	}
 }
 
 /* -- CONTACT ENDS -- */
@@ -1283,99 +1599,80 @@ footer {
 	font-family: 'Poppins';
 }
 
-.financiacion-dental {
-  background: #fff;
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0px 3px 12px rgba(0,0,0,0.08);
-  max-width: 900px;
-  margin: 40px auto;
-}
-
-.titulo-financiacion {
-  color: #c00000; /* Rojo */
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.descripcion-financiacion {
-  color: #000; /* Texto negro */
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.logos-financieras {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.logo-financiera {
-  max-height: 60px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.logo-financiera:hover {
-  transform: scale(1.05);
-}
-
-
+/* Responsive para Reviews */
 @media (max-width: 992px) {
-	.reviews-grid {
-		grid-template-columns: repeat(2, 1fr);
+	.reviews {
+		padding: 60px 0;
 	}
-
+	
 	.reviews h3 {
 		font-size: 60px;
+	}
+	
+	.reviews-subtitle {
+		font-size: 19px;
+	}
+	
+	.reviews-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 25px;
+	}
+}
+
+@media (max-width: 768px) {
+	.reviews {
+		padding: 50px 0;
+	}
+	
+	.reviews h3 {
+		font-size: 48px;
+	}
+	
+	.reviews-subtitle {
+		font-size: 18px;
+		margin-bottom: 40px;
+	}
+	
+	.reviews-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
 	}
 }
 
 @media (max-width: 576px) {
-	.reviews-grid {
-		grid-template-columns: 1fr;
+	.reviews {
+		padding: 40px 0;
 	}
-
+	
 	.reviews h3 {
-		font-size: 40px;
+		font-size: 36px;
+	}
+	
+	.reviews-subtitle {
+		font-size: 16px;
+		margin-bottom: 30px;
+		padding: 0 15px;
+	}
+	
+	.review-card {
+		padding: 20px;
 	}
 }
 
-
-
-
-
-.terms-check {
-	float: left;
-	width: 100%;
-	margin: 20px 0;
-	display: flex;
-	align-items: flex-start;
-}
-
-.terms-check input[type="checkbox"] {
-	float: left;
-	width: auto;
-	height: auto;
-	margin-top: 3px;
-}
-
-.terms-check label {
-	flex: 1;
-	margin-left: 10px;
-	line-height: 1.4;
-}
-
-.terms-check a:hover {
-	color: #1e1e1e !important;
-}
-
-@media (max-width: 768px) {
-	.terms-check {
-		font-size: 12px !important;
+@media (max-width: 400px) {
+	.reviews h3 {
+		font-size: 32px;
+	}
+	
+	.reviews-subtitle {
+		font-size: 15px;
+	}
+	
+	.review-card {
+		padding: 15px;
+	}
+	
+	.review-text {
+		font-size: 14px;
 	}
 }

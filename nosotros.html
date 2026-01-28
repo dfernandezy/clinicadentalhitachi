@@ -36,6 +36,417 @@
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Hero más amigable */
+        .nosotros-hero {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.9)), url('images/recepcion.png') center/cover;
+            padding: 140px 20px 60px;
+            text-align: center;
+        }
+
+        .nosotros-hero h1 {
+            font-size: 3rem;
+            color: #c00000;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .nosotros-hero .subtitulo {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+
+        .nosotros-hero .descripcion {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Historia sencilla */
+        .historia-section {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        .historia-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .historia-imagen {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .historia-imagen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .historia-texto h2 {
+            font-size: 2.2rem;
+            color: #c00000;
+            margin-bottom: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .historia-texto p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .historia-texto p strong {
+            color: #c00000;
+        }
+
+        /* Stats destacados */
+        .stats-section {
+            background: linear-gradient(135deg, #c00000, #a00000);
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            opacity: 0.95;
+        }
+
+        /* Por qué elegirnos - más visual */
+        .porque-section {
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .porque-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #c00000;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .porque-section .intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .porque-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .porque-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .porque-card:hover {
+            transform: translateY(-10px);
+            border-color: #c00000;
+            box-shadow: 0 15px 40px rgba(192, 0, 0, 0.15);
+        }
+
+        .porque-card .icono {
+            font-size: 3.5rem;
+            color: #c00000;
+            margin-bottom: 20px;
+        }
+
+        .porque-card h4 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .porque-card p {
+            font-size: 1.05rem;
+            color: #666;
+            line-height: 1.7;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Equipo más humano */
+        .equipo-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .equipo-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #c00000;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .equipo-section .intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .equipo-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .team-member {
+            background: transparent;
+            border: none;
+            outline: none;
+            transition: all 0.4s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+        }
+
+        .team-member-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        .team-member:hover .team-member-image {
+            box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+        }
+
+        .team-member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease;
+            display: block;
+            border: none;
+        }
+
+        .team-member:hover .team-member-image img {
+            transform: scale(1.05);
+        }
+
+        .team-member-info {
+            padding: 0 10px;
+            text-align: center;
+            background: transparent;
+        }
+
+        .team-member-info h3 {
+            font-size: 1.35rem;
+            color: #333;
+            margin-bottom: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .team-member-info .cargo {
+            font-size: 0.9rem;
+            color: #c00000;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .team-member-info p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.65;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* CTA final más cálido */
+        .cta-final {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .cta-final p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            line-height: 1.8;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: #c00000;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(192, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #a00000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(192, 0, 0, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: white;
+            color: #c00000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #c00000;
+        }
+
+        .btn-secondary:hover {
+            background: #c00000;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(192, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nosotros-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .historia-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .porque-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .equipo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nosotros-hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid,
+            .porque-grid,
+            .equipo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -81,12 +492,247 @@
         </div>
     </header>
 
-    <!-- Contenido próximamente... -->
-    <section style="padding: 200px 0; text-align: center;">
+    <!-- HERO -->
+    <section class="nosotros-hero">
         <div class="container">
-            <h1 style="font-size: 3rem; color: #ff0000; margin-bottom: 20px;">Página en construcción</h1>
-            <p style="font-size: 1.2rem; color: #666;">Estamos trabajando para ofrecerte la mejor experiencia</p>
-            <a href="index.html" style="display: inline-block; margin-top: 30px; padding: 15px 40px; background: #ff0000; color: white; text-decoration: none; border-radius: 50px;">Volver al inicio</a>
+            <h1>Conoce a tu equipo dental</h1>
+            <p class="subtitulo">Personas reales comprometidas con tu sonrisa</p>
+            <p class="descripcion">
+                Somos un equipo de profesionales apasionados por la odontología, pero sobre todo, 
+                comprometidos con hacer que cada visita al dentista sea una experiencia positiva y sin estrés.
+            </p>
+        </div>
+    </section>
+
+    <!-- NUESTRA HISTORIA -->
+    <section class="historia-section">
+        <div class="historia-container">
+            <div class="historia-texto">
+                <h2>Nuestra historia comenzó en 2017</h2>
+                <p>
+                    Todo empezó con un sueño: <strong>crear una clínica dental diferente</strong> en Can Vidalet, 
+                    Hospitalet de Llobregat. Un lugar donde las personas se sintieran como en casa, 
+                    donde el miedo al dentista desapareciera y donde cada sonrisa contara.
+                </p>
+                <p>
+                    Desde entonces, hemos atendido a <strong>miles de familias</strong> de Barcelona y alrededores. 
+                    Cada día nos levantamos con la misma ilusión del primer día: cuidar de tu salud dental 
+                    con profesionalidad, cercanía y las mejores tecnologías.
+                </p>
+                <p>
+                    No somos una gran corporación. Somos un <strong>equipo cercano</strong> que conoce tu nombre, 
+                    recuerda tus preferencias y celebra contigo cada mejora en tu sonrisa.
+                </p>
+            </div>
+            <div class="historia-imagen">
+                <img src="images/instalaciones2.jpg" alt="Clínica Dental Hitachi">
+            </div>
+        </div>
+    </section>
+
+    <!-- NÚMEROS QUE NOS REPRESENTAN -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>7+</h3>
+                <p>Años cuidando sonrisas</p>
+            </div>
+            <div class="stat-item">
+                <h3>6</h3>
+                <p>Profesionales en el equipo</p>
+            </div>
+            <div class="stat-item">
+                <h3>1000+</h3>
+                <p>Pacientes satisfechos</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Dedicación y cariño</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUÉ CONFIAR EN NOSOTROS -->
+    <section class="porque-section">
+        <h2>¿Por qué las familias confían en nosotros?</h2>
+        <p class="intro">
+            No se trata solo de dientes. Se trata de personas cuidando de personas.
+        </p>
+        <div class="porque-grid">
+            <div class="porque-card">
+                <div class="icono">😊</div>
+                <h4>Trato cercano y humano</h4>
+                <p>
+                    Aquí no eres un número. Te llamamos por tu nombre, conocemos tu historia 
+                    y nos preocupamos genuinamente por tu bienestar.
+                </p>
+            </div>
+
+            <div class="porque-card">
+                <div class="icono">🎓</div>
+                <h4>Experiencia que tranquiliza</h4>
+                <p>
+                    Más de 7 años de experiencia, formación continua y cientos de sonrisas 
+                    transformadas. Sabemos lo que hacemos.
+                </p>
+            </div>
+
+            <div class="porque-card">
+                <div class="icono">💻</div>
+                <h4>Tecnología moderna</h4>
+                <p>
+                    Equipos digitales de última generación para tratamientos más precisos, 
+                    rápidos y cómodos. Sin complicaciones innecesarias.
+                </p>
+            </div>
+
+            <div class="porque-card">
+                <div class="icono">🕐</div>
+                <h4>Horarios que se adaptan a ti</h4>
+                <p>
+                    Entendemos que tienes una vida ocupada. Por eso ofrecemos horarios 
+                    flexibles de mañana y tarde.
+                </p>
+            </div>
+
+            <div class="porque-card">
+                <div class="icono">💰</div>
+                <h4>Sin letra pequeña</h4>
+                <p>
+                    Presupuestos claros, explicados con calma. Opciones de financiación 
+                    sin comisiones ocultas. Transparencia total.
+                </p>
+            </div>
+
+            <div class="porque-card">
+                <div class="icono">🏥</div>
+                <h4>Instalaciones impecables</h4>
+                <p>
+                    Clínica moderna, limpia y acogedora. Ambiente relajado donde sentirte 
+                    cómodo desde que entras por la puerta.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUESTRO EQUIPO -->
+    <section class="equipo-section">
+        <h2>Las personas detrás de tu sonrisa</h2>
+        <p class="intro">
+            Conoce al equipo que te cuidará con profesionalidad, experiencia y mucho cariño.
+        </p>
+        <div class="equipo-grid">
+            <!-- Dra. Hitachi -->
+            <div class="team-member">
+                <div class="team-member-image">
+                    <img src="images/doctorahitachi.jpg" alt="Dra. Vivian Hitachi">
+                </div>
+                <div class="team-member-info">
+                    <h3>Dra. Vivian Hitachi A.</h3>
+                    <p class="cargo">Directora y Cirujana Dental</p>
+                    <p>
+                        La fundadora y alma de la clínica. Especialista en cirugía dental con 
+                        años de experiencia. Su pasión es hacer que te sientas seguro y bien cuidado.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Dra. Ana Molina -->
+            <div class="team-member">
+                <div class="team-member-image">
+                    <img src="images/dentista3.webp" alt="Dra. Ana Molina">
+                </div>
+                <div class="team-member-info">
+                    <h3>Dra. Ana Molina G.</h3>
+                    <p class="cargo">Odontóloga General</p>
+                    <p>
+                        Experta en tratamientos generales y preventivos. Su enfoque calmado y paciente 
+                        hace que hasta los más nerviosos se sientan tranquilos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Dra. Marta Luque -->
+            <div class="team-member">
+                <div class="team-member-image">
+                    <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque">
+                </div>
+                <div class="team-member-info">
+                    <h3>Dra. Marta Luque R.</h3>
+                    <p class="cargo">Ortodoncista</p>
+                    <p>
+                        Especialista en ortodoncia e Invisalign. Le encanta ver cómo las sonrisas 
+                        se transforman y la confianza de sus pacientes crece día a día.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ana Terrazas -->
+            <div class="team-member">
+                <div class="team-member-image">
+                    <img src="images/dentista4.webp" alt="Ana Terrazas">
+                </div>
+                <div class="team-member-info">
+                    <h3>Ana Terrazas Q.</h3>
+                    <p class="cargo">Auxiliar de Clínica</p>
+                    <p>
+                        La persona que te recibirá con una sonrisa y se asegurará de que todo 
+                        esté perfecto durante tu tratamiento. Atenta y cariñosa.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kathy Alonso -->
+            <div class="team-member">
+                <div class="team-member-image">
+                    <img src="images/dentista1.webp" alt="Kathy Alonso">
+                </div>
+                <div class="team-member-info">
+                    <h3>Kathy Alonso A.</h3>
+                    <p class="cargo">Higienista Dental</p>
+                    <p>
+                        Especialista en limpiezas dentales y prevención. Sus manos expertas 
+                        y su trato amable harán que ames venir a tus revisiones.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hernan Menacho -->
+            <div class="team-member">
+                <div class="team-member-image">
+                    <img src="images/dentista5.webp" alt="Hernan Menacho">
+                </div>
+                <div class="team-member-info">
+                    <h3>Hernan Menacho L.</h3>
+                    <p class="cargo">Recepción y Administración</p>
+                    <p>
+                        La primera voz que escucharás al llamar. Organiza tu cita, resuelve tus dudas 
+                        y hace que todo fluya sin complicaciones.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>¿Te gustaría conocernos en persona?</h2>
+            <p>
+                Ven a visitarnos sin compromiso. Te enseñaremos la clínica, conocerás al equipo 
+                y resolveremos todas tus dudas. Sin prisas, sin presiones. Solo una conversación tranquila 
+                sobre cómo podemos ayudarte.
+            </p>
+            <div class="cta-buttons">
+                <a href="contacto.html" class="btn-primary">
+                    <i class="fas fa-calendar-check"></i>
+                    Pedir cita ahora
+                </a>
+                <a href="tel:931479829" class="btn-secondary">
+                    <i class="fas fa-phone"></i>
+                    Llamar: 931 479 829
+                </a>
+            </div>
         </div>
     </section>
 
@@ -120,5 +766,138 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // GSAP Animations - suaves y naturales
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero - aparición suave
+        gsap.from('.nosotros-hero h1', {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+
+        gsap.from('.nosotros-hero .subtitulo', {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.2,
+            ease: 'power2.out'
+        });
+
+        gsap.from('.nosotros-hero .descripcion', {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.4,
+            ease: 'power2.out'
+        });
+
+        // Historia
+        gsap.from('.historia-texto', {
+            x: -50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.historia-section',
+                start: 'top 75%',
+            }
+        });
+
+        gsap.from('.historia-imagen', {
+            x: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.historia-section',
+                start: 'top 75%',
+            }
+        });
+
+        // Stats
+        gsap.utils.toArray('.stat-item').forEach((stat, index) => {
+            gsap.from(stat, {
+                scale: 0.8,
+                opacity: 0,
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: 'back.out(1.5)',
+                scrollTrigger: {
+                    trigger: '.stats-section',
+                    start: 'top 80%',
+                }
+            });
+        });
+
+        // Porque cards
+        gsap.utils.toArray('.porque-card').forEach((card, index) => {
+            gsap.from(card, {
+                y: 40,
+                opacity: 0,
+                duration: 0.7,
+                delay: index * 0.1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                }
+            });
+        });
+
+        // Team members
+        gsap.utils.toArray('.team-member').forEach((member, index) => {
+            gsap.from(member, {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                delay: index * 0.15,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: member,
+                    start: 'top 85%',
+                }
+            });
+        });
+
+        // CTA final
+        gsap.from('.cta-final h2', {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.cta-final',
+                start: 'top 80%',
+            }
+        });
+
+        gsap.from('.cta-final p', {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.cta-final',
+                start: 'top 80%',
+            }
+        });
+
+        gsap.from('.cta-buttons', {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.4,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '.cta-final',
+                start: 'top 80%',
+            }
+        });
+    </script>
 </body>
 </html>
