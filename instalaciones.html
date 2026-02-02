@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="theme-color" content="#ff0000">
-    <title>Instalaciones | Clínica Dental Hitachi</title>
-    <meta name="description" content="Descubre nuestras modernas instalaciones equipadas con la última tecnología dental.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras Instalaciones | Clínica Dental Hitachi</title>
+    <meta name="description" content="Descubre nuestras modernas instalaciones equipadas con la última tecnología dental en Barcelona.">
     <link rel="canonical" href="https://clinicadentalhitachi.com/instalaciones.html">
     <link rel="icon" type="image/png" href="images/logo.webp">
 
@@ -18,20 +17,230 @@
         gtag('config', 'G-FW71SH6H7M');
     </script>
 
-    <!-- Fonts & Icons -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icons-linear.css">
     <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-responsive.css">
-
-    <!-- Scripts -->
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/menuscript.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; overflow-x: hidden; }
+
+        /* Hero */
+        .instalaciones-hero {
+            padding: 220px 20px 120px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+        .instalaciones-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+        .instalaciones-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 20px;
+            background: #f9f9f9;
+            width: 100%;
+        }
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .gallery-intro h2 {
+            font-size: 3rem;
+            color: #ff0000;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .gallery-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .gallery-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(255,0,0,0.2);
+        }
+        .gallery-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover .gallery-image img {
+            transform: scale(1.1);
+        }
+        .gallery-info {
+            padding: 30px;
+        }
+        .gallery-info h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .gallery-info p {
+            color: #666;
+            line-height: 1.7;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Tecnologia Section */
+        .tech-section {
+            padding: 100px 20px;
+            background: white;
+            width: 100%;
+        }
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .tech-container h2 {
+            font-size: 3rem;
+            color: #ff0000;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .tech-container p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .tech-item {
+            padding: 40px 30px;
+            background: #f9f9f9;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .tech-item:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(255,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .tech-item i {
+            font-size: 3rem;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+        .tech-item h4 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .tech-item p {
+            color: #666;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* CTA */
+        .cta-instalaciones {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            padding: 100px 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .cta-instalaciones h2 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 25px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .cta-instalaciones p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 45px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .instalaciones-hero h1 { font-size: 3rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .tech-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 576px) {
+            .instalaciones-hero { padding: 180px 20px 80px; }
+            .instalaciones-hero h1 { font-size: 2.2rem; }
+            .instalaciones-hero p { font-size: 1.1rem; }
+            .gallery-intro h2 { font-size: 2.2rem; }
+            .tech-container h2 { font-size: 2.2rem; }
+            .tech-grid { grid-template-columns: 1fr; }
+            .cta-instalaciones h2 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
 
 <body>
@@ -41,7 +250,8 @@
             <div class="header_default">
                 <div class="site-branding">
                     <a href="index.html" class="logo">
-                        <img src="images/logo.webp" alt="Logo" class="logo-2">
+                        <img src="images/logo.webp" alt="Logo" class="logo-1" width="70px">
+                        <img src="images/logo.webp" alt="Logo" class="logo-2" width="70px">
                     </a>
                 </div>
                 <div class="header-right">
@@ -53,7 +263,7 @@
                         <div class="sitenav" id="sitenav">
                             <div class="navwrap">
                                 <div class="navouter">
-                                    <nav class="headermenu leftmenu" id="headnav" role="navigation">
+                                    <nav class="headermenu leftmenu" role="navigation">
                                         <ul>
                                             <li><a href="index.html">Inicio</a></li>
                                             <li><a href="nosotros.html">Nosotros</a></li>
@@ -77,13 +287,118 @@
         </div>
     </header>
 
-    <!-- Contenido próximamente... -->
-    <section style="padding: 200px 0; text-align: center;">
-        <div class="container">
-            <h1 style="font-size: 3rem; color: #ff0000; margin-bottom: 20px;">Página en construcción</h1>
-            <p style="font-size: 1.2rem; color: #666;">Estamos trabajando para ofrecerte la mejor experiencia</p>
-            <a href="index.html" style="display: inline-block; margin-top: 30px; padding: 15px 40px; background: #ff0000; color: white; text-decoration: none; border-radius: 50px;">Volver al inicio</a>
+    <!-- HERO -->
+    <section class="instalaciones-hero">
+        <h1>Nuestras Instalaciones</h1>
+        <p>Tecnología de vanguardia en un ambiente cómodo y acogedor diseñado para tu bienestar</p>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-intro">
+                <h2>Un espacio pensado para ti</h2>
+                <p>Cada rincón de nuestra clínica ha sido diseñado para que te sientas cómodo y seguro durante tu visita</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/recepcion.png" alt="Recepción">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Recepción</h3>
+                        <p>Un espacio acogedor donde serás recibido con una sonrisa. Ambiente moderno y confortable.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/maquinaria.jpg" alt="Sala de Tratamiento">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Salas de Tratamiento</h3>
+                        <p>Equipadas con tecnología de última generación para los tratamientos más avanzados.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/instalaciones2.jpg" alt="Consultorio">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Consultorios</h3>
+                        <p>Espacios amplios y luminosos diseñados para tu máximo confort.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/instalación2.webp" alt="Área de Diagnóstico">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Zona de Diagnóstico</h3>
+                        <p>Equipos digitales de rayos X para diagnósticos precisos con mínima radiación.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- TECNOLOGIA -->
+    <section class="tech-section">
+        <div class="tech-container">
+            <h2>Tecnología de Última Generación</h2>
+            <p>Invertimos en los mejores equipos para garantizar tratamientos precisos, seguros y cómodos</p>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fas fa-x-ray"></i>
+                    <h4>Radiografía Digital</h4>
+                    <p>90% menos radiación. Diagnósticos rápidos y precisos.</p>
+                </div>
+
+                <div class="tech-item">
+                    <i class="fas fa-microscope"></i>
+                    <h4>Microscopio Dental</h4>
+                    <p>Máxima precisión en endodoncia y cirugía.</p>
+                </div>
+
+                <div class="tech-item">
+                    <i class="fas fa-laptop-medical"></i>
+                    <h4>Escáner Intraoral</h4>
+                    <p>Impresiones digitales sin molestias.</p>
+                </div>
+
+                <div class="tech-item">
+                    <i class="fas fa-shield-virus"></i>
+                    <h4>Esterilización Avanzada</h4>
+                    <p>Protocolos estrictos para tu seguridad.</p>
+                </div>
+
+                <div class="tech-item">
+                    <i class="fas fa-tooth"></i>
+                    <h4>CAD/CAM</h4>
+                    <p>Prótesis digitales en el mismo día.</p>
+                </div>
+
+                <div class="tech-item">
+                    <i class="fas fa-wind"></i>
+                    <h4>Sedación Consciente</h4>
+                    <p>Tratamientos sin ansiedad ni dolor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-instalaciones">
+        <h2>¿Quieres conocer nuestra clínica?</h2>
+        <p>Ven a visitarnos y descubre por qué somos diferentes.</p>
+        <a href="contacto.html" class="btn-primary">
+            <i class="fas fa-calendar-check"></i>
+            Pedir visita guiada
+        </a>
     </section>
 
     <!-- FOOTER -->
@@ -94,18 +409,75 @@
                     <div class="footer-column">
                         <img src="images/logo.webp" alt="Logo" class="footer-logo">
                         <div class="footer-contact">
-                            <p><i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Calle Rosa de Alejandría Nº24</a></p>
-                            <p><i class="fa-solid fa-phone"></i><a href="tel:931479829">931479829</a></p>
+                            <p><i class="fa-solid fa-location-dot"></i><a style="color: rgb(66, 66, 66); text-decoration: none;" href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Calle Rosa de Alejandría Nº24</a></p>
+                            <p><i class="fa-solid fa-phone"></i><a style="color: red; text-decoration: none;" href="tel:931479829">931479829</a></p>
+                            <p><i class="fa-regular fa-clock"></i> L-V: 9:30-13:30 / 16:00-20:00</p>
                         </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Enlaces</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="servicios.html">Odontología</a></li>
+                            <li><a href="servicios.html">Ortodoncia</a></li>
+                            <li><a href="servicios.html">Implantes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacidad.html">Privacidad</a></li>
+                            <li><a href="cookies.html">Cookies</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>© 2025 Clínica Dental Hitachi</p>
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2025 Clínica Dental Hitachi</p>
+                    <div class="social-links">
+                        <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+
+    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.instalaciones-hero h1', { y: 30, opacity: 0, duration: 0.8 });
+        gsap.utils.toArray('.gallery-item').forEach((item, i) => {
+            gsap.from(item, {
+                y: 50, opacity: 0, duration: 0.8, delay: i * 0.1,
+                scrollTrigger: { trigger: item, start: 'top 85%' }
+            });
+        });
+        gsap.utils.toArray('.tech-item').forEach((item, i) => {
+            gsap.from(item, {
+                y: 40, opacity: 0, duration: 0.6, delay: i * 0.1,
+                scrollTrigger: { trigger: item, start: 'top 85%' }
+            });
+        });
+        
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            scrollBtn.classList.toggle('visible', window.scrollY > 500);
+        });
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
 </body>
 </html>

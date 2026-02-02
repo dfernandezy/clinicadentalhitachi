@@ -1,287 +1,509 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Clínica Dental Hitachi</title>
+    <meta name="description" content="Consejos, noticias y artículos sobre salud dental. Aprende a cuidar tu sonrisa con nuestros expertos.">
+    <link rel="canonical" href="https://clinicadentalhitachi.com/blog.html">
+    <link rel="icon" type="image/png" href="images/logo.webp">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW71SH6H7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FW71SH6H7M');
+    </script>
 
-	<title>Blog-Odontología Hitachi Can Vidalet </title>
-	<meta name="description"
-		content="Descubre los mitos y verdades sobre la salud dental. Desmentimos creencias populares y te damos consejos basados en ciencia para una sonrisa saludable.">
-	<meta lang="es">
-	<link rel="icon" type="image/png" href="images/logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icons-linear.css">
+    <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/menuscript.js"></script>
 
-	<link rel="canonical" href="https://clinicadentalhitachi.com/">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-		rel="stylesheet">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW71SH6H7M"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+        .blog-hero {
+            padding: 220px 20px 120px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+        .blog-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+        .blog-hero p {
+            font-size: 1.4rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.95;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
 
-		gtag('config', 'G-FW71SH6H7M');
-	</script>
-	<!-- FONT ICONS -->
-	<link rel="stylesheet" href="fonts/icons-linear.css">
-	<link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
-	<link rel="stylesheet" href="style1.css">
-	<link rel="stylesheet" href="style-responsive.css">
+        .blog-section {
+            padding: 120px 20px;
+            background: #fafafa;
+            width: 100%;
+        }
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
 
-	<script src="js/jquery.js"></script>
-	<script src="js/scripts.js"></script>
-	<script src="contactform/contactform.js"></script>
-	<script src="js/menuscript.js"></script>
+        .blog-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255,0,0,0.12);
+        }
 
-	<style>
-		a {
-			text-decoration: none;
-		}
-	</style>
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .blog-card:hover .blog-image img {
+            transform: scale(1.08);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #ff0000;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .blog-content {
+            padding: 35px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        .blog-meta i {
+            color: #ff0000;
+            margin-right: 6px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.6rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+        }
+        .blog-link:hover {
+            gap: 12px;
+            color: #cc0000;
+        }
+        .blog-link i {
+            transition: transform 0.3s ease;
+        }
+        .blog-link:hover i {
+            transform: translateX(4px);
+        }
+
+        .cta-blog {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            padding: 100px 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .cta-blog h2 {
+            font-size: 2.8rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        .cta-blog p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 45px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
+        }
+
+        @media (max-width: 992px) {
+            .blog-hero h1 { font-size: 3.2rem; }
+            .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        }
+        @media (max-width: 576px) {
+            .blog-hero { padding: 180px 20px 80px; }
+            .blog-hero h1 { font-size: 2.4rem; }
+            .blog-section { padding: 80px 20px; }
+            .blog-grid { grid-template-columns: 1fr; gap: 35px; }
+            .blog-content { padding: 30px; }
+            .cta-blog h2 { font-size: 2rem; }
+        }
+    </style>
 </head>
 
+<body>
+    <header>
+        <div class="container psr">
+            <div class="header_default">
+                <div class="site-branding">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.webp" alt="Logo" class="logo-1" width="70px">
+                        <img src="images/logo.webp" alt="Logo" class="logo-2" width="70px">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="site-navwrap">
+                        <div class="navicons">
+                            <a href="javascript:void;" class="navshow"><span class="lnr lnr-menu"></span></a>
+                            <a href="javascript:void;" class="navhide"><span class="lnr lnr-cross"></span></a>
+                        </div>
+                        <div class="sitenav" id="sitenav">
+                            <div class="navwrap">
+                                <div class="navouter">
+                                    <nav class="headermenu leftmenu" role="navigation">
+                                        <ul>
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="nosotros.html">Nosotros</a></li>
+                                            <li><a href="servicios.html">Servicios</a></li>
+                                            <li><a href="instalaciones.html">Instalaciones</a></li>
+                                            <li><a href="contacto.html">Contacto</a></li>
+                                            <li class="blog active"><a href="blog.html">Blog</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <section class="blog-hero">
+        <h1>Blog Dental</h1>
+        <p>Consejos, noticias y guías para cuidar tu salud dental</p>
+    </section>
 
+    <section class="blog-section">
+        <div class="blog-container">
+            <div class="blog-grid">
+                <!-- Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Blanqueamiento dental">
+                        <span class="blog-category">Estética</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 Ene 2025</span>
+                            <span><i class="far fa-clock"></i> 5 min</span>
+                        </div>
+                        <h3>¿Cómo funciona el blanqueamiento dental?</h3>
+                        <p class="blog-excerpt">
+                            Descubre cómo conseguir una sonrisa más blanca de forma segura y los cuidados necesarios para mantener los resultados.
+                        </p>
+                        <a href="#" class="blog-link">
+                            Leer más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
 
+                <!-- Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia">
+                        <span class="blog-category">Ortodoncia</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 10 Ene 2025</span>
+                            <span><i class="far fa-clock"></i> 4 min</span>
+                        </div>
+                        <h3>Invisalign vs Brackets: ¿Cuál elegir?</h3>
+                        <p class="blog-excerpt">
+                            Comparamos las ventajas y desventajas de cada sistema de ortodoncia para ayudarte a tomar la mejor decisión.
+                        </p>
+                        <a href="#" class="blog-link">
+                            Leer más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
 
-<header class="fixed">
-	<div class="container psr">
-		<div class="header_default">
-			<div class="site-branding">
-				<a href="index.html" class="logo">
-					<img src="images/logo.webp" alt="logo" width="70px">
-				</a>
-			</div>
+                <!-- Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza dental">
+                        <span class="blog-category">Prevención</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 5 Ene 2025</span>
+                            <span><i class="far fa-clock"></i> 3 min</span>
+                        </div>
+                        <h3>Importancia de la limpieza dental profesional</h3>
+                        <p class="blog-excerpt">
+                            Por qué es fundamental hacerse una limpieza dental cada 6 meses y qué problemas puedes prevenir.
+                        </p>
+                        <a href="#" class="blog-link">
+                            Leer más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
 
-			<div class="site-navwrap">
-				<div class="navicons">
-					<a href="javascript:void;" class="navshow">
-						<span class="lnr lnr-menu"></span>
-					</a>
-					<a href="javascript:void;" class="navhide">
-						<span class="lnr lnr-cross"></span>
-					</a>
-				</div>
+                <!-- Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/radio.png" alt="Implantes dentales">
+                        <span class="blog-category">Implantes</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 28 Dic 2024</span>
+                            <span><i class="far fa-clock"></i> 6 min</span>
+                        </div>
+                        <h3>Todo sobre implantes dentales en 2025</h3>
+                        <p class="blog-excerpt">
+                            Guía completa sobre implantes: proceso, cuidados, duración y precios. Resuelve todas tus dudas aquí.
+                        </p>
+                        <a href="#" class="blog-link">
+                            Leer más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
 
-				<div class="sitenav" id="sitenav">
-					<div class="navwrap">
-						<div class="navouter">
-							<nav class="headermenu leftmenu" id="headnav" role="navigation">
-								<ul>
-									<li><a href="index.html#home">Inicio</a></li>
-									<li><a href="index.html#about">Nosotros</a></li>
-									<li><a href="index.html#foodmenu">Servicios</a></li>
-									<li class="contact"><a href="index.html#contact">Contacto</a></li>
-									<li class="blog"><a href="blog.html">Blog</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
+                <!-- Post 5 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/instalaciones2.jpg" alt="Cuidado dental">
+                        <span class="blog-category">Consejos</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 20 Dic 2024</span>
+                            <span><i class="far fa-clock"></i> 4 min</span>
+                        </div>
+                        <h3>5 hábitos para una sonrisa perfecta</h3>
+                        <p class="blog-excerpt">
+                            Rutinas diarias que marcan la diferencia en tu salud bucal. Consejos de nuestros expertos para ti.
+                        </p>
+                        <a href="#" class="blog-link">
+                            Leer más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
 
-			<div class="contact-info">
-				<a href="tel:931479829">
-					<i class="fa-solid fa-phone-volume"></i>
-				</a>
-				<a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8">
-					<i class="fa-solid fa-map-location-dot"></i>
-				</a>
-				<a href="https://www.facebook.com/ClinicadentalDraHitachiA">
-					<i class="fa-brands fa-facebook-f"></i>
-				</a>
-			</div>
-		</div>
-	</div>
-</header>
-<!-- HEADER -->
+                <!-- Post 6 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/maquinaria.jpg" alt="Tecnología dental">
+                        <span class="blog-category">Tecnología</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 Dic 2024</span>
+                            <span><i class="far fa-clock"></i> 5 min</span>
+                        </div>
+                        <h3>Radiografía digital: más segura y precisa</h3>
+                        <p class="blog-excerpt">
+                            Descubre cómo la tecnología digital reduce la radiación un 90% y mejora los diagnósticos dentales.
+                        </p>
+                        <a href="#" class="blog-link">
+                            Leer más <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-<section class="banner">
-	<h1>Bienvenidos a nuestro Blog</h1>
-</section>
-<!--  -->
-<!--
-	 -->
-<!-- Colocar arriba el nuevo Blog -->
-<!--  -->
-<div class="blog-container">
-	<h2>Últimas publicaciones</h2>
-	<div class="blog-grid">
-		<a href="./blogpaginas/blog1.html" class="blog-card">
-			<img src="images/comer.jpg" alt="Post 1">
-			<div class="content">
-				<h3>Los Alimentos que más manchan los dientes:</h3>
-				<p>Descubre cuáles son los principales culpables y cómo reducir su impacto sin renunciar a ellos.
-				</p>
-			</div>
-		</a>
-		<a href="./blogpaginas/blog2.html" class="blog-card">
-			<img src="images/dientes.jpg" alt="Post 2">
-			<div class="content">
-				<h3>Hábitos díarios para unos dientes fuertes:</h3>
-				<p>Descubre los mejores hábitos diarios que te ayudarán a prevenir caries, fortalecer el esmalte y
-					mantener el blanco natural de tus dientes.</p>
-			</div>
-		</a>
-		<a href="./blogpaginas/blog3.html" class="blog-card">
-			<img src="images/mitos.jpg" alt="Post 3">
-			<div class="content">
-				<h3>Mitos y verdades sobre la salud dental. Lo que debes saber:</h3>
-				<p>En este artículo desmentimos los mitos más comunes y te explicamos lo que realmente funciona para
-					mantener una salud bucal óptima.</p>
-			</div>
-		</a>
+    <section class="cta-blog">
+        <h2>¿Tienes alguna duda?</h2>
+        <p>Nuestro equipo está aquí para ayudarte con cualquier pregunta sobre tu salud dental</p>
+        <a href="contacto.html" class="btn-primary">
+            <i class="fas fa-comments"></i>
+            Contáctanos
+        </a>
+    </section>
 
-		<a href="./blogpaginas/blog4.html" class="blog-card">
-			<img src="images/blanqueamiento.webp" alt="Post 4">
-			<div class="content">
-				<h3>Blanqueamiento dental en casa: ¿Qué funciona realmente?</h3>
-				<p>Explora métodos caseros y profesionales para blanquear tus dientes sin riesgos ni efectos
-					secundarios.</p>
-			</div>
-		</a>
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <img src="images/logo.webp" alt="Logo" class="footer-logo">
+                        <div class="footer-contact">
+                            <p><i class="fa-solid fa-location-dot"></i><a style="color: rgb(66, 66, 66); text-decoration: none;" href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Calle Rosa de Alejandría Nº24</a></p>
+                            <p><i class="fa-solid fa-phone"></i><a style="color: red; text-decoration: none;" href="tel:931479829">931479829</a></p>
+                            <p><i class="fa-regular fa-clock"></i> L-V: 9:30-13:30 / 16:00-20:00</p>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Enlaces</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="servicios.html">Odontología</a></li>
+                            <li><a href="servicios.html">Ortodoncia</a></li>
+                            <li><a href="servicios.html">Implantes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacidad.html">Privacidad</a></li>
+                            <li><a href="cookies.html">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2025 Clínica Dental Hitachi</p>
+                    <div class="social-links">
+                        <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
-		<a href="./blogpaginas/blog5.html" class="blog-card">
-			<img src="images/errores.webp" alt="Post 5">
-			<div class="content">
-				<h3>Errores comunes en la higiene dental que debes evitar</h3>
-				<p>Muchas personas cometen estos errores sin darse cuenta. Descubre cuáles son y cómo mejorar tu rutina
-					diaria.</p>
-			</div>
-		</a>
-
-		<a href="./blogpaginas/blog6.html" class="blog-card">
-			<img src="images/banner.webp" alt="Post 6">
-			<div class="content">
-				<h3>Soluciones dentales para transformar tu sonrisa en Can Vidalet</h3>
-				<p>Los 5 tratamientos más efectivos en nuestra clínica dental en Can Vidalet</p>
-			</div>
-		</a>
-
-		<a href="./blogpaginas/blog7.html" class="blog-card">
-			<img src="images/comer.jpg" alt="Post 7">
-			<div class="content">
-				<h3>Cómo combatir la sensibilidad dental</h3>
-				<p>Descubre cómo combatir la sensibilidad dental y volver a disfrutar sin molestias</p>
-			</div>
-		</a>
-
-		<a href="./blogpaginas/blog8.html" class="blog-card">
-			<img src="images/maquinaria.jpg" alt="Post 8">
-			<div class="content">
-				<h3>Odontología Digital</h3>
-				<p>Descubre las tecnologías innovadoras que mejoran los tratamientos dentales</p>
-			</div>
-		</a>
-
-		<a href="./blogpaginas/blog9.html" class="blog-card">
-			<img src="images/brackets-centrodentalhitachi.jpg" alt="Post 9">
-			<div class="content">
-				<h3>Ortodoncia Invisible: Sonríe sin que se note</h3>
-				<p>Conoce los <u>alineadores transparentes</u> que corrigen tu sonrisa con discreción y eficacia</p>
-			</div>
-		</a>
-
-	</div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-	<div class="footer-main">
-		<div class="container">
-			<div class="footer-grid">
-				<!-- Columna 1: Info de contacto -->
-				<div class="footer-column">
-					<img src="images/logo.webp" alt="Logo Centro Dental Hitachi" class="footer-logo">
-					<div class="footer-contact">
-						<p>
-							<i class="fa-solid fa-location-dot"></i>
-							<a style="color: rgb(66, 66, 66); text-decoration: none;"
-								href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">
-								Calle Rosa de Alejandría Nº24, Local 3 / 08906
-							</a>
-						</p>
-
-						<p><i class="fa-solid fa-phone"></i><a style="color: red; text-decoration: none;"
-								href="tel:931479829" target="_blank">931479829 </a></p>
-						<p><i class="fa-solid fa-phone"></i><a style="color: red; text-decoration: none;"
-								href="tel:622819008" target="_blank">622819008 </a></p>
-						<p style="color: black;"><i class="fa-regular fa-clock"></i> L-V: 9:30-13:30 /
-							16:00-20:00
-						</p>
-					</div>
-				</div>
-
-				<!-- Columna 2: Enlaces rápidos -->
-				<div class="footer-column">
-					<h4>Enlaces rápidos</h4>
-					<ul>
-						<li><a href="index.html#home">Inicio</a></li>
-						<li><a href="index.html#about">Nosotros</a></li>
-						<li><a href="index.html#foodmenu">Servicios</a></li>
-						<li><a href="index.html#contact">Contacto</a></li>
-						<li><a href="blog.html">Blog</a></li>
-					</ul>
-				</div>
-
-				<!-- Columna 3: Servicios -->
-				<div class="footer-column">
-					<h4>Servicios</h4>
-					<ul>
-						<li><a href="index.html#foodmenu">Odontología General</a></li>
-						<li><a href="index.html#foodmenu">Ortodoncia</a></li>
-						<li><a href="index.html#foodmenu">Implantes</a></li>
-						<li><a href="index.html#foodmenu">Estética Dental</a></li>
-						<li><a href="index.html#foodmenu">Urgencias</a></li>
-					</ul>
-				</div>
-
-				<!-- Columna 4: Legal -->
-				<div class="footer-column">
-					<h4>Legal</h4>
-					<ul>
-						<li><a href="privacidad.html">Política de Privacidad</a></li>
-						<li><a href="cookies.html">Política de Cookies</a></li>
-						<li><a href="aviso-legal.html">Aviso Legal</a></li>
-						<li><a href="accesibilidad.html">Accesibilidad</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- Footer Bottom -->
-	<div class="footer-bottom">
-		<div class="container">
-			<div class="footer-bottom-content">
-				<p class="copyright">© 2025 Centro Dental Hitachi. Todos los derechos reservados.</p>
-				<div class="social-links">
-					<a href="tel:931479829">
-						<i class="fa-solid fa-phone-volume"></i>
-					</a>
-					<a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i
-							class="fa-solid fa-location-dot"></i></a>
-					<a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i
-							class="fa-brands fa-facebook-f" target="_blank"></i></a>
-
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-	</body>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.blog-hero h1', { y: 30, opacity: 0, duration: 0.8 });
+        gsap.from('.blog-hero p', { y: 20, opacity: 0, duration: 0.8, delay: 0.2 });
+        
+        gsap.utils.toArray('.blog-card').forEach((card, i) => {
+            gsap.from(card, {
+                y: 50, opacity: 0, duration: 0.8, delay: i * 0.1,
+                scrollTrigger: { trigger: card, start: 'top 85%' }
+            });
+        });
+        
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
 
 </html>

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="theme-color" content="#ff0000">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Clínica Dental Hitachi</title>
-    <meta name="description" content="Contáctanos y agenda tu cita. Estamos en Barcelona, Can Vidalet.">
+    <meta name="description" content="Pide cita en nuestra clínica dental en Barcelona. Llámanos al 931 479 829 o rellena nuestro formulario de contacto.">
     <link rel="canonical" href="https://clinicadentalhitachi.com/contacto.html">
     <link rel="icon" type="image/png" href="images/logo.webp">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW71SH6H7M"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -18,30 +16,281 @@
         gtag('config', 'G-FW71SH6H7M');
     </script>
 
-    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icons-linear.css">
     <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-responsive.css">
-
-    <!-- Scripts -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/menuscript.js"></script>
+
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .contacto-hero {
+            padding: 220px 20px 120px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            text-align: center;
+            color: white;
+            width: 100%;
+            position: relative;
+        }
+        .contacto-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+        .contacto-hero p {
+            font-size: 1.4rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.95;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .contacto-info-section {
+            padding: 120px 20px;
+            background: #fafafa;
+            width: 100%;
+        }
+        .contacto-info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 100px;
+        }
+        .contacto-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .contacto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255,0,0,0.12);
+            border-color: rgba(255,0,0,0.1);
+        }
+        .contacto-card i {
+            font-size: 3.5rem;
+            color: #ff0000;
+            margin-bottom: 25px;
+            display: block;
+        }
+        .contacto-card h3 {
+            font-size: 1.6rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .contacto-card p {
+            color: #555;
+            line-height: 1.8;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+        .contacto-card a {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.2px;
+        }
+        .contacto-card a:hover {
+            color: #cc0000;
+            text-decoration: underline;
+        }
+
+        .form-map-section {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .form-container {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .form-container h2 {
+            font-size: 2.4rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        .form-container .form-subtitle {
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        .form-group {
+            margin-bottom: 28px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.2px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 22px;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: #fafafa;
+            font-weight: 400;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff0000;
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(255,0,0,0.08);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+            line-height: 1.6;
+        }
+        .form-check {
+            margin: 30px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .form-check input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            cursor: pointer;
+            accent-color: #ff0000;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .form-check label {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        .form-check label a {
+            color: #ff0000;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
+        }
+        .btn-submit:active {
+            transform: translateY(-1px);
+        }
+
+        .map-container {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            height: 100%;
+            min-height: 650px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0%) contrast(1.05);
+        }
+
+        @media (max-width: 992px) {
+            .contacto-hero h1 { font-size: 3.2rem; letter-spacing: -1px; }
+            .contacto-hero p { font-size: 1.2rem; }
+            .contacto-grid { grid-template-columns: 1fr; gap: 35px; }
+            .form-map-section { grid-template-columns: 1fr; gap: 50px; }
+            .map-container { min-height: 450px; }
+        }
+        @media (max-width: 576px) {
+            .contacto-hero { padding: 180px 20px 80px; }
+            .contacto-hero h1 { font-size: 2.4rem; }
+            .contacto-hero p { font-size: 1.1rem; }
+            .contacto-info-section { padding: 80px 20px; }
+            .contacto-grid { margin-bottom: 60px; }
+            .contacto-card { padding: 40px 30px; }
+            .form-container { padding: 40px 25px; }
+            .form-container h2 { font-size: 2rem; }
+            .btn-submit { padding: 18px; font-size: 1.05rem; }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- HEADER -->
     <header>
         <div class="container psr">
             <div class="header_default">
                 <div class="site-branding">
                     <a href="index.html" class="logo">
-                        <img src="images/logo.webp" alt="Logo" class="logo-2">
+                        <img src="images/logo.webp" alt="Logo" class="logo-1" width="70px">
+                        <img src="images/logo.webp" alt="Logo" class="logo-2" width="70px">
                     </a>
                 </div>
                 <div class="header-right">
@@ -53,7 +302,7 @@
                         <div class="sitenav" id="sitenav">
                             <div class="navwrap">
                                 <div class="navouter">
-                                    <nav class="headermenu leftmenu" id="headnav" role="navigation">
+                                    <nav class="headermenu leftmenu" role="navigation">
                                         <ul>
                                             <li><a href="index.html">Inicio</a></li>
                                             <li><a href="nosotros.html">Nosotros</a></li>
@@ -77,16 +326,89 @@
         </div>
     </header>
 
-    <!-- Contenido próximamente... -->
-    <section style="padding: 200px 0; text-align: center;">
-        <div class="container">
-            <h1 style="font-size: 3rem; color: #ff0000; margin-bottom: 20px;">Página en construcción</h1>
-            <p style="font-size: 1.2rem; color: #666;">Estamos trabajando para ofrecerte la mejor experiencia</p>
-            <a href="index.html" style="display: inline-block; margin-top: 30px; padding: 15px 40px; background: #ff0000; color: white; text-decoration: none; border-radius: 50px;">Volver al inicio</a>
+    <section class="contacto-hero">
+        <h1>Contacta con Nosotros</h1>
+        <p>Estamos aquí para ayudarte. Pide tu cita o resuelve tus dudas.</p>
+    </section>
+
+    <section class="contacto-info-section">
+        <div class="contacto-info-container">
+            <div class="contacto-grid">
+                <div class="contacto-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Teléfono</h3>
+                    <p><a href="tel:931479829">931 479 829</a></p>
+                    <p><a href="tel:622819008">622 819 008</a></p>
+                    <p style="color: #999; font-size: 0.95rem; margin-top: 15px;">L-V: 9:30-13:30 / 16:00-20:00</p>
+                </div>
+
+                <div class="contacto-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Dirección</h3>
+                    <p>Calle Rosa de Alejandría Nº24</p>
+                    <p>Local 3, 08906</p>
+                    <p><a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Ver en Google Maps →</a></p>
+                </div>
+
+                <div class="contacto-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Horario</h3>
+                    <p><strong>Lunes - Viernes</strong></p>
+                    <p>Mañanas: 9:30 - 13:30</p>
+                    <p>Tardes: 16:00 - 20:00</p>
+                </div>
+            </div>
+
+            <div class="form-map-section">
+                <div class="form-container">
+                    <h2>Pide tu Cita</h2>
+                    <p class="form-subtitle">Rellena el formulario y te responderemos en menos de 24 horas</p>
+                    
+                    <form action="enviar.php" method="POST">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="600 123 456" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">¿En qué podemos ayudarte?</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué tratamiento te interesa o qué dudas tienes..."></textarea>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="privacidad" name="privacidad" required>
+                            <label for="privacidad">
+                                Acepto la <a href="privacidad.html">política de privacidad</a> y el tratamiento de mis datos personales
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.0886626956396!2d2.1180394!3d41.3631594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4992c5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sCarrer%20de%20la%20Rosa%20d'Alexandria%2C%2024%2C%2008906%20L'Hospitalet%20de%20Llobregat%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1234567890123!5m2!1ses!2ses"
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-main">
             <div class="container">
@@ -94,18 +416,64 @@
                     <div class="footer-column">
                         <img src="images/logo.webp" alt="Logo" class="footer-logo">
                         <div class="footer-contact">
-                            <p><i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Calle Rosa de Alejandría Nº24</a></p>
-                            <p><i class="fa-solid fa-phone"></i><a href="tel:931479829">931479829</a></p>
+                            <p><i class="fa-solid fa-location-dot"></i><a style="color: rgb(66, 66, 66); text-decoration: none;" href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Calle Rosa de Alejandría Nº24</a></p>
+                            <p><i class="fa-solid fa-phone"></i><a style="color: red; text-decoration: none;" href="tel:931479829">931479829</a></p>
+                            <p><i class="fa-regular fa-clock"></i> L-V: 9:30-13:30 / 16:00-20:00</p>
                         </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Enlaces</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="servicios.html">Odontología</a></li>
+                            <li><a href="servicios.html">Ortodoncia</a></li>
+                            <li><a href="servicios.html">Implantes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacidad.html">Privacidad</a></li>
+                            <li><a href="cookies.html">Cookies</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>© 2025 Clínica Dental Hitachi</p>
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2025 Clínica Dental Hitachi</p>
+                    <div class="social-links">
+                        <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+
+    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.contacto-hero h1', { y: 30, opacity: 0, duration: 0.8 });
+        gsap.utils.toArray('.contacto-card').forEach((card, i) => {
+            gsap.from(card, { y: 40, opacity: 0, duration: 0.6, delay: i * 0.1, scrollTrigger: { trigger: card, start: 'top 85%' } });
+        });
+        
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
 </body>
 </html>
