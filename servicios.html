@@ -41,6 +41,20 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* Arreglo para que el header se vea en páginas internas */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        header nav.headermenu ul li a {
+            color: #000;
+        }
+
+        header .contact-info a {
+            color: #000;
+        }
+
         /* Hero */
         .servicios-hero {
             padding: 220px 20px 120px;
@@ -487,208 +501,5 @@
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
-</body>
-</html>
-        });
-        
-        const scrollBtn = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    </script>
-</body>
-</html>
-                            </p>
-                            <p><i class="fa-solid fa-phone"></i><a href="tel:931479829">931479829</a></p>
-                            <p><i class="fa-solid fa-phone"></i><a href="tel:622819008">622819008</a></p>
-                            <p><i class="fa-regular fa-clock"></i> L-V: 9:30-13:30 / 16:00-20:00</p>
-                        </div>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Enlaces rápidos</h4>
-                        <ul>
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="nosotros.html">Nosotros</a></li>
-                            <li><a href="servicios.html">Servicios</a></li>
-                            <li><a href="instalaciones.html">Instalaciones</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Servicios</h4>
-                        <ul>
-                            <li><a href="servicios.html#odontologia">Odontología General</a></li>
-                            <li><a href="servicios.html#ortodoncia">Ortodoncia</a></li>
-                            <li><a href="servicios.html#implantes">Implantes</a></li>
-                            <li><a href="servicios.html#estetica">Estética Dental</a></li>
-                            <li><a href="servicios.html#urgencias">Urgencias</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="privacidad.html">Política de Privacidad</a></li>
-                            <li><a href="cookies.html">Política de Cookies</a></li>
-                            <li><a href="aviso-legal.html">Aviso Legal</a></li>
-                            <li><a href="accesibilidad.html">Accesibilidad</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p class="copyright">© 2025 Clínica Dental Hitachi. Todos los derechos reservados.</p>
-                    <div class="social-links">
-                        <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SCROLL TO TOP -->
-    <button id="scrollToTop" class="scroll-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Base Scripts -->
-    <script src="js/bliss.js"></script>
-
-    <!-- GSAP ANIMATIONS -->
-    <script>
-        // Register ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Page load animation
-        window.addEventListener('load', function() {
-            gsap.from('header', {
-                y: -100,
-                opacity: 0,
-                duration: 0.8,
-                ease: 'power3.out'
-            });
-        });
-
-        // Hero animations
-        gsap.from('.hero-content [data-animate="fadeUp"]', {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: 'power3.out',
-            delay: 0.3
-        });
-
-        // Scroll indicator animation
-        gsap.to('.hero-scroll-indicator span', {
-            y: 10,
-            opacity: 0.5,
-            duration: 1.5,
-            repeat: -1,
-            yoyo: true,
-            ease: 'power1.inOut'
-        });
-
-        // Animate elements on scroll
-        document.querySelectorAll('[data-animate]').forEach(element => {
-            const animation = element.dataset.animate;
-            const delay = element.dataset.delay || 0;
-
-            let animationProps = {};
-
-            switch(animation) {
-                case 'fadeUp':
-                    animationProps = { y: 60, opacity: 0 };
-                    break;
-                case 'fadeLeft':
-                    animationProps = { x: -60, opacity: 0 };
-                    break;
-                case 'fadeRight':
-                    animationProps = { x: 60, opacity: 0 };
-                    break;
-                case 'zoomIn':
-                    animationProps = { scale: 0.8, opacity: 0 };
-                    break;
-            }
-
-            gsap.from(element, {
-                ...animationProps,
-                duration: 1,
-                delay: delay,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: element,
-                    start: 'top 85%',
-                    toggleActions: 'play none none reverse'
-                }
-            });
-        });
-
-        // Service cards hover effect
-        document.querySelectorAll('.servicio-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                gsap.to(this, {
-                    y: -10,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-                gsap.to(this.querySelector('.servicio-overlay'), {
-                    opacity: 1,
-                    duration: 0.3
-                });
-            });
-
-            card.addEventListener('mouseleave', function() {
-                gsap.to(this, {
-                    y: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-                gsap.to(this.querySelector('.servicio-overlay'), {
-                    opacity: 0,
-                    duration: 0.3
-                });
-            });
-        });
-
-        // Scroll to top button
-        const scrollBtn = document.getElementById('scrollToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
-            }
-        });
-
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Parallax effect for hero
-        gsap.to('.servicios-hero', {
-            backgroundPosition: '50% 100%',
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.servicios-hero',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true
-            }
-        });
-    </script>
-
 </body>
 </html>
