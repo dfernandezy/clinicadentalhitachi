@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Clínica Dental Hitachi</title>
-    <meta name="description" content="Consejos, noticias y artículos sobre salud dental. Aprende a cuidar tu sonrisa con nuestros expertos.">
+    <meta name="description"
+        content="Consejos, noticias y artículos sobre salud dental. Aprende a cuidar tu sonrisa con nuestros expertos.">
     <link rel="canonical" href="https://clinicadentalhitachi.com/blog.html">
     <link rel="icon" type="image/png" href="images/logo.webp">
 
@@ -20,12 +21,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="fonts/icons-linear.css">
     <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-responsive.css">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/jquery.js"></script>
@@ -33,9 +35,9 @@
     <script src="js/menuscript.js"></script>
 
     <style>
-        body { 
-            margin: 0; 
-            padding: 0; 
+        body {
+            margin: 0;
+            padding: 0;
             overflow-x: hidden;
             font-family: 'Poppins', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -60,8 +62,8 @@
         .blog-hero {
             padding: 200px 20px 100px;
             min-height: 550px;
-            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)), 
-                        url('images/dientes.jpg') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)),
+                url('images/habitosdientes.webp') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -70,9 +72,11 @@
             width: 100%;
             position: relative;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
+
         .blog-hero::before {
             content: '';
             position: absolute;
@@ -83,6 +87,12 @@
             background: rgba(255, 0, 0, 0.05);
             pointer-events: none;
         }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
         .blog-hero h1 {
             font-size: 4.5rem;
             margin-bottom: 25px;
@@ -90,10 +100,11 @@
             font-weight: 800;
             letter-spacing: -1.5px;
             line-height: 1.1;
-            text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
             position: relative;
             z-index: 1;
         }
+
         .blog-hero p {
             font-size: 1.4rem;
             max-width: 750px;
@@ -102,7 +113,7 @@
             opacity: 0.98;
             font-weight: 400;
             letter-spacing: 0.3px;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
             position: relative;
             z-index: 1;
         }
@@ -112,6 +123,7 @@
             background: #fafafa;
             width: 100%;
         }
+
         .blog-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -127,15 +139,16 @@
             background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             display: flex;
             flex-direction: column;
         }
+
         .blog-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(255,0,0,0.12);
+            box-shadow: 0 20px 50px rgba(255, 0, 0, 0.12);
         }
 
         .blog-image {
@@ -144,12 +157,14 @@
             overflow: hidden;
             position: relative;
         }
+
         .blog-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
         }
+
         .blog-card:hover .blog-image img {
             transform: scale(1.08);
         }
@@ -182,6 +197,7 @@
             font-size: 0.9rem;
             color: #999;
         }
+
         .blog-meta i {
             color: #ff0000;
             margin-right: 6px;
@@ -216,13 +232,16 @@
             letter-spacing: 0.3px;
             transition: all 0.3s ease;
         }
+
         .blog-link:hover {
             gap: 12px;
             color: #cc0000;
         }
+
         .blog-link i {
             transition: transform 0.3s ease;
         }
+
         .blog-link:hover i {
             transform: translateX(4px);
         }
@@ -233,6 +252,7 @@
             text-align: center;
             width: 100%;
         }
+
         .cta-blog h2 {
             font-size: 2.8rem;
             color: #1a1a1a;
@@ -241,6 +261,7 @@
             font-weight: 800;
             letter-spacing: -1px;
         }
+
         .cta-blog p {
             font-size: 1.2rem;
             color: #666;
@@ -248,6 +269,7 @@
             margin: 0 auto 40px;
             line-height: 1.6;
         }
+
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -264,22 +286,48 @@
             box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
             letter-spacing: 0.5px;
         }
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
         }
 
         @media (max-width: 992px) {
-            .blog-hero h1 { font-size: 3.2rem; }
-            .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .blog-hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
         }
+
         @media (max-width: 576px) {
-            .blog-hero { padding: 180px 20px 80px; }
-            .blog-hero h1 { font-size: 2.4rem; }
-            .blog-section { padding: 80px 20px; }
-            .blog-grid { grid-template-columns: 1fr; gap: 35px; }
-            .blog-content { padding: 30px; }
-            .cta-blog h2 { font-size: 2rem; }
+            .blog-hero {
+                padding: 180px 20px 80px;
+            }
+
+            .blog-hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .blog-section {
+                padding: 80px 20px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .blog-content {
+                padding: 30px;
+            }
+
+            .cta-blog h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -319,8 +367,10 @@
                     </div>
                     <div class="contact-info">
                         <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i
+                                class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -328,8 +378,10 @@
     </header>
 
     <section class="blog-hero">
-        <h1>Blog Dental</h1>
-        <p>Consejos, noticias y guías para cuidar tu salud dental</p>
+        <div class="hero-content">
+            <h1>Blog Dental</h1>
+            <p>Consejos, noticias y guías para cuidar tu salud dental</p>
+        </div>
     </section>
 
     <section class="blog-section">
@@ -348,7 +400,8 @@
                         </div>
                         <h3>¿Cómo funciona el blanqueamiento dental?</h3>
                         <p class="blog-excerpt">
-                            Descubre cómo conseguir una sonrisa más blanca de forma segura y los cuidados necesarios para mantener los resultados.
+                            Descubre cómo conseguir una sonrisa más blanca de forma segura y los cuidados necesarios
+                            para mantener los resultados.
                         </p>
                         <a href="#" class="blog-link">
                             Leer más <i class="fas fa-arrow-right"></i>
@@ -369,7 +422,8 @@
                         </div>
                         <h3>Invisalign vs Brackets: ¿Cuál elegir?</h3>
                         <p class="blog-excerpt">
-                            Comparamos las ventajas y desventajas de cada sistema de ortodoncia para ayudarte a tomar la mejor decisión.
+                            Comparamos las ventajas y desventajas de cada sistema de ortodoncia para ayudarte a tomar la
+                            mejor decisión.
                         </p>
                         <a href="#" class="blog-link">
                             Leer más <i class="fas fa-arrow-right"></i>
@@ -390,7 +444,8 @@
                         </div>
                         <h3>Importancia de la limpieza dental profesional</h3>
                         <p class="blog-excerpt">
-                            Por qué es fundamental hacerse una limpieza dental cada 6 meses y qué problemas puedes prevenir.
+                            Por qué es fundamental hacerse una limpieza dental cada 6 meses y qué problemas puedes
+                            prevenir.
                         </p>
                         <a href="#" class="blog-link">
                             Leer más <i class="fas fa-arrow-right"></i>
@@ -411,7 +466,8 @@
                         </div>
                         <h3>Todo sobre implantes dentales en 2025</h3>
                         <p class="blog-excerpt">
-                            Guía completa sobre implantes: proceso, cuidados, duración y precios. Resuelve todas tus dudas aquí.
+                            Guía completa sobre implantes: proceso, cuidados, duración y precios. Resuelve todas tus
+                            dudas aquí.
                         </p>
                         <a href="#" class="blog-link">
                             Leer más <i class="fas fa-arrow-right"></i>
@@ -432,7 +488,8 @@
                         </div>
                         <h3>5 hábitos para una sonrisa perfecta</h3>
                         <p class="blog-excerpt">
-                            Rutinas diarias que marcan la diferencia en tu salud bucal. Consejos de nuestros expertos para ti.
+                            Rutinas diarias que marcan la diferencia en tu salud bucal. Consejos de nuestros expertos
+                            para ti.
                         </p>
                         <a href="#" class="blog-link">
                             Leer más <i class="fas fa-arrow-right"></i>
@@ -453,7 +510,8 @@
                         </div>
                         <h3>Radiografía digital: más segura y precisa</h3>
                         <p class="blog-excerpt">
-                            Descubre cómo la tecnología digital reduce la radiación un 90% y mejora los diagnósticos dentales.
+                            Descubre cómo la tecnología digital reduce la radiación un 90% y mejora los diagnósticos
+                            dentales.
                         </p>
                         <a href="#" class="blog-link">
                             Leer más <i class="fas fa-arrow-right"></i>
@@ -480,8 +538,12 @@
                     <div class="footer-column">
                         <img src="images/logo.webp" alt="Logo" class="footer-logo">
                         <div class="footer-contact">
-                            <p><i class="fa-solid fa-location-dot"></i><a style="color: rgb(66, 66, 66); text-decoration: none;" href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Calle Rosa de Alejandría Nº24</a></p>
-                            <p><i class="fa-solid fa-phone"></i><a style="color: red; text-decoration: none;" href="tel:931479829">931479829</a></p>
+                            <p><i class="fa-solid fa-location-dot"></i><a
+                                    style="color: rgb(66, 66, 66); text-decoration: none;"
+                                    href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Calle Rosa de
+                                    Alejandría Nº24</a></p>
+                            <p><i class="fa-solid fa-phone"></i><a style="color: red; text-decoration: none;"
+                                    href="tel:931479829">931479829</a></p>
                             <p><i class="fa-regular fa-clock"></i> L-V: 9:30-13:30 / 16:00-20:00</p>
                         </div>
                     </div>
@@ -518,8 +580,10 @@
                     <p class="copyright">© 2025 Clínica Dental Hitachi</p>
                     <div class="social-links">
                         <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i
+                                class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -532,14 +596,14 @@
         gsap.registerPlugin(ScrollTrigger);
         gsap.from('.blog-hero h1', { y: 30, opacity: 0, duration: 0.8 });
         gsap.from('.blog-hero p', { y: 20, opacity: 0, duration: 0.8, delay: 0.2 });
-        
+
         gsap.utils.toArray('.blog-card').forEach((card, i) => {
             gsap.from(card, {
                 y: 50, opacity: 0, duration: 0.8, delay: i * 0.1,
                 scrollTrigger: { trigger: card, start: 'top 85%' }
             });
         });
-        
+
         const scrollBtn = document.getElementById('scrollToTop');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
