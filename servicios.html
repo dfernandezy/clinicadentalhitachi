@@ -55,13 +55,32 @@
             color: #000;
         }
 
-        /* Hero */
+        /* Hero - ESTANDARIZADO Y MEJORADO */
         .servicios-hero {
-            padding: 220px 20px 120px;
-            background: linear-gradient(135deg, #ff0000, #cc0000);
+            padding: 200px 20px 100px;
+            min-height: 550px;
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)), 
+                        url('images/limpiezadental.webp') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             text-align: center;
             color: white;
             width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .servicios-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 0, 0, 0.05);
+            pointer-events: none;
         }
         .servicios-hero h1 {
             font-size: 4.5rem;
@@ -69,13 +88,19 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
             letter-spacing: -1.5px;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+            position: relative;
+            z-index: 1;
         }
         .servicios-hero p {
             font-size: 1.4rem;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
             line-height: 1.6;
-            opacity: 0.95;
+            opacity: 0.98;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            position: relative;
+            z-index: 1;
         }
 
         /* Servicios Grid */
@@ -283,8 +308,10 @@
 
     <!-- HERO -->
     <section class="servicios-hero">
-        <h1>Nuestros Servicios Dentales</h1>
-        <p>Tratamientos completos para toda la familia. Desde prevención hasta los procedimientos más avanzados.</p>
+        <div class="hero-content">
+            <h1>Nuestros Servicios Dentales</h1>
+            <p>Tratamientos completos para toda la familia. Desde prevención hasta los procedimientos más avanzados.</p>
+        </div>
     </section>
 
     <!-- SERVICIOS -->
@@ -487,16 +514,30 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
+        
+        // Animaciones del hero (sin ScrollTrigger, se ejecutan al cargar)
         gsap.from('.servicios-hero h1', { y: 30, opacity: 0, duration: 0.8 });
         gsap.from('.servicios-hero p', { y: 20, opacity: 0, duration: 0.8, delay: 0.2 });
         
+        // Animaciones de las tarjetas SOLO cuando sean visibles
         gsap.utils.toArray('.servicio-card').forEach((card, i) => {
-            gsap.from(card, {
-                y: 50, opacity: 0, duration: 0.8, delay: i * 0.1,
-                scrollTrigger: { trigger: card, start: 'top 85%' }
-            });
+            gsap.fromTo(card, 
+                { y: 50, opacity: 0 }, // Estado inicial
+                { 
+                    y: 0, 
+                    opacity: 1, 
+                    duration: 0.8, 
+                    delay: i * 0.1,
+                    scrollTrigger: { 
+                        trigger: card, 
+                        start: 'top 85%',
+                        toggleActions: 'play none none none' // Solo se ejecuta una vez
+                    }
+                }
+            );
         });
         
+        // Botón scroll to top
         const scrollBtn = document.getElementById('scrollToTop');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));

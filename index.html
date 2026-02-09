@@ -58,6 +58,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" as="style">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
@@ -175,13 +176,13 @@
                     <!--site-navwrap-->
 
                     <div class="contact-info">
-                        <a href="tel:931479829">
+                        <a href="tel:931479829" aria-label="Llamar a la clínica">
                             <i class="fa-solid fa-phone-volume"></i>
 
                         </a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ver ubicación en Google Maps"><i
                                 class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Visitar página de Facebook"><i
                                 class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
@@ -210,14 +211,14 @@
         <div class="container">
             <div class="bannercontent">
                 <div class="text full">
-                    <h1 style="color: white; font-family: 'Poppins', sans-serif; font-size: 2rem;">Clínica Dental
+                    <h1 style="color: white; font-family: 'Poppins', sans-serif; font-size: 2rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Clínica Dental
                         Dra. Hitachi A.</h1>
-                    <h2>Cuidamos tu sonrisa</h2>
-                    <p>Tecnología avanzada para tu mejor sonrisa.</p>
+                    <h2 style="text-shadow: 2px 2px 6px rgba(0,0,0,0.3);">Cuidamos tu sonrisa</h2>
+                    <p style="text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">Tecnología avanzada para tu mejor sonrisa.</p>
                 </div>
             </div>
             <div class="horario-container">
-                <p class="horario">
+                <p class="horario" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
                     <i class="fa-regular fa-clock"></i>
                     Lunes - Viernes: 9:30-13:30 / 16:00-20:00
                     <i class="fa-regular fa-clock"></i>
@@ -257,23 +258,23 @@
                     <div class="swiper mySwiper" data-animate="fadeLeft">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="images/doctorahitachi.jpg" alt="Dentista 1" />
+                                <img src="images/doctorahitachi.jpg" alt="Dra. Vivian Hitachi Antelo - Especialista en Cirugía" loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Vivian Hitachi Antelo</h3>
                                     <p>Especialista en Cirugía</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="images/dentista4.webp" alt="Dentista 1" />
+                                <img src="images/dentista4.webp" alt="Ana Terrazas Q. - Auxiliar" loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Ana Terrazas Q.</h3>
-                                    <p>Auxililar</p>
+                                    <p>Auxiliar</p>
                                 </div>
                             </div>
                             
                             
                             <div class="swiper-slide">
-                                <img src="images/dentista3.webp" alt="Dentista 3" />
+                                <img src="images/dentista3.webp" alt="Dra. Ana Molina G. - Generalista" loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Ana Molina G.</h3>
                                     <p>Generalista</p>
@@ -281,7 +282,7 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentistamarta.JPEG" alt="Dentista 5" />
+                                <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R. - Ortodoncista" loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Marta Luque R.</h3>
                                     <p>Ortodoncista</p>
@@ -289,7 +290,7 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentista1.webp" alt="Dentista 5" />
+                                <img src="images/dentista1.webp" alt="Kathy Alonso A. - Higienista Auxiliar" loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Kathy Alonso A.</h3>
                                     <p>Higienista Auxiliar</p>
@@ -297,7 +298,7 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentista5.webp" alt="Dentista 5" />
+                                <img src="images/dentista5.webp" alt="Hernan Menacho L. - Administrador Recepcionista" loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Hernan Menacho L.</h3>
                                     <p>Adm. Recepcionista</p>
@@ -379,7 +380,7 @@
 
             <div class="menuitems_wrap">
                 <div class="item" data-animate="scaleIn" data-delay="0.1">
-                    <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="limpieza dental">
+                    <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza dental profesional Barcelona" loading="lazy">
                     <h6>Odontología General</h6>
                     <h5>Limpieza Dental</h5>
                     <p>Limpieza profesional para mantener tu salud bucal</p>
@@ -388,35 +389,35 @@
 
 
                 <div class="item" data-animate="scaleIn" data-delay="0.2">
-                    <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="blanqueamiento">
+                    <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Blanqueamiento dental Barcelona" loading="lazy">
                     <h6>Estética Dental</h6>
                     <h5>Blanqueamiento</h5>
                     <p>Mejora el aspecto de tu sonrisa</p>
                 </div>
 
                 <div class="item" data-animate="scaleIn" data-delay="0.3">
-                    <img src="images/radio.png" alt="radiografia digital">
+                    <img src="images/radio.png" alt="Radiografía digital dental" loading="lazy">
                     <h6>Diagnóstico</h6>
                     <h5>Radiografía Digital</h5>
                     <p>Diagnóstico preciso con la última tecnología</p>
                 </div>
 
                 <div class="item" data-animate="scaleIn" data-delay="0.1">
-                    <img src="images/equipo_de_Ortopantomografia.png" alt="empastes">
+                    <img src="images/equipo_de_Ortopantomografia.png" alt="Ortopantomografía dental" loading="lazy">
                     <h6>Dental</h6>
                     <h5>Ortopantomografia</h5>
                     <p>Radiografía panorámica</p>
                 </div>
 
                 <div class="item" data-animate="scaleIn" data-delay="0.2">
-                    <img src="images/brackets-centrodentalhitachi.jpg" alt="">
+                    <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia brackets e Invisalign Barcelona" loading="lazy">
                     <h6>Ortodoncia</h6>
                     <h5>Brackets e Invisalign</h5>
                     <p>Corrección dental con diferentes opciones de tratamiento</p>
                 </div>
 
                 <div class="item" data-animate="scaleIn" data-delay="0.3">
-                    <img src="images/atencióninmediata.jpg" alt="">
+                    <img src="images/atencióninmediata.jpg" alt="Urgencias dentales Barcelona" loading="lazy">
                     <h6>Urgencias</h6>
                     <h5>Atención Inmediata</h5>
                     <p>Solución rápida para emergencias dentales</p>
@@ -441,7 +442,7 @@
                 <!-- Tarjeta de Review -->
                 <div class="review-card" data-animate="fadeUp" data-delay="0.1">
                     <div class="review-header">
-                        <img src="images/taniaramos.png" alt="Avatar" class="review-avatar">
+                        <img src="images/taniaramos.png" alt="Tania Ramos - Reseña cliente" class="review-avatar" loading="lazy">
                         <div class="review-info">
                             <h4>Tania Ramos</h4>
                             <div class="review-date">05/09/2024</div>
@@ -459,7 +460,7 @@
                 <!-- Tarjeta de Review -->
                 <div class="review-card" data-animate="fadeUp" data-delay="0.2">
                     <div class="review-header">
-                        <img src="images/yamilethventurapng.png" alt="Avatar" class="review-avatar">
+                        <img src="images/yamilethventurapng.png" alt="Yamileth Ventura - Reseña cliente" class="review-avatar" loading="lazy">
                         <div class="review-info">
                             <h4>Yamileth Ventura</h4>
                             <div class="review-date">10/10/2024</div>
@@ -477,7 +478,7 @@
                 <!-- Tarjeta de Review -->
                 <div class="review-card" data-animate="fadeUp" data-delay="0.3">
                     <div class="review-header">
-                        <img src="images/eligranados.png" alt="Avatar" class="review-avatar">
+                        <img src="images/eligranados.png" alt="Eli Granados - Reseña cliente" class="review-avatar" loading="lazy">
                         <div class="review-info">
                             <h4>Eli Granados</h4>
                             <div class="review-date">15/12/2024</div>
@@ -644,12 +645,12 @@
                 <div class="footer-bottom-content">
                     <p class="copyright">© 2025 Clínica Dental Hitachi. Todos los derechos reservados.</p>
                     <div class="social-links">
-                        <a href="tel:931479829">
+                        <a href="tel:931479829" aria-label="Llamar a la clínica">
                             <i class="fa-solid fa-phone-volume"></i>
                         </a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ver ubicación en Google Maps"><i
                                 class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Visitar página de Facebook"><i
                                 class="fa-brands fa-facebook-f" target="_blank"></i></a>
 
 
@@ -662,7 +663,7 @@
     <!-- FOOTER -->
 
     <!-- SCROLL TO TOP BUTTON -->
-    <button id="scrollToTop" class="scroll-to-top">
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
         <i class="fas fa-arrow-up"></i>
     </button>
 

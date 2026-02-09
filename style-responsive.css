@@ -29,8 +29,6 @@
 		top: 0;
 	}
 
-	.site-branding a.logo {}
-
 	.site-branding a.logo img {
 		max-width: 120px;
 		height: auto;
@@ -160,7 +158,12 @@
 	}
 
 	.bannercontent .text {
-		width: 50%;
+		width: 75%;
+		max-width: 90%;
+	}
+
+	.bannercontent .text h1 {
+		font-size: 2rem !important;
 	}
 
 	.bannercontent .text h3 {
@@ -173,7 +176,7 @@
 	}
 
 	.bannercontent .text p {
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 150%;
 	}
 
@@ -187,6 +190,11 @@
 		line-height: 45px;
 		font-size: 12px;
 		margin: 0 10px;
+	}
+	
+	.horario-container .horario {
+		font-size: 14px;
+		padding: 12px 20px;
 	}
 
 
@@ -491,34 +499,62 @@
 
 
 @media (max-width: 768px) {
+	.bannercontent .text {
+		width: 85%;
+		max-width: 95%;
+	}
+	
+	.bannercontent .text h1 {
+		font-size: 1.8rem !important;
+	}
+	
+	.bannercontent .text h2 {
+		font-size: 28px;
+	}
+	
+	.bannercontent .text p {
+		font-size: 15px;
+	}
+	
 	.horario {
-		padding: 0 20px;
-
-
-		font-size: 16px;
-		/* Reduce un poco el tamaño de fuente si es necesario */
+		padding: 10px 15px;
+		font-size: 14px;
 	}
 
 	.horario i {
 		margin: 0 10px;
-		/* Añade margen a los iconos */
 	}
-
-
 }
 
 /* Para pantallas aún más pequeñas */
 @media (max-width: 480px) {
-	.horario {
+	.bannercontent .text {
+		width: 95%;
+		max-width: 100%;
+		padding: 0 10px;
+	}
+	
+	.bannercontent .text h1 {
+		font-size: 1.5rem !important;
+		line-height: 1.3;
+	}
+	
+	.bannercontent .text h2 {
+		font-size: 24px;
+	}
+	
+	.bannercontent .text p {
 		font-size: 14px;
-		/* Reduce más el tamaño de fuente */
+	}
+	
+	.horario {
+		font-size: 13px;
 		line-height: 1.4;
-		/* Mejora el espaciado entre líneas */
+		padding: 8px 12px;
 	}
 
 	.horario i {
-		font-size: 16px;
-		/* Ajusta el tamaño del icono */
+		font-size: 14px;
 	}
 }
 

@@ -43,6 +43,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Arreglo para que el header se vea en páginas internas */
@@ -62,15 +63,32 @@
         /* Hero Section */
         .nosotros-hero {
             padding: 220px 20px 120px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(248, 249, 250, 0.95)), 
+                        url('images/doctorahitachi.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
             text-align: center;
             width: 100%;
+            position: relative;
+        }
+        
+        .nosotros-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
         }
 
         .nosotros-hero .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .nosotros-hero h1 {
@@ -79,15 +97,18 @@
             margin: 0 0 20px 0;
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
         }
 
         .nosotros-hero p {
             font-size: 1.3rem;
-            color: #666;
+            color: #333;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
             font-family: 'Poppins', sans-serif;
+            text-shadow: 1px 1px 4px rgba(255,255,255,0.9);
+            font-weight: 500;
         }
 
         /* Historia Section */

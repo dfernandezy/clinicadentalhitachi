@@ -34,7 +34,12 @@
     <script src="js/menuscript.js"></script>
 
     <style>
-        body { margin: 0; padding: 0; overflow-x: hidden; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
 
         /* Arreglo para que el header se vea en páginas internas */
         header {
@@ -50,26 +55,52 @@
             color: #000;
         }
 
-        /* Hero */
+        /* Hero - ESTANDARIZADO Y MEJORADO */
         .instalaciones-hero {
-            padding: 220px 20px 120px;
-            background: linear-gradient(135deg, #ff0000, #cc0000);
+            padding: 200px 20px 100px;
+            min-height: 550px;
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)), 
+                        url('images/maquinaria.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             text-align: center;
             color: white;
             width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .instalaciones-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 0, 0, 0.05);
+            pointer-events: none;
         }
         .instalaciones-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
+            font-size: 4.5rem;
+            margin-bottom: 25px;
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
+            letter-spacing: -1.5px;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+            position: relative;
+            z-index: 1;
         }
         .instalaciones-hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
+            font-size: 1.4rem;
+            max-width: 750px;
             margin: 0 auto;
-            line-height: 1.8;
-            opacity: 0.95;
+            line-height: 1.6;
+            opacity: 0.98;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            position: relative;
+            z-index: 1;
         }
 
         /* Gallery Section */
