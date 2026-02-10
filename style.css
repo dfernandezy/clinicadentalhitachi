@@ -257,8 +257,14 @@ header.fixed nav.headermenu ul li a {
 nav.headermenu ul li.active a {
 	background: #ff0000;
 	color: #fff !important;
+	border-radius: 5px;
 }
 
+header.fixed nav.headermenu ul li.active a {
+	background: #ff0000;
+	color: #fff !important;
+	border-radius: 5px;
+}
 
 
 
