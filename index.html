@@ -66,13 +66,21 @@
     <!-- FONT ICONS -->
     <link rel="stylesheet" href="fonts/icons-linear.css">
     <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-responsive.css">
-    <link rel="stylesheet" href="index-enhancements.css">
+    <!-- Preload critical styles to reduce flash-of-unstyled content -->
+    <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="style-responsive.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="index-enhancements.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style-responsive.css">
+        <link rel="stylesheet" href="index-enhancements.css">
+    </noscript>
+    <!-- Preload main hero image to avoid visible background pop-in -->
+    <link rel="preload" as="image" href="images/dentista6edit.jpg">
 
-    <script src="js/jquery.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/menuscript.js"></script>
+    <script defer src="js/jquery.js"></script>
+    <script defer src="js/scripts.js"></script>
+    <script defer src="js/menuscript.js"></script>
     
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -133,8 +141,8 @@
 
                 <div class="site-branding">
                     <a href="index.html" class="logo">
-                        <img src="images/logo.webp" alt="logo" class="logo-1" width="70px">
-                        <img src="images/logo.webp" alt="logo" class="logo-2" width="70px">
+                        <img src="images/logo-clean.svg" alt="logo" class="logo-1" width="70px">
+                        <img src="images/logo-clean.svg" alt="logo" class="logo-2" width="70px">
                     </a>
                 </div>
 
@@ -298,9 +306,9 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentista5.webp" alt="Hernan Menacho L. - Administrador Recepcionista" loading="lazy" />
+                                <img src="images/dentista5.webp" alt="Herman Menacho L. - Administrador Recepcionista" loading="lazy" />
                                 <div class="swiper-text">
-                                    <h3>Hernan Menacho L.</h3>
+                                    <h3>Herman Menacho L.</h3>
                                     <p>Adm. Recepcionista</p>
                                 </div>
                             </div>
@@ -579,7 +587,7 @@
                 <div class="footer-grid">
                     <!-- Columna 1: Info de contacto -->
                     <div class="footer-column">
-                        <img src="images/logo.webp" alt="Logo Clínica Dental Hitachi" class="footer-logo">
+                        <img src="images/logo-clean.svg" alt="Logo Clínica Dental Hitachi" class="footer-logo">
                         <div class="footer-contact">
                             <p>
                                 <i class="fa-solid fa-location-dot"></i>

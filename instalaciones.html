@@ -23,15 +23,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icons-linear.css">
     <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-responsive.css">
+    <!-- Preload critical styles to avoid flash of unstyled content -->
+    <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="style-responsive.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style-responsive.css">
+    </noscript>
+    <!-- Preload hero background image to reduce background pop-in -->
+    <link rel="preload" as="image" href="images/maquinaria.jpg">
     
     <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/menuscript.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="js/jquery.js"></script>
+    <script defer src="js/scripts.js"></script>
+    <script defer src="js/menuscript.js"></script>
 
     <style>
         body { 
@@ -411,9 +418,9 @@
                 </div>
 
                 <div class="tech-item">
-                    <i class="fas fa-microscope"></i>
-                    <h4>Microscopio Dental</h4>
-                    <p>Máxima precisión en endodoncia y cirugía.</p>
+                    <i class="fas fa-book-medical"></i>
+                    <h4>TAC / CBCT</h4>
+                    <p>Tomografía computarizada 3D para diagnósticos precisos en implantología y planificación quirúrgica.</p>
                 </div>
 
                 <div class="tech-item">
@@ -434,11 +441,7 @@
                     <p>Prótesis digitales en el mismo día.</p>
                 </div>
 
-                <div class="tech-item">
-                    <i class="fas fa-wind"></i>
-                    <h4>Sedación Consciente</h4>
-                    <p>Tratamientos sin ansiedad ni dolor.</p>
-                </div>
+                <!-- Sedación Consciente removed as requested -->
             </div>
         </div>
     </section>
