@@ -352,7 +352,7 @@
                 <!-- Blanqueamiento -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Blanqueamiento">
+                        <img src="images/blanqueamientohitachi.jpg" alt="Blanqueamiento">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Estética Dental</p>
@@ -511,7 +511,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p class="copyright">© 2025 Clínica Dental Hitachi. Todos los derechos reservados.</p>
+                    <p class="copyright">© 2026 Clínica Dental Hitachi. Todos los derechos reservados.</p>
                     <div class="social-links">
                         <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
                         <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
@@ -525,7 +525,6 @@
     <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
@@ -552,10 +551,12 @@
             );
         });
         
-        // Botón scroll to top
+        // Botón scroll to top (sólo si existe)
         const scrollBtn = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
+            scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
     </script>
 </body>
 </html>

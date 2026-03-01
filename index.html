@@ -58,7 +58,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        as="style">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
@@ -81,7 +83,7 @@
     <script defer src="js/jquery.js"></script>
     <script defer src="js/scripts.js"></script>
     <script defer src="js/menuscript.js"></script>
-    
+
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -188,10 +190,10 @@
                             <i class="fa-solid fa-phone-volume"></i>
 
                         </a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ver ubicación en Google Maps"><i
-                                class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Visitar página de Facebook"><i
-                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"
+                            aria-label="Ver ubicación en Google Maps"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"
+                            aria-label="Visitar página de Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
 
@@ -215,29 +217,259 @@
 
 
 
-    <section class="banner">
+    <section class="banner"
+        style="min-height: 100vh; display: flex; align-items: center; padding-top: 80px; padding-bottom: 0; box-sizing: border-box;">
         <div class="container">
             <div class="bannercontent">
                 <div class="text full">
-                    <h1 style="color: white; font-family: 'Poppins', sans-serif; font-size: 2rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Clínica Dental
+                    <h1
+                        style="color: white; font-family: 'Poppins', sans-serif; font-size: 2rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">
+                        Clínica Dental
                         Dra. Hitachi A.</h1>
                     <h2 style="text-shadow: 2px 2px 6px rgba(0,0,0,0.3);">Cuidamos tu sonrisa</h2>
                     <p style="text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">Tecnología avanzada para tu mejor sonrisa.</p>
+                    <div style="margin-top: 28px;">
+                        <a href="contacto.html"
+                            style="display:inline-flex;align-items:center;gap:10px;background:#ff0000;color:#fff;font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:600;padding:14px 30px;border-radius:50px;text-decoration:none;box-shadow:0 8px 25px rgba(255,0,0,0.4);">
+                            Pedir cita <i class="fas fa-calendar-check"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="horario-container">
-                <p class="horario" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
-                    <i class="fa-regular fa-clock"></i>
-                    Lunes - Viernes: 9:30-13:30 / 16:00-20:00
-                    <i class="fa-regular fa-clock"></i>
-                </p>
-            </div>
+          
         </div>
     </section>
     <!-- BANNER -->
 
+    <!-- VIDEO SHOWCASE -->
+    <section class="video-showcase-section">
+        <div class="video-showcase-wrapper">
+            <video class="showcase-video" muted loop playsinline preload="none" id="showcaseVideo">
+                <source src="images/video-trabajo-01.mp4" type="video/mp4">
+            </video>
+            <div class="showcase-overlay">
+                <div class="showcase-content">
+                    <span class="showcase-eyebrow">Nuestro trabajo</span>
+                    <h2 class="showcase-title">Así cuidamos tu sonrisa</h2>
+                    <p class="showcase-subtitle">Cada tratamiento, realizado con precisión, tecnología y dedicación</p>
+                    <div class="showcase-actions">
+                        <a href="servicios.html" class="showcase-btn-primary">Ver nuestros servicios <i
+                                class="fas fa-arrow-right"></i></a>
+                        <a href="contacto.html" class="showcase-btn-secondary">Pedir cita</a>
+                    </div>
+                </div>
+                <div class="showcase-horario">
+                    <i class="fa-regular fa-clock"></i>
+                    Lunes - Viernes: 9:30-13:30 / 16:00-20:00
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- VIDEO SHOWCASE -->
 
-    
+    <style>
+        .video-showcase-section {
+            width: 100%;
+            position: relative;
+        }
+
+        /* Banner mobile fixes */
+        @media (max-width: 768px) {
+            .banner {
+                padding-top: 140px !important;
+                padding-bottom: 60px !important;
+                align-items: flex-start !important;
+            }
+
+            .bannercontent .text h1 {
+                font-size: 1.1rem !important;
+                margin-bottom: 4px !important;
+            }
+
+            .bannercontent .text h2 {
+                font-size: 2.2rem !important;
+                line-height: 1.15 !important;
+                margin-bottom: 10px !important;
+            }
+
+            .bannercontent .text p {
+                font-size: 0.95rem !important;
+            }
+
+            .horario-container .horario {
+                font-size: 13px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bannercontent .text h2 {
+                font-size: 1.9rem !important;
+            }
+        }
+
+        .video-showcase-wrapper {
+            position: relative;
+            width: 100%;
+            height: 85vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .showcase-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .showcase-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.38) 60%, rgba(0, 0, 0, 0.18) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 1;
+            padding: 0 8vw 50px;
+        }
+
+        .showcase-horario {
+            position: absolute;
+            bottom: 24px;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            white-space: nowrap;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+
+        .showcase-horario .fa-regular {
+            color: #ff4444;
+            font-size: 1rem;
+        }
+
+        .showcase-content {
+            max-width: 620px;
+        }
+
+        .showcase-eyebrow {
+            display: inline-block;
+            background: #ff0000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .showcase-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 4.5vw, 3.8rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin: 0 0 18px;
+            letter-spacing: -0.03em;
+        }
+
+        .showcase-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin-bottom: 36px;
+            font-weight: 300;
+        }
+
+        .showcase-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .showcase-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ff0000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 15px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+        }
+
+        .showcase-btn-primary:hover {
+            background: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 35px rgba(255, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .showcase-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            background: transparent;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 15px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .showcase-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .video-showcase-wrapper {
+                height: 100vh;
+                min-height: 500px;
+            }
+
+            .showcase-overlay {
+                padding: 0 6vw 50px;
+            }
+
+            .showcase-content {
+                max-width: 100%;
+            }
+
+            .showcase-horario {
+                font-size: 0.82rem;
+            }
+        }
+    </style>
+
+
     <section class="contentblock about" id="about">
         <div class="container">
             <div class="contentinline">
@@ -266,7 +498,17 @@
                     <div class="swiper mySwiper" data-animate="fadeLeft">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="images/doctorahitachi.jpg" alt="Dra. Vivian Hitachi Antelo - Especialista en Cirugía" loading="lazy" />
+                                <img src="images/centro-actualizado.jpg"
+                                    alt="Clínica Dental Dra. Hitachi - Centro actualizado" loading="lazy" />
+                                <div class="swiper-text">
+                                    <h3>Nuestra Clínica</h3>
+                                    <p>Espacio moderno y acogedor</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="images/doctorahitachi.jpg"
+                                    alt="Dra. Vivian Hitachi Antelo - Especialista en Cirugía" loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Vivian Hitachi Antelo</h3>
                                     <p>Especialista en Cirugía</p>
@@ -279,10 +521,11 @@
                                     <p>Auxiliar</p>
                                 </div>
                             </div>
-                            
-                            
+
+
                             <div class="swiper-slide">
-                                <img src="images/dentista3.webp" alt="Dra. Ana Molina G. - Generalista" loading="lazy" />
+                                <img src="images/dentista3.webp" alt="Dra. Ana Molina G. - Generalista"
+                                    loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Ana Molina G.</h3>
                                     <p>Generalista</p>
@@ -290,7 +533,8 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R. - Ortodoncista" loading="lazy" />
+                                <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R. - Ortodoncista"
+                                    loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Marta Luque R.</h3>
                                     <p>Ortodoncista</p>
@@ -298,7 +542,8 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentista1.webp" alt="Kathy Alonso A. - Higienista Auxiliar" loading="lazy" />
+                                <img src="images/dentista1.webp" alt="Kathy Alonso A. - Higienista Auxiliar"
+                                    loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Kathy Alonso A.</h3>
                                     <p>Higienista Auxiliar</p>
@@ -306,7 +551,8 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentista5.webp" alt="Herman Menacho L. - Administrador Recepcionista" loading="lazy" />
+                                <img src="images/dentista5.webp" alt="Herman Menacho L. - Administrador Recepcionista"
+                                    loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Herman Menacho L.</h3>
                                     <p>Adm. Recepcionista</p>
@@ -371,7 +617,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="installations-cta" data-animate="fadeUp">
                 <a href="instalaciones.html" class="btn-main-large">
                     Ver todas las instalaciones <i class="fas fa-arrow-right"></i>
@@ -388,7 +634,8 @@
 
             <div class="menuitems_wrap">
                 <div class="item" data-animate="scaleIn" data-delay="0.1">
-                    <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza dental profesional Barcelona" loading="lazy">
+                    <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza dental profesional Barcelona"
+                        loading="lazy">
                     <h6>Odontología General</h6>
                     <h5>Limpieza Dental</h5>
                     <p>Limpieza profesional para mantener tu salud bucal</p>
@@ -397,7 +644,7 @@
 
 
                 <div class="item" data-animate="scaleIn" data-delay="0.2">
-                    <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Blanqueamiento dental Barcelona" loading="lazy">
+                    <img src="images/blanqueamientohitachi.jpg" alt="Blanqueamiento dental Barcelona" loading="lazy">
                     <h6>Estética Dental</h6>
                     <h5>Blanqueamiento</h5>
                     <p>Mejora el aspecto de tu sonrisa</p>
@@ -418,7 +665,8 @@
                 </div>
 
                 <div class="item" data-animate="scaleIn" data-delay="0.2">
-                    <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia brackets e Invisalign Barcelona" loading="lazy">
+                    <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia brackets e Invisalign Barcelona"
+                        loading="lazy">
                     <h6>Ortodoncia</h6>
                     <h5>Brackets e Invisalign</h5>
                     <p>Corrección dental con diferentes opciones de tratamiento</p>
@@ -431,7 +679,7 @@
                     <p>Solución rápida para emergencias dentales</p>
                 </div>
             </div>
-            
+
             <div class="services-cta" data-animate="fadeUp">
                 <a href="servicios.html" class="btn-main-large">
                     Ver todos los servicios <i class="fas fa-arrow-right"></i>
@@ -444,13 +692,15 @@
     <section class="reviews">
         <div class="container">
             <h3 data-animate="fadeUp">¿Qué opinan nuestros pacientes?</h3>
-            <p class="reviews-subtitle" data-animate="fadeUp" data-delay="0.1">Testimonios reales de nuestros pacientes</p>
+            <p class="reviews-subtitle" data-animate="fadeUp" data-delay="0.1">Testimonios reales de nuestros pacientes
+            </p>
 
             <div class="reviews-grid">
                 <!-- Tarjeta de Review -->
                 <div class="review-card" data-animate="fadeUp" data-delay="0.1">
                     <div class="review-header">
-                        <img src="images/taniaramos.png" alt="Tania Ramos - Reseña cliente" class="review-avatar" loading="lazy">
+                        <img src="images/taniaramos.png" alt="Tania Ramos - Reseña cliente" class="review-avatar"
+                            loading="lazy">
                         <div class="review-info">
                             <h4>Tania Ramos</h4>
                             <div class="review-date">05/09/2024</div>
@@ -468,7 +718,8 @@
                 <!-- Tarjeta de Review -->
                 <div class="review-card" data-animate="fadeUp" data-delay="0.2">
                     <div class="review-header">
-                        <img src="images/yamilethventurapng.png" alt="Yamileth Ventura - Reseña cliente" class="review-avatar" loading="lazy">
+                        <img src="images/yamilethventurapng.png" alt="Yamileth Ventura - Reseña cliente"
+                            class="review-avatar" loading="lazy">
                         <div class="review-info">
                             <h4>Yamileth Ventura</h4>
                             <div class="review-date">10/10/2024</div>
@@ -486,7 +737,8 @@
                 <!-- Tarjeta de Review -->
                 <div class="review-card" data-animate="fadeUp" data-delay="0.3">
                     <div class="review-header">
-                        <img src="images/eligranados.png" alt="Eli Granados - Reseña cliente" class="review-avatar" loading="lazy">
+                        <img src="images/eligranados.png" alt="Eli Granados - Reseña cliente" class="review-avatar"
+                            loading="lazy">
                         <div class="review-info">
                             <h4>Eli Granados</h4>
                             <div class="review-date">15/12/2024</div>
@@ -509,35 +761,44 @@
             </div>
         </div>
     </section>
-        <!-- Sección Financiamiento Clínica Dental Dra. Hitachi -->
-<section class="financiacion-section">
-  <div class="container">
-    <div class="financiacion-header">
-      <h2>Financia tu tratamiento dental</h2>
-      <p>
-        En <strong>Clínica Dental Dra. Hitachi</strong> pensamos en tu comodidad.  
-        Ahora puedes acceder a todos nuestros tratamientos dentales sin preocuparte por el pago inmediato.  
-        Trabajamos con financiación flexible adaptada a tus necesidades. ¡Sonríe hoy y págalo poco a poco!
-      </p>
-    </div>
-    <div class="financiacion-logos">
-      <img src="images/pepper-logo.png" alt="Pepper Money financiación">
-    </div>
-  </div>
-</section>
+    <!-- Sección Financiamiento Clínica Dental Dra. Hitachi -->
+    <section class="financiacion-section">
+        <div class="container">
+            <div class="financiacion-header">
+                <h2>Financia tu tratamiento dental</h2>
+                <p>
+                    En <strong>Clínica Dental Dra. Hitachi</strong> pensamos en tu comodidad.
+                    Ahora puedes acceder a todos nuestros tratamientos dentales sin preocuparte por el pago inmediato.
+                    Trabajamos con financiación flexible adaptada a tus necesidades. ¡Sonríe hoy y págalo poco a poco!
+                </p>
+            </div>
+            <div class="financiacion-logos">
+                <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20un%20presupuesto%20para%20un%20tratamiento"
+                    target="_blank" aria-label="Pedir presupuesto por WhatsApp">
+                    <img src="images/pepper-logo.png" alt="Pepper Money financiación">
+                </a>
+            </div>
+        </div>
+    </section>
 
 
 
 
     <section id="contact" style="padding: 80px 20px; background: #f9f9f9;">
         <div style="max-width: 1100px; margin: 0 auto;">
-            <h3 style="text-align:center; font-family:'Poppins',sans-serif; color:#ff0000; font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Contacto</h3>
-            <h4 style="text-align:center; font-family:'Poppins',sans-serif; color:#1a1a1a; font-size:2rem; font-weight:800; letter-spacing:-0.5px; margin-bottom:48px;">¿Tienes alguna pregunta?</h4>
+            <h3
+                style="text-align:center; font-family:'Poppins',sans-serif; color:#ff0000; font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">
+                Contacto</h3>
+            <h4
+                style="text-align:center; font-family:'Poppins',sans-serif; color:#1a1a1a; font-size:2rem; font-weight:800; letter-spacing:-0.5px; margin-bottom:48px;">
+                ¿Tienes alguna pregunta?</h4>
 
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
                 <!-- FORMULARIO -->
-                <div style="background:white; border-radius:20px; padding:40px; box-shadow:0 6px 24px rgba(0,0,0,0.07); border:1px solid rgba(0,0,0,0.04);">
-                    <form id="contactform" action="https://formspree.io/f/xzzdlqja" method="POST" style="display:flex; flex-direction:column; gap:14px;">
+                <div
+                    style="background:white; border-radius:20px; padding:40px; box-shadow:0 6px 24px rgba(0,0,0,0.07); border:1px solid rgba(0,0,0,0.04);">
+                    <form id="contactform" action="https://formspree.io/f/xzzdlqja" method="POST"
+                        style="display:flex; flex-direction:column; gap:14px;">
                         <input type="text" name="name" placeholder="Nombre*" required
                             style="padding:12px 16px; border:2px solid #e8e8e8; border-radius:10px; font-family:'Poppins',sans-serif; font-size:0.95rem; background:#fafafa; outline:none; transition:border-color 0.2s;">
                         <input type="email" name="email" placeholder="Email*" required
@@ -545,9 +806,14 @@
                         <textarea name="message" placeholder="Cuéntanos en qué podemos ayudarte..." required rows="5"
                             style="padding:12px 16px; border:2px solid #e8e8e8; border-radius:10px; font-family:'Poppins',sans-serif; font-size:0.95rem; background:#fafafa; resize:vertical; outline:none; line-height:1.5;"></textarea>
                         <div style="display:flex; align-items:flex-start; gap:10px;">
-                            <input type="checkbox" id="terms" name="terms" required style="margin-top:3px; accent-color:#ff0000; width:16px; height:16px; flex-shrink:0;">
-                            <label for="terms" style="font-size:0.82rem; color:#888; font-family:'Poppins',sans-serif; line-height:1.5;">
-                                Acepto la <a href="privacidad.html" target="_blank" style="color:#ff0000; font-weight:600;">Política de Privacidad</a> y los <a href="aviso-legal.html" target="_blank" style="color:#ff0000; font-weight:600;">Términos y Condiciones</a>
+                            <input type="checkbox" id="terms" name="terms" required
+                                style="margin-top:3px; accent-color:#ff0000; width:16px; height:16px; flex-shrink:0;">
+                            <label for="terms"
+                                style="font-size:0.82rem; color:#888; font-family:'Poppins',sans-serif; line-height:1.5;">
+                                Acepto la <a href="privacidad.html" target="_blank"
+                                    style="color:#ff0000; font-weight:600;">Política de Privacidad</a> y los <a
+                                    href="aviso-legal.html" target="_blank"
+                                    style="color:#ff0000; font-weight:600;">Términos y Condiciones</a>
                             </label>
                         </div>
                         <button type="submit"
@@ -558,11 +824,13 @@
                 </div>
 
                 <!-- MAPA -->
-                <div style="border-radius:20px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,0.08); height:100%; min-height:420px;">
+                <div
+                    style="border-radius:20px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,0.08); height:100%; min-height:420px;">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.0951372571812!2d2.0980058753577517!3d41.372017696949506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4997f13f7cddb%3A0x5a78ab3d7c85765a!2sCentro%20Odontol%C3%B3gico%20Can%20Vidalet!5e0!3m2!1ses!2ses!4v1737710860237!5m2!1ses!2ses"
-                        width="100%" height="100%" style="border:0; display:block; min-height:420px;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="Ubicación Clínica Dental Hitachi"></iframe>
+                        width="100%" height="100%" style="border:0; display:block; min-height:420px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación Clínica Dental Hitachi"></iframe>
                 </div>
             </div>
         </div>
@@ -645,15 +913,16 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p class="copyright">© 2025 Clínica Dental Hitachi. Todos los derechos reservados.</p>
+                    <p class="copyright">© 2026 Clínica Dental Hitachi. Todos los derechos reservados.</p>
                     <div class="social-links">
                         <a href="tel:931479829" aria-label="Llamar a la clínica">
                             <i class="fa-solid fa-phone-volume"></i>
                         </a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ver ubicación en Google Maps"><i
-                                class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Visitar página de Facebook"><i
-                                class="fa-brands fa-facebook-f" target="_blank"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"
+                            aria-label="Ver ubicación en Google Maps"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"
+                            aria-label="Visitar página de Facebook"><i class="fa-brands fa-facebook-f"
+                                target="_blank"></i></a>
 
 
 
@@ -665,20 +934,12 @@
     <!-- FOOTER -->
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/34622819008?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20la%20cl%C3%ADnica" 
-       target="_blank" 
-       id="whatsappBtn"
-       class="whatsapp-float" 
-       aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/34622819008?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20la%20cl%C3%ADnica"
+        target="_blank" id="whatsappBtn" class="whatsapp-float" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- SCROLL TO TOP BUTTON -->
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-
+    <!-- SCROLL TO TOP BUTTON removed — using only WhatsApp float -->
 
     <script src="js/bliss.js"></script>
 
@@ -686,7 +947,7 @@
         // Inicializar el Swiper PERO sin autoplay
         var swiper = new Swiper(".mySwiper", {
             effect: "fadeIn",
-            
+
             // Autoplay DESACTIVADO al inicio
             autoplay: false,
 
@@ -720,7 +981,7 @@
                         pauseOnMouseEnter: true
                     };
                     swiper.autoplay.start();
-                    
+
                     // Dejar de observar después de activarlo (solo se activa una vez)
                     swiperObserver.unobserve(entry.target);
                 }
@@ -754,6 +1015,26 @@
         // Register ScrollTrigger
         gsap.registerPlugin(ScrollTrigger);
 
+        // Video: play when scrolled into view, keep looping
+        const showcaseVideo = document.getElementById('showcaseVideo');
+        if (showcaseVideo) {
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        showcaseVideo.play();
+                    }
+                    // No pausamos al salir — loop continuo mientras esté visible
+                });
+            }, { threshold: 0.2 });
+            videoObserver.observe(showcaseVideo);
+        }
+
+        // Video showcase animation
+        gsap.from('.showcase-eyebrow', { y: 20, opacity: 0, duration: 0.8, delay: 0.2, scrollTrigger: { trigger: '.video-showcase-section', start: 'top 80%' } });
+        gsap.from('.showcase-title', { y: 30, opacity: 0, duration: 1, delay: 0.4, scrollTrigger: { trigger: '.video-showcase-section', start: 'top 80%' } });
+        gsap.from('.showcase-subtitle', { y: 20, opacity: 0, duration: 0.8, delay: 0.6, scrollTrigger: { trigger: '.video-showcase-section', start: 'top 80%' } });
+        gsap.from('.showcase-actions', { y: 20, opacity: 0, duration: 0.8, delay: 0.8, scrollTrigger: { trigger: '.video-showcase-section', start: 'top 80%' } });
+
         // Hero/Banner animations - SUAVES Y FLUIDAS
         gsap.from('.banner .text h1', {
             y: 30,
@@ -786,7 +1067,7 @@
 
             let animationProps = {};
 
-            switch(animation) {
+            switch (animation) {
                 case 'fadeUp':
                     animationProps = { y: 60, opacity: 0 };
                     break;
@@ -816,7 +1097,7 @@
 
         // Service cards hover effect
         document.querySelectorAll('.menuitems_wrap .item').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 gsap.to(this, {
                     y: -10,
                     duration: 0.3,
@@ -829,7 +1110,7 @@
                 });
             });
 
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 gsap.to(this, {
                     y: 0,
                     duration: 0.3,
@@ -845,7 +1126,7 @@
 
         // Reviews cards hover
         document.querySelectorAll('.review-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 gsap.to(this, {
                     y: -8,
                     boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
@@ -854,7 +1135,7 @@
                 });
             });
 
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 gsap.to(this, {
                     y: 0,
                     boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
@@ -866,7 +1147,7 @@
 
         // Installations grid items
         document.querySelectorAll('.installation-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
+            item.addEventListener('mouseenter', function () {
                 gsap.to(this.querySelector('img'), {
                     scale: 1.1,
                     duration: 0.4,
@@ -874,7 +1155,7 @@
                 });
             });
 
-            item.addEventListener('mouseleave', function() {
+            item.addEventListener('mouseleave', function () {
                 gsap.to(this.querySelector('img'), {
                     scale: 1,
                     duration: 0.4,
@@ -883,23 +1164,21 @@
             });
         });
 
-        // Scroll to top button
+        // Scroll-to-top: only enable if the button exists (we prefer WhatsApp primary CTA)
         const scrollBtn = document.getElementById('scrollToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
-            }
-        });
-
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollBtn.classList.add('visible');
+                } else {
+                    scrollBtn.classList.remove('visible');
+                }
             });
-        });
+
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
 
         // Parallax effect for banner
         gsap.to('.banner', {

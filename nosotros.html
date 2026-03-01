@@ -788,7 +788,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p class="copyright">© 2025 Clínica Dental Hitachi. Todos los derechos reservados.</p>
+                    <p class="copyright">© 2026 Clínica Dental Hitachi. Todos los derechos reservados.</p>
                     <div class="social-links">
                         <a href="tel:931479829">
                             <i class="fa-solid fa-phone-volume"></i>
@@ -804,11 +804,10 @@
     </footer>
     <!-- FOOTER -->
 
-    <!-- SCROLL TO TOP -->
+    <!-- Using WhatsApp float only (scroll-to-top removed) -->
     <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <!-- GSAP ANIMATIONS -->
     <script>
@@ -848,10 +847,12 @@
         });
         
         const scrollBtn = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', () => {
-            scrollBtn.classList.toggle('visible', window.scrollY > 500);
-        });
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => {
+                scrollBtn.classList.toggle('visible', window.scrollY > 500);
+            });
+            scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
     </script>
 </body>
 </html>

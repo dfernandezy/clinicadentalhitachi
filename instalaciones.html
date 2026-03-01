@@ -301,6 +301,125 @@
             .tech-grid { grid-template-columns: 1fr; }
             .cta-instalaciones h2 { font-size: 2.2rem; }
         }
+
+        .tech-item--center {
+            grid-column: 2;
+        }
+        .tech-item--featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 30px;
+            padding: 0;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 10px 40px rgba(255,0,0,0.12);
+            text-align: left;
+        }
+        .tech-item--featured:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 55px rgba(255,0,0,0.18);
+        }
+        .tech-item-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        .tech-item--featured h4,
+        .tech-item--featured p {
+            padding-right: 30px;
+        }
+        .tech-item--featured h4 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .tech-item--featured p {
+            color: #666;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Videos Section */
+        .videos-section {
+            padding: 100px 20px;
+            background: #0a0a0a;
+            width: 100%;
+        }
+        .videos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .videos-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .videos-intro h2 {
+            font-size: 3rem;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 16px;
+        }
+        .videos-intro h2 span { color: #ff0000; }
+        .videos-intro p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .videos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .video-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(255,0,0,0.2);
+        }
+        .video-card-player {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        .video-card-info {
+            padding: 24px 28px;
+        }
+        .video-card-info h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .video-card-info p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .tech-item--featured {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+            .tech-item-img { height: 200px; }
+            .tech-item--featured h4,
+            .tech-item--featured p { padding: 0 20px 20px; }
+            .videos-grid { grid-template-columns: 1fr; }
+            .videos-intro h2 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 
@@ -404,6 +523,26 @@
                         <p>Equipos digitales de rayos X para diagnósticos precisos con mínima radiación.</p>
                     </div>
                 </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/maquinatac.jpg" alt="TAC Dental 3D - Tomografía Computarizada">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>TAC Dental 3D</h3>
+                        <p>Nuestra tomografía computarizada de última generación permite planificaciones quirúrgicas de máxima precisión, especialmente en implantología.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/centro-actualizado.jpg" alt="Centro Dental actualizado">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Centro Renovado</h3>
+                        <p>Recientemente renovado para ofrecerte las mejores condiciones en un ambiente moderno y cómodo.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -415,16 +554,16 @@
             <p>Invertimos en los mejores equipos para garantizar tratamientos precisos, seguros y cómodos</p>
 
             <div class="tech-grid">
+                <div class="tech-item tech-item--featured">
+                    <img src="images/maquinatac.jpg" alt="TAC Dental 3D CBCT" class="tech-item-img">
+                    <h4>TAC / CBCT 3D</h4>
+                    <p>Tomografía computarizada de haz cónico para diagnósticos tridimensionales precisos en implantología y planificación quirúrgica avanzada.</p>
+                </div>
+
                 <div class="tech-item">
                     <i class="fas fa-x-ray"></i>
                     <h4>Radiografía Digital</h4>
                     <p>90% menos radiación. Diagnósticos rápidos y precisos.</p>
-                </div>
-
-                <div class="tech-item">
-                    <i class="fas fa-book-medical"></i>
-                    <h4>TAC / CBCT</h4>
-                    <p>Tomografía computarizada 3D para diagnósticos precisos en implantología y planificación quirúrgica.</p>
                 </div>
 
                 <div class="tech-item">
@@ -445,10 +584,40 @@
                     <p>Prótesis digitales en el mismo día.</p>
                 </div>
 
-                <div class="tech-item">
+                <div class="tech-item tech-item--center">
                     <i class="fas fa-microscope"></i>
                     <h4>Microscopio Dental</h4>
                     <p>Visión ampliada para procedimientos de precisión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEOS SECTION -->
+    <section class="videos-section">
+        <div class="videos-container">
+            <div class="videos-intro">
+                <h2>Nuestro trabajo en acción</h2>
+                <p>Así trabajamos cada día para ofrecerte los mejores resultados</p>
+            </div>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <video autoplay muted loop playsinline preload="none" class="video-card-player">
+                        <source src="images/video-trabajo-02.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-card-info">
+                        <h4>Precisión en cada tratamiento</h4>
+                        <p>Nuestros equipos nos permiten trabajar con la máxima exactitud.</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <video autoplay muted loop playsinline preload="none" class="video-card-player">
+                        <source src="images/video-trabajo-03.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-card-info">
+                        <h4>Tecnología al servicio de tu salud</h4>
+                        <p>Innovación y cuidado en cada procedimiento que realizamos.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -507,7 +676,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p class="copyright">© 2025 Clínica Dental Hitachi</p>
+                    <p class="copyright">© 2026 Clínica Dental Hitachi</p>
                     <div class="social-links">
                         <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
                         <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
@@ -521,7 +690,6 @@
     <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
@@ -538,12 +706,24 @@
                 scrollTrigger: { trigger: item, start: 'top 85%' }
             });
         });
+        gsap.utils.toArray('.video-card').forEach((card, i) => {
+            gsap.from(card, {
+                y: 50, opacity: 0, duration: 0.8, delay: i * 0.15,
+                scrollTrigger: { trigger: card, start: 'top 85%' }
+            });
+        });
+        gsap.from('.videos-intro', {
+            y: 30, opacity: 0, duration: 0.8,
+            scrollTrigger: { trigger: '.videos-intro', start: 'top 85%' }
+        });
         
         const scrollBtn = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', () => {
-            scrollBtn.classList.toggle('visible', window.scrollY > 500);
-        });
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => {
+                scrollBtn.classList.toggle('visible', window.scrollY > 500);
+            });
+            scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
     </script>
 </body>
 </html>
