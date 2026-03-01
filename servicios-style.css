@@ -46,7 +46,7 @@
         url('images/banner.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     overflow: hidden;
     margin-top: 120px;
 }

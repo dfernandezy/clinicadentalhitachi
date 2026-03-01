@@ -277,24 +277,31 @@
         /* Banner mobile fixes */
         @media (max-width: 768px) {
             .banner {
-                padding-top: 140px !important;
+                padding-top: 120px !important;
                 padding-bottom: 60px !important;
                 align-items: flex-start !important;
             }
 
             .bannercontent .text h1 {
-                font-size: 1.1rem !important;
-                margin-bottom: 4px !important;
+                font-size: 1rem !important;
+                margin-bottom: 6px !important;
+                line-height: 1.4 !important;
             }
 
             .bannercontent .text h2 {
-                font-size: 2.2rem !important;
-                line-height: 1.15 !important;
+                font-size: 1.9rem !important;
+                line-height: 1.2 !important;
                 margin-bottom: 10px !important;
             }
 
             .bannercontent .text p {
-                font-size: 0.95rem !important;
+                font-size: 0.9rem !important;
+                line-height: 1.5 !important;
+            }
+
+            .bannercontent .text div a {
+                font-size: 0.9rem !important;
+                padding: 12px 24px !important;
             }
 
             .horario-container .horario {
@@ -304,7 +311,7 @@
 
         @media (max-width: 480px) {
             .bannercontent .text h2 {
-                font-size: 1.9rem !important;
+                font-size: 1.7rem !important;
             }
         }
 
@@ -1018,15 +1025,23 @@
         // Video: play when scrolled into view, keep looping
         const showcaseVideo = document.getElementById('showcaseVideo');
         if (showcaseVideo) {
-            const videoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        showcaseVideo.play();
-                    }
-                    // No pausamos al salir — loop continuo mientras esté visible
-                });
-            }, { threshold: 0.2 });
-            videoObserver.observe(showcaseVideo);
+            const tryPlay = () => {
+                const p = showcaseVideo.play();
+                if (p !== undefined) p.catch(() => {});
+            };
+            if ('IntersectionObserver' in window) {
+                const videoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => { if (entry.isIntersecting) tryPlay(); });
+                }, { threshold: 0.2 });
+                videoObserver.observe(showcaseVideo);
+            } else {
+                tryPlay();
+            }
+            // Fallback para iOS: intentar play en primer scroll
+            window.addEventListener('scroll', function iosPlay() {
+                tryPlay();
+                window.removeEventListener('scroll', iosPlay);
+            }, { once: true });
         }
 
         // Video showcase animation
