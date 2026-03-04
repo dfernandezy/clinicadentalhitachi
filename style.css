@@ -317,7 +317,7 @@ header.fixed .contact-info a {
 	margin: 0 0 0 0;
 	padding: 300px 0 220px 0;
 	background: url(images/dentista6edit.jpg) no-repeat center center;
-	background-attachment: scroll;
+	background-attachment: fixed;
 	/* Parallax effect */
 	background-size: cover;
 	position: relative;
@@ -1411,7 +1411,7 @@ footer {
 	text-align: center;
 	font-size: 16px;
 	font-family: 'Poppins', sans-serif;
-	color: #ffffff;
+	color: #000000;
 	z-index: 10;
 }
 
@@ -1869,3 +1869,149 @@ footer {
 		font-size: 14px;
 	}
 }
+
+/* ============================================================
+   FOOTER ESTÁNDAR – Clínica Dental Dra. Hitachi
+============================================================ */
+:root {
+    --color-red: #e8001d;
+    --color-red-dark: #b8001a;
+    --color-dark: #1a1a1a;
+    --color-muted: #6b7280;
+    --color-light: #f8f8f6;
+    --color-white: #ffffff;
+    --color-border: #e5e7eb;
+    --transition: 0.28s ease;
+    --max-width: 1200px;
+}
+
+footer.site-footer {
+    background: var(--color-white) !important;
+    color: var(--color-dark) !important;
+    padding-top: clamp(3rem, 6vw, 5rem);
+    border-top: 1px solid var(--color-border);
+    background-image: none !important;
+}
+
+footer.site-footer .footer-inner {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    footer.site-footer .footer-inner { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (min-width: 992px) {
+    footer.site-footer .footer-inner { grid-template-columns: 2fr 1fr 1fr 1.4fr !important; padding-inline: 2.5rem; }
+}
+
+footer.site-footer .footer__brand img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+footer.site-footer .footer__brand p {
+    font-size: .88rem;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 300px;
+    margin-bottom: 1.25rem;
+    color: var(--color-muted);
+}
+
+footer.site-footer .footer__contact {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+}
+
+footer.site-footer .footer__contact a,
+footer.site-footer .footer__contact span {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    font-size: .88rem;
+    color: var(--color-muted);
+    transition: color var(--transition);
+    text-decoration: none;
+}
+
+footer.site-footer .footer__contact a:hover { color: var(--color-dark); }
+
+footer.site-footer .footer__contact svg { color: var(--color-red); flex-shrink: 0; }
+
+footer.site-footer .footer__nav h3,
+footer.site-footer .footer__hours h3 {
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+footer.site-footer .footer__nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer.site-footer .footer__nav a {
+    font-size: .88rem;
+    color: var(--color-muted);
+    transition: color var(--transition), padding-left var(--transition);
+    text-decoration: none;
+}
+
+footer.site-footer .footer__nav a:hover { color: var(--color-dark); padding-left: 4px; }
+
+footer.site-footer .footer__nav a[aria-current="page"] { color: var(--color-red); }
+
+footer.site-footer .footer__hours dl {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+}
+
+footer.site-footer .footer__hours dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: .55rem;
+}
+
+footer.site-footer .footer__hours dt { font-size: .85rem; color: var(--color-muted); font-weight: 400; }
+
+footer.site-footer .footer__hours dd { font-size: .85rem; font-weight: 600; color: var(--color-dark); }
+
+footer.site-footer .footer-bottom { padding-block: 1.25rem; }
+
+footer.site-footer .footer-bottom .container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: .35rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    footer.site-footer .footer-bottom .container {
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+}
+
+footer.site-footer .footer-bottom p { font-size: .82rem; color: var(--color-muted); }

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestras Instalaciones | Clínica Dental Hitachi</title>
-    <meta name="description" content="Descubre nuestras modernas instalaciones equipadas con la última tecnología dental en Barcelona.">
-    <link rel="canonical" href="https://clinicadentalhitachi.com/instalaciones.html">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instalaciones – Clínica Dental Dra. Hitachi</title>
+    <meta name="description"
+        content="Descubre las instalaciones de vanguardia de la Clínica Dental Dra. Hitachi: tecnología TAC, laboratorio propio, salas de última generación y un equipo comprometido con tu sonrisa en L'Hospitalet de Llobregat, Barcelona." />
+    <link rel="canonical" href="https://clinicadentalhitachi.com/instalaciones.html" />
     <link rel="icon" type="image/png" href="images/logo.webp">
+
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://clinicadentalhitachi.com/instalaciones.html">
-    <meta property="og:title" content="Nuestras Instalaciones | Clínica Dental Hitachi">
-    <meta property="og:description" content="Descubre nuestras modernas instalaciones equipadas con la última tecnología dental en Barcelona.">
-    <meta property="og:image" content="https://clinicadentalhitachi.com/images/maquinaria.jpg">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:image" content="https://clinicadentalhitachi.com/images/maquinaria.jpg">
+    <meta property="og:title" content="Instalaciones – Clínica Dental Dra. Hitachi" />
+    <meta property="og:description"
+        content="Visita virtual de nuestras instalaciones de última generación en L'Hospitalet de Llobregat, Barcelona. TAC dental, laboratorio propio, salas equipadas y ambiente confortable." />
+    <meta property="og:image" content="images/maquinaria.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://clinicadentalhitachi.com/instalaciones.html" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW71SH6H7M"></script>
@@ -26,405 +28,1011 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Force Poppins site-wide and ensure Font Awesome icons use FA font -->
+    <style>
+        * { font-family: 'Poppins', sans-serif !important; }
+        i, .fa, .fas, .fab, .far, .fal, .fad {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+        }
+    </style>
     <link rel="stylesheet" href="fonts/icons-linear.css">
     <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-responsive.css">
-    <!-- Preload hero background image to reduce background pop-in -->
-    <link rel="preload" as="image" href="images/maquinaria.jpg">
-    
+    <link rel="stylesheet" href="index-enhancements.css">
+
+    <!-- Preload hero -->
+    <link rel="preload" as="image" href="images/maquinaria.jpg" />
+
     <!-- GSAP -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script defer src="js/jquery.js"></script>
     <script defer src="js/scripts.js"></script>
     <script defer src="js/menuscript.js"></script>
-
-    <style>
-        body { 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Arreglo para que el header se vea en páginas internas */
-        header {
-            background: #fff;
-            border-bottom: 1px solid #eee;
-        }
-
-        header nav.headermenu ul li a {
-            color: #000;
-        }
-
-        header .contact-info a {
-            color: #000;
-        }
-
-        /* Hero - ESTANDARIZADO Y MEJORADO */
-        .instalaciones-hero {
-            padding: 200px 20px 100px;
-            min-height: 550px;
-            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)), 
-                        url('images/maquinaria.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: scroll;
-            background-position: center;
-            text-align: center;
-            color: white;
-            width: 100%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .instalaciones-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 0, 0, 0.05);
-            pointer-events: none;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        .instalaciones-hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 25px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
-            position: relative;
-            z-index: 1;
-        }
-        .instalaciones-hero p {
-            font-size: 1.4rem;
-            max-width: 750px;
-            margin: 0 auto;
-            line-height: 1.6;
-            opacity: 0.98;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: 100px 20px;
-            background: #f9f9f9;
-            width: 100%;
-        }
-        .gallery-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .gallery-intro {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .gallery-intro h2 {
-            font-size: 3rem;
-            color: #ff0000;
-            margin-bottom: 20px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .gallery-intro p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        .gallery-item {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-        }
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(255,0,0,0.2);
-        }
-        .gallery-image {
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-        }
-        .gallery-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .gallery-item:hover .gallery-image img {
-            transform: scale(1.1);
-        }
-        .gallery-info {
-            padding: 30px;
-        }
-        .gallery-info h3 {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 15px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .gallery-info p {
-            color: #666;
-            line-height: 1.7;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Tecnologia Section */
-        .tech-section {
-            padding: 100px 20px;
-            background: white;
-            width: 100%;
-        }
-        .tech-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .tech-container h2 {
-            font-size: 3rem;
-            color: #ff0000;
-            margin-bottom: 20px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .tech-container p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        .tech-item {
-            padding: 40px 30px;
-            background: #f9f9f9;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-        .tech-item:hover {
-            background: white;
-            box-shadow: 0 10px 30px rgba(255,0,0,0.1);
-            transform: translateY(-5px);
-        }
-        .tech-item i {
-            font-size: 3rem;
-            color: #ff0000;
-            margin-bottom: 20px;
-        }
-        .tech-item h4 {
-            font-size: 1.3rem;
-            color: #333;
-            margin-bottom: 15px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .tech-item p {
-            color: #666;
-            line-height: 1.6;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* CTA */
-        .cta-instalaciones {
-            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
-            padding: 100px 20px;
-            text-align: center;
-            width: 100%;
-        }
-        .cta-instalaciones h2 {
-            font-size: 3rem;
-            color: #333;
-            margin-bottom: 25px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .cta-instalaciones p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 20px 45px;
-            background: linear-gradient(135deg, #ff0000, #cc0000);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 0, 0, 0.4);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .instalaciones-hero h1 { font-size: 3rem; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .tech-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 576px) {
-            .instalaciones-hero { padding: 180px 20px 80px; }
-            .instalaciones-hero h1 { font-size: 2.2rem; }
-            .instalaciones-hero p { font-size: 1.1rem; }
-            .gallery-intro h2 { font-size: 2.2rem; }
-            .tech-container h2 { font-size: 2.2rem; }
-            .tech-grid { grid-template-columns: 1fr; }
-            .cta-instalaciones h2 { font-size: 2.2rem; }
-        }
-
-        .tech-item--center {
-            grid-column: 2;
-        }
-        .tech-item--featured {
-            grid-column: span 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 30px;
-            padding: 0;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 10px 40px rgba(255,0,0,0.12);
-            text-align: left;
-        }
-        .tech-item--featured:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 55px rgba(255,0,0,0.18);
-        }
-        .tech-item-img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-        }
-        .tech-item--featured h4,
-        .tech-item--featured p {
-            padding-right: 30px;
-        }
-        .tech-item--featured h4 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 12px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .tech-item--featured p {
-            color: #666;
-            line-height: 1.6;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Videos Section */
-        .videos-section {
-            padding: 100px 20px;
-            background: #0a0a0a;
-            width: 100%;
-        }
-        .videos-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .videos-intro {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .videos-intro h2 {
-            font-size: 3rem;
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
-            margin-bottom: 16px;
-        }
-        .videos-intro h2 span { color: #ff0000; }
-        .videos-intro p {
-            color: rgba(255,255,255,0.6);
-            font-size: 1.1rem;
-            font-family: 'Poppins', sans-serif;
-        }
-        .videos-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        .video-card {
-            background: #1a1a1a;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .video-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(255,0,0,0.2);
-        }
-        .video-card-player {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-        }
-        .video-card-info {
-            padding: 24px 28px;
-        }
-        .video-card-info h4 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-        .video-card-info p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .tech-item--featured {
-                grid-column: span 1;
-                grid-template-columns: 1fr;
-            }
-            .tech-item-img { height: 200px; }
-            .tech-item--featured h4,
-            .tech-item--featured p { padding: 0 20px 20px; }
-            .videos-grid { grid-template-columns: 1fr; }
-            .videos-intro h2 { font-size: 2.2rem; }
-        }
-    </style>
 </head>
 
+<style>
+    /* ============================================================
+       VARIABLES & RESET
+    ============================================================ */
+    :root {
+        --color-red: #e8001d;
+        --color-red-dark: #b8001a;
+        --color-dark: #1a1a1a;
+        --color-muted: #6b7280;
+        --color-light: #f8f8f6;
+        --color-white: #ffffff;
+        --color-border: #e5e7eb;
+        --color-card-bg: #ffffff;
+        --font-base: 'Poppins', sans-serif;
+        --radius-btn: 50px;
+        --radius-card: 16px;
+        --radius-sm: 8px;
+        --shadow-card: 0 4px 24px rgba(0, 0, 0, .09);
+        --shadow-hover: 0 12px 40px rgba(0, 0, 0, .18);
+        --shadow-btn: 0 4px 16px rgba(232, 0, 29, .35);
+        --transition: 0.28s ease;
+        --max-width: 1200px;
+        --section-pad: clamp(3.5rem, 7vw, 6rem);
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        font-family: var(--font-base);
+        color: var(--color-dark);
+        background: var(--color-white);
+        line-height: 1.65;
+        overflow-x: hidden;
+    }
+
+    img,
+    video {
+        display: block;
+        max-width: 100%;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* Focus visible for keyboard users */
+    :focus-visible {
+        outline: 2.5px solid var(--color-red);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container {
+        width: 100%;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        padding-inline: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            padding-inline: 2rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            padding-inline: 2.5rem;
+        }
+    }
+
+    .section {
+        padding-block: var(--section-pad);
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 680px;
+        margin-inline: auto;
+        margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section-header h2 {
+        font-size: clamp(1.75rem, 3.5vw, 2.8rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: .75rem;
+        letter-spacing: -.02em;
+    }
+
+    .section-sub {
+        color: var(--color-muted);
+        font-size: clamp(.95rem, 1.5vw, 1.05rem);
+        font-weight: 300;
+    }
+
+    .eyebrow {
+        display: inline-block;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        padding: .3rem .9rem;
+        border-radius: 50px;
+        margin-bottom: 1rem;
+        background: var(--color-red);
+        color: var(--color-white);
+    }
+
+    .eyebrow--dark {
+        background: transparent;
+        color: var(--color-red);
+        border: 1.5px solid var(--color-red);
+    }
+
+    .eyebrow--red {
+        background: var(--color-red);
+        color: var(--color-white);
+    }
+
+    .eyebrow--light {
+        background: rgba(255, 255, 255, .18);
+        color: var(--color-white);
+        border: 1.5px solid rgba(255, 255, 255, .45);
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: .45rem;
+        padding: .8rem 2rem;
+        border-radius: var(--radius-btn);
+        font-family: var(--font-base);
+        font-size: .95rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: background var(--transition), color var(--transition),
+            border-color var(--transition), transform var(--transition),
+            box-shadow var(--transition);
+        text-decoration: none;
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+    .btn--primary {
+        background: var(--color-red);
+        color: var(--color-white);
+        border-color: var(--color-red);
+        box-shadow: var(--shadow-btn);
+    }
+
+    .btn--primary:hover,
+    .btn--primary:focus-visible {
+        background: var(--color-red-dark);
+        border-color: var(--color-red-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(232, 0, 29, .45);
+    }
+
+    .btn--outline {
+        background: transparent;
+        color: var(--color-white);
+        border-color: rgba(255, 255, 255, .7);
+    }
+
+    .btn--outline:hover,
+    .btn--outline:focus-visible {
+        background: rgba(255, 255, 255, .12);
+        border-color: var(--color-white);
+        transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        padding-top: 80px; /* solo compensar el header */
+        overflow: hidden;
+        margin-top: 0;
+    }
+
+    @media (min-width: 768px) {
+        .hero {
+            min-height: 100vh;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .hero {
+            min-height: 100vh;
+        }
+    }
+
+    .hero__media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    /* Hero imagen — oculta, el video tiene poster como fallback */
+    .hero__image {
+        display: none;
+    }
+
+    .hero__video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .hero__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: linear-gradient(135deg, rgba(15,15,20,.72) 0%, rgba(15,15,20,.48) 55%, rgba(15,15,20,.3) 100%);
+    }
+
+    .hero__schedule {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 4;
+        /* por debajo del hero__content (z-index:5) */
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+        background: rgba(255, 255, 255, .15);
+        border: 1px solid rgba(255, 255, 255, .3);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        color: var(--color-white);
+        font-size: .82rem;
+        font-weight: 500;
+        padding: .55rem 1.1rem;
+        border-radius: 50px;
+        letter-spacing: .02em;
+        white-space: nowrap;
+        pointer-events: none;
+        /* no bloquea clics en elementos de debajo */
+    }
+
+    @media (min-width: 768px) {
+        .hero__schedule {
+            bottom: 2.5rem;
+            font-size: .88rem;
+            pointer-events: auto;
+        }
+    }
+
+    .hero__content {
+        position: relative;
+        z-index: 5;
+        max-width: 700px;
+    }
+
+    .hero__title {
+        font-size: clamp(1.6rem, 4vw, 3.8rem);
+        font-weight: 800;
+        color: var(--color-white);
+        line-height: 1.1;
+        letter-spacing: -.03em;
+        margin-bottom: 1.1rem;
+    }
+
+    .hero__subtitle {
+        font-size: clamp(.98rem, 1.8vw, 1.2rem);
+        color: rgba(255, 255, 255, .85);
+        font-weight: 300;
+        max-width: 520px;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .hero__ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .85rem;
+    }
+
+    .hero-animate {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .hero-animate[data-delay="0"] {
+        transition-delay: .1s;
+    }
+
+    .hero-animate[data-delay="1"] {
+        transition-delay: .25s;
+    }
+
+    .hero-animate[data-delay="2"] {
+        transition-delay: .4s;
+    }
+
+    .hero-animate[data-delay="3"] {
+        transition-delay: .55s;
+    }
+
+    .hero-animate.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ============================================================
+       GALLERY
+    ============================================================ */
+    .gallery {
+        background: var(--color-light);
+    }
+
+    .gallery__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 576px) {
+        .gallery__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .gallery__item {
+        position: relative;
+        border-radius: var(--radius-card);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        aspect-ratio: 4/3;
+        cursor: zoom-in;
+    }
+
+    .gallery__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .45s ease;
+    }
+
+    .gallery__item:hover img {
+        transform: scale(1.05);
+    }
+
+    .gallery__item figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(15, 15, 20, .75), transparent);
+        color: var(--color-white);
+        font-size: .88rem;
+        font-weight: 600;
+        padding: 1.5rem 1rem .85rem;
+        letter-spacing: .03em;
+        text-transform: uppercase;
+    }
+
+    .gallery-animate {
+        opacity: 0;
+        transform: translateY(20px) scale(.98);
+        transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .gallery-animate.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    .gallery-animate:nth-child(2) {
+        transition-delay: .1s;
+    }
+
+    .gallery-animate:nth-child(3) {
+        transition-delay: .2s;
+    }
+
+    .gallery-animate:nth-child(4) {
+        transition-delay: .3s;
+    }
+
+    /* ============================================================
+       TECHNOLOGY
+    ============================================================ */
+    .technology {
+        background: var(--color-white);
+    }
+
+    .tech__featured {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        background: linear-gradient(135deg, #fafafa 0%, #f0f0ee 100%);
+        border-radius: var(--radius-card);
+        overflow: hidden;
+        margin-bottom: 3rem;
+        border: 1px solid var(--color-border);
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .tech__featured.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+        .tech__featured {
+            flex-direction: row;
+            align-items: stretch;
+            min-height: 380px;
+        }
+    }
+
+    .tech__featured-image {
+        position: relative;
+        flex: 0 0 45%;
+        min-height: 240px;
+    }
+
+    .tech__featured-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .tech__badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: var(--color-red);
+        color: var(--color-white);
+        font-size: .68rem;
+        font-weight: 700;
+        letter-spacing: .14em;
+        padding: .3rem .75rem;
+        border-radius: 50px;
+    }
+
+    .tech__featured-text {
+        padding: 2rem 2rem 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .75rem;
+        flex: 1;
+    }
+
+    .tech__featured-text h3 {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: -.02em;
+    }
+
+    .tech__featured-text p {
+        color: var(--color-muted);
+        font-size: .97rem;
+        line-height: 1.7;
+    }
+
+    .tech__features-list {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: .5rem;
+    }
+
+    .tech__features-list li {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        font-size: .92rem;
+        font-weight: 500;
+        color: var(--color-dark);
+    }
+
+    .tech__features-list li svg {
+        color: var(--color-red);
+        flex-shrink: 0;
+    }
+
+    .tech__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    @media (min-width: 576px) {
+        .tech__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 992px) {
+        .tech__grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .tech__card {
+        background: var(--color-card-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-card);
+        padding: 1.75rem 1.5rem;
+        transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .tech__card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity .55s ease, transform .55s ease, box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .tech__card:hover {
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-4px);
+        border-color: rgba(232, 0, 29, .25);
+    }
+
+    .tech__card-icon {
+        width: 60px;
+        height: 60px;
+        background: #fff5f6;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-red);
+        margin-bottom: 1.1rem;
+        transition: background var(--transition);
+    }
+
+    .tech__card:hover .tech__card-icon {
+        background: var(--color-red);
+        color: var(--color-white);
+    }
+
+    .tech__card h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: .55rem;
+        letter-spacing: -.01em;
+    }
+
+    .tech__card p {
+        font-size: .9rem;
+        color: var(--color-muted);
+        line-height: 1.65;
+    }
+
+    .tech__card:nth-child(2) {
+        transition-delay: .08s;
+    }
+
+    .tech__card:nth-child(3) {
+        transition-delay: .16s;
+    }
+
+    .tech__card:nth-child(4) {
+        transition-delay: .24s;
+    }
+
+    .tech__card:nth-child(5) {
+        transition-delay: .32s;
+    }
+
+    .tech__card:nth-child(6) {
+        transition-delay: .4s;
+    }
+
+    /* ============================================================
+       VIDEOS
+    ============================================================ */
+    .videos {
+        background: var(--color-white);
+    }
+
+    .videos .section-header h2,
+    .videos .section-sub {
+        color: var(--color-dark);
+    }
+
+    .videos .section-sub {
+        color: var(--color-muted);
+    }
+
+    .videos__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .videos__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .videos__item {
+        border-radius: var(--radius-card);
+        overflow: hidden;
+        background: var(--color-white);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity .6s ease, transform .6s ease;
+        box-shadow: var(--shadow-card);
+    }
+
+    .videos__item.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .videos__item:nth-child(2) {
+        transition-delay: .15s;
+    }
+
+    .clinic-video {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        display: block;
+    }
+
+    .videos__caption {
+        padding: 1.25rem 1.4rem 1.4rem;
+        background: var(--color-white);
+    }
+
+    .videos__caption h3 {
+        color: var(--color-dark);
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: .4rem;
+    }
+
+    .videos__caption p {
+        color: var(--color-muted);
+        font-size: .88rem;
+        font-weight: 300;
+        line-height: 1.6;
+    }
+
+    /* ============================================================
+       CTA
+    ============================================================ */
+    .cta-visit {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        text-align: center;
+        padding-block: clamp(4rem, 9vw, 7rem);
+        overflow: hidden;
+    }
+
+    .cta-visit__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(232, 0, 29, .88) 0%, rgba(180, 0, 15, .82) 100%);
+        z-index: 0;
+    }
+
+    .cta-visit__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 660px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    .cta-visit__inner h2 {
+        font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+        font-weight: 800;
+        color: var(--color-white);
+        line-height: 1.15;
+        letter-spacing: -.03em;
+    }
+
+    .cta-visit__inner p {
+        color: rgba(255, 255, 255, .82);
+        font-size: clamp(.95rem, 1.6vw, 1.1rem);
+        font-weight: 300;
+        max-width: 500px;
+    }
+
+    .cta-visit .btn--primary {
+        background: var(--color-white);
+        color: var(--color-red);
+        border-color: var(--color-white);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, .2);
+    }
+
+    .cta-visit .btn--primary:hover {
+        background: var(--color-light);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, .28);
+    }
+
+    /* ============================================================
+       FOOTER original aa.html
+    ============================================================ */
+    .site-footer {
+        background: var(--color-white);
+        color: var(--color-dark);
+        padding-top: clamp(3rem, 6vw, 5rem);
+        border-top: 1px solid var(--color-border);
+    }
+
+    .footer-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    @media (min-width: 576px) {
+        .footer-inner {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 992px) {
+        .footer-inner {
+            grid-template-columns: 2fr 1fr 1fr 1.4fr;
+        }
+    }
+
+    .footer__brand img {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 1rem;
+    }
+
+    .footer__brand p {
+        font-size: .88rem;
+        font-weight: 300;
+        line-height: 1.7;
+        max-width: 300px;
+        margin-bottom: 1.25rem;
+        color: var(--color-muted);
+    }
+
+    .footer__contact {
+        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        gap: .65rem;
+    }
+
+    .footer__contact a,
+    .footer__contact span {
+        display: flex;
+        align-items: center;
+        gap: .55rem;
+        font-size: .88rem;
+        color: var(--color-muted);
+        transition: color var(--transition);
+    }
+
+    .footer__contact a:hover {
+        color: var(--color-dark);
+    }
+
+    .footer__contact svg {
+        color: var(--color-red);
+        flex-shrink: 0;
+    }
+
+    .footer__nav h3,
+    .footer__hours h3 {
+        font-size: .8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        color: var(--color-dark);
+        margin-bottom: 1rem;
+    }
+
+    .footer__nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .footer__nav a {
+        font-size: .88rem;
+        color: var(--color-muted);
+        transition: color var(--transition), padding-left var(--transition);
+    }
+
+    .footer__nav a:hover {
+        color: var(--color-dark);
+        padding-left: 4px;
+    }
+
+    .footer__nav a[aria-current="page"] {
+        color: var(--color-red);
+    }
+
+    .footer__hours dl {
+        display: flex;
+        flex-direction: column;
+        gap: .65rem;
+    }
+
+    .footer__hours dl div {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: .55rem;
+    }
+
+    .footer__hours dt {
+        font-size: .85rem;
+        color: var(--color-muted);
+        font-weight: 400;
+    }
+
+    .footer__hours dd {
+        font-size: .85rem;
+        font-weight: 600;
+        color: var(--color-dark);
+    }
+
+    .footer-bottom {
+        padding-block: 1.25rem;
+    }
+
+    .footer-bottom .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .35rem;
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer-bottom .container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .footer-bottom p {
+        font-size: .82rem;
+        color: var(--color-muted);
+    }
+
+    /* ============================================================
+       HEADER — mismo aspecto que index/servicios/nosotros/contacto
+    ============================================================ */
+    header {
+        background: #fff !important;
+        border-bottom: 1px solid #eee !important;
+        box-shadow: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+    }
+
+    header .header_default {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        height: 80px !important;
+        padding: 0 !important;
+    }
+
+    header .header-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+    }
+
+    header .site-branding .logo img {
+        width: 70px !important;
+        height: auto !important;
+    }
+
+    header nav.headermenu ul {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.25rem !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    header nav.headermenu ul li a {
+        color: #1a1a1a !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        padding: 0.4rem 0.75rem !important;
+        border-radius: 6px !important;
+        transition: color 0.2s ease, background 0.2s ease !important;
+        text-decoration: none !important;
+    }
+
+    header nav.headermenu ul li a:hover,
+    header nav.headermenu ul li.active a {
+        color: #e8001d !important;
+        background: rgba(232, 0, 29, 0.06) !important;
+    }
+
+    header .contact-info {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+    }
+
+    header .contact-info a {
+        color: #1a1a1a !important;
+        font-size: 1.1rem !important;
+        transition: color 0.2s ease !important;
+        text-decoration: none !important;
+    }
+
+    header .contact-info a:hover {
+        color: #e8001d !important;
+    }
+
+    /* Hero ya tiene padding-block propio, quitamos el padding-top del main para que no se duplique */
+    main#main-content .hero {
+        margin-top: 0 !important;
+    }
+</style>
+
 <body>
-    <!-- HEADER -->
+    <!-- HEADER — igual que servicios.html -->
     <header>
         <div class="container psr">
             <div class="header_default">
@@ -437,8 +1045,8 @@
                 <div class="header-right">
                     <div class="site-navwrap">
                         <div class="navicons">
-                            <a href="javascript:void;" class="navshow"><span class="lnr lnr-menu"></span></a>
-                            <a href="javascript:void;" class="navhide"><span class="lnr lnr-cross"></span></a>
+                            <a href="javascript:void(0);" class="navshow"><span class="lnr lnr-menu"></span></a>
+                            <a href="javascript:void(0);" class="navhide"><span class="lnr lnr-cross"></span></a>
                         </div>
                         <div class="sitenav" id="sitenav">
                             <div class="navwrap">
@@ -458,272 +1066,500 @@
                         </div>
                     </div>
                     <div class="contact-info">
-                        <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="tel:+34622819008"><i class="fa-solid fa-phone-volume"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i
+                                class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="instalaciones-hero">
-        <div class="hero-content">
-            <h1>Nuestras Instalaciones</h1>
-            <p>Tecnología de vanguardia en un ambiente cómodo y acogedor diseñado para tu bienestar</p>
-        </div>
-    </section>
+    <!-- ============================================================
+       MAIN
+  ============================================================ -->
+    <main id="main-content">
 
-    <!-- GALLERY -->
-    <section class="gallery-section">
-        <div class="gallery-container">
-            <div class="gallery-intro">
-                <h2>Un espacio pensado para ti</h2>
-                <p>Cada rincón de nuestra clínica ha sido diseñado para que te sientas cómodo y seguro durante tu visita</p>
+        <!-- ============================
+         HERO
+    ============================= -->
+        <section class="hero" id="hero" aria-label="Sección principal de instalaciones">
+            <div class="hero__media" aria-hidden="true">
+                <video id="heroVideo"
+                    src="images/video-trabajo-01.mp4"
+                    poster="images/maquinaria.jpg"
+                    muted playsinline loop preload="auto"
+                    aria-hidden="true"
+                    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"></video>
+                <div class="hero__overlay" aria-hidden="true"></div>
             </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/recepcion.png" alt="Recepción">
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Recepción</h3>
-                        <p>Un espacio acogedor donde serás recibido con una sonrisa. Ambiente moderno y confortable.</p>
-                    </div>
-                </div>
+            <!-- Schedule badge -->
+            <div class="hero__schedule" aria-label="Horario de la clínica">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span>Lun–Vie: 9:00–20:00 &nbsp;|&nbsp; Sáb: 9:00–14:00</span>
+            </div>
 
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/maquinaria.jpg" alt="Sala de Tratamiento">
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Salas de Tratamiento</h3>
-                        <p>Equipadas con tecnología de última generación para los tratamientos más avanzados.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/instalaciones2.jpg" alt="Consultorio">
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Consultorios</h3>
-                        <p>Espacios amplios y luminosos diseñados para tu máximo confort.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/instalación2.webp" alt="Área de Diagnóstico">
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Zona de Diagnóstico</h3>
-                        <p>Equipos digitales de rayos X para diagnósticos precisos con mínima radiación.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/maquinatac.jpg" alt="TAC Dental 3D - Tomografía Computarizada">
-                    </div>
-                    <div class="gallery-info">
-                        <h3>TAC Dental 3D</h3>
-                        <p>Nuestra tomografía computarizada de última generación permite planificaciones quirúrgicas de máxima precisión, especialmente en implantología.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/centro-actualizado.jpg" alt="Centro Dental actualizado">
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Centro Renovado</h3>
-                        <p>Recientemente renovado para ofrecerte las mejores condiciones en un ambiente moderno y cómodo.</p>
-                    </div>
+            <!-- Hero content -->
+            <div class="hero__content container">
+                <span class="eyebrow hero-animate" data-delay="0">NUESTRO TRABAJO</span>
+                <h1 class="hero__title hero-animate" data-delay="1">
+                    Instalaciones de<br />Clínica Dental<br />Dra. Hitachi
+                </h1>
+                <p class="hero__subtitle hero-animate" data-delay="2">
+                    Tecnología de última generación al servicio de tu salud bucal, en un entorno cálido y confortable.
+                </p>
+                <!-- Hero CTAs -->
+                <div class="hero__ctas hero-animate" data-delay="3">
+                    <a href="servicios.html" class="btn btn--primary"
+                        aria-label="Ver todos nuestros servicios dentales">Ver
+                        servicios</a>
+                    <a href="contacto.html" class="btn btn--outline" aria-label="Solicitar cita en la clínica">Pedir
+                        cita</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- TECNOLOGIA -->
-    <section class="tech-section">
-        <div class="tech-container">
-            <h2>Tecnología de Última Generación</h2>
-            <p>Invertimos en los mejores equipos para garantizar tratamientos precisos, seguros y cómodos</p>
-
-            <div class="tech-grid">
-                <div class="tech-item tech-item--featured">
-                    <img src="images/maquinatac.jpg" alt="TAC Dental 3D CBCT" class="tech-item-img">
-                    <h4>TAC / CBCT 3D</h4>
-                    <p>Tomografía computarizada de haz cónico para diagnósticos tridimensionales precisos en implantología y planificación quirúrgica avanzada.</p>
-                </div>
-
-                <div class="tech-item">
-                    <i class="fas fa-x-ray"></i>
-                    <h4>Radiografía Digital</h4>
-                    <p>90% menos radiación. Diagnósticos rápidos y precisos.</p>
-                </div>
-
-                <div class="tech-item">
-                    <i class="fas fa-laptop-medical"></i>
-                    <h4>Escáner Intraoral</h4>
-                    <p>Impresiones digitales sin molestias.</p>
-                </div>
-
-                <div class="tech-item">
-                    <i class="fas fa-shield-virus"></i>
-                    <h4>Esterilización Avanzada</h4>
-                    <p>Protocolos estrictos para tu seguridad.</p>
-                </div>
-
-                <div class="tech-item">
-                    <i class="fas fa-tooth"></i>
-                    <h4>CAD/CAM</h4>
-                    <p>Prótesis digitales en el mismo día.</p>
-                </div>
-
-                <div class="tech-item tech-item--center">
-                    <i class="fas fa-microscope"></i>
-                    <h4>Microscopio Dental</h4>
-                    <p>Visión ampliada para procedimientos de precisión.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VIDEOS SECTION -->
-    <section class="videos-section">
-        <div class="videos-container">
-            <div class="videos-intro">
-                <h2>Nuestro trabajo en acción</h2>
-                <p>Así trabajamos cada día para ofrecerte los mejores resultados</p>
-            </div>
-            <div class="videos-grid">
-                <div class="video-card">
-                    <video autoplay muted loop playsinline preload="none" class="video-card-player">
-                        <source src="images/video-trabajo-02.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-card-info">
-                        <h4>Precisión en cada tratamiento</h4>
-                        <p>Nuestros equipos nos permiten trabajar con la máxima exactitud.</p>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <video autoplay muted loop playsinline preload="none" class="video-card-player">
-                        <source src="images/video-trabajo-03.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-card-info">
-                        <h4>Tecnología al servicio de tu salud</h4>
-                        <p>Innovación y cuidado en cada procedimiento que realizamos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-instalaciones">
-        <h2>¿Quieres conocer nuestra clínica?</h2>
-        <p>Ven a visitarnos y descubre por qué somos diferentes.</p>
-        <a href="contacto.html" class="btn-primary">
-            <i class="fas fa-calendar-check"></i>
-            Pedir visita guiada
-        </a>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-main">
+        <!-- ============================
+         GALERÍA
+    ============================= -->
+        <section class="section gallery" id="galeria" aria-labelledby="gallery-heading">
             <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-column">
-                        <img src="images/logo.webp" alt="Logo" class="footer-logo">
-                        <div class="footer-contact">
-                            <p><i class="fa-solid fa-location-dot"></i><a style="color: rgb(66, 66, 66); text-decoration: none;" href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Calle Rosa de Alejandría Nº24</a></p>
-                            <p><i class="fa-solid fa-phone"></i><a style="color: red; text-decoration: none;" href="tel:931479829">931479829</a></p>
-                            <p><i class="fa-regular fa-clock"></i> L-V: 9:30-13:30 / 16:00-20:00</p>
+                <div class="section-header">
+                    <span class="eyebrow eyebrow--dark">NUESTRAS INSTALACIONES</span>
+                    <h2 id="gallery-heading">Un espacio diseñado para ti</h2>
+                    <p class="section-sub">Cada rincón de nuestra clínica ha sido pensado para ofrecerte comodidad,
+                        higiene y la tecnología más avanzada.</p>
+                </div>
+
+                <div class="gallery__grid reveal-grid">
+                    <figure class="gallery__item gallery-animate">
+                        <img src="./images/recepcion.jpg"
+                            alt="Recepción de la Clínica Dental Dra. Hitachi, amplia y luminosa con mostrador de madera clara"
+                            loading="lazy" width="600" height="450" />
+                        <figcaption>Recepción</figcaption>
+                    </figure>
+
+                    <figure class="gallery__item gallery-animate">
+                        <img src="images/instalación2.webp"
+                            alt="Sala de espera dental equipada con sillones cómodos y revistas" loading="lazy"
+                            width="600" height="450" />
+                        <figcaption>Sala de Espera</figcaption>
+                    </figure>
+
+                    <figure class="gallery__item gallery-animate">
+                        <img src="images/instalación3.webp"
+                            alt="Laboratorio dental propio con microscopio y materiales de cerámica de alta precisión"
+                            loading="lazy" width="600" height="450" />
+                        <figcaption>Boxes de Tratamiento</figcaption>
+                    </figure>
+
+                    <figure class="gallery__item gallery-animate">
+                        <img src="images/maquinatac.jpg"
+                            alt="Equipo TAC dental de última generación para diagnóstico 3D con mínima radiación"
+                            loading="lazy" width="600" height="450" />
+                        <figcaption>Sala TAC 3D</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================
+         TECNOLOGÍA
+    ============================= -->
+        <section class="section technology" id="tecnologia" aria-labelledby="tech-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="eyebrow eyebrow--dark">EQUIPAMIENTO</span>
+                    <h2 id="tech-heading">Tecnología que marca la diferencia</h2>
+                    <p class="section-sub">Invertimos continuamente en los mejores equipos para ofrecerte diagnósticos
+                        precisos y tratamientos mínimamente invasivos.</p>
+                </div>
+
+                <!-- Featured card: TAC -->
+                <div class="tech__featured reveal-item">
+                    <div class="tech__featured-image">
+                        <img src="images/maquinatac.jpg"
+                            alt="Escáner TAC dental Cone Beam de la clínica con representación 3D del maxilar en pantalla"
+                            loading="lazy" width="700" height="500" />
+                        <span class="tech__badge">DESTACADO</span>
+                    </div>
+                    <div class="tech__featured-text">
+                        <span class="eyebrow eyebrow--red">TAC CONE BEAM 3D</span>
+                        <h3>Diagnóstico volumétrico sin igual</h3>
+                        <p>Nuestro escáner TAC Cone Beam ofrece imágenes tridimensionales de alta resolución con una
+                            dosis de radiación hasta <strong>10 veces menor</strong> que un TAC médico convencional.
+                            Imprescindible para implantología, endodoncia y ortodoncia de precisión.</p>
+                        <ul class="tech__features-list" role="list">
+                            <li>
+                                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Resolución 0,08 mm voxel
+                            </li>
+                            <li>
+                                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Campo de visión configurable
+                            </li>
+                            <li>
+                                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Dosis ultrabaja de radiación
+                            </li>
+                            <li>
+                                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Resultados de Alta Definición
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tech cards grid -->
+                <div class="tech__grid">
+
+                    <article class="tech__card reveal-item" aria-label="Tecnología de escáner intraoral">
+                        <div class="tech__card-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                <path d="M12 6v6l4 2" />
+                                <circle cx="18" cy="6" r="4" />
+                            </svg>
+                        </div>
+                        <h3>Escáner Intraoral</h3>
+                        <p>Impresiones digitales precisas en minutos. Sin material de impresión incómodo. Visualización
+                            inmediata en 3D.</p>
+                    </article>
+
+                    <article class="tech__card reveal-item" aria-label="Tecnología de microscopio clínico">
+                        <div class="tech__card-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                            </svg>
+                        </div>
+                        <h3>Microscopio Clínico</h3>
+                        <p>Aumentos de hasta 20x para endodoncias y cirugías de alta precisión. Menor invasión, mejores
+                            resultados.</p>
+                    </article>
+
+                    <article class="tech__card reveal-item" aria-label="Tecnología de láser dental">
+                        <div class="tech__card-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </div>
+                        <h3>Láser Dental</h3>
+                        <p>Tratamientos periodontales y blanqueamientos con láser de diodo. Sin bisturí, sin puntos,
+                            curación más rápida.</p>
+                    </article>
+
+                    <article class="tech__card reveal-item" aria-label="Sistema CAD/CAM de diseño dental">
+                        <div class="tech__card-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <h3>CAD/CAM Cerámico</h3>
+                        <p>Coronas y carillas de cerámica fresadas en el mismo día. Diseño digital, ajuste perfecto y
+                            estética natural.</p>
+                    </article>
+
+                    <article class="tech__card reveal-item" aria-label="Radiología digital de baja dosis">
+                        <div class="tech__card-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                                <circle cx="12" cy="13" r="3" />
+                            </svg>
+                        </div>
+                        <h3>Radiología Digital</h3>
+                        <p>Radiografías panorámicas y periapicales con sensor digital. 80% menos radiación que la
+                            radiografía convencional.</p>
+                    </article>
+
+                    <article class="tech__card reveal-item" aria-label="Sistema de esterilización y desinfección">
+                        <div class="tech__card-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h3>Esterilización Total</h3>
+                        <p>Autoclaves clase B con trazabilidad completa. Protocolo de desinfección auditado y
+                            certificado por sanidad.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================
+         VÍDEOS
+    ============================= -->
+        <section class="section videos" id="videos" aria-labelledby="videos-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="eyebrow eyebrow--dark">EN ACCIÓN</span>
+                    <h2 id="videos-heading">Nuestro equipo trabajando</h2>
+                    <p class="section-sub">Transparencia total: así es el día a día de la Clínica Dental Dra. Hitachi.
+                    </p>
+                </div>
+
+                <div class="videos__grid">
+                    <div class="videos__item reveal-item">
+                        <video class="clinic-video" src="images/video-trabajo-02.mp4" poster="images/instalación2.webp"
+                            muted playsinline loop preload="metadata"
+                            aria-label="Vídeo del equipo dental trabajando en sala de tratamiento"></video>
+                        <div class="videos__caption">
+                            <h3>Equipo de Alta Tecnologia</h3>
+                            <p>Nuestros especialistas dentales trabajan por tu bienestar y tranquilidad.</p>
                         </div>
                     </div>
-                    <div class="footer-column">
-                        <h4>Enlaces</h4>
-                        <ul>
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="nosotros.html">Nosotros</a></li>
-                            <li><a href="servicios.html">Servicios</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Servicios</h4>
-                        <ul>
-                            <li><a href="servicios.html">Odontología</a></li>
-                            <li><a href="servicios.html">Ortodoncia</a></li>
-                            <li><a href="servicios.html">Implantes</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="privacidad.html">Privacidad</a></li>
-                            <li><a href="cookies.html">Cookies</a></li>
-                        </ul>
+
+                    <div class="videos__item reveal-item">
+                        <video class="clinic-video" src="images/video-trabajo-03.mp4" poster="images/instalación3.webp"
+                            muted playsinline loop preload="metadata"
+                            aria-label="Vídeo del laboratorio dental propio con técnico trabajando en prótesis"></video>
+                        <div class="videos__caption">
+                            <h3>Experiencia Probada</h3>
+                            <p>Técnicos especializados en tu salud dental.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- ============================
+         CTA VISITA GUIADA
+    ============================= -->
+        <section class="section cta-visit" id="visita-guiada" aria-labelledby="cta-visit-heading">
+            <div class="cta-visit__overlay" aria-hidden="true"></div>
+            <div class="container cta-visit__inner reveal-item">
+                <span class="eyebrow eyebrow--light">VISITA PRESENCIAL</span>
+                <h2 id="cta-visit-heading">¿Quieres conocer nuestras instalaciones en persona?</h2>
+                <p>Ven a visitarnos sin compromiso. Nuestro equipo te recibirá y te mostrará todo lo que hacemos por tu
+                    salud bucal.</p>
+                <a href="contacto.html" class="btn btn--primary"
+                    aria-label="Solicitar visita guiada a las instalaciones de la clínica">Solicitar visita guiada</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+       FOOTER original aa.html
+    ============================================================ -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+
+            <div class="footer__brand">
+                <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
+                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
+                        loading="lazy" />
+                </a>
+                <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
+                <address class="footer__contact">
+                    <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        622 819 008
+                    </a>
+                    <a href="mailto:info@clinicahitachi.es" aria-label="Enviar email a info@clinicahitachi.es">
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        info@clinicahitachi.es
+                    </a>
+                    <span>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
+                    </span>
+                </address>
+            </div>
+
+            <nav class="footer__nav" aria-label="Navegación del pie de página">
+                <h3>Servicios</h3>
+                <ul role="list">
+                    <li><a href="servicios.html">Implantes</a></li>
+                    <li><a href="servicios.html">Ortodoncia</a></li>
+                    <li><a href="servicios.html">Estética dental</a></li>
+                    <li><a href="servicios.html">Endodoncia</a></li>
+                    <li><a href="servicios.html">Periodoncia</a></li>
+                    <li><a href="servicios.html">Blanqueamiento</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__nav" aria-label="Navegación informativa del pie de página">
+                <h3>Clínica</h3>
+                <ul role="list">
+                    <li><a href="nosotros.html">Nuestro equipo</a></li>
+                    <li><a href="instalaciones.html" aria-current="page">Instalaciones</a></li>
+                    <li><a href="blog.html">Blog dental</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="aviso-legal.html">Aviso legal</a></li>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__hours">
+                <h3>Horario</h3>
+                <dl>
+                    <div>
+                        <dt>Lunes – Viernes</dt>
+                        <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
+                    </div>
+                    <div>
+                        <dt>Sábados</dt>
+                        <dd>9:00 – 14:00</dd>
+                    </div>
+                    <div>
+                        <dt>Domingos</dt>
+                        <dd>Cerrado</dd>
+                    </div>
+                </dl>
+            </div>
+
         </div>
+
         <div class="footer-bottom">
             <div class="container">
-                <div class="footer-bottom-content">
-                    <p class="copyright">© 2026 Clínica Dental Hitachi</p>
-                    <div class="social-links">
-                        <a href="tel:931479829"><i class="fa-solid fa-phone-volume"></i></a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                </div>
+                <p>&copy; <span id="year"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
+                <p>Diseñado con <span aria-label="amor" role="img">♥</span> en Barcelona</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/34622819008?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20las%20instalaciones%20de%20la%20cl%C3%ADnica"
+        id="whatsappBtn" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <script src="scripts.js" defer></script>
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from('.instalaciones-hero h1', { y: 30, opacity: 0, duration: 0.8 });
-        gsap.utils.toArray('.gallery-item').forEach((item, i) => {
-            gsap.from(item, {
-                y: 50, opacity: 0, duration: 0.8, delay: i * 0.1,
-                scrollTrigger: { trigger: item, start: 'top 85%' }
-            });
-        });
-        gsap.utils.toArray('.tech-item').forEach((item, i) => {
-            gsap.from(item, {
-                y: 40, opacity: 0, duration: 0.6, delay: i * 0.1,
-                scrollTrigger: { trigger: item, start: 'top 85%' }
-            });
-        });
-        gsap.utils.toArray('.video-card').forEach((card, i) => {
-            gsap.from(card, {
-                y: 50, opacity: 0, duration: 0.8, delay: i * 0.15,
-                scrollTrigger: { trigger: card, start: 'top 85%' }
-            });
-        });
-        gsap.from('.videos-intro', {
-            y: 30, opacity: 0, duration: 0.8,
-            scrollTrigger: { trigger: '.videos-intro', start: 'top 85%' }
-        });
-        
-        const scrollBtn = document.getElementById('scrollToTop');
-        if (scrollBtn) {
-            window.addEventListener('scroll', () => {
-                scrollBtn.classList.toggle('visible', window.scrollY > 500);
-            });
-            scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        'use strict';
+
+        function initHeroVideo() {
+            const video = document.getElementById('heroVideo');
+            if (!video) return;
+            function tryPlay(v) {
+                const promise = v.play();
+                if (promise !== undefined) {
+                    promise.catch(() => { v.style.opacity = '0'; });
+                }
+            }
+            const heroObs = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) { tryPlay(video); } else { video.pause(); }
+                });
+            }, { threshold: 0.25 });
+            heroObs.observe(video);
+            const iosFallback = () => { tryPlay(video); };
+            document.addEventListener('touchstart', iosFallback, { once: true, passive: true });
+            document.addEventListener('click', iosFallback, { once: true, passive: true });
         }
+
+        function initClinicVideos() {
+            const videos = document.querySelectorAll('.clinic-video');
+            if (!videos.length) return;
+            function tryPlay(v) {
+                const promise = v.play();
+                if (promise !== undefined) { promise.catch(() => { }); }
+            }
+            const videoObs = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) { tryPlay(entry.target); } else { entry.target.pause(); }
+                });
+            }, { threshold: 0.4 });
+            videos.forEach((v) => videoObs.observe(v));
+            function iosFallback() { videos.forEach((v) => tryPlay(v)); }
+            document.addEventListener('touchstart', iosFallback, { once: true, passive: true });
+            document.addEventListener('scroll', iosFallback, { once: true, passive: true });
+        }
+
+        function initHeroAnimations() {
+            const heroSection = document.getElementById('hero');
+            if (!heroSection) return;
+            const animatables = heroSection.querySelectorAll('.hero-animate');
+            requestAnimationFrame(() => {
+                setTimeout(() => { animatables.forEach((el) => el.classList.add('is-visible')); }, 80);
+            });
+        }
+
+        function initScrollReveal() {
+            const selectors = ['.reveal-item', '.gallery-animate', '.tech__card', '.tech__featured', '.videos__item'];
+            const targets = document.querySelectorAll(selectors.join(', '));
+            if (!targets.length) return;
+            const revealObs = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            targets.forEach((el) => revealObs.observe(el));
+        }
+
+        function initFooterYear() {
+            const yearEl = document.getElementById('year');
+            if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initHeroVideo();
+            initClinicVideos();
+            initHeroAnimations();
+            initScrollReveal();
+            initFooterYear();
+        });
     </script>
 </body>
+
 </html>
