@@ -135,6 +135,13 @@ html {
 		color: #fff !important;
 	}
 
+	nav.headermenu ul li.active a {
+		background: transparent !important;
+		color: #ff0000 !important;
+		border-bottom: 2px solid #ff0000;
+		border-radius: 0;
+	}
+
 	.contact-info {
 		float: right;
 		margin-left: 10px;

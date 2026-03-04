@@ -14,6 +14,11 @@
     --max-width: 1200px;
 }
 
+footer.site-footer,
+footer.site-footer * {
+    font-family: 'Poppins', sans-serif;
+}
+
 footer.site-footer {
     background: var(--color-white) !important;
     color: var(--color-dark) !important;

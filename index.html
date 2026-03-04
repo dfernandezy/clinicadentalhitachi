@@ -70,10 +70,12 @@
     <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="style-responsive.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="index-enhancements.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="footer.css" as="style" onload="this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="style-responsive.css">
         <link rel="stylesheet" href="index-enhancements.css">
+        <link rel="stylesheet" href="footer.css">
     </noscript>
     <!-- Preload main hero image to avoid visible background pop-in -->
     <link rel="preload" as="image" href="images/dentista6edit.jpg">
@@ -87,10 +89,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <style>
-	* { font-family: 'Poppins', sans-serif !important; }
-	i, .fa, .fas, .fab, .far, .fal, .fad {
-		font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
-	}
+    /* Don't use the universal selector with !important — it breaks icon fonts.
+       Use explicit rules instead so icon font-families render correctly. */
+    html, body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Prefer specificity over !important: scope icon-font rules to the header
+       so they override body/font inheritance without needing !important. */
+    .header_default i,
+    .header_default .fa,
+    .header_default .fas,
+    .header_default .fab,
+    .header_default .far,
+    .header_default .fal,
+    .header_default .fad {
+        font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands';
+    }
+
+    /* Linearicons used in the header (hamburger). Scoped to header to avoid
+       global overrides and to remove the need for !important. */
+    .header_default .lnr,
+    .header_default [class^="lnr-"],
+    .header_default .lnr:before {
+        font-family: 'Linearicons-Free';
+    }
 </style>
 </head>
 
@@ -117,8 +140,7 @@
                     </a>
                 </div>
 
-                <div class="header-right"></div>
-
+                <div class="header-right">
 
                     <div class="site-navwrap">
                         <div class="navicons">

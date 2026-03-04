@@ -32,11 +32,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
-    <!-- Force Poppins site-wide and ensure Font Awesome icons use FA font -->
+    <!-- Fuente base + fuentes de icono (sin !important global) -->
     <style>
-        * { font-family: 'Poppins', sans-serif !important; }
-        i, .fa, .fas, .fab, .far, .fal, .fad {
-            font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+        html, body { font-family: 'Poppins', sans-serif; }
+
+        /* Font Awesome: scoped al header para no romper cascada global */
+        .header_default i,
+        .header_default .fa,
+        .header_default .fas,
+        .header_default .fab,
+        .header_default .far,
+        .header_default .fal,
+        .header_default .fad {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands';
+        }
+
+        /* Linearicons: icono hamburguesa */
+        .header_default .lnr,
+        .header_default [class^="lnr-"],
+        .header_default .lnr:before {
+            font-family: 'Linearicons-Free';
         }
     </style>
     <link rel="stylesheet" href="fonts/icons-linear.css">
@@ -46,6 +61,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-responsive.css">
     <link rel="stylesheet" href="index-enhancements.css">
+    <link rel="stylesheet" href="footer.css">
 
     <!-- Preload hero -->
     <link rel="preload" as="image" href="images/maquinaria.jpg" />
@@ -992,20 +1008,20 @@
     }
 
     header nav.headermenu ul li a {
-        color: #1a1a1a !important;
-        font-family: 'Poppins', sans-serif !important;
-        font-size: 0.9rem !important;
-        font-weight: 500 !important;
-        padding: 0.4rem 0.75rem !important;
-        border-radius: 6px !important;
-        transition: color 0.2s ease, background 0.2s ease !important;
-        text-decoration: none !important;
+        color: #1a1a1a;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.4rem 0.75rem;
+        border-radius: 6px;
+        transition: color 0.2s ease, background 0.2s ease;
+        text-decoration: none;
     }
 
     header nav.headermenu ul li a:hover,
     header nav.headermenu ul li.active a {
-        color: #e8001d !important;
-        background: rgba(232, 0, 29, 0.06) !important;
+        color: #e8001d;
+        background: rgba(232, 0, 29, 0.06);
     }
 
     header .contact-info {
