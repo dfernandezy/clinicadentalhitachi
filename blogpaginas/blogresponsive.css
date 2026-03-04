@@ -29,8 +29,6 @@
         top: 0;
     }
 
-    .site-branding a.logo {}
-
     .site-branding a.logo img {
         max-width: 120px;
         height: auto;
@@ -120,6 +118,13 @@
         font-size: 16px;
         padding: 0 30px;
         color: #fff !important;
+    }
+
+    nav.headermenu ul li.active a {
+        background: transparent !important;
+        color: #ff0000 !important;
+        border-bottom: 2px solid #ff0000;
+        border-radius: 0;
     }
 
     .contact-info {
