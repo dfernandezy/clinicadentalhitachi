@@ -298,7 +298,7 @@ header.fixed .contact-info a {
     color: #000;
 }
 
-/* -- HEADER CSS ENDS -- */
+/* -- HEADER CSS ENDS --
 
 
 
@@ -309,7 +309,7 @@ header.fixed .contact-info a {
     float: left;
     width: 100%;
     margin: 0 0 0 0;
-    padding: 300px 0 220px 0;
+    padding: 160px 0 120px 0;
     background: url(../images/dentist.webp) no-repeat center center;
     background-attachment: fixed;
     /* Parallax effect */
@@ -432,6 +432,9 @@ header.fixed .contact-info a {
     width: 100%;
     margin: 0 0 0 0;
     padding: 80px 0;
+    position: relative;
+    z-index: 1;
+    background: #fff;
 }
 
 .about .contentinline {
@@ -668,6 +671,8 @@ header.fixed .contact-info a {
     margin: 0 0 0 0;
     padding: 100px 0 50px 0;
     position: relative;
+    z-index: 1;
+    background: #fff;
 }
 
 .foodmenu:before {
@@ -984,25 +989,16 @@ footer {
     /* Iconos un poco más grandes */
 }
 
+/* Banner más alto en desktop */
+.banner {
+    min-height: 600px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 768px) {
+    .banner {
+        min-height: 400px;
+    }
+}
 
 /* Footer Styles */
 /* Footer Styles */
@@ -1210,6 +1206,8 @@ footer {
     float: left;
     width: 100%;
     padding: 80px 0;
+    position: relative;
+    z-index: 1;
     background: #f9f9f9;
 }
 
