@@ -796,3 +796,18 @@ html {
 	background: #ff0000;
 	display: none;
 }
+
+/* Contact section grid — index.html */
+.contact-grid-index {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .contact-grid-index {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}

@@ -124,6 +124,8 @@
         .contacto-info-container {
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
         }
         .contacto-grid {
             display: grid;
@@ -317,8 +319,8 @@
             .contacto-hero h1 { font-size: 3.2rem; letter-spacing: -1px; }
             .contacto-hero p { font-size: 1.2rem; }
             .contacto-grid { grid-template-columns: 1fr; gap: 35px; }
-            .form-map-section { grid-template-columns: 1fr; gap: 50px; }
-            .map-container { min-height: 450px; }
+            .form-map-section { grid-template-columns: 1fr; gap: 30px; width: 100%; }
+            .map-container { min-height: 350px; }
         }
         @media (max-width: 576px) {
             .contacto-hero { padding: 180px 20px 80px; }
@@ -330,6 +332,9 @@
             .form-container { padding: 40px 25px; }
             .form-container h2 { font-size: 2rem; }
             .btn-submit { padding: 18px; font-size: 1.05rem; }
+            .form-map-section { gap: 24px; padding: 0; }
+            .map-container { min-height: 280px; width: 100%; }
+            .map-container iframe { width: 100%; }
         }
     </style>
 </head>
