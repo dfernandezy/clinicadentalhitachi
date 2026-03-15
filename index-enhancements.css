@@ -811,3 +811,229 @@ html {
         gap: 30px;
     }
 }
+
+/* =============================================
+   REVIEWS CAROUSEL INFINITO
+   ============================================= */
+.reviews {
+    padding: 80px 0;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+
+.reviews .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reviews h3 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #ff0000;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.reviews-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+/* Badge Google */
+.reviews-google-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.reviews-google-badge a {
+    color: #4285F4;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.reviews-google-badge a:hover {
+    opacity: 0.75;
+}
+
+/* Wrapper con fade en los bordes */
+.reviews-track-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.reviews-track-wrapper::before,
+.reviews-track-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.reviews-track-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #f9f9f9, transparent);
+}
+
+.reviews-track-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #f9f9f9, transparent);
+}
+
+/* Track animado */
+.reviews-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollReviews 50s linear infinite;
+}
+
+.reviews-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollReviews {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Tarjeta individual */
+.review-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    width: 300px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+.review-card:hover {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Avatar con inicial (reemplaza a la imagen) */
+.review-avatar-letter {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.review-info {
+    flex: 1;
+}
+
+.review-info h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 2px 0;
+}
+
+.review-date {
+    font-size: 0.75rem;
+    color: #aaa;
+    font-family: 'Poppins', sans-serif;
+}
+
+.google-icon {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.review-stars {
+    color: #FBBC05;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.83rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* CTA debajo del carrusel */
+.reviews-cta {
+    text-align: center;
+    margin-top: 36px;
+}
+
+.btn-google-reviews {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    background: #fff;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.btn-google-reviews:hover {
+    border-color: #4285F4;
+    color: #4285F4;
+    box-shadow: 0 4px 16px rgba(66,133,244,0.15);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        width: 260px;
+        padding: 18px;
+    }
+
+    .reviews-track-wrapper::before,
+    .reviews-track-wrapper::after {
+        width: 40px;
+    }
+}
