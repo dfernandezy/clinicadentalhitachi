@@ -861,10 +861,7 @@
     }
 
     .scroll-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
+        display: none !important;
     }
 }
 

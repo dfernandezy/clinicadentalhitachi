@@ -1306,11 +1306,7 @@ header.fixed .contact-info a {
 
 @media (max-width: 768px) {
 	.scroll-to-top {
-		bottom: 20px;
-		right: 20px;
-		width: 45px;
-		height: 45px;
-		font-size: 18px;
+		display: none !important;
 	}
 }
 /* ======================================== 
