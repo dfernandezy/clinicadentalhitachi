@@ -57,7 +57,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        as="style">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
@@ -82,99 +84,101 @@
     <script defer src="js/jquery.js"></script>
     <script defer src="js/scripts.js"></script>
     <script defer src="js/menuscript.js"></script>
-    
+
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <style>
-    /* Don't use the universal selector with !important — it breaks icon fonts.
+        /* Don't use the universal selector with !important — it breaks icon fonts.
        Use explicit rules instead so icon font-families render correctly. */
-    html, body {
-        font-family: 'Poppins', sans-serif;
-    }
+        html,
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
 
-    /* Prefer specificity over !important: scope icon-font rules to the header
+        /* Prefer specificity over !important: scope icon-font rules to the header
        so they override body/font inheritance without needing !important. */
-    .header_default i,
-    .header_default .fa,
-    .header_default .fas,
-    .header_default .fab,
-    .header_default .far,
-    .header_default .fal,
-    .header_default .fad {
-        font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands';
-    }
+        .header_default i,
+        .header_default .fa,
+        .header_default .fas,
+        .header_default .fab,
+        .header_default .far,
+        .header_default .fal,
+        .header_default .fad {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands';
+        }
 
-    /* Linearicons used in the header (hamburger). Scoped to header to avoid
+        /* Linearicons used in the header (hamburger). Scoped to header to avoid
        global overrides and to remove the need for !important. */
-    .header_default .lnr,
-    .header_default [class^="lnr-"],
-    .header_default .lnr:before {
-        font-family: 'Linearicons-Free';
-    }
+        .header_default .lnr,
+        .header_default [class^="lnr-"],
+        .header_default .lnr:before {
+            font-family: 'Linearicons-Free';
+        }
 
-    /* ── SITE BRANDING: logo icono + nombre ── */
-    .site-branding {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
+        /* ── SITE BRANDING: logo icono + nombre ── */
+        .site-branding {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
 
-    .site-branding a.logo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-        float: none;
-    }
-
-    .site-branding a.logo img {
-        float: none;
-        width: 55px;
-        max-width: 55px;
-        height: auto;
-        flex-shrink: 0;
-    }
-
-    .logo-name {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.3;
-    }
-
-    .logo-name-line1,
-    .logo-name-line2 {
-        font-family: Georgia, 'Times New Roman', serif;
-        font-style: italic;
-        font-weight: 700;
-        font-size: 1rem;
-        color: #cc0000;
-        letter-spacing: 0.1px;
-        white-space: nowrap;
-        text-shadow: 0 0 10px rgba(255,255,255,0.7);
-    }
-
-    header.fixed .logo-name-line1,
-    header.fixed .logo-name-line2 {
-        text-shadow: none;
-    }
-
-    /* Mobile (≤1200px) */
-    @media (max-width: 1200px) {
-        .logo-name-line1,
-        .logo-name-line2 {
-            font-size: 1rem;
-            text-shadow: none;
+        .site-branding a.logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            float: none;
         }
 
         .site-branding a.logo img {
-            width: 46px;
-            max-width: 46px;
+            float: none;
+            width: 55px;
+            max-width: 55px;
+            height: auto;
+            flex-shrink: 0;
         }
-    }
-</style>
+
+        .logo-name {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .logo-name-line1,
+        .logo-name-line2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #cc0000;
+            letter-spacing: 0.1px;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        header.fixed .logo-name-line1,
+        header.fixed .logo-name-line2 {
+            text-shadow: none;
+        }
+
+        /* Mobile (≤1200px) */
+        @media (max-width: 1200px) {
+
+            .logo-name-line1,
+            .logo-name-line2 {
+                font-size: 1rem;
+                text-shadow: none;
+            }
+
+            .site-branding a.logo img {
+                width: 46px;
+                max-width: 46px;
+            }
+        }
+    </style>
 </head>
 
 
@@ -244,10 +248,10 @@
                             <i class="fa-solid fa-phone-volume"></i>
 
                         </a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ver ubicación en Google Maps"><i
-                                class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Visitar página de Facebook"><i
-                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"
+                            aria-label="Ver ubicación en Google Maps"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"
+                            aria-label="Visitar página de Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
 
@@ -275,14 +279,16 @@
         <div class="container">
             <div class="bannercontent">
                 <div class="text full">
-                    <h1 style="color: white; font-family: 'Poppins', sans-serif; font-size: 2rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">Clínica Dental
+                    <h1
+                        style="color: white; font-family: 'Poppins', sans-serif; font-size: 2rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">
+                        Clínica Dental
                         Dra. Hitachi A.</h1>
                     <h2 style="text-shadow: 2px 2px 6px rgba(0,0,0,0.3);">Cuidamos tu sonrisa</h2>
                     <p style="text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">Tecnología avanzada para tu mejor sonrisa.</p>
                 </div>
             </div>
             <div class="horario-container">
-                <p class="horario" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
+                <p class="horario">
                     <i class="fa-regular fa-clock"></i>
                     Lunes - Viernes: 9:30-13:30 / 16:00-20:00
                     <i class="fa-regular fa-clock"></i>
@@ -293,7 +299,7 @@
     <!-- BANNER -->
 
 
-    
+
     <section class="contentblock about" id="about">
         <div class="container">
             <div class="contentinline">
@@ -322,14 +328,16 @@
                     <div class="swiper mySwiper" data-animate="fadeLeft">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="images/instalación1.webp" alt="Recepción - Centro Dental Hitachi" loading="eager" />
+                                <img src="images/instalación1.webp" alt="Recepción - Centro Dental Hitachi"
+                                    loading="eager" />
                                 <div class="swiper-text">
                                     <h3>Centro Dental Hitachi</h3>
                                     <p>L'Hospitalet de Llobregat, Barcelona</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="images/doctorahitachi.jpg" alt="Dra. Vivian Hitachi Antelo - Especialista en Cirugía" loading="lazy" />
+                                <img src="images/doctorahitachi.jpg"
+                                    alt="Dra. Vivian Hitachi Antelo - Especialista en Cirugía" loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Vivian Hitachi Antelo</h3>
                                     <p>Especialista en Cirugía</p>
@@ -342,10 +350,11 @@
                                     <p>Auxiliar</p>
                                 </div>
                             </div>
-                            
-                            
+
+
                             <div class="swiper-slide">
-                                <img src="images/dentista3.webp" alt="Dra. Ana Molina G. - Generalista" loading="lazy" />
+                                <img src="images/dentista3.webp" alt="Dra. Ana Molina G. - Generalista"
+                                    loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Ana Molina G.</h3>
                                     <p>Generalista</p>
@@ -353,7 +362,8 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R. - Ortodoncista" loading="lazy" />
+                                <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R. - Ortodoncista"
+                                    loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Dra. Marta Luque R.</h3>
                                     <p>Ortodoncista</p>
@@ -361,7 +371,8 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentista1.webp" alt="Kathy Alonso A. - Higienista Auxiliar" loading="lazy" />
+                                <img src="images/dentista1.webp" alt="Kathy Alonso A. - Higienista Auxiliar"
+                                    loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Kathy Alonso A.</h3>
                                     <p>Higienista Auxiliar</p>
@@ -369,7 +380,8 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="images/dentista5.webp" alt="Herman Menacho L. - Administrador Recepcionista" loading="lazy" />
+                                <img src="images/dentista5.webp" alt="Herman Menacho L. - Administrador Recepcionista"
+                                    loading="lazy" />
                                 <div class="swiper-text">
                                     <h3>Herman Menacho L.</h3>
                                     <p>Adm. Recepcionista</p>
@@ -434,7 +446,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="installations-cta" data-animate="fadeUp">
                 <a href="instalaciones.html" class="btn-main-large">
                     Ver todas las instalaciones <i class="fas fa-arrow-right"></i>
@@ -451,7 +463,8 @@
 
             <div class="menuitems_wrap">
                 <div class="item" data-animate="scaleIn" data-delay="0.1">
-                    <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza dental profesional Barcelona" loading="lazy">
+                    <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza dental profesional Barcelona"
+                        loading="lazy">
                     <h6>Odontología General</h6>
                     <h5>Limpieza Dental</h5>
                     <p>Limpieza profesional para mantener tu salud bucal</p>
@@ -460,7 +473,8 @@
 
 
                 <div class="item" data-animate="scaleIn" data-delay="0.2">
-                    <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Blanqueamiento dental Barcelona" loading="lazy">
+                    <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Blanqueamiento dental Barcelona"
+                        loading="lazy">
                     <h6>Estética Dental</h6>
                     <h5>Blanqueamiento</h5>
                     <p>Mejora el aspecto de tu sonrisa</p>
@@ -481,7 +495,8 @@
                 </div>
 
                 <div class="item" data-animate="scaleIn" data-delay="0.2">
-                    <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia brackets e Invisalign Barcelona" loading="lazy">
+                    <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia brackets e Invisalign Barcelona"
+                        loading="lazy">
                     <h6>Ortodoncia</h6>
                     <h5>Brackets e Invisalign</h5>
                     <p>Corrección dental con diferentes opciones de tratamiento</p>
@@ -494,7 +509,7 @@
                     <p>Solución rápida para emergencias dentales</p>
                 </div>
             </div>
-            
+
             <div class="services-cta" data-animate="fadeUp">
                 <a href="servicios.html" class="btn-main-large">
                     Ver todos los servicios <i class="fas fa-arrow-right"></i>
@@ -512,260 +527,1218 @@
             <!-- Badge Google -->
             <div class="reviews-google-badge" data-animate="fadeUp" data-delay="0.2">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    <path
+                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                        fill="#4285F4" />
+                    <path
+                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                        fill="#34A853" />
+                    <path
+                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                        fill="#FBBC05" />
+                    <path
+                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                        fill="#EA4335" />
                 </svg>
                 <span>4.9 ★ · Más de 80 reseñas en Google</span>
-                <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener noreferrer">Ver todas →</a>
+                <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener noreferrer">Ver todas
+                    →</a>
             </div>
 
             <!-- Carrusel infinito -->
             <div class="reviews-track-wrapper">
                 <div class="reviews-track">
 
+                    <!-- Reseñas reales de Google Maps -->
+
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#4285F4">T</div>
-                            <div class="review-info"><h4>Tania Ramos</h4><div class="review-date">Sep 2024</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#4285F4">M</div>
+                            <div class="review-info">
+                                <h4>Maria Urbina</h4>
+                                <div class="review-date">Mar 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Excelente centro, la atención, el personal es súper amable y atento, todas sus prácticas 100% profesionales, y el ambiente muy tranquilo, recomendadisimos!</p>
+                        <p class="review-text">Mi experiencia fue muy positiva, no tengo ninguna queja personal muy
+                            amable y profesional, instalaciones muy limpias gracias por su atención</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#34A853">Y</div>
-                            <div class="review-info"><h4>Yamileth Ventura</h4><div class="review-date">Oct 2024</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#34A853">C</div>
+                            <div class="review-info">
+                                <h4>Cristina Cruz Martinez</h4>
+                                <div class="review-date">Feb 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Me he hecho unos implantes, y son muy profesionales con lo que hacen, encantada con su trabajo, la atención muy buena, los recomiendo son los mejores 👍</p>
+                        <p class="review-text">Excelente el trato recibido tanto por el personal de la clínica como por
+                            parte de la Dra. Hitachi. Buenos profesionales.</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#EA4335">E</div>
-                            <div class="review-info"><h4>Eli Granados</h4><div class="review-date">Dic 2024</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#EA4335">L</div>
+                            <div class="review-info">
+                                <h4>LUIS PALACIOS</h4>
+                                <div class="review-date">Feb 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Solo tengo palabras de agradecimiento para el gran equipo. Empatía desde el minuto uno, grandes profesionales. Me han hecho un tratamiento de implantes y todo genial. Me han devuelto la sonrisa!! ❤️</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#FBBC05">M</div>
-                            <div class="review-info"><h4>María José López</h4><div class="review-date">Ene 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Llevaba años con miedo al dentista y aquí me lo han quitado del todo. El trato es excepcional, explican todo paso a paso y no sientes nada. Totalmente recomendable.</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#4285F4">C</div>
-                            <div class="review-info"><h4>Carlos Mendoza</h4><div class="review-date">Feb 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Me hicieron una endodoncia sin ningún dolor. La doctora Hitachi es muy profesional y el equipo muy amable. Precios muy razonables para la calidad del servicio.</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#34A853">L</div>
-                            <div class="review-info"><h4>Laura Sánchez</h4><div class="review-date">Mar 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Llevo toda la familia aquí desde hace años. La ortodoncia de mi hija ha quedado perfecta y mi marido se ha puesto implantes. Siempre un trato cercano y muy profesional.</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#EA4335">R</div>
-                            <div class="review-info"><h4>Roberto Paz</h4><div class="review-date">Abr 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Fui por urgencia con un dolor horrible y me atendieron el mismo día. Rápidos, eficientes y muy amables. La clínica está muy bien equipada. Volveré sin dudarlo.</p>
+                        <p class="review-text">Excelente atencion muy profesional en todo</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
                             <div class="review-avatar-letter" style="background:#FBBC05">A</div>
-                            <div class="review-info"><h4>Ana Belén Torres</h4><div class="review-date">May 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-info">
+                                <h4>adolfo maunagoitia</h4>
+                                <div class="review-date">Ene 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">El blanqueamiento dental ha quedado espectacular. Me explicaron todo el proceso, no tuve sensibilidad y el resultado superó mis expectativas. 100% recomendable.</p>
+                        <p class="review-text">Un gran equipo y magnífica atención en todo momento.</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#4285F4">J</div>
-                            <div class="review-info"><h4>Jordi Puig</h4><div class="review-date">Jun 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#4285F4">M</div>
+                            <div class="review-info">
+                                <h4>Maribel Sandres</h4>
+                                <div class="review-date">Ene 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Primera visita y ya estoy convencido. Instalaciones muy modernas, personal muy profesional. Me hicieron una revisión completa con radiografías digitales. Muy satisfecho.</p>
+                        <p class="review-text">Muy buen equipo amables precios a alcance de nuestros bolsillos los
+                            recomiendo</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#34A853">S</div>
-                            <div class="review-info"><h4>Sofía Ramírez</h4><div class="review-date">Jul 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#34A853">B</div>
+                            <div class="review-info">
+                                <h4>Beatriz Aguilar</h4>
+                                <div class="review-date">Dic 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Traigo a mis hijos desde pequeños. Son muy pacientes con los niños, los hacen sentir seguros. El mejor dentista del barrio sin duda.</p>
+                        <p class="review-text">Atención personalizada y muy atentos todo el procedimiento impecable me
+                            agrado mucho que me atendieran y muy recomendable</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#EA4335">I</div>
+                            <div class="review-info">
+                                <h4>Iam</h4>
+                                <div class="review-date">Nov 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Super recomendadísimo, siempre lo recomiendo porque es la única clínica
+                            en Barcelona en la que he quedado satisfecha.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#FBBC05">M</div>
+                            <div class="review-info">
+                                <h4>Miriam Luisa</h4>
+                                <div class="review-date">Nov 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Un equipo muy profesional, y la doctora tiene unas manos de santo, mi
+                            experiencia es y ha sido excelente</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#4285F4">D</div>
+                            <div class="review-info">
+                                <h4>Dolly Neira</h4>
+                                <div class="review-date">Oct 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Recomiendo mucho este centro odontológico, personal capacitado
+                            profesionalmente, tienen un excelente servicio.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#34A853">J</div>
+                            <div class="review-info">
+                                <h4>janina soto castro</h4>
+                                <div class="review-date">Oct 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Mi experiencia ha sido genial. Desde el principio hasta el final de mi
+                            tratamiento. La doctora tiene unas manos de oro.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#EA4335">F</div>
+                            <div class="review-info">
+                                <h4>Fatima Campos</h4>
+                                <div class="review-date">Sep 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Satisfecha con el excelente trabajo 👍</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#FBBC05">H</div>
+                            <div class="review-info">
+                                <h4>Hugo.F. S.J</h4>
+                                <div class="review-date">Sep 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Excelentes profesionales. Los recomiendo.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#4285F4">C</div>
+                            <div class="review-info">
+                                <h4>Carmen Arnez</h4>
+                                <div class="review-date">Ago 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Todas las veces que he ido, excelente atención y sobretodo honestidad!!!
+                            Gracias por la gran profesionalidad.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#34A853">C</div>
+                            <div class="review-info">
+                                <h4>Cristina Aynes Lopez</h4>
+                                <div class="review-date">Ago 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Excelente atención y trato. Ya llevo varios años, y espero no tener que
+                            buscar otro centro. Todo excelente, tanto en atención como en tratamientos.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#EA4335">E</div>
+                            <div class="review-info">
+                                <h4>Eduard Ulises Quiñonez</h4>
+                                <div class="review-date">Ago 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Es un sitio excelente, estoy muy contento con el trato que le han dado a
+                            mi caso y el trato con los clientes es maravilloso 👏😁 lo recomiendo.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#FBBC05">N</div>
+                            <div class="review-info">
+                                <h4>Natalia Lozada</h4>
+                                <div class="review-date">May 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Es una clínica que tiene unos profesionales excelentes, sobre todo una
+                            amabilidad con los pacientes que se merece un 10 👏👏</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#4285F4">E</div>
+                            <div class="review-info">
+                                <h4>Eli Granados</h4>
+                                <div class="review-date">Dic 2024</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Solo tengo palabras de agradecimiento para el gran equipo. Empatía desde
+                            el minuto uno, grandes profesionales. Me han devuelto la sonrisa!! ❤️</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#34A853">Y</div>
+                            <div class="review-info">
+                                <h4>Yamileth Ventura</h4>
+                                <div class="review-date">Sept 2024</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Me e echo unos implantes, y son muy profesionales con lo que hacen,
+                            encantada con su trabajo, la atención muy buena, los recomiendo son los mejores 👍</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#EA4335">T</div>
+                            <div class="review-info">
+                                <h4>tania ramos</h4>
+                                <div class="review-date">Ene 2024</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Excelente centro, la atención, el personal es súper amable y atento,
+                            todas sus prácticas 100% profesionales, y el ambiente muy tranquilo, recomendadisimos!</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#FBBC05">I</div>
+                            <div class="review-info">
+                                <h4>ines olivan</h4>
+                                <div class="review-date">Jun 2023</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Sois maravillosos, la empatía os hace grandes, mil gracias por la
+                            atención recibida, os recomiendo 100x100 ♥️🌹😘</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#4285F4">R</div>
+                            <div class="review-info">
+                                <h4>Rudy Saucedo</h4>
+                                <div class="review-date">Jun 2022</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Excelente, muy buenos profesionales y los precios maravillosos. La
+                            atención es buenísima. 100% recomendable</p>
                     </div>
 
                     <!-- Copia duplicada para bucle infinito -->
+
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#4285F4">T</div>
-                            <div class="review-info"><h4>Tania Ramos</h4><div class="review-date">Sep 2024</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#4285F4">M</div>
+                            <div class="review-info">
+                                <h4>Maria Urbina</h4>
+                                <div class="review-date">Mar 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Excelente centro, la atención, el personal es súper amable y atento, todas sus prácticas 100% profesionales, y el ambiente muy tranquilo, recomendadisimos!</p>
+                        <p class="review-text">Mi experiencia fue muy positiva, no tengo ninguna queja personal muy
+                            amable y profesional, instalaciones muy limpias gracias por su atención</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#34A853">Y</div>
-                            <div class="review-info"><h4>Yamileth Ventura</h4><div class="review-date">Oct 2024</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#34A853">C</div>
+                            <div class="review-info">
+                                <h4>Cristina Cruz Martinez</h4>
+                                <div class="review-date">Feb 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Me he hecho unos implantes, y son muy profesionales con lo que hacen, encantada con su trabajo, la atención muy buena, los recomiendo son los mejores 👍</p>
+                        <p class="review-text">Excelente el trato recibido tanto por el personal de la clínica como por
+                            parte de la Dra. Hitachi. Buenos profesionales.</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#EA4335">E</div>
-                            <div class="review-info"><h4>Eli Granados</h4><div class="review-date">Dic 2024</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#EA4335">L</div>
+                            <div class="review-info">
+                                <h4>LUIS PALACIOS</h4>
+                                <div class="review-date">Feb 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Solo tengo palabras de agradecimiento para el gran equipo. Empatía desde el minuto uno, grandes profesionales. Me han devuelto la sonrisa!! ❤️</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#FBBC05">M</div>
-                            <div class="review-info"><h4>María José López</h4><div class="review-date">Ene 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Llevaba años con miedo al dentista y aquí me lo han quitado del todo. El trato es excepcional, explican todo paso a paso. Totalmente recomendable.</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#4285F4">C</div>
-                            <div class="review-info"><h4>Carlos Mendoza</h4><div class="review-date">Feb 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Me hicieron una endodoncia sin ningún dolor. La doctora Hitachi es muy profesional y el equipo muy amable. Precios muy razonables para la calidad del servicio.</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#34A853">L</div>
-                            <div class="review-info"><h4>Laura Sánchez</h4><div class="review-date">Mar 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Llevo toda la familia aquí. La ortodoncia de mi hija ha quedado perfecta y mi marido se ha puesto implantes. Siempre un trato cercano y muy profesional.</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#EA4335">R</div>
-                            <div class="review-info"><h4>Roberto Paz</h4><div class="review-date">Abr 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Fui por urgencia con un dolor horrible y me atendieron el mismo día. Rápidos, eficientes y muy amables. La clínica está muy bien equipada. Volveré sin dudarlo.</p>
+                        <p class="review-text">Excelente atencion muy profesional en todo</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
                             <div class="review-avatar-letter" style="background:#FBBC05">A</div>
-                            <div class="review-info"><h4>Ana Belén Torres</h4><div class="review-date">May 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-info">
+                                <h4>adolfo maunagoitia</h4>
+                                <div class="review-date">Ene 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">El blanqueamiento dental ha quedado espectacular. No tuve sensibilidad y el resultado superó mis expectativas. 100% recomendable.</p>
+                        <p class="review-text">Un gran equipo y magnífica atención en todo momento.</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#4285F4">J</div>
-                            <div class="review-info"><h4>Jordi Puig</h4><div class="review-date">Jun 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#4285F4">M</div>
+                            <div class="review-info">
+                                <h4>Maribel Sandres</h4>
+                                <div class="review-date">Ene 2026</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Primera visita y ya estoy convencido. Instalaciones muy modernas, personal muy profesional. Me hicieron una revisión completa con radiografías digitales. Muy satisfecho.</p>
+                        <p class="review-text">Muy buen equipo amables precios a alcance de nuestros bolsillos los
+                            recomiendo</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-header">
-                            <div class="review-avatar-letter" style="background:#34A853">S</div>
-                            <div class="review-info"><h4>Sofía Ramírez</h4><div class="review-date">Jul 2025</div></div>
-                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            <div class="review-avatar-letter" style="background:#34A853">B</div>
+                            <div class="review-info">
+                                <h4>Beatriz Aguilar</h4>
+                                <div class="review-date">Dic 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">Traigo a mis hijos desde pequeños. Son muy pacientes con los niños, los hacen sentir seguros. El mejor dentista del barrio sin duda.</p>
+                        <p class="review-text">Atención personalizada y muy atentos todo el procedimiento impecable me
+                            agrado mucho que me atendieran y muy recomendable</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#EA4335">I</div>
+                            <div class="review-info">
+                                <h4>Iam</h4>
+                                <div class="review-date">Nov 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Super recomendadísimo, siempre lo recomiendo porque es la única clínica
+                            en Barcelona en la que he quedado satisfecha.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#FBBC05">M</div>
+                            <div class="review-info">
+                                <h4>Miriam Luisa</h4>
+                                <div class="review-date">Nov 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Un equipo muy profesional, y la doctora tiene unas manos de santo, mi
+                            experiencia es y ha sido excelente</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#4285F4">D</div>
+                            <div class="review-info">
+                                <h4>Dolly Neira</h4>
+                                <div class="review-date">Oct 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Recomiendo mucho este centro odontológico, personal capacitado
+                            profesionalmente, tienen un excelente servicio.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#34A853">J</div>
+                            <div class="review-info">
+                                <h4>janina soto castro</h4>
+                                <div class="review-date">Oct 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Mi experiencia ha sido genial. Desde el principio hasta el final de mi
+                            tratamiento. La doctora tiene unas manos de oro.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#EA4335">F</div>
+                            <div class="review-info">
+                                <h4>Fatima Campos</h4>
+                                <div class="review-date">Sep 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Satisfecha con el excelente trabajo 👍</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#FBBC05">H</div>
+                            <div class="review-info">
+                                <h4>Hugo.F. S.J</h4>
+                                <div class="review-date">Sep 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Excelentes profesionales. Los recomiendo.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#4285F4">C</div>
+                            <div class="review-info">
+                                <h4>Carmen Arnez</h4>
+                                <div class="review-date">Ago 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Todas las veces que he ido, excelente atención y sobretodo honestidad!!!
+                            Gracias por la gran profesionalidad.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#34A853">C</div>
+                            <div class="review-info">
+                                <h4>Cristina Aynes Lopez</h4>
+                                <div class="review-date">Ago 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Excelente atención y trato. Ya llevo varios años, y espero no tener que
+                            buscar otro centro. Todo excelente, tanto en atención como en tratamientos.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#EA4335">E</div>
+                            <div class="review-info">
+                                <h4>Eduard Ulises Quiñonez</h4>
+                                <div class="review-date">Ago 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Es un sitio excelente, estoy muy contento con el trato que le han dado a
+                            mi caso y el trato con los clientes es maravilloso 👏😁 lo recomiendo.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#FBBC05">N</div>
+                            <div class="review-info">
+                                <h4>Natalia Lozada</h4>
+                                <div class="review-date">May 2025</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Es una clínica que tiene unos profesionales excelentes, sobre todo una
+                            amabilidad con los pacientes que se merece un 10 👏👏</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#4285F4">E</div>
+                            <div class="review-info">
+                                <h4>Eli Granados</h4>
+                                <div class="review-date">Dic 2024</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Solo tengo palabras de agradecimiento para el gran equipo. Empatía desde
+                            el minuto uno, grandes profesionales. Me han devuelto la sonrisa!! ❤️</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#34A853">Y</div>
+                            <div class="review-info">
+                                <h4>Yamileth Ventura</h4>
+                                <div class="review-date">Sept 2024</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Me e echo unos implantes, y son muy profesionales con lo que hacen,
+                            encantada con su trabajo, la atención muy buena, los recomiendo son los mejores 👍</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#EA4335">T</div>
+                            <div class="review-info">
+                                <h4>tania ramos</h4>
+                                <div class="review-date">Ene 2024</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Excelente centro, la atención, el personal es súper amable y atento,
+                            todas sus prácticas 100% profesionales, y el ambiente muy tranquilo, recomendadisimos!</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#FBBC05">I</div>
+                            <div class="review-info">
+                                <h4>ines olivan</h4>
+                                <div class="review-date">Jun 2023</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Sois maravillosos, la empatía os hace grandes, mil gracias por la
+                            atención recibida, os recomiendo 100x100 ♥️🌹😘</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-letter" style="background:#4285F4">R</div>
+                            <div class="review-info">
+                                <h4>Rudy Saucedo</h4>
+                                <div class="review-date">Jun 2022</div>
+                            </div>
+                            <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Excelente, muy buenos profesionales y los precios maravillosos. La
+                            atención es buenísima. 100% recomendable</p>
                     </div>
 
                 </div><!-- /.reviews-track -->
             </div><!-- /.reviews-track-wrapper -->
 
             <div class="reviews-cta" data-animate="fadeUp">
-                <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener noreferrer" class="btn-google-reviews">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener noreferrer"
+                    class="btn-google-reviews">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
                     Ver todas las reseñas en Google
                 </a>
             </div>
         </div>
     </section>
-        <!-- Sección Financiamiento Clínica Dental Dra. Hitachi -->
-<section class="financiacion-section">
-  <div class="container">
-    <div class="financiacion-header">
-      <h2>Financia tu tratamiento dental</h2>
-      <p>
-        En <strong>Clínica Dental Dra. Hitachi</strong> pensamos en tu comodidad.  
-        Ahora puedes acceder a todos nuestros tratamientos dentales sin preocuparte por el pago inmediato.  
-        Trabajamos con financiación flexible adaptada a tus necesidades. ¡Sonríe hoy y págalo poco a poco!
-      </p>
-    </div>
-    <div class="financiacion-logos">
-      <img src="images/pepper-logo.png" alt="Pepper Money financiación">
-    </div>
-  </div>
-</section>
+    <!-- Sección Financiamiento Clínica Dental Dra. Hitachi -->
+    <section class="financiacion-section">
+        <div class="container">
+            <div class="financiacion-header">
+                <h2>Financia tu tratamiento dental</h2>
+                <p>
+                    En <strong>Clínica Dental Dra. Hitachi</strong> pensamos en tu comodidad.
+                    Ahora puedes acceder a todos nuestros tratamientos dentales sin preocuparte por el pago inmediato.
+                    Trabajamos con financiación flexible adaptada a tus necesidades. ¡Sonríe hoy y págalo poco a poco!
+                </p>
+            </div>
+            <div class="financiacion-logos">
+                <img src="images/pepper-logo.png" alt="Pepper Money financiación">
+            </div>
+        </div>
+    </section>
 
 
 
 
     <section id="contact" style="padding: 80px 20px; background: #f9f9f9;">
         <div style="max-width: 1100px; margin: 0 auto;">
-            <h3 style="text-align:center; font-family:'Poppins',sans-serif; color:#ff0000; font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Contacto</h3>
-            <h4 style="text-align:center; font-family:'Poppins',sans-serif; color:#1a1a1a; font-size:2rem; font-weight:800; letter-spacing:-0.5px; margin-bottom:48px;">¿Tienes alguna pregunta?</h4>
+            <h3
+                style="text-align:center; font-family:'Poppins',sans-serif; color:#ff0000; font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">
+                Contacto</h3>
+            <h4
+                style="text-align:center; font-family:'Poppins',sans-serif; color:#1a1a1a; font-size:2rem; font-weight:800; letter-spacing:-0.5px; margin-bottom:48px;">
+                ¿Tienes alguna pregunta?</h4>
 
             <div class="contact-grid-index">
                 <!-- FORMULARIO -->
-                <div style="background:white; border-radius:20px; padding:40px; box-shadow:0 6px 24px rgba(0,0,0,0.07); border:1px solid rgba(0,0,0,0.04);">
-                    <form id="contactform" action="https://formspree.io/f/xzzdlqja" method="POST" style="display:flex; flex-direction:column; gap:14px;">
+                <div
+                    style="background:white; border-radius:20px; padding:40px; box-shadow:0 6px 24px rgba(0,0,0,0.07); border:1px solid rgba(0,0,0,0.04);">
+                    <form id="contactform" action="https://formspree.io/f/xzzdlqja" method="POST"
+                        style="display:flex; flex-direction:column; gap:14px;">
                         <input type="text" name="name" placeholder="Nombre*" required
                             style="padding:12px 16px; border:2px solid #e8e8e8; border-radius:10px; font-family:'Poppins',sans-serif; font-size:0.95rem; background:#fafafa; outline:none; transition:border-color 0.2s;">
                         <input type="email" name="email" placeholder="Email*" required
@@ -773,9 +1746,14 @@
                         <textarea name="message" placeholder="Cuéntanos en qué podemos ayudarte..." required rows="5"
                             style="padding:12px 16px; border:2px solid #e8e8e8; border-radius:10px; font-family:'Poppins',sans-serif; font-size:0.95rem; background:#fafafa; resize:vertical; outline:none; line-height:1.5;"></textarea>
                         <div style="display:flex; align-items:flex-start; gap:10px;">
-                            <input type="checkbox" id="terms" name="terms" required style="margin-top:3px; accent-color:#ff0000; width:16px; height:16px; flex-shrink:0;">
-                            <label for="terms" style="font-size:0.82rem; color:#888; font-family:'Poppins',sans-serif; line-height:1.5;">
-                                Acepto la <a href="privacidad.html" target="_blank" style="color:#ff0000; font-weight:600;">Política de Privacidad</a> y los <a href="aviso-legal.html" target="_blank" style="color:#ff0000; font-weight:600;">Términos y Condiciones</a>
+                            <input type="checkbox" id="terms" name="terms" required
+                                style="margin-top:3px; accent-color:#ff0000; width:16px; height:16px; flex-shrink:0;">
+                            <label for="terms"
+                                style="font-size:0.82rem; color:#888; font-family:'Poppins',sans-serif; line-height:1.5;">
+                                Acepto la <a href="privacidad.html" target="_blank"
+                                    style="color:#ff0000; font-weight:600;">Política de Privacidad</a> y los <a
+                                    href="aviso-legal.html" target="_blank"
+                                    style="color:#ff0000; font-weight:600;">Términos y Condiciones</a>
                             </label>
                         </div>
                         <button type="submit"
@@ -807,24 +1785,45 @@
         <div class="container footer-inner">
             <div class="footer__brand">
                 <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
-                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42" loading="lazy" />
+                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
+                        loading="lazy" />
                 </a>
                 <p>Tu sonrisa, nuestra prioridad. Cuidando la salud bucal de Barcelona.</p>
                 <address class="footer__contact">
                     <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         622 819 008
                     </a>
                     <a href="tel:+34931479829" aria-label="Llamar al fijo de la clínica: 931 479 829">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         931 479 829
                     </a>
                     <a href="mailto:info@clinicahitachi.es" aria-label="Enviar email a info@clinicahitachi.es">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
                         info@clinicahitachi.es
                     </a>
                     <span>
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
                         Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
                     </span>
                     <span style="font-size:0.75rem; color:#aaa; margin-top:4px; display:block;">
@@ -857,8 +1856,14 @@
             <div class="footer__hours">
                 <h3>Horario</h3>
                 <dl>
-                    <div><dt>Lunes – Viernes</dt><dd>9:30 – 13:30 / 16:00 – 20:00</dd></div>
-                    <div><dt>Sábados y Domingos</dt><dd>Cerrado</dd></div>
+                    <div>
+                        <dt>Lunes – Viernes</dt>
+                        <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
+                    </div>
+                    <div>
+                        <dt>Sábados y Domingos</dt>
+                        <dd>Cerrado</dd>
+                    </div>
                 </dl>
             </div>
         </div>
@@ -872,11 +1877,8 @@
     <!-- FOOTER -->
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/34622819008?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20la%20cl%C3%ADnica" 
-       target="_blank" 
-       id="whatsappBtn"
-       class="whatsapp-float" 
-       aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/34622819008?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita%20en%20la%20cl%C3%ADnica"
+        target="_blank" id="whatsappBtn" class="whatsapp-float" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -893,7 +1895,7 @@
         // Inicializar el Swiper PERO sin autoplay
         var swiper = new Swiper(".mySwiper", {
             effect: "fadeIn",
-            
+
             // Autoplay DESACTIVADO al inicio
             autoplay: false,
 
@@ -927,7 +1929,7 @@
                         pauseOnMouseEnter: true
                     };
                     swiper.autoplay.start();
-                    
+
                     // Dejar de observar después de activarlo (solo se activa una vez)
                     swiperObserver.unobserve(entry.target);
                 }
@@ -993,7 +1995,7 @@
 
             let animationProps = {};
 
-            switch(animation) {
+            switch (animation) {
                 case 'fadeUp':
                     animationProps = { y: 60, opacity: 0 };
                     break;
@@ -1023,7 +2025,7 @@
 
         // Service cards hover effect
         document.querySelectorAll('.menuitems_wrap .item').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 gsap.to(this, {
                     y: -10,
                     duration: 0.3,
@@ -1036,7 +2038,7 @@
                 });
             });
 
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 gsap.to(this, {
                     y: 0,
                     duration: 0.3,
@@ -1052,7 +2054,7 @@
 
         // Reviews cards hover
         document.querySelectorAll('.review-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 gsap.to(this, {
                     y: -8,
                     boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
@@ -1061,7 +2063,7 @@
                 });
             });
 
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 gsap.to(this, {
                     y: 0,
                     boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
@@ -1073,7 +2075,7 @@
 
         // Installations grid items
         document.querySelectorAll('.installation-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
+            item.addEventListener('mouseenter', function () {
                 gsap.to(this.querySelector('img'), {
                     scale: 1.1,
                     duration: 0.4,
@@ -1081,7 +2083,7 @@
                 });
             });
 
-            item.addEventListener('mouseleave', function() {
+            item.addEventListener('mouseleave', function () {
                 gsap.to(this.querySelector('img'), {
                     scale: 1,
                     duration: 0.4,
@@ -1092,7 +2094,7 @@
 
         // Scroll to top button
         const scrollBtn = document.getElementById('scrollToTop');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
                 scrollBtn.classList.add('visible');
