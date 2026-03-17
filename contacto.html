@@ -4,18 +4,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="theme-color" content="#ff0000">
-    <title>Contacto | Clínica Dental Hitachi</title>
-    <meta name="description" content="Pide cita en nuestra clínica dental en Barcelona. Llámanos o rellena nuestro formulario de contacto.">
+    <title>Contacto | Clínica Dental Hitachi – Implantes, Estética y Prótesis en L'Hospitalet</title>
+    <meta name="description" content="Pide cita en Clínica Dental Hitachi, tu dentista en L'Hospitalet de Llobregat. Especialistas en implantes dentales, estética dental (carillas y blanqueamiento) y prótesis. Llámanos: 622 819 008.">
+    <meta name="keywords" content="clínica dental L'Hospitalet, dentista Barcelona, implantes dentales, carillas dentales, blanqueamiento dental, prótesis dental, Clínica Dental Hitachi">
     <link rel="canonical" href="https://clinicadentalhitachi.com/contacto.html">
     <link rel="icon" type="image/png" href="images/logo.webp">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://clinicadentalhitachi.com/contacto.html">
-    <meta property="og:title" content="Pide Cita | Clínica Dental Hitachi Barcelona">
-    <meta property="og:description" content="Pide cita en nuestra clínica dental en Barcelona. Llámanos o escríbenos.">
+    <meta property="og:title" content="Pide Cita | Clínica Dental Hitachi – Implantes y Estética en Barcelona">
+    <meta property="og:description" content="Contacta con Clínica Dental Hitachi en L'Hospitalet. Implantes, carillas, blanqueamiento y prótesis. Respuesta en menos de 24h.">
     <meta property="og:image" content="https://clinicadentalhitachi.com/images/recepcion.jpg">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:image" content="https://clinicadentalhitachi.com/images/recepcion.jpg">
+
+    <!-- Schema.org LocalBusiness + Dental -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Clínica Dental Dra. Hitachi",
+      "image": "https://clinicadentalhitachi.com/images/logo.webp",
+      "url": "https://clinicadentalhitachi.com",
+      "telephone": ["+34622819008", "+34931479829"],
+      "email": "info@clinicahitachi.es",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Rosa de Alejandría, 24, Local 3",
+        "addressLocality": "L'Hospitalet de Llobregat",
+        "addressRegion": "Barcelona",
+        "postalCode": "08906",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.3631594,
+        "longitude": 2.1180394
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:30",
+          "closes": "13:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "16:00",
+          "closes": "20:00"
+        }
+      ],
+      "medicalSpecialty": ["Implantology","CosmeticDentistry","Prosthodontics","Orthodontics"],
+      "sameAs": [
+        "https://www.facebook.com/ClinicadentalDraHitachiA"
+      ]
+    }
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW71SH6H7M"></script>
@@ -49,6 +96,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <style>
+        /* Texto SEO oculto visualmente pero legible para buscadores */
+        .seo-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -75,7 +135,7 @@
             padding: 200px 20px 100px;
             min-height: 550px;
             background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)), 
-                        url('images/recepcion.png') no-repeat center center;
+                        url('images/recepcionhitachi.jpg') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -117,6 +177,33 @@
             text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
             position: relative;
             z-index: 1;
+        }
+        /* Badges de servicios en el hero */
+        .hero-services-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-services-badges a {
+            background: rgba(255,255,255,0.18);
+            border: 1.5px solid rgba(255,255,255,0.55);
+            color: #fff;
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            backdrop-filter: blur(6px);
+            transition: background 0.25s, border-color 0.25s;
+        }
+        .hero-services-badges a:hover {
+            background: rgba(255,255,255,0.32);
+            border-color: #fff;
         }
 
         .contacto-info-section {
@@ -318,6 +405,52 @@
             filter: grayscale(0%) contrast(1.05);
         }
 
+        /* Bloque SEO servicios */
+        .seo-services-block {
+            background: #fff;
+            border-top: 1px solid #f0f0f0;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        .seo-services-block .seo-services-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .seo-services-block h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+        .seo-services-block p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        .seo-services-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .seo-services-links a {
+            display: inline-block;
+            padding: 10px 24px;
+            border: 2px solid #e8001d;
+            border-radius: 50px;
+            color: #e8001d;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.25s, color 0.25s;
+        }
+        .seo-services-links a:hover {
+            background: #e8001d;
+            color: #fff;
+        }
+
         @media (max-width: 992px) {
             .contacto-hero h1 { font-size: 3.2rem; letter-spacing: -1px; }
             .contacto-hero p { font-size: 1.2rem; }
@@ -343,13 +476,19 @@
 </head>
 
 <body>
+    <!-- Texto SEO oculto para buscadores: zona geográfica alternativa -->
+    <span class="seo-hidden" aria-hidden="true">
+        Clínica Dental cerca de Can Vidalet, L'Hospitalet de Llobregat. 
+        Implantes dentales, estética dental, carillas y prótesis en Barcelona.
+    </span>
+
     <header>
         <div class="container psr">
             <div class="header_default">
                 <div class="site-branding">
                     <a href="index.html" class="logo">
-                        <img src="images/logo.webp" alt="Logo" class="logo-1" width="70px">
-                        <img src="images/logo.webp" alt="Logo" class="logo-2" width="70px">
+                        <img src="images/logo.webp" alt="Logo Clínica Dental Hitachi L'Hospitalet" class="logo-1" width="70px">
+                        <img src="images/logo.webp" alt="Logo Clínica Dental Hitachi L'Hospitalet" class="logo-2" width="70px">
                     </a>
                 </div>
                 <div class="header-right">
@@ -376,19 +515,25 @@
                         </div>
                     </div>
                     <div class="contact-info">
-                        <a href="tel:+34622819008"><i class="fa-solid fa-phone-volume"></i></a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="tel:+34622819008" aria-label="Llamar a Clínica Dental Hitachi"><i class="fa-solid fa-phone-volume"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ver ubicación en Google Maps"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Facebook Clínica Dental Hitachi"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="contacto-hero">
+    <section class="contacto-hero" aria-label="Contacto con Clínica Dental Hitachi">
         <div class="hero-content">
-            <h1>Contacta con Nosotros</h1>
-            <p>Estamos aquí para ayudarte. Pide tu cita o resuelve tus dudas.</p>
+            <h1>Contacta con Clínica Dental Hitachi</h1>
+            <p>Especialistas en implantes dentales, estética dental y prótesis en L'Hospitalet de Llobregat, Barcelona.</p>
+            <!-- Badges de servicios con links a futuras landings -->
+            <div class="hero-services-badges" role="list">
+                <a href="implantes.html" role="listitem" title="Landing implantes dentales">🦷 Implantes Dentales</a>
+                <a href="estetica-dental.html" role="listitem" title="Landing estética dental">✨ Estética Dental</a>
+                <a href="protesis-dental.html" role="listitem" title="Landing prótesis dental">🔬 Prótesis Dental</a>
+            </div>
         </div>
     </section>
 
@@ -396,7 +541,7 @@
         <div class="contacto-info-container">
             <div class="contacto-grid">
                 <div class="contacto-card">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
                     <h3>Teléfono</h3>
                     <p><a href="tel:931479829">931 479 829</a></p>
                     <p><a href="tel:622819008">622 819 008</a></p>
@@ -404,15 +549,15 @@
                 </div>
 
                 <div class="contacto-card">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <h3>Dirección</h3>
                     <p>Calle Rosa de Alejandría Nº24</p>
-                    <p>Local 3, 08906</p>
-                    <p><a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank">Ver en Google Maps →</a></p>
+                    <p>Local 3, 08906 – L'Hospitalet de Llobregat</p>
+                    <p><a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener">Ver en Google Maps →</a></p>
                 </div>
 
                 <div class="contacto-card">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
                     <h3>Horario</h3>
                     <p><strong>Lunes - Viernes</strong></p>
                     <p>Mañanas: 9:30 - 13:30</p>
@@ -423,22 +568,33 @@
             <div class="form-map-section">
                 <div class="form-container">
                     <h2>Pide tu Cita</h2>
-                    <p class="form-subtitle">Rellena el formulario y te responderemos en menos de 24 horas</p>
-                    
+                    <p class="form-subtitle">Rellena el formulario y te responderemos en menos de 24 horas. Atendemos consultas sobre implantes, estética dental y prótesis.</p>
                     <form action="enviar.php" method="POST">
                         <div class="form-group">
                             <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required autocomplete="name">
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
                         </div>
 
                         <div class="form-group">
                             <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="600 123 456" required>
+                            <input type="tel" id="telefono" name="telefono" placeholder="600 123 456" required autocomplete="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="servicio">Servicio de interés</label>
+                            <select id="servicio" name="servicio" style="width:100%;padding:12px 18px;border:2px solid #e8e8e8;border-radius:10px;font-size:0.95rem;font-family:'Poppins',sans-serif;background:#fafafa;box-sizing:border-box;">
+                                <option value="">Selecciona un servicio...</option>
+                                <option value="implantes">Implantes Dentales</option>
+                                <option value="estetica">Estética Dental (Carillas / Blanqueamiento)</option>
+                                <option value="protesis">Prótesis Dental</option>
+                                <option value="ortodoncia">Ortodoncia</option>
+                                <option value="otro">Otro / Revisión general</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
@@ -454,7 +610,7 @@
                         </div>
 
                         <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i> Enviar mensaje
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar mensaje
                         </button>
                     </form>
                 </div>
@@ -462,6 +618,7 @@
                 <div class="map-container">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.0886626956396!2d2.1180394!3d41.3631594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4992c5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sCarrer%20de%20la%20Rosa%20d'Alexandria%2C%2024%2C%2008906%20L'Hospitalet%20de%20Llobregat%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1234567890123!5m2!1ses!2ses"
+                        title="Ubicación Clínica Dental Hitachi en L'Hospitalet de Llobregat"
                         allowfullscreen="" 
                         loading="lazy">
                     </iframe>
@@ -470,13 +627,32 @@
         </div>
     </section>
 
+    <!-- Bloque SEO servicios + links a landings -->
+    <section class="seo-services-block" aria-label="Nuestros servicios principales">
+        <div class="seo-services-inner">
+            <h2>Nuestros Tratamientos en L'Hospitalet de Llobregat</h2>
+            <p>
+                En <strong>Clínica Dental Hitachi</strong> somos especialistas en <strong>implantes dentales</strong>, 
+                <strong>estética dental</strong> (carillas de porcelana y blanqueamiento profesional) y 
+                <strong>prótesis dental</strong> en L'Hospitalet de Llobregat, a pocos minutos del centro de Barcelona. 
+                Más de 20 años cuidando la sonrisa de nuestros pacientes con tecnología TAC 3D y materiales de última generación.
+            </p>
+            <div class="seo-services-links">
+                <a href="implantes.html" title="Implantes dentales en L'Hospitalet">🦷 Implantes Dentales</a>
+                <a href="estetica-dental.html" title="Carillas y blanqueamiento dental Barcelona">✨ Estética Dental</a>
+                <a href="protesis-dental.html" title="Prótesis dental L'Hospitalet">🔬 Prótesis Dental</a>
+                <a href="servicios.html" title="Todos los servicios dentales">Ver todos los servicios →</a>
+            </div>
+        </div>
+    </section>
+
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-inner">
             <div class="footer__brand">
                 <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
-                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42" loading="lazy" />
+                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi – L'Hospitalet" width="140" height="42" loading="lazy" />
                 </a>
-                <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
+                <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal en L'Hospitalet de Llobregat, Barcelona.</p>
                 <address class="footer__contact">
                     <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
                         <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -502,10 +678,10 @@
             <nav class="footer__nav" aria-label="Navegación del pie de página">
                 <h3>Servicios</h3>
                 <ul role="list">
-                    <li><a href="servicios.html">Implantes</a></li>
+                    <li><a href="implantes.html">Implantes Dentales</a></li>
+                    <li><a href="estetica-dental.html">Estética Dental</a></li>
+                    <li><a href="protesis-dental.html">Prótesis Dental</a></li>
                     <li><a href="servicios.html">Ortodoncia</a></li>
-                    <li><a href="servicios.html">Estética dental</a></li>
-                    <li><a href="servicios.html">Endodoncia</a></li>
                     <li><a href="servicios.html">Periodoncia</a></li>
                     <li><a href="servicios.html">Blanqueamiento</a></li>
                 </ul>
@@ -537,7 +713,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp con Clínica Dental Hitachi">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
     <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
@@ -548,10 +724,12 @@
         gsap.utils.toArray('.contacto-card').forEach((card, i) => {
             gsap.from(card, { y: 40, opacity: 0, duration: 0.6, delay: i * 0.1, scrollTrigger: { trigger: card, start: 'top 85%' } });
         });
-        
         const scrollBtn = document.getElementById('scrollToTop');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        // Footer year
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

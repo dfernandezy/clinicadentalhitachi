@@ -983,6 +983,23 @@
         border-radius: 5px !important;
         border-bottom: none !important;
     }
+
+    /* Override padding-top for instalaciones.html */
+    @media(max-width:1200px) {
+        body {
+            padding-top: 0 !important;
+        }
+
+        /* Asegurar que el menú responsivo sea visible */
+        .sitenav nav.headermenu ul li a {
+            color: #fff !important;
+        }
+
+        .sitenav nav.headermenu ul li.active a {
+            color: #ff0000 !important;
+            background: transparent !important;
+        }
+    }
 </style>
 </head>
 
@@ -1092,14 +1109,14 @@
 
                 <div class="gallery__grid reveal-grid">
                     <figure class="gallery__item gallery-animate">
-                        <img src="./images/recepcion.jpg"
+                        <img src="./images/recepcionhitachi.jpg"
                             alt="Recepción de la Clínica Dental Dra. Hitachi, amplia y luminosa con mostrador de madera clara"
                             loading="lazy" width="600" height="450" />
                         <figcaption>Recepción</figcaption>
                     </figure>
 
                     <figure class="gallery__item gallery-animate">
-                        <img src="images/instalación2.webp"
+                        <img src="images/instalacion2.webp"
                             alt="Sala de espera dental equipada con sillones cómodos y revistas" loading="lazy"
                             width="600" height="450" />
                         <figcaption>Sala de Espera</figcaption>

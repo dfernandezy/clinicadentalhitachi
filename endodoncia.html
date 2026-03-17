@@ -1,30 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Endodoncia — Clínica Dental Dra. Hitachi</title>
-	<link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e8001d">
+    <title>Endodoncia — Clínica Dental Dra. Hitachi</title>
+    <meta name="description" content="Página en mantenimiento. Nuestros tratamientos de endodoncia estarán disponibles pronto en clinicadentalhitachi.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="maintenance.css" />
 </head>
 <body>
-	<header class="site-header">
-		<div class="container header-inner">
-			<a href="servicios.html" class="header-logo"><img src="images/logo.webp" alt="Logo" width="140" height="42"/></a>
-		</div>
-	</header>
+    <!-- Background elements -->
+    <div class="maintenance__bg"></div>
 
-	<main class="container section" style="padding-top:100px;">
-		<h1>Endodoncia</h1>
-		<p>Descripción breve sobre tratamientos endodónticos y sus beneficios.</p>
-		<p><a href="contacto.html">Pedir cita</a> · <a href="servicios.html">Volver a servicios</a></p>
-	</main>
+    <!-- Header -->
+    <header class="maintenance__header">
+        <div class="maintenance__header-inner">
+            <a href="index.html">
+                <img src="images/logo.webp" alt="Clínica Dental Dra. Hitachi" class="maintenance__logo">
+            </a>
+            <nav class="maintenance__header-nav">
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
 
-	<footer class="site-footer" style="background:var(--color-white);padding:40px 0;">
-		<div class="container">
-			<p>&copy; <span id="year"></span> Clínica Dental Dra. Hitachi.</p>
-		</div>
-	</footer>
+    <!-- Main content -->
+    <main class="maintenance__main">
+        <div class="maintenance__container">
+            <div class="maintenance__badge">
+                En mantenimiento
+            </div>
 
-	<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+            <div class="maintenance__icon">
+                🔍
+            </div>
+
+            <h1 class="maintenance__title">Endodoncia</h1>
+
+            <p class="maintenance__subtitle">Página en mantenimiento</p>
+
+            <p class="maintenance__text">
+                Estamos preparando información sobre nuestros tratamientos de endodoncia y el cuidado de conductos radiculares. 
+                Pronto podrás conocer cómo preservamos la salud de tus dientes.
+            </p>
+
+            <div class="maintenance__ctas">
+                <a href="servicios.html" class="maintenance__btn maintenance__btn--primary">
+                    <i class="fas fa-arrow-left"></i>
+                    Ver servicios
+                </a>
+                <a href="contacto.html" class="maintenance__btn maintenance__btn--outline">
+                    <i class="fas fa-phone-volume"></i>
+                    Pedir cita
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="maintenance__footer">
+        <p>&copy; <span id="year"></span> <a href="index.html">Clínica Dental Dra. Hitachi</a> · L'Hospitalet de Llobregat, Barcelona</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
