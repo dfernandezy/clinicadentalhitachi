@@ -2011,3 +2011,45 @@ footer.site-footer .footer-bottom .container {
 }
 
 footer.site-footer .footer-bottom p { font-size: .82rem; color: var(--color-muted); }
+
+.servicio-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.servicio-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.servicio-buttons a.btn-ver {
+    background-color: #ff0000;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.servicio-buttons a.btn-ver:hover {
+    background-color: #cc0000;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+.servicio-buttons a.btn-llamar {
+    background-color: #1a1a1a;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.servicio-buttons a.btn-llamar:hover {
+    background-color: #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}

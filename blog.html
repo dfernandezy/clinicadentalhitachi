@@ -302,6 +302,30 @@
             box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
         }
 
+        /* Evitar que sitenav se muestre siempre en móvil por el CSS global.
+           jQuery (scripts.js) lo controla con fadeIn/fadeOut (display inline). */
+        @media (max-width: 768px) {
+            .sitenav { display: none; }
+            /* X de cerrar menú: encima del overlay del menú */
+            .navicons a.navhide {
+                z-index: 1200 !important;
+                display: none;
+            }
+            /* Botón cerrar dentro del menú */
+            .blog-menu-close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                z-index: 1300;
+                background: none;
+                border: none;
+                color: #fff;
+                font-size: 2rem;
+                cursor: pointer;
+                line-height: 1;
+            }
+        }
+
         @media (max-width: 992px) {
             .blog-hero h1 {
                 font-size: 3.2rem;
@@ -359,6 +383,7 @@
                             <a href="javascript:void;" class="navhide"><span class="lnr lnr-cross"></span></a>
                         </div>
                         <div class="sitenav" id="sitenav">
+                            <button class="blog-menu-close" id="blogMenuClose" aria-label="Cerrar menú">&#10005;</button>
                             <div class="navwrap">
                                 <div class="navouter">
                                     <nav class="headermenu leftmenu" id="headnav" role="navigation">
@@ -415,6 +440,9 @@
                         </p>
                         <a href="blogpaginas/blog3.html" class="blog-link">
                             Leer más <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="servicio-estetica.html" class="blog-link" style="margin-top:8px; color:#333; font-size:0.85rem;">
+                            Ver servicio de Estética <i class="fas fa-tooth"></i>
                         </a>
                     </div>
                 </article>
@@ -482,6 +510,9 @@
                         <a href="blogpaginas/blog6.html" class="blog-link">
                             Leer más <i class="fas fa-arrow-right"></i>
                         </a>
+                        <a href="servicio-implantes.html" class="blog-link" style="margin-top:8px; color:#333; font-size:0.85rem;">
+                            Ver servicio de Implantes <i class="fas fa-tooth"></i>
+                        </a>
                     </div>
                 </article>
 
@@ -543,22 +574,49 @@
 
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-inner">
+
             <div class="footer__brand">
                 <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
-                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42" loading="lazy" />
+                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
+                        loading="lazy" />
                 </a>
                 <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
                 <address class="footer__contact">
                     <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         622 819 008
                     </a>
+                    <a href="tel:+34931479829" aria-label="Llamar al fijo de la clínica: 931 479 829">
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        931 479 829
+                    </a>
                     <a href="mailto:info@clinicahitachi.es" aria-label="Enviar email a info@clinicahitachi.es">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
                         info@clinicahitachi.es
                     </a>
                     <span>
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
                         Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
                     </span>
                     <span style="font-size:0.75rem; color:#aaa; margin-top:4px; display:block;">
@@ -566,37 +624,43 @@
                     </span>
                 </address>
             </div>
+
             <nav class="footer__nav" aria-label="Navegación del pie de página">
-                <h3>Servicios</h3>
+                <h3>Clinica Hitachi</h3>
                 <ul role="list">
-                    <li><a href="implantes-dentales.html">Implantes</a></li>
-                    <li><a href="contacto.html">Ortodoncia</a></li>
-                    <li><a href="estetica-dental.html">Estética dental</a></li>
-                    <li><a href="contacto.html">Endodoncia</a></li>
-                    <li><a href="contacto.html">Periodoncia</a></li>
-                    <li><a href="protesis-dental.html">Prótesis dental</a></li>
-                </ul>
-                <a href="servicios.html" style="display:inline-block;margin-top:1rem;font-size:0.82rem;font-weight:700;color:#e8001d;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;" aria-label="Ver todos los servicios">Ver todos los servicios &rarr;</a>
-            </nav>
-            <nav class="footer__nav" aria-label="Navegación informativa del pie de página">
-                <h3>Clínica</h3>
-                <ul role="list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="nosotros.html">Nuestro equipo</a></li>
                     <li><a href="instalaciones.html">Instalaciones</a></li>
                     <li><a href="blog.html">Blog dental</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__nav" aria-label="Información Legal">
+                <h3>Información Legal</h3>
+                <ul role="list">
                     <li><a href="aviso-legal.html">Aviso legal</a></li>
                     <li><a href="privacidad.html">Privacidad</a></li>
                 </ul>
             </nav>
+
             <div class="footer__hours">
                 <h3>Horario</h3>
                 <dl>
-                    <div><dt>Lunes – Viernes</dt><dd>9:30 – 13:30 / 16:00 – 20:00</dd></div>
-                    <div><dt>Sábados y Domingos</dt><dd>Cerrado</dd></div>
+                    <div>
+                        <dt>Lunes – Viernes</dt>
+                        <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
+                    </div>
+                    <div>
+                        <dt>Sábados y Domingos</dt>
+                        <dd>Cerrado</dd>
+                    </div>
                 </dl>
             </div>
+
         </div>
+
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; <span id="year"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
@@ -625,6 +689,26 @@
         const scrollBtn = document.getElementById('scrollToTop');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Menú móvil: mostrar/ocultar X al abrir y cerrar
+        document.addEventListener('DOMContentLoaded', function () {
+            var navShow = document.querySelector('.navshow');
+            var navHide = document.querySelector('.navhide');
+            var blogClose = document.getElementById('blogMenuClose');
+            var siteNav = document.getElementById('sitenav');
+            if (!navShow || !siteNav) return;
+            navShow.addEventListener('click', function () {
+                if (navHide) navHide.style.display = 'flex';
+            });
+            navHide && navHide.addEventListener('click', function () {
+                navHide.style.display = 'none';
+            });
+            blogClose && blogClose.addEventListener('click', function () {
+                siteNav.style.display = 'none';
+                if (navHide) navHide.style.display = 'none';
+                if (navShow) navShow.style.display = 'flex';
+            });
+        });
     </script>
 </body>
 

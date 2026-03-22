@@ -531,6 +531,37 @@
 	.horario i {
 		margin: 0 10px;
 	}
+
+	.sitenav {
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: rgba(0, 0, 0, 0.95);
+		z-index: 1100;
+	}
+
+	.sitenav .close-menu {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 24px;
+		color: #fff;
+		cursor: pointer;
+		z-index: 1200;
+	}
+
+	.headermenu ul li.blog {
+		margin-right: 0;
+		text-align: center;
+	}
+
+	.headermenu ul {
+		padding: 0;
+		text-align: center;
+	}
 }
 
 /* Para pantallas aún más pequeñas */

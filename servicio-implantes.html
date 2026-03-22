@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e8001d">
+  <title>Implantes Dentales en L'Hospitalet | Clínica Dental Dra. Hitachi</title>
+  <meta name="description"
+    content="Implantes dentales en L'Hospitalet de Llobregat. Titanio de alta calidad, carga inmediata y All-on-4. Diagnóstico gratuito. Pide tu cita hoy.">
+  <link rel="canonical" href="https://clinicadentalhitachi.com/servicio-implantes.html">
+  <link rel="icon" type="image/png" href="images/logo.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-responsive.css">
+  <link rel="stylesheet" href="footer.css">
+
+  <style>
+    /* ─────────────────────────────────────────
+   TOKENS — Clínica Dental Dra. Hitachi
+───────────────────────────────────────── */
+    :root {
+      --red: #e8001d;
+      --red-light: #ff1a33;
+      --red-dark: #b5001a;
+      --ink: #1a1a1a;
+      --ink-2: #2e2e35;
+      --ink-3: #3a3a44;
+      --ink-4: #4a4a55;
+      --smoke: #f7f6f4;
+      --mist: #eceae7;
+      --stone: #6b7280;
+      --white: #ffffff;
+      --bone: rgba(255, 255, 255, 0.15);
+      --display: 'Poppins', sans-serif;
+      --body: 'Poppins', sans-serif;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+      --spring: cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    /* Hard light theme override */
+    html,
+    body,
+    .hero,
+    .services-hero,
+    .s,
+    .s--smoke,
+    .s--ink2,
+    .s--ink3,
+    .final-cta,
+    .site-footer,
+    .sitenav,
+    .service-card,
+    .testimonial-card,
+    .why-item,
+    .faq-item {
+      background-color: var(--white) !important;
+      color: var(--ink) !important;
+    }
+
+    .hero-mesh,
+    .services-hero__right::before,
+    .trust-band,
+    .footer-bottom,
+    .site-footer,
+    .testimonial-card::before,
+    .final-cta::before {
+      background: none !important;
+    }
+
+    .btn-ghost,
+    .headermenu ul li a,
+    .footer__nav ul li a,
+    .footer__hours dd,
+    .footer__hours dt {
+      color: var(--ink) !important;
+    }
+
+    .footer__nav ul li a:hover,
+    .section-eyebrow,
+    .stat-item__num,
+    .benefit-num {
+      color: var(--red) !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      font-size: 16px
+    }
+
+    body {
+      font-family: var(--body);
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    /* Hide dark-theme elements */
+    .cur,
+    .cur-f,
+    #spb {
+      display: none
+    }
+
+    /* ─────────────────────────────────────────
+   HEADER — light white style
+───────────────────────────────────────── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 68px;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, .07);
+      transition: box-shadow .3s;
+    }
+
+    header.scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+    }
+
+    /* Override any dark-variant states */
+    header.light-bg {
+      background: rgba(255, 255, 255, .97);
+      border-bottom-color: rgba(0, 0, 0, .07);
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 2rem
+    }
+
+    .header_default {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px
+    }
+
+    .site-branding .logo {
+      display: flex;
+      align-items: center
+    }
+
+    .logo-1 {
+      display: block
+    }
+
+    .logo-2 {
+      display: none
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem
+    }
+
+    .headermenu ul {
+      list-style: none;
+      display: flex;
+      gap: .2rem;
+      align-items: center
+    }
+
+    .headermenu ul li a {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: .45rem .8rem;
+      border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+
+    .headermenu ul li a:hover {
+      color: var(--red);
+      background: rgba(232, 0, 29, .06)
+    }
+
+    .headermenu ul li.active>a,
+    .headermenu ul li.blog>a {
+      color: var(--red)
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem
+    }
+
+    .contact-info a {
+      font-size: .95rem;
+      color: #666;
+      transition: color .2s, transform .2s
+    }
+
+    .contact-info a:hover {
+      color: var(--red);
+      transform: scale(1.15)
+    }
+
+    .navicons {
+      display: none
+    }
+
+    #navShow,
+    #navHide {
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--ink)
+    }
+
+    /* ─────────────────────────────────────────
+   HERO — light brand style
+───────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      padding-top: 68px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+      background: var(--smoke);
+    }
+
+    /* Subtle red gradient mesh on light bg */
+    .hero-mesh {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 55% at 70% 45%, rgba(232, 0, 29, .07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(232, 0, 29, .04) 0%, transparent 60%);
+      animation: meshPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes meshPulse {
+      from {
+        opacity: .7;
+        transform: scale(1)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.04)
+      }
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 3rem 5rem 12.5rem;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 150px;
+    }
+
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 3rem 5rem 2rem;
+    }
+
+    /* Floating 3D implant SVG illustration */
+    .implant-visual {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      animation: floatY 5s ease-in-out infinite;
+    }
+
+    @keyframes floatY {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-18px)
+      }
+    }
+
+    .implant-visual svg {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 40px 80px rgba(232, 0, 29, .2))
+    }
+
+    /* Orbiting ring */
+    .implant-visual::before {
+      content: '';
+      position: absolute;
+      width: 110%;
+      height: 110%;
+      top: -5%;
+      left: -5%;
+      border-radius: 50%;
+      border: 1px solid rgba(232, 0, 29, .12);
+      animation: spinRing 18s linear infinite;
+    }
+
+    .implant-visual::after {
+      content: '';
+      position: absolute;
+      width: 130%;
+      height: 130%;
+      top: -15%;
+      left: -15%;
+      border-radius: 50%;
+      border: 1px dashed rgba(232, 0, 29, .06);
+      animation: spinRing 30s linear infinite reverse;
+    }
+
+    @keyframes spinRing {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* Hero text */
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: upIn .6s var(--ease) .1s forwards;
+    }
+
+    .hero-eyebrow span {
+      width: 24px;
+      height: 1.5px;
+      background: var(--red);
+      display: block
+    }
+
+    .hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(2.8rem, 5.2vw, 5rem);
+      line-height: 1.06;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: upIn .7s var(--ease) .25s forwards;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--red)
+    }
+
+    .hero-h1 .stroke {
+
+      color: var(--white);
+      text-shadow: #111 0px 0px 1px, #111 0px 0px 1px, #111 0px 0px 3px;
+    }
+
+    .hero-sub {
+      font-size: .97rem;
+      line-height: 1.75;
+      color: var(--stone);
+      max-width: 400px;
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: upIn .6s var(--ease) .4s forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      animation: upIn .6s var(--ease) .55s forwards;
+    }
+
+    /* Pill badges */
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      opacity: 0;
+      animation: upIn .6s var(--ease) .7s forwards;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, .1);
+      color: var(--stone);
+      padding: .38rem .85rem;
+      border-radius: 50px;
+      transition: border-color .3s, color .3s;
+    }
+
+    .trust-pill:hover {
+      border-color: var(--red);
+      color: var(--red)
+    }
+
+    .trust-pill i {
+      color: var(--red);
+      font-size: .7rem
+    }
+
+    /* Buttons */
+    .btn-r {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--body);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .95rem 1.9rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background .25s, transform .3s var(--spring), box-shadow .3s;
+    }
+
+    .btn-r:hover {
+      background: #ff1a33;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 32px rgba(232, 0, 29, .45)
+    }
+
+    .btn-o {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .95rem 1.9rem;
+      border-radius: 50px;
+      border: 1px solid rgba(0, 0, 0, .18);
+      transition: border-color .25s, color .25s, transform .3s;
+    }
+
+    .btn-o:hover {
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-2px)
+    }
+
+    /* Scroll cue */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      opacity: 0;
+      animation: upIn .6s var(--ease) 1.1s forwards;
+      z-index: 2;
+    }
+
+    .scroll-cue span {
+      font-size: .62rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, .35)
+    }
+
+    .scroll-cue-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(232, 0, 29, .5), transparent);
+      animation: scrollLine 2s ease-in-out infinite
+    }
+
+    @keyframes scrollLine {
+
+      0%,
+      100% {
+        transform: scaleY(1);
+        transform-origin: top
+      }
+
+      50% {
+        transform: scaleY(.5);
+        transform-origin: top
+      }
+    }
+
+    @keyframes upIn {
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* ─────────────────────────────────────────
+   SECTIONS
+───────────────────────────────────────── */
+    .s {
+      padding: 7rem 0
+    }
+
+    .s--smoke {
+      background: var(--smoke);
+      color: var(--ink)
+    }
+
+    .s--ink2 {
+      background: var(--white);
+      color: var(--ink);
+      border-top: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    .s--ink3 {
+      background: var(--smoke);
+      color: var(--ink)
+    }
+
+    .sh {
+      text-align: center;
+      margin-bottom: 4.5rem
+    }
+
+    .sey {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: .75rem;
+    }
+
+    .sey::before,
+    .sey::after {
+      content: '';
+      width: 18px;
+      height: 1.5px;
+      background: var(--red);
+      opacity: .6
+    }
+
+    .sh2 {
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      line-height: 1.12;
+      margin-bottom: .75rem;
+      color: var(--ink);
+    }
+
+    .s--smoke .sh2 {
+      color: var(--ink)
+    }
+
+    .ssub {
+      font-size: .95rem;
+      color: var(--stone);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7
+    }
+
+    /* ─────────────────────────────────────────
+   QUÉ ES — SPLIT SECTION
+───────────────────────────────────────── */
+    .what-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .what-media {
+      position: relative
+    }
+
+    .what-img-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      position: relative;
+      background: var(--smoke);
+    }
+
+    .what-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(10%);
+      transition: transform .6s var(--ease), filter .4s
+    }
+
+    .what-img-wrap:hover img {
+      transform: scale(1.03);
+      filter: grayscale(0)
+    }
+
+    /* Floating stat card */
+    .stat-float {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 1.4rem 1.8rem;
+      box-shadow: 0 20px 50px rgba(232, 0, 29, .35);
+    }
+
+    .stat-float__n {
+      font-family: var(--display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1
+    }
+
+    .stat-float__l {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-top: .2rem;
+      opacity: .85
+    }
+
+    /* Second floating card */
+    .stat-float2 {
+      position: absolute;
+      top: -1.5rem;
+      left: -2rem;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, .09);
+      color: var(--ink);
+      border-radius: 14px;
+      padding: 1.1rem 1.5rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .12);
+    }
+
+    .stat-float2__n {
+      font-family: var(--display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--red)
+    }
+
+    .stat-float2__l {
+      font-size: .68rem;
+      font-weight: 500;
+      color: var(--stone);
+      margin-top: .15rem
+    }
+
+    .what-content {
+      color: var(--ink)
+    }
+
+    .s--smoke .what-content {
+      color: var(--ink)
+    }
+
+    .what-lead {
+      font-family: var(--display);
+      font-size: 1.45rem;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .s--smoke .what-lead {
+      color: var(--ink)
+    }
+
+    .what-body {
+      font-size: .92rem;
+      line-height: 1.8;
+      color: var(--stone);
+      margin-bottom: 2rem
+    }
+
+    .s--smoke .what-body {
+      color: var(--stone)
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: .88rem;
+      line-height: 1.6;
+      color: var(--stone);
+    }
+
+    .s--smoke .check-list li {
+      color: var(--stone)
+    }
+
+    .check-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      border-radius: 50%;
+      background: rgba(232, 0, 29, .12);
+      border: 1.5px solid rgba(232, 0, 29, .4);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23e8001d' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ─────────────────────────────────────────
+   TIPOS DE IMPLANTE
+───────────────────────────────────────── */
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(0, 0, 0, .07);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid rgba(0, 0, 0, .07);
+    }
+
+    .type-card {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: background .4s var(--ease);
+    }
+
+    .type-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s var(--ease);
+    }
+
+    .type-card:hover {
+      background: var(--smoke)
+    }
+
+    .type-card:hover::after {
+      transform: scaleX(1)
+    }
+
+    .type-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: rgba(232, 0, 29, .08);
+      border: 1px solid rgba(232, 0, 29, .15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--red);
+      margin-bottom: 2rem;
+      transition: transform .35s var(--spring), background .3s;
+    }
+
+    .type-card:hover .type-icon {
+      transform: scale(1.1) rotate(-6deg);
+      background: rgba(232, 0, 29, .15)
+    }
+
+    .type-num {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-family: var(--display);
+      font-size: 4rem;
+      font-weight: 800;
+      font-style: italic;
+      color: rgba(0, 0, 0, .04);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .type-h {
+      font-family: var(--display);
+      font-size: 1.35rem;
+      margin-bottom: .65rem;
+      line-height: 1.2;
+      color: var(--ink);
+      font-weight: 700
+    }
+
+    .type-p {
+      font-size: .85rem;
+      line-height: 1.7;
+      color: var(--stone);
+      margin-bottom: 1.5rem
+    }
+
+    .type-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(232, 0, 29, .08);
+      padding: .28rem .7rem;
+      border-radius: 50px;
+    }
+
+    /* ─────────────────────────────────────────
+   PROCESO — VERTICAL TIMELINE
+───────────────────────────────────────── */
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 0;
+    }
+
+    .timeline::before {
+      content: '';
+      grid-column: 2;
+      grid-row: 1/-1;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--red) 10%, var(--red) 90%, transparent);
+      margin: 0 auto;
+      opacity: .3;
+    }
+
+    .tl-row {
+      display: contents
+    }
+
+    .tl-empty {
+      grid-column: 1
+    }
+
+    .tl-empty.right {
+      grid-column: 3
+    }
+
+    .tl-node {
+      grid-column: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tl-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid rgba(232, 0, 29, .35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--red);
+      transition: background .3s, border-color .3s, transform .35s var(--spring);
+      position: relative;
+    }
+
+    .tl-dot::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(232, 0, 29, .1);
+      transition: border-color .3s;
+    }
+
+    .tl-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, .07);
+      border-radius: 16px;
+      padding: 2rem 2.2rem;
+      margin: 1rem 0;
+      transition: border-color .35s, transform .35s var(--ease), box-shadow .35s;
+    }
+
+    .tl-card:hover {
+      border-color: rgba(232, 0, 29, .25);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .1);
+    }
+
+    .tl-card:hover~.tl-node .tl-dot,
+    .tl-row:hover .tl-dot {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--white);
+      transform: scale(1.15);
+    }
+
+    .tl-step {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: .5rem
+    }
+
+    .tl-h {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      margin-bottom: .5rem;
+      color: var(--ink);
+      font-weight: 700
+    }
+
+    .tl-p {
+      font-size: .84rem;
+      line-height: 1.7;
+      color: var(--stone)
+    }
+
+    /* align alternating cards */
+    .tl-left {
+      grid-column: 1;
+      text-align: right
+    }
+
+    .tl-right {
+      grid-column: 3
+    }
+
+    /* ─────────────────────────────────────────
+   VENTAJAS — BIG STATS
+───────────────────────────────────────── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5px;
+      background: rgba(0, 0, 0, .1);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid rgba(0, 0, 0, .06);
+    }
+
+    .benefit-box {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background .35s;
+    }
+
+    .benefit-box:hover {
+      background: var(--smoke)
+    }
+
+    .benefit-box:hover .benefit-h {
+      color: var(--ink)
+    }
+
+    .benefit-box:hover .benefit-p {
+      color: var(--stone)
+    }
+
+    /* ─────────────────────────────────────────
+   FAQ ACCORDION
+───────────────────────────────────────── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      max-width: 780px;
+      margin: 0 auto
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, .07);
+      border-radius: 0;
+      overflow: hidden;
+      transition: background .3s;
+    }
+
+    .faq-item:first-child {
+      border-radius: 16px 16px 0 0
+    }
+
+    .faq-item:last-child {
+      border-radius: 0 0 16px 16px
+    }
+
+    .faq-item.open {
+      background: var(--smoke)
+    }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--body);
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--ink);
+      transition: color .2s;
+    }
+
+    .faq-q:hover {
+      color: var(--red)
+    }
+
+    .faq-q-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      color: var(--stone);
+      transition: transform .3s var(--ease), border-color .3s, color .3s, background .3s;
+    }
+
+    .faq-item.open .faq-q-icon {
+      transform: rotate(45deg);
+      border-color: var(--red);
+      color: var(--white);
+      background: var(--red);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s var(--ease), padding .35s;
+    }
+
+    .faq-a-inner {
+      padding: 0 2rem 1.5rem;
+      font-size: .88rem;
+      line-height: 1.75;
+      color: var(--stone);
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 400px
+    }
+
+    /* ─────────────────────────────────────────
+   TESTIMONIALS
+───────────────────────────────────────── */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem
+    }
+
+    .testi-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, .07);
+      border-radius: 18px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s var(--ease), border-color .35s, box-shadow .35s;
+    }
+
+    .testi-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232, 0, 29, .2);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .1)
+    }
+
+    .testi-card::before {
+      content: '\201C';
+      font-family: var(--display);
+      font-size: 9rem;
+      color: rgba(232, 0, 29, .06);
+      position: absolute;
+      top: -2rem;
+      right: 1.5rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      color: var(--red);
+      font-size: .75rem;
+      margin-bottom: 1.2rem
+    }
+
+    .testi-text {
+      font-size: .88rem;
+      line-height: 1.8;
+      color: var(--stone);
+      margin-bottom: 1.8rem
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: .8rem
+    }
+
+    .testi-av {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(232, 0, 29, .08);
+      border: 1px solid rgba(232, 0, 29, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--display);
+      font-size: 1.1rem;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-weight: 700;
+      font-size: .84rem;
+      color: var(--ink)
+    }
+
+    .testi-role {
+      font-size: .7rem;
+      color: var(--stone);
+      margin-top: .1rem
+    }
+
+    .testi-badge {
+      margin-left: auto;
+      font-size: .65rem;
+      font-weight: 700;
+      background: rgba(34, 197, 94, .1);
+      color: #22c55e;
+      padding: .2rem .55rem;
+      border-radius: 50px;
+      letter-spacing: .04em;
+    }
+
+    /* ─────────────────────────────────────────
+   FINAL CTA
+───────────────────────────────────────── */
+    .fcta {
+      padding: 9rem 0;
+      background: var(--red);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fcta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(-45deg,
+          rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10px,
+          rgba(0, 0, 0, .04) 10px, rgba(0, 0, 0, .04) 11px);
+      pointer-events: none;
+    }
+
+    .fcta-title {
+      font-family: var(--display);
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+
+    .fcta-sub {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 3rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .fcta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem
+    }
+
+    .btn-w {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      background: var(--white);
+      color: var(--red);
+      font-family: var(--body);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      transition: transform .3s var(--spring), box-shadow .3s;
+    }
+
+    .btn-w:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .2)
+    }
+
+    .btn-wghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      background: transparent;
+      color: rgba(255, 255, 255, .9);
+      font-family: var(--body);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      border: 1.5px solid rgba(255, 255, 255, .3);
+      transition: border-color .25s, color .25s, transform .3s;
+    }
+
+    .btn-wghost:hover {
+      border-color: var(--white);
+      color: var(--white);
+      transform: translateY(-2px)
+    }
+
+    .fcta-note {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .45);
+      letter-spacing: .04em
+    }
+
+    /* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+    .site-footer {
+      background: var(--light-bg);
+      color: var(--ink);
+      padding: 5rem 0 0;
+      font-family: var(--body);
+      font-size: .88rem
+    }
+
+    .footer-inner {
+      border-bottom: 1px solid rgba(0, 0, 0, .08)
+    }
+
+    .footer__brand p {
+      color: var(--ink)
+    }
+
+    .footer__contact a,
+    .footer__contact span {
+      color: var(--grey)
+    }
+
+    .footer__contact a:hover {
+      color: var(--red)
+    }
+
+    .footer__nav h3,
+    .footer__hours h3 {
+      color: var(--ink)
+    }
+
+    .footer__nav ul li a {
+      color: var(--ink);
+    }
+
+    .footer__nav ul li a:hover {
+      color: var(--red);
+      padding-left: 4px
+    }
+
+    .footer__hours dt {
+      color: var(--ink)
+    }
+
+    .footer__hours dd {
+      color: var(--grey)
+    }
+
+    .footer-bottom {
+      background: var(--smoke)
+    }
+
+    .footer-bottom p {
+      color: var(--stone)
+    }
+
+    /* ─────────────────────────────────────────
+   FLOATS
+───────────────────────────────────────── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .4);
+      z-index: 999;
+      transition: transform .3s var(--spring), box-shadow .3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 10px 36px rgba(37, 211, 102, .55)
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 5.5rem;
+      right: 2rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1.5px solid rgba(0, 0, 0, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      color: var(--ink);
+      cursor: pointer;
+      z-index: 998;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .3s, transform .3s, background .3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .scroll-to-top:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--white)
+    }
+
+    /* ─────────────────────────────────────────
+   REVEAL
+───────────────────────────────────────── */
+    .rv {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease)
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .rv-d1 {
+      transition-delay: .1s
+    }
+
+    .rv-d2 {
+      transition-delay: .2s
+    }
+
+    .rv-d3 {
+      transition-delay: .3s
+    }
+
+    .rv-d4 {
+      transition-delay: .4s
+    }
+
+    /* ─────────────────────────────────────────
+   MOBILE NAV
+───────────────────────────────────────── */
+    @media(max-width:900px) {
+      .navicons {
+        display: flex !important;
+      }
+
+      .sitenav {
+        position: fixed;
+        inset: 0;
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s;
+        z-index: 990;
+      }
+
+      .sitenav.open {
+        opacity: 1;
+        pointer-events: all
+      }
+
+      .headermenu ul {
+        flex-direction: column;
+        gap: .25rem;
+        text-align: center
+      }
+
+      .headermenu ul li a {
+        color: #1a1a1a !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+        padding: .4rem 1rem !important;
+        display: block !important;
+      }
+
+      .sitenav .headermenu,
+      .sitenav .headermenu ul {
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: .5rem !important;
+      }
+
+      .sitenav .headermenu ul li {
+        width: 100% !important;
+        text-align: center !important;
+      }
+
+      .sitenav .headermenu ul li a {
+        color: #1a1a1a !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+        padding: .5rem 2rem !important;
+        display: block !important;
+        text-align: center !important;
+      }
+
+      .headermenu ul li a:hover {
+        color: var(--red) !important;
+        background: none
+      }
+
+      .contact-info {
+        display: none
+      }
+
+      .hero {
+        grid-template-columns: 1fr
+      }
+
+      .hero-right {
+        display: none
+      }
+
+      .hero-left {
+        padding: 5rem 1.5rem 3rem
+      }
+
+      .what-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem
+      }
+
+      .stat-float {
+        right: -1rem;
+        bottom: -1rem
+      }
+
+      .stat-float2 {
+        left: -1rem;
+        top: -1rem
+      }
+
+      .types-grid {
+        grid-template-columns: 1fr
+      }
+
+      .timeline {
+        grid-template-columns: 1fr 60px 1fr
+      }
+
+      .tl-left {
+        text-align: right
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem
+      }
+    }
+
+    @media(max-width:600px){
+      /* Timeline: usar una sola columna en móvil y mostrar ambos laterales */
+      .timeline{
+        grid-template-columns:1fr;
+        grid-auto-rows:auto;
+        gap:1rem;
+      }
+      /* Ocultar la línea central para evitar solapamientos en una sola columna */
+      .timeline::before{ display:none; }
+
+      /* Forzar que los elementos de la timeline ocupen la única columna */
+      .tl-left,
+      .tl-right,
+      .tl-node,
+      .tl-empty {
+        grid-column:1 !important;
+        width:100%;
+      }
+
+      /* Alinear contenido y ajustar espaciado para mobile */
+      .tl-left, .tl-right { text-align:left; }
+      .tl-card{ margin: .6rem 0; }
+
+      /* Centrar el punto (dot) en mobile */
+      .tl-node{
+        display:flex;
+        align-items:center;
+        gap:.75rem;
+        padding:.6rem 0;
+        justify-content:center; /* <-- centrado horizontal */
+      }
+      .tl-dot{
+        margin:0 auto;           /* <-- asegura centro absoluto */
+        flex:0 0 auto;
+      }
+      .tl-dot::before{ display:none; } /* quitar halo extra en mobile */
+
+      /* Ajustes generales responsive */
+      .benefits-grid{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr}
+      .footer-bottom .container{flex-direction:column;gap:.4rem;text-align:center}
+      .s{padding:5rem 0}
+      .fcta{padding:6rem 0}
+    }
+
+    .sh2,
+    .services-hero__title,
+    .hero-h1 {
+      color: #111 !important;
+    }
+
+    .ssub,
+    .section-subtitle,
+    .hero-sub,
+    .tl-p,
+    .type-p,
+    .testi-text,
+    .faq-a-inner,
+    .testi-role {
+      color: #4a4a4a !important;
+    }
+
+    .s,
+    .s--smoke,
+    .s--ink2,
+    .s--ink3,
+    .final-cta {
+      background: #fff !important;
+    }
+
+    .hero-trust {
+      display: flex;
+      gap: .7rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-pill {
+      background: #fff;
+      border: 1px solid rgba(232, 0, 29, .18);
+      color: #4a4a4a;
+    }
+
+    .trust-pill:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .type-card:hover,
+    .tl-card:hover,
+    .benefit-box:hover,
+    .testi-card:hover,
+    .why-item:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    }
+
+    /* ── FIX MENÚ MÓVIL ── */
+    @media(max-width:900px) {
+      .sitenav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        z-index: 9999 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity .3s ease !important;
+      }
+
+      .sitenav.open {
+        opacity: 1 !important;
+        pointer-events: all !important;
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+      }
+
+      .sitenav .headermenu ul li a {
+        color: #1a1a1a !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+        padding: .4rem 1rem !important;
+        display: block !important;
+      }
+
+      .sitenav .headermenu,
+      .sitenav .headermenu ul {
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: .5rem !important;
+      }
+
+      .sitenav .headermenu ul li {
+        width: 100% !important;
+        text-align: center !important;
+      }
+
+      .sitenav .headermenu ul li a {
+        color: #1a1a1a !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+        padding: .5rem 2rem !important;
+        display: block !important;
+        text-align: center !important;
+      }
+
+      .sitenav .headermenu ul li.active>a,
+      .sitenav .headermenu ul li.blog>a {
+        color: #e8001d !important;
+      }
+
+      .sitenav .headermenu ul li a:hover {
+        color: #e8001d !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="spb"></div>
+  <div class="cur" id="cur"></div>
+  <div class="cur-f" id="curf"></div>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header id="hdr">
+    <div class="container">
+      <div class="header_default">
+        <div class="site-branding">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Clínica Dental Dra. Hitachi" class="logo-1" width="68">
+            <img src="images/logo.webp" alt="" class="logo-2" width="68">
+          </a>
+        </div>
+        <div class="header-right">
+          <div class="site-navwrap">
+            <div class="navicons">
+              <button id="navShow" aria-label="Abrir menú">&#9776;</button>
+              <button id="navHide" style="display:none" aria-label="Cerrar menú">&#x2715;</button>
+            </div>
+            <div class="sitenav" id="sitenav">
+              <span class="close-menu" onclick="closeMenu()">&times;</span>
+              <nav class="headermenu leftmenu" role="navigation">
+                <ul>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="nosotros.html">Nosotros</a></li>
+                  <li class="active"><a href="servicios.html">Servicios</a></li>
+                  <li><a href="instalaciones.html">Instalaciones</a></li>
+                  <li><a href="contacto.html">Contacto</a></li>
+                  <li class="blog"><a href="blog.html">Blog</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="contact-info">
+            <a href="tel:+34622819008" aria-label="Llamar"><i class="fa-solid fa-phone-volume"></i></a>
+            <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ubicación"><i
+                class="fa-solid fa-location-dot"></i></a>
+            <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="hero" aria-label="Implantes dentales en L'Hospitalet">
+    <div class="hero-mesh" aria-hidden="true"></div>
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span></span>
+        Clínica Dental Dra. Hitachi
+      </div>
+      <h1 class="hero-h1">
+        Implantes dentales<br>
+        <em>para toda la</em><br>
+        <span class="stroke">vida</span>
+      </h1>
+      <p class="hero-sub">
+        Recupera tu diente perdido con implantes de titanio de alta calidad. Carga inmediata disponible: sal con dientes fijos el mismo día.
+      </p>
+      <div class="hero-ctas">
+        <a href="contacto.html" class="btn-r">
+          <i class="fas fa-calendar-plus"></i>
+          Pedir cita
+        </a>
+        <a href="tel:+34622819008" class="btn-o">
+          <i class="fas fa-phone"></i>
+          622 819 008
+        </a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-pill"><i class="fas fa-shield-alt"></i> Titanio grado médico</span>
+        <span class="trust-pill"><i class="fas fa-clock"></i> Carga inmediata</span>
+        <span class="trust-pill"><i class="fas fa-star"></i> +600 implantes colocados</span>
+        <span class="trust-pill"><i class="fas fa-euro-sign"></i> Financiación sin intereses</span>
+      </div>
+    </div>
+
+    <div class="hero-right" aria-hidden="true">
+      <div class="implant-visual"
+        style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:22px;padding:1.2rem;position:relative;">
+        <div
+          style="position:absolute;top:1rem;left:1rem;z-index:3;background:rgba(255,255,255,.95);border:1px solid rgba(232,0,29,.35);border-radius:50%;padding:.45rem;display:flex;align-items:center;justify-content:center;">
+          <img src="images/logo.webp" alt="Logo Hitachi" width="44" height="44" style="display:block;" />
+        </div>
+        <video class="hero-video" controls muted autoplay loop playsinline
+          style="width:100%;height:auto;border-radius:18px;object-fit:cover;display:block;">
+          <source src="images/video-trabajo-02.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de vídeo.
+        </video>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Descubre más</span>
+      <div class="scroll-cue-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ QUÉ ES ═══════════ -->
+  <section class="s s--ink2" aria-labelledby="h-que">
+    <div class="container">
+      <div class="what-grid">
+        <div class="what-media rv">
+          <div class="what-img-wrap">
+            <img src="images/empastes-centrodentalhitachi.jpg"
+              alt="Implante dental en Clínica Hitachi"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#1c1d21,#26272d)'">
+          </div>
+          <div class="stat-float">
+            <div class="stat-float__n">+600</div>
+            <div class="stat-float__l">implantes colocados</div>
+          </div>
+          <div class="stat-float2">
+            <div class="stat-float2__n">98%</div>
+            <div class="stat-float2__l">tasa de éxito</div>
+          </div>
+        </div>
+        <div class="what-content rv rv-d2">
+          <p class="what-lead">Un implante de titanio es la solución más parecida a un diente natural que existe hoy en odontología.</p>
+          <p class="what-body">
+            Se ancla directamente en el hueso maxilar y actúa como raíz artificial sobre la que se coloca una corona de porcelana a medida. Sin afectar a los dientes vecinos, sin prótesis removibles y con una durabilidad que puede ser de por vida.
+          </p>
+          <ul class="check-list">
+            <li>Titanio biocompatible: el cuerpo lo acepta como tejido propio</li>
+            <li>No se talla ningún diente sano adyacente</li>
+            <li>Preserva el hueso maxilar y evita su reabsorción</li>
+            <li>Corona de porcelana idéntica al diente natural</li>
+            <li>Planificación con escáner 3D y guía quirúrgica digital</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TIPOS ═══════════ -->
+  <section class="s s--ink3" aria-labelledby="h-tipos">
+    <div class="container">
+      <div class="sh rv">
+        <span class="sey">Modalidades</span>
+        <h2 class="sh2" id="h-tipos">¿Qué tipo de implante necesitas?</h2>
+        <p class="ssub">Cada caso es único. Te asesoramos sin compromiso en nuestra primera visita.</p>
+      </div>
+      <div class="types-grid">
+        <div class="type-card rv">
+          <div class="type-num">01</div>
+          <div class="type-icon"><i class="fas fa-tooth"></i></div>
+          <h3 class="type-h">Implante unitario</h3>
+          <p class="type-p">Reemplaza un solo diente perdido con una raíz de titanio y una corona de porcelana. La opción más habitual: resultados estéticos y funcionales excelentes a largo plazo.</p>
+          <span class="type-tag"><i class="fas fa-check"></i> Caso más frecuente</span>
+        </div>
+        <div class="type-card rv rv-d1">
+          <div class="type-num">02</div>
+          <div class="type-icon"><i class="fas fa-layer-group"></i></div>
+          <h3 class="type-h">Puente sobre implantes</h3>
+          <p class="type-p">Dos o más implantes sostienen un puente fijo cuando faltan varios dientes consecutivos. Sin necesidad de desgastar dientes naturales vecinos.</p>
+          <span class="type-tag"><i class="fas fa-check"></i> Alta estabilidad</span>
+        </div>
+        <div class="type-card rv rv-d2">
+          <div class="type-num">03</div>
+          <div class="type-icon"><i class="fas fa-teeth-open"></i></div>
+          <h3 class="type-h">All-on-4 / All-on-6</h3>
+          <p class="type-p">Boca completa fija sobre 4 ó 6 implantes estratégicamente colocados. La solución definitiva para quienes han perdido todos o casi todos los dientes. Saldrás de quirófano con dientes fijos.</p>
+          <span class="type-tag"><i class="fas fa-bolt"></i> Carga inmediata</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROCESO ═══════════ -->
+  <section class="s s--ink2" aria-labelledby="h-proceso">
+    <div class="container">
+      <div class="sh rv">
+        <span class="sey">Paso a paso</span>
+        <h2 class="sh2" id="h-proceso">Tu implante, de principio a fin</h2>
+        <p class="ssub">Un proceso claro, sin sorpresas y con acompañamiento en cada fase</p>
+      </div>
+      <div class="timeline">
+
+        <!-- Fila 1 -->
+        <div class="tl-left rv">
+          <div class="tl-card" style="margin-right:2rem">
+            <div class="tl-step">Paso 01</div>
+            <h3 class="tl-h">Exploración y diagnóstico</h3>
+            <p class="tl-p">Revisión completa, radiografía panorámica y valoración del hueso disponible. Te explicamos opciones y presupuesto sin compromiso.</p>
+          </div>
+        </div>
+        <div class="tl-node"><div class="tl-dot">01</div></div>
+        <div></div>
+
+        <!-- Fila 2 -->
+        <div></div>
+        <div class="tl-node"><div class="tl-dot">02</div></div>
+        <div class="tl-right rv rv-d1">
+          <div class="tl-card" style="margin-left:2rem">
+            <div class="tl-step">Paso 02</div>
+            <h3 class="tl-h">Planificación 3D</h3>
+            <p class="tl-p">Escáner cone beam (CBCT), planificación con software implantológico y fabricación de guía quirúrgica digital. Cero improvisación en quirófano.</p>
+          </div>
+        </div>
+
+        <!-- Fila 3 -->
+        <div class="tl-left rv rv-d1">
+          <div class="tl-card" style="margin-right:2rem">
+            <div class="tl-step">Paso 03</div>
+            <h3 class="tl-h">Cirugía de colocación</h3>
+            <p class="tl-p">Intervención mínimamente invasiva con anestesia local. Duración media 45–60 minutos por implante. La mayoría de pacientes vuelven al trabajo al día siguiente.</p>
+          </div>
+        </div>
+        <div class="tl-node"><div class="tl-dot">03</div></div>
+        <div></div>
+
+        <!-- Fila 4 -->
+        <div></div>
+        <div class="tl-node"><div class="tl-dot">04</div></div>
+        <div class="tl-right rv rv-d2">
+          <div class="tl-card" style="margin-left:2rem">
+            <div class="tl-step">Paso 04</div>
+            <h3 class="tl-h">Osteointegración</h3>
+            <p class="tl-p">El titanio se fusiona con el hueso en 2–4 meses. Durante este período llevás una corona provisional estética. Seguimiento incluido en cada revisión.</p>
+          </div>
+        </div>
+
+        <!-- Fila 5 -->
+        <div class="tl-left rv rv-d2">
+          <div class="tl-card" style="margin-right:2rem">
+            <div class="tl-step">Paso 05</div>
+            <h3 class="tl-h">Corona definitiva</h3>
+            <p class="tl-p">Colocamos la corona de porcelana personalizada. Color, forma y tamaño a juego perfecto con tus dientes naturales. ¡Ya puedes lucir tu sonrisa completa!</p>
+          </div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-dot" style="background:var(--red);border-color:var(--red);color:var(--white)">
+            <i class="fas fa-smile" style="font-size:.85rem"></i>
+          </div>
+        </div>
+        <div></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ BENEFICIOS ═══════════ -->
+  <section class="s s--smoke" aria-labelledby="h-ventajas">
+    <div class="container">
+      <div class="sh rv">
+        <span class="sey">Ventajas</span>
+        <h2 class="sh2" id="h-ventajas">Por qué elegir el implante dental</h2>
+        <p class="ssub">Frente a puentes convencionales o prótesis removibles, el implante es la opción más avanzada</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-box rv">
+          <div class="benefit-num" data-target="25" data-suffix="+">25+</div>
+          <div class="benefit-h">Años de durabilidad</div>
+          <div class="benefit-p">Con una higiene correcta y revisiones periódicas, un implante puede durar toda la vida. Es la solución más longeva del mercado.</div>
+        </div>
+        <div class="benefit-box rv rv-d1">
+          <div class="benefit-num" data-target="98" data-suffix="%">98%</div>
+          <div class="benefit-h">Tasa de éxito</div>
+          <div class="benefit-p">Los implantes de titanio tienen la mayor tasa de éxito de todos los tratamientos restauradores en odontología moderna.</div>
+        </div>
+        <div class="benefit-box rv rv-d2">
+          <div class="benefit-num" data-target="1" data-suffix="h">1h</div>
+          <div class="benefit-h">Duración de la cirugía</div>
+          <div class="benefit-p">La colocación es rápida y con anestesia local. Muchos pacientes vuelven a su actividad normal al día siguiente.</div>
+        </div>
+        <div class="benefit-box rv rv-d3">
+          <div class="benefit-num" data-target="0" data-suffix="">0</div>
+          <div class="benefit-h">Dientes tallados</div>
+          <div class="benefit-p">A diferencia del puente convencional, el implante no requiere desgastar los dientes sanos vecinos. Tu boca queda intacta.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FAQ ═══════════ -->
+  <section class="s s--ink2" aria-labelledby="h-faq">
+    <div class="container">
+      <div class="sh rv">
+        <span class="sey">Preguntas frecuentes</span>
+        <h2 class="sh2" id="h-faq">Todo lo que necesitas saber</h2>
+        <p class="ssub">Resolvemos tus dudas sobre implantes antes de la consulta</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            ¿Duele la colocación de un implante?
+            <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              No. La cirugía se realiza con anestesia local y es completamente indolora durante la intervención. Después puede haber una leve molestia similar a una extracción que se controla fácilmente con analgésicos estándar. La mayoría de pacientes quedan sorprendidos de lo sencillo que ha sido.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            ¿Cuánto tiempo dura el proceso completo?
+            <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Un implante convencional (cirugía + osteointegración + corona definitiva) toma entre 3 y 6 meses. En los casos de carga inmediata (All-on-4), puedes salir del quirófano con dientes fijos provisionales el mismo día de la intervención.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            ¿Tengo suficiente hueso para un implante?
+            <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              En muchos casos la respuesta es sí, incluso cuando el paciente cree que no. Con nuestro escáner 3D evaluamos el volumen óseo exacto. Si hay deficiencia, existen técnicas de regeneración ósea que lo resuelven. Solo un diagnóstico personalizado puede determinarlo con certeza.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            ¿Fumar afecta al implante?
+            <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Fumar reduce las tasas de éxito del implante, especialmente durante la osteointegración. Recomendamos no fumar al menos 2 semanas antes y 2 meses después de la cirugía. Aun así, muchos pacientes fumadores tienen implantes exitosos siguiendo el protocolo adecuado.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            ¿Cómo cuido un implante dental?
+            <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Exactamente igual que tus dientes naturales: cepillado, hilo dental e irrigador. Revisiones anuales en clínica. Sin cremas adhesivas ni cuidados extraordinarios. Es la gran ventaja frente a las prótesis removibles.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            ¿Tenéis financiación para implantes?
+            <span class="faq-q-icon"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Sí. Ofrecemos planes de financiación flexibles sin intereses para que el coste nunca sea un obstáculo para tu salud. Consúltanos en la primera visita y te diseñamos un plan de pago adaptado a ti.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TESTIMONIOS ═══════════ -->
+  <section class="s s--ink3" aria-labelledby="h-testi">
+    <div class="container">
+      <div class="sh rv">
+        <span class="sey">Opiniones reales</span>
+        <h2 class="sh2" id="h-testi">Pacientes que recuperaron su diente</h2>
+        <p class="ssub">Casos reales de implantes dentales en nuestra clínica</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card rv">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testi-text">Perdí una muela de un golpe y estaba muy preocupado. En la Clínica Hitachi me explicaron todo con claridad, el proceso fue indoloro y el resultado es increíble. No se distingue del diente natural. Lo recomiendo sin dudarlo.</p>
+          <div class="testi-author">
+            <div class="testi-av">A</div>
+            <div>
+              <div class="testi-name">Antoni R.</div>
+              <div class="testi-role">Implante unitario · 2024</div>
+            </div>
+            <span class="testi-badge">✓ Google</span>
+          </div>
+        </div>
+        <div class="testi-card rv rv-d1">
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testi-text">Me hicieron un All-on-4 y el mismo día salí con dientes fijos. No me lo podía creer. La Dra. Hitachi me explicó todo con mucha paciencia y el equipo es increíble. Después de años sin poder morder correctamente, ahora como de todo.</p>
+          <div class="testi-author">
+            <div class="testi-av">F</div>
+            <div>
+              <div class="testi-name">Fernando G.</div>
+              <div class="testi-role">All-on-4 · 2024</div>
+            </div>
+            <span class="testi-badge">✓ Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FINAL CTA ═══════════ -->
+  <section class="fcta" aria-labelledby="h-fcta">
+    <div class="container" style="position:relative;z-index:1">
+      <p class="fcta-title" id="h-fcta">
+        Recupera tu diente<br>con implantes de <em>titanio</em>
+      </p>
+      <p class="fcta-sub">Diagnóstico digital y plan de implantes personalizado. Pide tu cita hoy.</p>
+      <div class="fcta-btns">
+        <a href="contacto.html" class="btn-w">
+          <i class="fas fa-calendar-plus"></i>
+          Pedir cita
+        </a>
+        <a href="tel:+34622819008" class="btn-wghost">
+          <i class="fas fa-phone"></i>
+          622 819 008
+        </a>
+        <a href="https://wa.me/34622819008?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20implantes%20dentales"
+          target="_blank" class="btn-wghost" style="border-color:rgba(37,211,102,.4);color:#25D366">
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp
+        </a>
+      </div>
+      <p class="fcta-note">Lun–Vie · 9:30–13:30 / 16:00–20:00 · Calle Rosa de Alejandría 24, L'Hospitalet</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer__brand">
+        <a href="index.html">
+          <img src="images/logo.webp" alt="Clínica Dental Dra. Hitachi" width="120" loading="lazy">
+        </a>
+        <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
+        <address class="footer__contact">
+          <a href="tel:+34622819008">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            622 819 008
+          </a>
+          <a href="tel:+34931479829">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            931 479 829
+          </a>
+          <a href="mailto:info@clinicahitachi.es">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            info@clinicahitachi.es
+          </a>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Calle Rosa de Alejandría 24, L'Hospitalet
+          </span>
+          <span style="font-size:.7rem;color:#444;margin-top:4px">Reg. Sanitario: E08704494</span>
+        </address>
+      </div>
+      <nav class="footer__nav" aria-label="Servicios">
+        <h3>Servicios</h3>
+        <ul>
+          <li><a href="servicio-implantes.html">Implantes dentales</a></li>
+          <li><a href="contacto.html">Ortodoncia</a></li>
+          <li><a href="servicio-estetica.html">Estética dental</a></li>
+          <li><a href="contacto.html">Endodoncia</a></li>
+          <li><a href="contacto.html">Periodoncia</a></li>
+          <li><a href="protesis-dental.html">Prótesis dental</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__nav" aria-label="Clínica">
+        <h3>Clínica</h3>
+        <ul>
+          <li><a href="nosotros.html">Nuestro equipo</a></li>
+          <li><a href="instalaciones.html">Instalaciones</a></li>
+          <li><a href="blog.html">Blog dental</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+        </ul>
+      </nav>
+      <div class="footer__hours">
+        <h3>Horario</h3>
+        <dl>
+          <div>
+            <dt>Lunes – Viernes</dt>
+            <dd>9:30–13:30 / 16:00–20:00</dd>
+          </div>
+          <div>
+            <dt>Sábados y Domingos</dt>
+            <dd>Cerrado</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="yr"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
+        <p>Diseñado con ♥ en Barcelona</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/34622819008?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20implantes%20dentales"
+    class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <button id="stt" class="scroll-to-top" aria-label="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ═══════════ SCRIPTS ═══════════ -->
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Scroll progress bar
+    const spb = document.getElementById('spb');
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+      spb.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    // Header style on scroll (changes when over light sections)
+    const hdr = document.getElementById('hdr');
+    const lightSections = document.querySelectorAll('.s--smoke, .fcta');
+    function updateHeader() {
+      let isLight = false;
+      lightSections.forEach(sec => {
+        const r = sec.getBoundingClientRect();
+        if (r.top <= 68 && r.bottom > 68) isLight = true;
+      });
+      hdr.classList.toggle('light-bg', isLight);
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+
+    // Scroll to top
+    const stt = document.getElementById('stt');
+    window.addEventListener('scroll', () => stt.classList.toggle('visible', window.scrollY > 600), { passive: true });
+    stt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Mobile nav
+    const navShow = document.getElementById('navShow');
+    const navHide = document.getElementById('navHide');
+    const nav = document.getElementById('sitenav');
+    navShow.addEventListener('click', () => {
+      nav.classList.add('open');
+      navShow.style.display = 'none';
+      navHide.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+    navHide.addEventListener('click', closeNav);
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    function closeNav() {
+      nav.classList.remove('open');
+      navHide.style.display = 'none';
+      navShow.style.display = 'block';
+      document.body.style.overflow = '';
+    }
+
+    function closeMenu() {
+      document.querySelector('.sitenav').style.display = 'none';
+    }
+
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Custom cursor (desktop)
+    if (window.innerWidth > 900) {
+      const cur = document.getElementById('cur');
+      const curf = document.getElementById('curf');
+      let mx = 0, my = 0, fx = 0, fy = 0;
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        if (cur) { cur.style.left = mx + 'px'; cur.style.top = my + 'px'; }
+      });
+      (function tick(){
+        fx += (mx - fx) * .13;
+        fy += (my - fy) * .13;
+        if (curf) { curf.style.left = fx + 'px'; curf.style.top = fy + 'px'; }
+        requestAnimationFrame(tick);
+      })();
+      document.querySelectorAll('a,button,.type-card,.tl-card,.testi-card,.benefit-box').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          if (cur) { cur.style.width = '18px'; cur.style.height = '18px'; }
+          if (curf) { curf.style.width = '56px'; curf.style.height = '56px'; }
+        });
+        el.addEventListener('mouseleave', () => {
+          if (cur) { cur.style.width = '8px'; cur.style.height = '8px'; }
+          if (curf) { curf.style.width = '34px'; curf.style.height = '34px'; }
+        });
+      });
+    }
+
+    // Animated counters in benefit boxes
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('[data-target]').forEach(el => {
+          const target = +el.dataset.target;
+          const suffix = el.dataset.suffix || '';
+          let start = null;
+          (function step(ts){
+            if (!start) start = ts;
+            const prog = Math.min((ts - start) / 1600, 1);
+            const eased = 1 - Math.pow(1 - prog, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (prog < 1) requestAnimationFrame(step);
+            else el.textContent = target + suffix;
+          })(performance.now());
+        });
+        counterObs.unobserve(e.target);
+      });
+    }, {threshold:.5});
+    document.querySelectorAll('.benefits-grid').forEach(g => counterObs.observe(g));
+  </script>
+</body>
+
+</html>
