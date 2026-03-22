@@ -1604,49 +1604,83 @@
       }
     }
 
-    @media(max-width:600px){
+    @media(max-width:600px) {
+
       /* Timeline: usar una sola columna en móvil y mostrar ambos laterales */
-      .timeline{
-        grid-template-columns:1fr;
-        grid-auto-rows:auto;
-        gap:1rem;
+      .timeline {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1rem;
       }
+
       /* Ocultar la línea central para evitar solapamientos en una sola columna */
-      .timeline::before{ display:none; }
+      .timeline::before {
+        display: none;
+      }
 
       /* Forzar que los elementos de la timeline ocupen la única columna */
       .tl-left,
       .tl-right,
       .tl-node,
       .tl-empty {
-        grid-column:1 !important;
-        width:100%;
+        grid-column: 1 !important;
+        width: 100%;
       }
 
       /* Alinear contenido y ajustar espaciado para mobile */
-      .tl-left, .tl-right { text-align:left; }
-      .tl-card{ margin: .6rem 0; }
+      .tl-left,
+      .tl-right {
+        text-align: left;
+      }
+
+      .tl-card {
+        margin: .6rem 0;
+      }
 
       /* Centrar el punto (dot) en mobile */
-      .tl-node{
-        display:flex;
-        align-items:center;
-        gap:.75rem;
-        padding:.6rem 0;
-        justify-content:center; /* <-- centrado horizontal */
+      .tl-node {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        padding: .6rem 0;
+        justify-content: center;
+        /* <-- centrado horizontal */
       }
-      .tl-dot{
-        margin:0 auto;           /* <-- asegura centro absoluto */
-        flex:0 0 auto;
+
+      .tl-dot {
+        margin: 0 auto;
+        /* <-- asegura centro absoluto */
+        flex: 0 0 auto;
       }
-      .tl-dot::before{ display:none; } /* quitar halo extra en mobile */
+
+      .tl-dot::before {
+        display: none;
+      }
+
+      /* quitar halo extra en mobile */
 
       /* Ajustes generales responsive */
-      .benefits-grid{grid-template-columns:1fr}
-      .footer-inner{grid-template-columns:1fr}
-      .footer-bottom .container{flex-direction:column;gap:.4rem;text-align:center}
-      .s{padding:5rem 0}
-      .fcta{padding:6rem 0}
+      .benefits-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom .container {
+        flex-direction: column;
+        gap: .4rem;
+        text-align: center
+      }
+
+      .s {
+        padding: 5rem 0
+      }
+
+      .fcta {
+        padding: 6rem 0
+      }
     }
 
     .sh2,
@@ -1837,7 +1871,8 @@
         <span class="stroke">tu mordida</span>
       </h1>
       <p class="hero-sub">
-        Prótesis fijas, removibles y sobre implantes con materiales de primera calidad. Función y estética completamente restauradas.
+        Prótesis fijas, removibles y sobre implantes con materiales de primera calidad. Función y estética completamente
+        restauradas.
       </p>
       <div class="hero-ctas">
         <a href="contacto.html" class="btn-r">
@@ -1884,8 +1919,7 @@
       <div class="what-grid">
         <div class="what-media rv">
           <div class="what-img-wrap">
-            <img src="images/blanqueamientomujer.webp"
-              alt="Prótesis dental en Clínica Hitachi"
+            <img src="images/blanqueamientomujer.webp" alt="Prótesis dental en Clínica Hitachi"
               onerror="this.parentElement.style.background='linear-gradient(135deg,#1c1d21,#26272d)'">
           </div>
           <div class="stat-float">
@@ -1898,9 +1932,12 @@
           </div>
         </div>
         <div class="what-content rv rv-d2">
-          <p class="what-lead">Recupera la función masticatoria y la estética con prótesis diseñadas específicamente para ti.</p>
+          <p class="what-lead">Recupera la función masticatoria y la estética con prótesis diseñadas específicamente
+            para ti.</p>
           <p class="what-body">
-            La pérdida de dientes afecta al habla, la alimentación y la autoestima. En Clínica Hitachi diseñamos prótesis a medida —fijas, removibles o sobre implantes— que devuelven comodidad, función y naturalidad desde el primer día.
+            La pérdida de dientes afecta al habla, la alimentación y la autoestima. En Clínica Hitachi diseñamos
+            prótesis a medida —fijas, removibles o sobre implantes— que devuelven comodidad, función y naturalidad desde
+            el primer día.
           </p>
           <ul class="check-list">
             <li>Materiales premium: porcelana, zirconio y resina de alta resistencia</li>
@@ -1927,21 +1964,24 @@
           <div class="type-num">01</div>
           <div class="type-icon"><i class="fas fa-teeth"></i></div>
           <h3 class="type-h">Prótesis fija</h3>
-          <p class="type-p">Coronas y puentes cementados sobre dientes naturales o implantes. No se retira, se cuida como tus propios dientes y ofrece la máxima estabilidad.</p>
+          <p class="type-p">Coronas y puentes cementados sobre dientes naturales o implantes. No se retira, se cuida
+            como tus propios dientes y ofrece la máxima estabilidad.</p>
           <span class="type-tag"><i class="fas fa-check"></i> Mayor confort</span>
         </div>
         <div class="type-card rv rv-d1">
           <div class="type-num">02</div>
           <div class="type-icon"><i class="fas fa-hand-holding-medical"></i></div>
           <h3 class="type-h">Prótesis removible</h3>
-          <p class="type-p">Dentadura parcial o completa extraíble. Solución económica y funcional cuando no hay soporte óseo suficiente para implantes. Fácil mantenimiento.</p>
+          <p class="type-p">Dentadura parcial o completa extraíble. Solución económica y funcional cuando no hay soporte
+            óseo suficiente para implantes. Fácil mantenimiento.</p>
           <span class="type-tag"><i class="fas fa-check"></i> Solución accesible</span>
         </div>
         <div class="type-card rv rv-d2">
           <div class="type-num">03</div>
           <div class="type-icon"><i class="fas fa-magnet"></i></div>
           <h3 class="type-h">Prótesis sobre implantes</h3>
-          <p class="type-p">La combinación más avanzada: prótesis anclada sobre implantes de titanio. Sin movilidad, sin adhesivos y con la misma sensación que los dientes naturales.</p>
+          <p class="type-p">La combinación más avanzada: prótesis anclada sobre implantes de titanio. Sin movilidad, sin
+            adhesivos y con la misma sensación que los dientes naturales.</p>
           <span class="type-tag"><i class="fas fa-bolt"></i> Máxima estabilidad</span>
         </div>
       </div>
@@ -1963,10 +2003,13 @@
           <div class="tl-card" style="margin-right:2rem">
             <div class="tl-step">Paso 01</div>
             <h3 class="tl-h">Exploración y diagnóstico</h3>
-            <p class="tl-p">Revisión completa de tu boca, estado del hueso y dientes remanentes. Radiografías digitales para planificar la mejor solución.</p>
+            <p class="tl-p">Revisión completa de tu boca, estado del hueso y dientes remanentes. Radiografías digitales
+              para planificar la mejor solución.</p>
           </div>
         </div>
-        <div class="tl-node"><div class="tl-dot">01</div></div>
+        <div class="tl-node">
+          <div class="tl-dot">01</div>
+        </div>
         <div></div>
 
         <!-- Fila 2 -->
@@ -1974,10 +2017,13 @@
           <div class="tl-card" style="margin-right:2rem">
             <div class="tl-step">Paso 02</div>
             <h3 class="tl-h">Toma de medidas digital</h3>
-            <p class="tl-p">Escáner intraoral de precisión para obtener el modelo exacto de tu boca. Sin impresiones incómodas, resultado más exacto.</p>
+            <p class="tl-p">Escáner intraoral de precisión para obtener el modelo exacto de tu boca. Sin impresiones
+              incómodas, resultado más exacto.</p>
           </div>
         </div>
-        <div class="tl-node"><div class="tl-dot">02</div></div>
+        <div class="tl-node">
+          <div class="tl-dot">02</div>
+        </div>
         <div></div>
 
         <!-- Fila 3 -->
@@ -1985,10 +2031,13 @@
           <div class="tl-card" style="margin-right:2rem">
             <div class="tl-step">Paso 03</div>
             <h3 class="tl-h">Fabricación a medida</h3>
-            <p class="tl-p">El laboratorio dental elabora tu prótesis con los materiales seleccionados: porcelana, zirconio o resina de alta calidad.</p>
+            <p class="tl-p">El laboratorio dental elabora tu prótesis con los materiales seleccionados: porcelana,
+              zirconio o resina de alta calidad.</p>
           </div>
         </div>
-        <div class="tl-node"><div class="tl-dot">03</div></div>
+        <div class="tl-node">
+          <div class="tl-dot">03</div>
+        </div>
         <div></div>
 
         <!-- Fila 4 -->
@@ -1996,10 +2045,13 @@
           <div class="tl-card" style="margin-right:2rem">
             <div class="tl-step">Paso 04</div>
             <h3 class="tl-h">Prueba y ajuste</h3>
-            <p class="tl-p">Colocación provisional para validar estética, mordida y comodidad. Realizamos todos los ajustes necesarios antes de la entrega definitiva.</p>
+            <p class="tl-p">Colocación provisional para validar estética, mordida y comodidad. Realizamos todos los
+              ajustes necesarios antes de la entrega definitiva.</p>
           </div>
         </div>
-        <div class="tl-node"><div class="tl-dot">04</div></div>
+        <div class="tl-node">
+          <div class="tl-dot">04</div>
+        </div>
         <div></div>
 
         <!-- Fila 5 -->
@@ -2007,7 +2059,8 @@
           <div class="tl-card" style="margin-right:2rem">
             <div class="tl-step">Paso 05</div>
             <h3 class="tl-h">Entrega y seguimiento</h3>
-            <p class="tl-p">Colocación definitiva con instrucciones de higiene y cuidado. Revisiones periódicas para garantizar que tu prótesis dura en perfecto estado.</p>
+            <p class="tl-p">Colocación definitiva con instrucciones de higiene y cuidado. Revisiones periódicas para
+              garantizar que tu prótesis dura en perfecto estado.</p>
           </div>
         </div>
         <div class="tl-node">
@@ -2033,22 +2086,26 @@
         <div class="benefit-box rv">
           <div class="benefit-num" data-target="15" data-suffix="+">15+</div>
           <div class="benefit-h">Años de durabilidad</div>
-          <div class="benefit-p">Una prótesis bien cuidada y revisada periódicamente puede durar más de 15 años con total funcionalidad.</div>
+          <div class="benefit-p">Una prótesis bien cuidada y revisada periódicamente puede durar más de 15 años con
+            total funcionalidad.</div>
         </div>
         <div class="benefit-box rv rv-d1">
           <div class="benefit-num" data-target="96" data-suffix="%">96%</div>
           <div class="benefit-h">Satisfacción de pacientes</div>
-          <div class="benefit-p">El 96 % de nuestros pacientes valora positivamente la adaptación y la estética de su prótesis en la primera revisión.</div>
+          <div class="benefit-p">El 96 % de nuestros pacientes valora positivamente la adaptación y la estética de su
+            prótesis en la primera revisión.</div>
         </div>
         <div class="benefit-box rv rv-d2">
           <div class="benefit-num" data-target="2" data-suffix=" ses.">2 ses.</div>
           <div class="benefit-h">Proceso ágil</div>
-          <div class="benefit-p">En la mayoría de casos completamos el proceso en 2–3 sesiones gracias al escáner digital y nuestro laboratorio colaborador.</div>
+          <div class="benefit-p">En la mayoría de casos completamos el proceso en 2–3 sesiones gracias al escáner
+            digital y nuestro laboratorio colaborador.</div>
         </div>
         <div class="benefit-box rv rv-d3">
           <div class="benefit-num" data-target="0" data-suffix="">0</div>
           <div class="benefit-h">Adhesivos necesarios</div>
-          <div class="benefit-p">Las prótesis fijas y sobre implantes no requieren cremas adhesivas. Comodidad total en tu día a día.</div>
+          <div class="benefit-p">Las prótesis fijas y sobre implantes no requieren cremas adhesivas. Comodidad total en
+            tu día a día.</div>
         </div>
       </div>
     </div>
@@ -2071,7 +2128,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Depende del tipo. Una prótesis removible convencional puede estar lista en 1–2 semanas. Las prótesis fijas de porcelana o zirconio suelen tardar entre 2 y 4 semanas desde la toma de medidas. En casos urgentes disponemos de prótesis inmediatas provisionales.
+              Depende del tipo. Una prótesis removible convencional puede estar lista en 1–2 semanas. Las prótesis fijas
+              de porcelana o zirconio suelen tardar entre 2 y 4 semanas desde la toma de medidas. En casos urgentes
+              disponemos de prótesis inmediatas provisionales.
             </div>
           </div>
         </div>
@@ -2083,7 +2142,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              La colocación en sí no duele. Es posible que los primeros días notes algo de presión o rozadura mientras tu boca se adapta. Si tienes molestias persistentes, te ajustamos la prótesis sin coste adicional hasta que esté perfecta.
+              La colocación en sí no duele. Es posible que los primeros días notes algo de presión o rozadura mientras
+              tu boca se adapta. Si tienes molestias persistentes, te ajustamos la prótesis sin coste adicional hasta
+              que esté perfecta.
             </div>
           </div>
         </div>
@@ -2095,7 +2156,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Sí. Las prótesis fijas y sobre implantes permiten comer prácticamente cualquier alimento desde el primer día. Con las removibles se recomienda empezar por alimentos blandos y aumentar progresivamente la dureza en las primeras semanas de adaptación.
+              Sí. Las prótesis fijas y sobre implantes permiten comer prácticamente cualquier alimento desde el primer
+              día. Con las removibles se recomienda empezar por alimentos blandos y aumentar progresivamente la dureza
+              en las primeras semanas de adaptación.
             </div>
           </div>
         </div>
@@ -2107,7 +2170,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Debes retirarla después de cada comida y limpiarla con cepillo específico y agua fría. Por la noche se recomienda dejarla en remojo con una pastilla efervescente. Te proporcionamos instrucciones detalladas personalizadas en la entrega.
+              Debes retirarla después de cada comida y limpiarla con cepillo específico y agua fría. Por la noche se
+              recomienda dejarla en remojo con una pastilla efervescente. Te proporcionamos instrucciones detalladas
+              personalizadas en la entrega.
             </div>
           </div>
         </div>
@@ -2119,7 +2184,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Las prótesis removibles suelen necesitar revisión o rebase cada 5–7 años porque el hueso se reabsorbe con el tiempo. Las prótesis fijas bien mantenidas pueden durar 15 años o más. Con revisiones anuales garantizamos su longevidad.
+              Las prótesis removibles suelen necesitar revisión o rebase cada 5–7 años porque el hueso se reabsorbe con
+              el tiempo. Las prótesis fijas bien mantenidas pueden durar 15 años o más. Con revisiones anuales
+              garantizamos su longevidad.
             </div>
           </div>
         </div>
@@ -2131,7 +2198,8 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Sí. Ofrecemos planes de financiación flexibles sin intereses para que el coste nunca sea un obstáculo para recuperar tu sonrisa. Consúltanos en la primera visita y adaptamos el plan de pago a tu situación.
+              Sí. Ofrecemos planes de financiación flexibles sin intereses para que el coste nunca sea un obstáculo para
+              recuperar tu sonrisa. Consúltanos en la primera visita y adaptamos el plan de pago a tu situación.
             </div>
           </div>
         </div>
@@ -2151,9 +2219,12 @@
       <div class="testi-grid">
         <div class="testi-card rv">
           <div class="testi-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="testi-text">Llevaba años con una dentadura postiza que se me movía y me daba vergüenza hablar en público. Me hicieron una prótesis sobre implantes y el cambio es brutal. Como de todo, hablo con confianza y nadie sabe que llevo prótesis.</p>
+          <p class="testi-text">Llevaba años con una dentadura postiza que se me movía y me daba vergüenza hablar en
+            público. Me hicieron una prótesis sobre implantes y el cambio es brutal. Como de todo, hablo con confianza y
+            nadie sabe que llevo prótesis.</p>
           <div class="testi-author">
             <div class="testi-av">M</div>
             <div>
@@ -2165,9 +2236,12 @@
         </div>
         <div class="testi-card rv rv-d1">
           <div class="testi-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="testi-text">Me rompí una muela y necesitaba una corona urgente. En la Clínica Hitachi me atendieron rápido, me pusieron una provisional y en dos semanas tenía la definitiva de porcelana. Quedó perfecta, igual que la natural.</p>
+          <p class="testi-text">Me rompí una muela y necesitaba una corona urgente. En la Clínica Hitachi me atendieron
+            rápido, me pusieron una provisional y en dos semanas tenía la definitiva de porcelana. Quedó perfecta, igual
+            que la natural.</p>
           <div class="testi-author">
             <div class="testi-av">J</div>
             <div>
@@ -2210,75 +2284,83 @@
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
+
       <div class="footer__brand">
-        <a href="index.html">
-          <img src="images/logo.webp" alt="Clínica Dental Dra. Hitachi" width="120" loading="lazy">
+        <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
+          <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
+            loading="lazy" />
         </a>
         <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
         <address class="footer__contact">
-          <a href="tel:+34622819008">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
             622 819 008
           </a>
-          <a href="tel:+34931479829">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="tel:+34931479829" aria-label="Llamar al fijo de la clínica: 931 479 829">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
             931 479 829
           </a>
-          <a href="mailto:info@clinicahitachi.es">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="mailto:info@clinicahitachi.es" aria-label="Enviar email a info@clinicahitachi.es">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
               <polyline points="22,6 12,13 2,6" />
             </svg>
             info@clinicahitachi.es
           </a>
           <span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            Calle Rosa de Alejandría 24, L'Hospitalet
+            Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
           </span>
-          <span style="font-size:.7rem;color:#444;margin-top:4px">Reg. Sanitario: E08704494</span>
+          <span style="font-size:0.75rem; color:#aaa; margin-top:4px; display:block;">
+            Reg. Sanitario: E08704494
+          </span>
         </address>
       </div>
-      <nav class="footer__nav" aria-label="Servicios">
-        <h3>Servicios</h3>
-        <ul>
-          <li><a href="servicio-implantes.html">Implantes dentales</a></li>
-          <li><a href="contacto.html">Ortodoncia</a></li>
-          <li><a href="servicio-estetica.html">Estética dental</a></li>
-          <li><a href="contacto.html">Endodoncia</a></li>
-          <li><a href="contacto.html">Periodoncia</a></li>
-          <li><a href="protesis-dental.html">Prótesis dental</a></li>
-        </ul>
-      </nav>
-      <nav class="footer__nav" aria-label="Clínica">
-        <h3>Clínica</h3>
-        <ul>
+
+      <nav class="footer__nav" aria-label="Navegación del pie de página">
+        <h3>Clinica Hitachi</h3>
+        <ul role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
           <li><a href="nosotros.html">Nuestro equipo</a></li>
           <li><a href="instalaciones.html">Instalaciones</a></li>
           <li><a href="blog.html">Blog dental</a></li>
           <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__nav" aria-label="Información Legal">
+        <h3>Información Legal</h3>
+        <ul role="list">
           <li><a href="aviso-legal.html">Aviso legal</a></li>
           <li><a href="privacidad.html">Privacidad</a></li>
         </ul>
       </nav>
+
       <div class="footer__hours">
         <h3>Horario</h3>
         <dl>
           <div>
             <dt>Lunes – Viernes</dt>
-            <dd>9:30–13:30 / 16:00–20:00</dd>
+            <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
           </div>
           <div>
             <dt>Sábados y Domingos</dt>
@@ -2286,11 +2368,13 @@
           </div>
         </dl>
       </div>
+
     </div>
+
     <div class="footer-bottom">
       <div class="container">
-        <p>© <span id="yr"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
-        <p>Diseñado con ♥ en Barcelona</p>
+        <p>&copy; <span id="year"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
+        <p>Diseñado con <span aria-label="amor" role="img">♥</span> en Barcelona</p>
       </div>
     </div>
   </footer>
@@ -2381,7 +2465,7 @@
         mx = e.clientX; my = e.clientY;
         if (cur) { cur.style.left = mx + 'px'; cur.style.top = my + 'px'; }
       });
-      (function tick(){
+      (function tick() {
         fx += (mx - fx) * .13;
         fy += (my - fy) * .13;
         if (curf) { curf.style.left = fx + 'px'; curf.style.top = fy + 'px'; }
@@ -2407,7 +2491,7 @@
           const target = +el.dataset.target;
           const suffix = el.dataset.suffix || '';
           let start = null;
-          (function step(ts){
+          (function step(ts) {
             if (!start) start = ts;
             const prog = Math.min((ts - start) / 1600, 1);
             const eased = 1 - Math.pow(1 - prog, 3);
@@ -2418,7 +2502,7 @@
         });
         counterObs.unobserve(e.target);
       });
-    }, {threshold:.5});
+    }, { threshold: .5 });
     document.querySelectorAll('.benefits-grid').forEach(g => counterObs.observe(g));
   </script>
 </body>

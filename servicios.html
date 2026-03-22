@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestros Servicios | Clínica Dental Hitachi</title>
-    <meta name="description" content="Todos los tratamientos dentales en Barcelona: limpieza, ortodoncia, implantes, estética dental y urgencias.">
+    <meta name="description"
+        content="Todos los tratamientos dentales en Barcelona: limpieza, ortodoncia, implantes, estética dental y urgencias.">
     <link rel="canonical" href="https://clinicadentalhitachi.com/servicios.html">
     <link rel="icon" type="image/png" href="images/logo.webp">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://clinicadentalhitachi.com/servicios.html">
     <meta property="og:title" content="Nuestros Servicios | Clínica Dental Hitachi">
-    <meta property="og:description" content="Todos los tratamientos dentales en Barcelona: limpieza, ortodoncia, implantes, estética dental y urgencias.">
+    <meta property="og:description"
+        content="Todos los tratamientos dentales en Barcelona: limpieza, ortodoncia, implantes, estética dental y urgencias.">
     <meta property="og:image" content="https://clinicadentalhitachi.com/images/limpiezadental.webp">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:image" content="https://clinicadentalhitachi.com/images/limpiezadental.webp">
@@ -28,7 +31,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="fonts/icons-linear.css">
     <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
     <!-- Styles -->
@@ -38,7 +42,7 @@
     <link rel="stylesheet" href="footer.css">
     <!-- Preload hero background image to reduce background pop-in -->
     <link rel="preload" as="image" href="images/limpiezadental.webp">
-    
+
     <!-- GSAP -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -47,9 +51,9 @@
     <script defer src="js/menuscript.js"></script>
 
     <style>
-        body { 
-            margin: 0; 
-            padding: 0; 
+        body {
+            margin: 0;
+            padding: 0;
             overflow-x: hidden;
             font-family: 'Poppins', sans-serif;
         }
@@ -72,8 +76,8 @@
         .servicios-hero {
             padding: 200px 20px 100px;
             min-height: 550px;
-            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)), 
-                        url('images/limpiezadental.webp') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)),
+                url('images/limpiezadental.webp') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -85,6 +89,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .servicios-hero::before {
             content: '';
             position: absolute;
@@ -95,23 +100,25 @@
             background: rgba(255, 0, 0, 0.05);
             pointer-events: none;
         }
+
         .servicios-hero h1 {
             font-size: 4.5rem;
             margin-bottom: 25px;
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
             letter-spacing: -1.5px;
-            text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
             position: relative;
             z-index: 1;
         }
+
         .servicios-hero p {
             font-size: 1.4rem;
             max-width: 750px;
             margin: 0 auto;
             line-height: 1.6;
             opacity: 0.98;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
             position: relative;
             z-index: 1;
         }
@@ -122,44 +129,53 @@
             background: #fafafa;
             width: 100%;
         }
+
         .servicios-container {
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .servicios-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 50px;
         }
+
         .servicio-card {
             background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
             transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
         }
+
         .servicio-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(255,0,0,0.15);
+            box-shadow: 0 20px 50px rgba(255, 0, 0, 0.15);
         }
+
         .servicio-imagen {
             width: 100%;
             height: 220px;
             overflow: hidden;
         }
+
         .servicio-imagen img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
         }
+
         .servicio-card:hover .servicio-imagen img {
             transform: scale(1.08);
         }
+
         .servicio-content {
             padding: 30px 28px;
         }
+
         .servicio-categoria {
             color: #ff0000;
             font-size: 0.8rem;
@@ -168,6 +184,7 @@
             margin-bottom: 10px;
             letter-spacing: 0.8px;
         }
+
         .servicio-content h3 {
             font-size: 1.5rem;
             color: #1a1a1a;
@@ -175,17 +192,20 @@
             font-weight: 700;
             letter-spacing: -0.5px;
         }
+
         .servicio-content p {
             color: #666;
             line-height: 1.5;
             margin-bottom: 18px;
             font-size: 0.9rem;
         }
+
         .servicio-lista {
             list-style: none;
             padding: 0;
             margin-bottom: 20px;
         }
+
         .servicio-lista li {
             color: #555;
             padding: 8px 0;
@@ -193,6 +213,7 @@
             position: relative;
             font-size: 0.9rem;
         }
+
         .servicio-lista li:before {
             content: '✓';
             position: absolute;
@@ -201,6 +222,7 @@
             font-weight: bold;
             font-size: 1.1rem;
         }
+
         .btn-servicio {
             display: inline-flex;
             align-items: center;
@@ -212,13 +234,14 @@
             border-radius: 50px;
             font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(255,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
             font-size: 0.9rem;
             letter-spacing: 0.2px;
         }
+
         .btn-servicio:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255,0,0,0.4);
+            box-shadow: 0 12px 35px rgba(255, 0, 0, 0.4);
         }
 
         /* CTA */
@@ -228,6 +251,7 @@
             text-align: center;
             width: 100%;
         }
+
         .cta-servicios h2 {
             font-size: 2.8rem;
             color: #1a1a1a;
@@ -235,12 +259,14 @@
             font-weight: 800;
             letter-spacing: -1px;
         }
+
         .cta-servicios p {
             font-size: 1.2rem;
             color: #666;
             max-width: 650px;
             margin: 0 auto 40px;
         }
+
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -255,6 +281,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
         }
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
@@ -262,19 +289,45 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .servicios-hero h1 { font-size: 3.2rem; }
-            .servicios-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .servicios-hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .servicios-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
         }
+
         @media (max-width: 576px) {
-            .servicios-hero { padding: 180px 20px 80px; }
-            .servicios-hero h1 { font-size: 2.4rem; }
-            .servicios-section { padding: 80px 20px; }
-            .servicios-grid { grid-template-columns: 1fr; gap: 35px; }
-            .servicio-content { padding: 35px 30px; }
-            .cta-servicios h2 { font-size: 2rem; }
+            .servicios-hero {
+                padding: 180px 20px 80px;
+            }
+
+            .servicios-hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .servicios-section {
+                padding: 80px 20px;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .servicio-content {
+                padding: 35px 30px;
+            }
+
+            .cta-servicios h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- HEADER -->
     <header>
@@ -311,8 +364,10 @@
                     </div>
                     <div class="contact-info">
                         <a href="tel:+34622819008"><i class="fa-solid fa-phone-volume"></i></a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i
+                                class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -346,7 +401,8 @@
                             <li>Diseño de sonrisa</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-estetica.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
+                            <a href="servicio-estetica.html" class="btn-servicio">Ver Página <i
+                                    class="fas fa-arrow-right"></i></a>
                             <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
                         </div>
                     </div>
@@ -367,7 +423,8 @@
                             <li>Prótesis sobre implantes</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-protesis.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
+                            <a href="servicio-protesis.html" class="btn-servicio">Ver Página <i
+                                    class="fas fa-arrow-right"></i></a>
                             <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
                         </div>
                     </div>
@@ -376,7 +433,7 @@
                 <!-- Implantes Dentales -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/implantes-centrodentalhitachi.jpg" alt="Implantes Dentales">
+                        <img src="images/blanqueamientomujer.webp" alt="Implantes Dentales">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Implantes Dentales</p>
@@ -388,7 +445,8 @@
                             <li>All-on-4</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-implantes.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
+                            <a href="servicio-implantes.html" class="btn-servicio">Ver Página <i
+                                    class="fas fa-arrow-right"></i></a>
                             <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
                         </div>
                     </div>
@@ -410,32 +468,12 @@
                             <li>Fluorización</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-general.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
                             <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blanqueamiento -->
-                <div class="servicio-card">
-                    <div class="servicio-imagen">
-                        <img src="images/antesydespues.png" alt="Blanqueamiento">
-                    </div>
-                    <div class="servicio-content">
-                        <p class="servicio-categoria">Estética Dental</p>
-                        <h3>Blanqueamiento Dental</h3>
-                        <p>Sonrisa más blanca y brillante de forma segura y duradera.</p>
-                        <ul class="servicio-lista">
-                            <li>Blanqueamiento LED</li>
-                            <li>Resultados inmediatos</li>
-                            <li>Seguro y sin dolor</li>
-                            <li>Profesionalidad garantizada</li>
-                        </ul>
-                        <div class="servicio-buttons">
-                            <a href="servicio-ortodoncia.html" class="btn-servicio">Pedir cita <i class="fas fa-calendar-check"></i></a>
-                        </div>
-                    </div>
-                </div>
+               
 
                 <!-- Ortodoncia -->
                 <div class="servicio-card">
@@ -453,7 +491,8 @@
                             <li>Financiación disponible</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-implantes.html" class="btn-servicio">Pedir cita <i class="fas fa-arrow-right"></i></a>
+                            <a href="servicio-implantes.html" class="btn-servicio">Pedir cita <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -474,7 +513,8 @@
                             <li>Garantía profesional</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-estetica.html" class="btn-servicio">Pedir cita <i class="fas fa-calendar-check"></i></a>
+                            <a href="servicio-estetica.html" class="btn-servicio">Pedir cita <i
+                                    class="fas fa-calendar-check"></i></a>
                         </div>
                     </div>
                 </div>
@@ -495,7 +535,8 @@
                             <li>Alta tecnología</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-implantes.html" class="btn-servicio">Pedir cita <i class="fas fa-arrow-right"></i></a>
+                            <a href="servicio-implantes.html" class="btn-servicio">Pedir cita <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -537,26 +578,49 @@
     <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-inner">
+
             <div class="footer__brand">
                 <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
-                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42" loading="lazy" />
+                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
+                        loading="lazy" />
                 </a>
-                <p>Tu sonrisa, nuestra pasión. +35 reseñas de 5 estrellas en Google.</p>
+                <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
                 <address class="footer__contact">
                     <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         622 819 008
                     </a>
                     <a href="tel:+34931479829" aria-label="Llamar al fijo de la clínica: 931 479 829">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         931 479 829
                     </a>
                     <a href="mailto:info@clinicahitachi.es" aria-label="Enviar email a info@clinicahitachi.es">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
                         info@clinicahitachi.es
                     </a>
                     <span>
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
                         Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
                     </span>
                     <span style="font-size:0.75rem; color:#aaa; margin-top:4px; display:block;">
@@ -564,37 +628,43 @@
                     </span>
                 </address>
             </div>
+
             <nav class="footer__nav" aria-label="Navegación del pie de página">
-                <h3>Servicios</h3>
+                <h3>Clinica Hitachi</h3>
                 <ul role="list">
-                    <li><a href="servicio-implantes.html">Implantes</a></li>
-                    <li><a href="servicio-ortodoncia.html">Ortodoncia</a></li>
-                    <li><a href="servicio-estetica.html">Estética dental</a></li>
-                    <li><a href="contacto.html">Endodoncia</a></li>
-                    <li><a href="contacto.html">Periodoncia</a></li>
-                    <li><a href="protesis-dental.html">Prótesis dental</a></li>
-                </ul>
-                <a href="servicios.html" style="display:inline-block;margin-top:1rem;font-size:0.82rem;font-weight:700;color:#e8001d;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;" aria-label="Ver todos los servicios">Ver todos los servicios &rarr;</a>
-            </nav>
-            <nav class="footer__nav" aria-label="Navegación informativa del pie de página">
-                <h3>Clínica</h3>
-                <ul role="list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="nosotros.html">Nuestro equipo</a></li>
                     <li><a href="instalaciones.html">Instalaciones</a></li>
                     <li><a href="blog.html">Blog dental</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__nav" aria-label="Información Legal">
+                <h3>Información Legal</h3>
+                <ul role="list">
                     <li><a href="aviso-legal.html">Aviso legal</a></li>
                     <li><a href="privacidad.html">Privacidad</a></li>
                 </ul>
             </nav>
+
             <div class="footer__hours">
                 <h3>Horario</h3>
                 <dl>
-                    <div><dt>Lunes – Viernes</dt><dd>9:30 – 13:30 / 16:00 – 20:00</dd></div>
-                    <div><dt>Sábados y Domingos</dt><dd>Cerrado</dd></div>
+                    <div>
+                        <dt>Lunes – Viernes</dt>
+                        <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
+                    </div>
+                    <div>
+                        <dt>Sábados y Domingos</dt>
+                        <dd>Cerrado</dd>
+                    </div>
                 </dl>
             </div>
+
         </div>
+
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; <span id="year"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
@@ -603,40 +673,42 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn"
+        class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
     <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        
+
         // Animaciones del hero (sin ScrollTrigger, se ejecutan al cargar)
         gsap.from('.servicios-hero h1', { y: 30, opacity: 0, duration: 0.8 });
         gsap.from('.servicios-hero p', { y: 20, opacity: 0, duration: 0.8, delay: 0.2 });
-        
+
         // Animaciones de las tarjetas SOLO cuando sean visibles
         gsap.utils.toArray('.servicio-card').forEach((card, i) => {
-            gsap.fromTo(card, 
+            gsap.fromTo(card,
                 { y: 50, opacity: 0 }, // Estado inicial
-                { 
-                    y: 0, 
-                    opacity: 1, 
-                    duration: 0.8, 
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
                     delay: i * 0.1,
-                    scrollTrigger: { 
-                        trigger: card, 
+                    scrollTrigger: {
+                        trigger: card,
                         start: 'top 85%',
                         toggleActions: 'play none none none' // Solo se ejecuta una vez
                     }
                 }
             );
         });
-        
+
         // Botón scroll to top
         const scrollBtn = document.getElementById('scrollToTop');
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
 </body>
+
 </html>
