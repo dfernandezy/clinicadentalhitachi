@@ -304,26 +304,10 @@
 
         /* Evitar que sitenav se muestre siempre en móvil por el CSS global.
            jQuery (scripts.js) lo controla con fadeIn/fadeOut (display inline). */
+        .blog-menu-close { display: none; }
+
         @media (max-width: 768px) {
             .sitenav { display: none; }
-            /* X de cerrar menú: encima del overlay del menú */
-            .navicons a.navhide {
-                z-index: 1200 !important;
-                display: none;
-            }
-            /* Botón cerrar dentro del menú */
-            .blog-menu-close {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                z-index: 1300;
-                background: none;
-                border: none;
-                color: #fff;
-                font-size: 2rem;
-                cursor: pointer;
-                line-height: 1;
-            }
         }
 
         @media (max-width: 992px) {
@@ -383,7 +367,6 @@
                             <a href="javascript:void;" class="navhide"><span class="lnr lnr-cross"></span></a>
                         </div>
                         <div class="sitenav" id="sitenav">
-                            <button class="blog-menu-close" id="blogMenuClose" aria-label="Cerrar menú">&#10005;</button>
                             <div class="navwrap">
                                 <div class="navouter">
                                     <nav class="headermenu leftmenu" id="headnav" role="navigation">
@@ -690,25 +673,7 @@
         window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // Menú móvil: mostrar/ocultar X al abrir y cerrar
-        document.addEventListener('DOMContentLoaded', function () {
-            var navShow = document.querySelector('.navshow');
-            var navHide = document.querySelector('.navhide');
-            var blogClose = document.getElementById('blogMenuClose');
-            var siteNav = document.getElementById('sitenav');
-            if (!navShow || !siteNav) return;
-            navShow.addEventListener('click', function () {
-                if (navHide) navHide.style.display = 'flex';
-            });
-            navHide && navHide.addEventListener('click', function () {
-                navHide.style.display = 'none';
-            });
-            blogClose && blogClose.addEventListener('click', function () {
-                siteNav.style.display = 'none';
-                if (navHide) navHide.style.display = 'none';
-                if (navShow) navShow.style.display = 'flex';
-            });
-        });
+        // Menú móvil: el navhide nativo (jQuery en scripts.js) ya lo gestiona
     </script>
 </body>
 

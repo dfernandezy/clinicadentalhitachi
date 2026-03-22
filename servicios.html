@@ -139,6 +139,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 50px;
+            align-items: stretch;
         }
 
         .servicio-card {
@@ -148,6 +149,9 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
             transition: all 0.4s ease;
             border: 1px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .servicio-card:hover {
@@ -174,6 +178,9 @@
 
         .servicio-content {
             padding: 30px 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .servicio-categoria {
@@ -204,6 +211,7 @@
             list-style: none;
             padding: 0;
             margin-bottom: 20px;
+            flex: 1;
         }
 
         .servicio-lista li {
@@ -242,6 +250,14 @@
         .btn-servicio:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(255, 0, 0, 0.4);
+        }
+
+        .servicio-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 8px;
         }
 
         /* CTA */
@@ -437,7 +453,7 @@
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Implantes Dentales</p>
-                        <h3>Implantes de Alta Calidad</h3>
+                        <h3>Implantes de Muy Alta Calidad</h3>
                         <p>Soluciones definitivas para reemplazar dientes perdidos con implantes de titanio.</p>
                         <ul class="servicio-lista">
                             <li>Implantes de titanio</li>
@@ -491,8 +507,8 @@
                             <li>Financiación disponible</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-implantes.html" class="btn-servicio">Pedir cita <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <a href="servicio-estetica.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
+                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
                         </div>
                     </div>
                 </div>
@@ -513,8 +529,8 @@
                             <li>Garantía profesional</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-estetica.html" class="btn-servicio">Pedir cita <i
-                                    class="fas fa-calendar-check"></i></a>
+                            <a href="servicio-implantes.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
+                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
                         </div>
                     </div>
                 </div>
