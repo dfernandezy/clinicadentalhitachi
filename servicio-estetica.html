@@ -1458,6 +1458,11 @@
       transform: none
     }
 
+    /* Fallback: si el JS falla, mostrar todo igualmente */
+    @media (prefers-reduced-motion: reduce) {
+      .rv { opacity: 1 !important; transform: none !important; }
+    }
+
     .rv-d1 {
       transition-delay: .1s
     }
@@ -1552,7 +1557,8 @@
       }
 
       .hero {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        min-height: auto;
       }
 
       .hero-right {
@@ -1560,7 +1566,20 @@
       }
 
       .hero-left {
-        padding: 5rem 1.5rem 3rem
+        padding: 6rem 1.5rem 3.5rem;
+        margin-bottom: 0;
+      }
+
+      .hero-h1 {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+      }
+
+      .hero-sub {
+        max-width: 100%;
+      }
+
+      .hero-ctas {
+        flex-wrap: wrap;
       }
 
       .what-grid {
@@ -1605,6 +1624,38 @@
     }
 
     @media(max-width:600px){
+      .hero-left {
+        padding: 5.5rem 1.25rem 3rem;
+      }
+
+      .scroll-cue {
+        display: none;
+      }
+
+      .hero-h1 {
+        font-size: clamp(1.9rem, 9vw, 2.6rem);
+        line-height: 1.1;
+      }
+
+      .hero-eyebrow {
+        font-size: .75rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        gap: .75rem;
+      }
+
+      .hero-ctas a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-trust {
+        gap: .5rem;
+      }
+
       /* Timeline: usar una sola columna en móvil y mostrar ambos laterales */
       .timeline{
         grid-template-columns:1fr;
@@ -1624,7 +1675,10 @@
       }
 
       /* Alinear contenido y ajustar espaciado para mobile */
-      .tl-left, .tl-right { text-align:left; }
+      .tl-left, .tl-right {
+        text-align:left;
+        justify-content:flex-start;
+      }
       .tl-card{ margin: .6rem 0; }
 
       /* Centrar el punto (dot) en mobile */
@@ -1633,13 +1687,13 @@
         align-items:center;
         gap:.75rem;
         padding:.6rem 0;
-        justify-content:center; /* <-- centrado horizontal */
+        justify-content:center;
       }
       .tl-dot{
-        margin:0 auto;           /* <-- asegura centro absoluto */
+        margin:0 auto;
         flex:0 0 auto;
       }
-      .tl-dot::before{ display:none; } /* quitar halo extra en mobile */
+      .tl-dot::before{ display:none; }
 
       /* Ajustes generales responsive */
       .benefits-grid{grid-template-columns:1fr}
@@ -1699,79 +1753,6 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
     }
 
-    /* ── FIX MENÚ MÓVIL ── */
-    @media(max-width:900px) {
-      .sitenav {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-        z-index: 9999 !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        transition: opacity .3s ease !important;
-      }
-
-      .sitenav.open {
-        opacity: 1 !important;
-        pointer-events: all !important;
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-      }
-
-      .sitenav .headermenu ul li a {
-        color: #1a1a1a !important;
-        font-size: 1.1rem !important;
-        font-weight: 700 !important;
-        text-transform: none !important;
-        letter-spacing: 0 !important;
-        padding: .4rem 1rem !important;
-        display: block !important;
-      }
-
-      .sitenav .headermenu,
-      .sitenav .headermenu ul {
-        width: 100% !important;
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: .5rem !important;
-      }
-
-      .sitenav .headermenu ul li {
-        width: 100% !important;
-        text-align: center !important;
-      }
-
-      .sitenav .headermenu ul li a {
-        color: #1a1a1a !important;
-        font-size: 1.1rem !important;
-        font-weight: 700 !important;
-        text-transform: none !important;
-        letter-spacing: 0 !important;
-        padding: .5rem 2rem !important;
-        display: block !important;
-        text-align: center !important;
-      }
-
-      .sitenav .headermenu ul li.active>a,
-      .sitenav .headermenu ul li.blog>a {
-        color: #e8001d !important;
-      }
-
-      .sitenav .headermenu ul li a:hover {
-        color: #e8001d !important;
-      }
-    }
   </style>
 </head>
 
@@ -2338,7 +2319,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; <span id="year"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
+                <p>&copy; <span id="yr"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
                 <p>Diseñado con <span aria-label="amor" role="img">♥</span> en Barcelona</p>
             </div>
         </div>
@@ -2355,7 +2336,8 @@
   <!-- ═══════════ SCRIPTS ═══════════ -->
   <script>
     // Year
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    const yrEl = document.getElementById('yr') || document.getElementById('year');
+    if (yrEl) yrEl.textContent = new Date().getFullYear();
 
     // Scroll progress bar
     const spb = document.getElementById('spb');

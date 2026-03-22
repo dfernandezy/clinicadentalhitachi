@@ -1552,7 +1552,8 @@
       }
 
       .hero {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        min-height: auto;
       }
 
       .hero-right {
@@ -1560,7 +1561,20 @@
       }
 
       .hero-left {
-        padding: 5rem 1.5rem 3rem
+        padding: 6rem 1.5rem 3.5rem;
+        margin-bottom: 0;
+      }
+
+      .hero-h1 {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+      }
+
+      .hero-sub {
+        max-width: 100%;
+      }
+
+      .hero-ctas {
+        flex-wrap: wrap;
       }
 
       .what-grid {
@@ -1605,16 +1619,45 @@
     }
 
     @media(max-width:600px){
-      /* Timeline: usar una sola columna en móvil y mostrar ambos laterales */
+      .hero-left {
+        padding: 5.5rem 1.25rem 3rem;
+      }
+
+      .scroll-cue {
+        display: none;
+      }
+
+      .hero-h1 {
+        font-size: clamp(1.9rem, 9vw, 2.6rem);
+        line-height: 1.1;
+      }
+
+      .hero-eyebrow {
+        font-size: .75rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        gap: .75rem;
+      }
+
+      .hero-ctas a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-trust {
+        gap: .5rem;
+      }
+
       .timeline{
         grid-template-columns:1fr;
         grid-auto-rows:auto;
         gap:1rem;
       }
-      /* Ocultar la línea central para evitar solapamientos en una sola columna */
       .timeline::before{ display:none; }
 
-      /* Forzar que los elementos de la timeline ocupen la única columna */
       .tl-left,
       .tl-right,
       .tl-node,
@@ -1623,25 +1666,16 @@
         width:100%;
       }
 
-      /* Alinear contenido y ajustar espaciado para mobile */
-      .tl-left, .tl-right { text-align:left; }
-      .tl-card{ margin: .6rem 0; }
-
-      /* Centrar el punto (dot) en mobile */
-      .tl-node{
-        display:flex;
-        align-items:center;
-        gap:.75rem;
-        padding:.6rem 0;
-        justify-content:center; /* <-- centrado horizontal */
+      .tl-left, .tl-right {
+        text-align:left;
+        justify-content:flex-start;
       }
-      .tl-dot{
-        margin:0 auto;           /* <-- asegura centro absoluto */
-        flex:0 0 auto;
-      }
-      .tl-dot::before{ display:none; } /* quitar halo extra en mobile */
 
-      /* Ajustes generales responsive */
+      .tl-card {
+        max-width: 100%;
+        margin: .6rem 0;
+      }
+
       .benefits-grid{grid-template-columns:1fr}
       .footer-inner{grid-template-columns:1fr}
       .footer-bottom .container{flex-direction:column;gap:.4rem;text-align:center}
@@ -2299,7 +2333,7 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; <span id="year"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
+                <p>&copy; <span id="yr"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
                 <p>Diseñado con <span aria-label="amor" role="img">♥</span> en Barcelona</p>
             </div>
         </div>
