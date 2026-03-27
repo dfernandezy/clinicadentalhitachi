@@ -3,39 +3,357 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Política de Privacidad | Centro Dental Hitachi</title>
-
-    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Dentales en L'Hospitalet (Can Vidalet) | Clínica Dental Dra. Hitachi</title>
     <meta name="description"
-        content="Política de privacidad del Centro Dental Hitachi. Información sobre el tratamiento de datos personales.">
-
-    <!-- Favicon -->
+        content="Clínica dental en L'Hospitalet de Llobregat, zona Can Vidalet. Implantes, carillas, blanqueamiento, ortodoncia, prótesis y urgencias. Pide cita: 622 819 008.">
+    <link rel="canonical" href="https://clinicadentalhitachi.com/servicios.html">
     <link rel="icon" type="image/png" href="images/logo.webp">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clinicadentalhitachi.com/servicios.html">
+    <meta property="og:title" content="Nuestros Servicios | Clínica Dental Hitachi">
+    <meta property="og:description"
+        content="Todos los tratamientos dentales en Barcelona: limpieza, ortodoncia, implantes, estética dental y urgencias.">
+    <meta property="og:image" content="https://clinicadentalhitachi.com/images/limpiezadental.webp">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="https://clinicadentalhitachi.com/images/limpiezadental.webp">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW71SH6H7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FW71SH6H7M');
+    </script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Icons -->
     <link rel="stylesheet" href="fonts/icons-linear.css">
     <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
-
     <!-- Styles -->
-    <link rel="stylesheet" href="styleextra.css">
-    <link rel="stylesheet" href="styleextra-responsive.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-responsive.css">
     <link rel="stylesheet" href="index-enhancements.css">
     <link rel="stylesheet" href="footer.css">
+    <!-- Preload hero background image to reduce background pop-in -->
+    <link rel="preload" as="image" href="images/limpiezadental.webp">
 
-    <!-- Scripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/scripts.js"></script>
+    <!-- GSAP -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="js/jquery.js"></script>
+    <script defer src="js/scripts.js"></script>
+    <script defer src="js/menuscript.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Arreglo para que el header se vea en páginas internas */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        header nav.headermenu ul li a {
+            color: #000;
+        }
+
+        header .contact-info a {
+            color: #000;
+        }
+
+        /* Hero - ESTANDARIZADO Y MEJORADO */
+        .servicios-hero {
+            padding: 200px 20px 100px;
+            min-height: 550px;
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)),
+                url('images/limpiezadental.webp') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            text-align: center;
+            color: white;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .servicios-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 0, 0, 0.05);
+            pointer-events: none;
+        }
+
+        .servicios-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 1;
+        }
+
+        .servicios-hero p {
+            font-size: 1.4rem;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.98;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Servicios Grid */
+        .servicios-section {
+            padding: 120px 20px;
+            background: #fafafa;
+            width: 100%;
+        }
+
+        .servicios-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            align-items: stretch;
+        }
+
+        .servicio-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 0, 0, 0.15);
+        }
+
+        .servicio-imagen {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .servicio-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .servicio-card:hover .servicio-imagen img {
+            transform: scale(1.08);
+        }
+
+        .servicio-content {
+            padding: 30px 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .servicio-categoria {
+            color: #ff0000;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 0.8px;
+        }
+
+        .servicio-content h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .servicio-content p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 18px;
+            font-size: 0.9rem;
+        }
+
+        .servicio-lista {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .servicio-lista li {
+            color: #555;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .servicio-lista li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .btn-servicio {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 0.2px;
+        }
+
+        .btn-servicio:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 0, 0, 0.4);
+        }
+
+        .servicio-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        /* CTA */
+        .cta-servicios {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            padding: 100px 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .cta-servicios h2 {
+            font-size: 2.8rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .cta-servicios p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 45px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .servicios-hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .servicios-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* iOS/Android fix: background-attachment:fixed causa zoom borroso en móvil */
+            .servicios-hero {
+                background-attachment: scroll;
+                background-position: center top;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .servicios-hero {
+                padding: 180px 20px 80px;
+            }
+
+            .servicios-hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .servicios-section {
+                padding: 80px 20px;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .servicio-content {
+                padding: 35px 30px;
+            }
+
+            .cta-servicios h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header (igual que en index.html) -->
+    <!-- HEADER -->
     <header>
         <div class="container psr">
             <div class="header_default">
@@ -48,17 +366,17 @@
                 <div class="header-right">
                     <div class="site-navwrap">
                         <div class="navicons">
-                            <a href="javascript:void(0);" class="navshow"><span class="lnr lnr-menu"></span></a>
-                            <a href="javascript:void(0);" class="navhide"><span class="lnr lnr-cross"></span></a>
+                            <a href="javascript:void;" class="navshow"><span class="lnr lnr-menu"></span></a>
+                            <a href="javascript:void;" class="navhide"><span class="lnr lnr-cross"></span></a>
                         </div>
                         <div class="sitenav" id="sitenav">
                             <div class="navwrap">
                                 <div class="navouter">
-                                    <nav class="headermenu leftmenu" role="navigation">
+                                    <nav class="headermenu leftmenu" id="headnav" role="navigation">
                                         <ul>
                                             <li><a href="index.html">Inicio</a></li>
                                             <li><a href="nosotros.html">Nosotros</a></li>
-                                            <li><a href="servicios.html">Servicios</a></li>
+                                            <li class="active"><a href="servicios.html">Servicios</a></li>
                                             <li><a href="instalaciones.html">Instalaciones</a></li>
                                             <li><a href="contacto.html">Contacto</a></li>
                                             <li class="blog"><a href="blog.html">Blog</a></li>
@@ -80,158 +398,208 @@
         </div>
     </header>
 
-    <section class="banner"
-        style="background: url('/images/banner.webp') no-repeat center center; background-size: cover;">
-        <div class="container">
-            <div class="bannercontent">
-                <div class="text full">
-                    <h2>Política de Privacidad</h2>
-                    <p>Tu privacidad es importante para nosotros</p>
+    <!-- HERO -->
+    <section class="servicios-hero">
+        <div class="hero-content">
+            <h1>Nuestros Servicios Dentales</h1>
+            <p>Tratamientos completos para toda la familia. Desde prevención hasta los procedimientos más avanzados.</p>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="servicios-section">
+        <div class="servicios-container">
+            <div class="servicios-grid">
+                <!-- Estética Dental -->
+                <div class="servicio-card">
+                    <div class="servicio-imagen">
+                        <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Estética Dental">
+                    </div>
+                    <div class="servicio-content">
+                        <p class="servicio-categoria">Estética Dental</p>
+                        <h3>Carillas y Blanqueamiento</h3>
+                        <p>Mejora la apariencia de tu sonrisa con tratamientos de estética dental personalizados.</p>
+                        <ul class="servicio-lista">
+                            <li>Carillas dentales</li>
+                            <li>Blanqueamiento dental</li>
+                            <li>Diseño de sonrisa</li>
+                        </ul>
+                        <div class="servicio-buttons">
+                            <a href="servicio-estetica.html" class="btn-servicio">Ver Página <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prótesis Dental -->
+                <div class="servicio-card">
+                    <div class="servicio-imagen">
+                        <img src="images/empastes-centrodentalhitachi.jpg" alt="Prótesis Dental">
+                    </div>
+                    <div class="servicio-content">
+                        <p class="servicio-categoria">Prótesis Dental</p>
+                        <h3>Prótesis Fijas y Removibles</h3>
+                        <p>Recupera la funcionalidad y estética de tu sonrisa con nuestras prótesis dentales.</p>
+                        <ul class="servicio-lista">
+                            <li>Prótesis fijas</li>
+                            <li>Prótesis removibles</li>
+                            <li>Prótesis sobre implantes</li>
+                        </ul>
+                        <div class="servicio-buttons">
+                            <a href="servicio-protesis.html" class="btn-servicio">Ver Página <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Implantes Dentales -->
+                <div class="servicio-card">
+                    <div class="servicio-imagen">
+                        <img src="images/blanqueamientomujer.webp" alt="Implantes Dentales">
+                    </div>
+                    <div class="servicio-content">
+                        <p class="servicio-categoria">Implantes Dentales</p>
+                        <h3>Implantes de Muy Alta Calidad</h3>
+                        <p>Soluciones definitivas para reemplazar dientes perdidos con implantes de titanio.</p>
+                        <ul class="servicio-lista">
+                            <li>Implantes de titanio</li>
+                            <li>Carga inmediata</li>
+                            <li>All-on-4</li>
+                        </ul>
+                        <div class="servicio-buttons">
+                            <a href="servicio-implantes.html" class="btn-servicio">Ver Página <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Limpieza -->
+                <div class="servicio-card">
+                    <div class="servicio-imagen">
+                        <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza Dental">
+                    </div>
+                    <div class="servicio-content">
+                        <p class="servicio-categoria">Odontología General</p>
+                        <h3>Limpieza Dental</h3>
+                        <p>Prevención y cuidado para mantener tu boca sana. Elimina sarro y manchas.</p>
+                        <ul class="servicio-lista">
+                            <li>Limpieza profunda</li>
+                            <li>Eliminación de sarro</li>
+                            <li>Pulido dental</li>
+                            <li>Fluorización</li>
+                        </ul>
+                        <div class="servicio-buttons">
+                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                <!-- Ortodoncia -->
+                <div class="servicio-card">
+                    <div class="servicio-imagen">
+                        <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia">
+                    </div>
+                    <div class="servicio-content">
+                        <p class="servicio-categoria">Ortodoncia</p>
+                        <h3>Brackets e Invisalign</h3>
+                        <p>Corrige la posición de tus dientes con brackets o invisibles.</p>
+                        <ul class="servicio-lista">
+                            <li>Brackets metálicos</li>
+                            <li>Brackets estéticos</li>
+                            <li>Invisalign</li>
+                            <li>Financiación disponible</li>
+                        </ul>
+                        <div class="servicio-buttons">
+                            <a href="servicio-estetica.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
+                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Implantes -->
+                <div class="servicio-card">
+                    <div class="servicio-imagen">
+                        <img src="images/radio.png" alt="Implantes">
+                    </div>
+                    <div class="servicio-content">
+                        <p class="servicio-categoria">Cirugía Dental</p>
+                        <h3>Implantes Dentales</h3>
+                        <p>Recupera tus dientes con implantes de titanio de última generación.</p>
+                        <ul class="servicio-lista">
+                            <li>Implantes de titanio</li>
+                            <li>Carga inmediata</li>
+                            <li>Estética natural</li>
+                            <li>Garantía profesional</li>
+                        </ul>
+                        <div class="servicio-buttons">
+                            <a href="servicio-implantes.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
+                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Endodoncia -->
+                <div class="servicio-card">
+                    <div class="servicio-imagen">
+                        <img src="images/equipo_de_Ortopantomografia.png" alt="Endodoncia">
+                    </div>
+                    <div class="servicio-content">
+                        <p class="servicio-categoria">Tratamientos</p>
+                        <h3>Endodoncia</h3>
+                        <p>Salva tu diente eliminando la infección del nervio dental. Sin dolor.</p>
+                        <ul class="servicio-lista">
+                            <li>Anestesia local</li>
+                            <li>Procedimiento indoloro</li>
+                            <li>Salva el diente natural</li>
+                            <li>Alta tecnología</li>
+                        </ul>
+                        <div class="servicio-buttons">
+                            <a href="servicio-implantes.html" class="btn-servicio">Pedir cita <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Urgencias -->
+                <div class="servicio-card">
+                    <div class="servicio-imagen">
+                        <img src="images/atencióninmediata.jpg" alt="Urgencias">
+                    </div>
+                    <div class="servicio-content">
+                        <p class="servicio-categoria">Urgencias</p>
+                        <h3>Atención Inmediata</h3>
+                        <p>¿Dolor de muelas? Te atendemos el mismo día sin cita previa.</p>
+                        <ul class="servicio-lista">
+                            <li>Atención inmediata</li>
+                            <li>Alivio del dolor</li>
+                            <li>Horario ampliado</li>
+                            <li>Solución rápida</li>
+                        </ul>
+                        <div class="servicio-buttons">
+                            <a href="tel:931479829" class="btn-servicio">Llamar ahora <i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contenido de la Política -->
-    <section class="about" style="padding: 80px 0;">
-        <div class="container">
-            <div class="text" style="width: 100%; max-width: 800px; margin: 0 auto;">
-                <h4>Última actualización: 17/03/2026</h4>
-
-                <div class="privacy-content">
-                    <section class="privacy-section">
-                        <h3>1. Responsable del Tratamiento</h3>
-                        <p>En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo (RGPD) y la Ley
-                            Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de
-                            los derechos digitales (LOPDGDD), le informamos que:</p>
-                        <ul>
-                            <li><strong>Responsable:</strong> Clínica Dental Dra. Hitachi</li>
-                            <li><strong>Dirección:</strong> Calle Rosa de Alejandría Nº24 Local 3, L'Hospitalet de
-                                Llobregat, 08906 Barcelona</li>
-                            <li><strong>Registro Sanitario:</strong> E08704494</li>
-                            <li><strong>Teléfono:</strong> 622 819 008 / 931 479 829</li>
-                            <li><strong>Email:</strong> info@clinicahitachi.es</li>
-                        </ul>
-                    </section>
-
-                    <section class="privacy-section">
-                        <h3>2. Datos Personales que Tratamos</h3>
-                        <p>Según la finalidad, tratamos las siguientes categorías de datos:</p>
-                        <ul>
-                            <li><strong>Datos identificativos:</strong> nombre, apellidos, DNI/NIF, fecha de nacimiento.
-                            </li>
-                            <li><strong>Datos de contacto:</strong> dirección postal, teléfono, correo electrónico.</li>
-                            <li><strong>Datos de salud:</strong> historial clínico-dental, diagnósticos, tratamientos
-                                realizados y medicación (categoría especial conforme al art. 9 RGPD).</li>
-                            <li><strong>Datos económicos:</strong> facturación y, si procede, datos de pago para
-                                financiación.</li>
-                            <li><strong>Datos de navegación:</strong> dirección IP, cookies técnicas y analíticas (véase
-                                nuestra <a href="cookies.html" style="color:#ff0000;">Política de Cookies</a>).</li>
-                        </ul>
-                    </section>
-
-                    <section class="privacy-section">
-                        <h3>3. Finalidad y Base Jurídica del Tratamiento</h3>
-                        <ul>
-                            <li><strong>Prestación de servicios sanitarios:</strong> gestión de citas, historial clínico
-                                y tratamientos dentales. Base jurídica: ejecución de contrato y cumplimiento de
-                                obligaciones legales en materia sanitaria (art. 6.1.b y 9.2.h RGPD; Ley 41/2002 de
-                                Autonomía del Paciente).</li>
-                            <li><strong>Atención de consultas:</strong> responder a solicitudes enviadas por formulario,
-                                email o teléfono. Base jurídica: consentimiento del interesado (art. 6.1.a RGPD).</li>
-                            <li><strong>Facturación y gestión administrativa:</strong> cumplimiento de obligaciones
-                                tributarias y contables. Base jurídica: obligación legal (art. 6.1.c RGPD).</li>
-                            <li><strong>Comunicaciones comerciales:</strong> envío de información sobre servicios,
-                                promociones o novedades de la clínica, únicamente si ha prestado consentimiento expreso.
-                                Base jurídica: consentimiento (art. 6.1.a RGPD). Puede retirar el consentimiento en
-                                cualquier momento.</li>
-                        </ul>
-                    </section>
-
-                    <section class="privacy-section">
-                        <h3>4. Conservación de los Datos</h3>
-                        <p>Los datos clínicos se conservan durante el tiempo mínimo exigido por la normativa sanitaria
-                            aplicable, en particular conforme a lo establecido en el artículo 17 de la Ley 41/2002
-                            (mínimo 5 años desde la última asistencia) y la normativa de la Comunitat de Catalunya,
-                            que prevé la conservación de la historia clínica durante al menos 10 años.</p>
-                        <p>Los datos de contacto y comunicaciones comerciales se conservan mientras no se solicite
-                            su supresión. Los datos fiscales se conservan durante 6 años conforme al Código de
-                            Comercio.</p>
-                    </section>
-
-                    <section class="privacy-section">
-                        <h3>5. Destinatarios y Cesiones de Datos</h3>
-                        <p>No se ceden datos a terceros salvo obligación legal o cuando sea necesario para la
-                            prestación del servicio. En particular:</p>
-                        <ul>
-                            <li>Laboratorios dentales externos, únicamente para la fabricación de prótesis u otros
-                                trabajos técnicos directamente relacionados con su tratamiento.</li>
-                            <li>Entidades aseguradoras o mutuas, en caso de que el paciente cuente con seguro dental y
-                                autorice expresamente la comunicación.</li>
-                            <li>Administraciones Públicas y organismos oficiales, cuando exista obligación legal (p.
-                                ej., Agencia Tributaria, colegios profesionales, autoridades sanitarias).</li>
-                            <li>Proveedores de servicios tecnológicos (hosting, email, gestión de citas) que actúan como
-                                encargados del tratamiento bajo contrato conforme al art. 28 RGPD, sin poder utilizar
-                                los datos para fines propios.</li>
-                        </ul>
-                        <p>No se realizan transferencias internacionales de datos fuera del Espacio Económico Europeo.
-                        </p>
-                    </section>
-
-                    <section class="privacy-section">
-                        <h3>6. Derechos del Interesado</h3>
-                        <p>Puede ejercer en cualquier momento los siguientes derechos:</p>
-                        <ul>
-                            <li><strong>Acceso:</strong> conocer qué datos suyos tratamos.</li>
-                            <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
-                            <li><strong>Supresión:</strong> solicitar la eliminación de sus datos cuando ya no sean
-                                necesarios para la finalidad para la que fueron recogidos, salvo obligación legal de
-                                conservación.</li>
-                            <li><strong>Oposición:</strong> oponerse al tratamiento por motivos relacionados con su
-                                situación particular.</li>
-                            <li><strong>Limitación:</strong> solicitar la restricción del tratamiento en determinadas
-                                circunstancias.</li>
-                            <li><strong>Portabilidad:</strong> recibir sus datos en formato estructurado y de uso común.
-                            </li>
-                            <li><strong>Retirada del consentimiento:</strong> en cualquier momento, sin que ello afecte
-                                a la licitud del tratamiento previo.</li>
-                        </ul>
-                        <p>Para ejercer estos derechos, envíe su solicitud con copia de su DNI a:
-                            <strong>info@clinicahitachi.es</strong> o por correo postal a nuestra dirección. Dispone del
-                            derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (<a
-                                href="https://www.aepd.es" target="_blank" rel="noopener"
-                                style="color:#ff0000;">www.aepd.es</a>) si considera que el tratamiento no se ajusta a
-                            la normativa vigente.
-                        </p>
-                    </section>
-
-                    <section class="privacy-section">
-                        <h3>7. Datos de Menores</h3>
-                        <p>En caso de pacientes menores de 14 años, el tratamiento de sus datos requiere el
-                            consentimiento expreso del padre, madre o tutor legal, quienes deberán firmar los
-                            formularios correspondientes en la clínica.</p>
-                    </section>
-
-                    <section class="privacy-section">
-                        <h3>8. Seguridad</h3>
-                        <p>Clínica Dental Dra. Hitachi aplica las medidas técnicas y organizativas necesarias para
-                            garantizar la seguridad de los datos personales y evitar su alteración, pérdida,
-                            tratamiento o acceso no autorizado, conforme a lo exigido por el RGPD y la normativa
-                            de seguridad aplicable a los datos de salud.</p>
-                    </section>
-
-                    <section class="privacy-section">
-                        <h3>9. Modificaciones</h3>
-                        <p>Nos reservamos el derecho a actualizar esta Política de Privacidad para adaptarla a
-                            cambios normativos o en nuestros servicios. La versión vigente estará siempre
-                            disponible en esta página. Le recomendamos consultarla periódicamente.</p>
-                    </section>
-                </div>
-            </div>
-        </div>
+    <!-- CTA -->
+    <section class="cta-servicios">
+        <h2>¿No encuentras lo que buscas?</h2>
+        <p>Contáctanos y te asesoraremos sobre el mejor tratamiento para ti</p>
+        <a href="contacto.html" class="btn-primary">
+            <i class="fas fa-comments"></i>
+            Pedir información
+        </a>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-inner">
 
@@ -329,61 +697,41 @@
         </div>
     </footer>
 
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    <script src="js/bliss.js"></script>
+    <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn"
+        class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+
     <script>
-        var dateobj = new Date(); var getyear = dateobj.getFullYear(); var getyeardiv = document.getElementById('copyrightyear'); getyeardiv.innerHTML = getyear;
-    </script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            // Efecto de desvanecimiento
-            effect: "fadeIn", // Cambiado a "fade" para una transición más suave
+        gsap.registerPlugin(ScrollTrigger);
 
-            // Autoplay
-            autoplay: {
-                delay: 1000, // 2 segundos entre cada slide
-                disableOnInteraction: false, // Continúa el autoplay incluso después de la interacción del usuario
-                pauseOnMouseEnter: true // Pausa cuando el mouse está sobre el slider
-            },
+        // Animaciones del hero (sin ScrollTrigger, se ejecutan al cargar)
+        gsap.from('.servicios-hero h1', { y: 30, opacity: 0, duration: 0.8 });
+        gsap.from('.servicios-hero p', { y: 20, opacity: 0, duration: 0.8, delay: 0.2 });
 
-            // Loop
-            loop: true,
-
-            // Velocidad de transición
-            speed: 2000, // 1 segundo para la transición
-
-            // Navegación
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-
-            // Paginación
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true // Hace que los bullets sean dinámicos
-            },
-
-            // Efectos adicionales
-            fadeEffect: {
-                crossFade: true // Asegura una transición suave entre slides
-            }
+        // Animaciones de las tarjetas SOLO cuando sean visibles
+        gsap.utils.toArray('.servicio-card').forEach((card, i) => {
+            gsap.fromTo(card,
+                { y: 50, opacity: 0 }, // Estado inicial
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none' // Solo se ejecuta una vez
+                    }
+                }
+            );
         });
 
-        // Opcional: Pausar al hover
-        document.querySelector('.mySwiper').addEventListener('mouseenter', function () {
-            swiper.autoplay.stop();
-        });
-
-        document.querySelector('.mySwiper').addEventListener('mouseleave', function () {
-            swiper.autoplay.start();
-        });
-
-
-
-
-
+        // Botón scroll to top
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
+        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
 </body>
 

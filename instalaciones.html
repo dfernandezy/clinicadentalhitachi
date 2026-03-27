@@ -1001,6 +1001,14 @@
             background: transparent !important;
         }
     }
+
+    @media(max-width:768px) {
+        /* iOS/Android fix: background-attachment:fixed causa zoom borroso en móvil */
+        .cta-visit {
+            background-attachment: scroll;
+            background-position: center center;
+        }
+    }
 </style>
 </head>
 
