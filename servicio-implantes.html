@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style-responsive.css">
+  <link rel="stylesheet" href="index-enhancements.css">
   <link rel="stylesheet" href="footer.css">
 
   <style>
@@ -254,17 +255,18 @@
       grid-template-columns: 1fr 1fr;
       position: relative;
       overflow: hidden;
-      background: var(--smoke);
+      background: #f2f4f8;
     }
 
-    /* Subtle red gradient mesh on light bg */
+    /* ─── IMPLANTES: mesh azulado-frío técnico ─── */
     .hero-mesh {
       position: absolute;
       inset: 0;
       z-index: 0;
       background:
-        radial-gradient(ellipse 60% 55% at 70% 45%, rgba(232, 0, 29, .07) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(232, 0, 29, .04) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 55% at 70% 45%, rgba(232, 0, 29, .06) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 40% at 20% 75%, rgba(30, 80, 160, .06) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 30% at 55% 5%, rgba(20, 50, 120, .04) 0%, transparent 50%);
       animation: meshPulse 8s ease-in-out infinite alternate;
     }
 
@@ -1922,6 +1924,12 @@
               alt="Implante dental en Clínica Hitachi"
               onerror="this.parentElement.style.background='linear-gradient(135deg,#1c1d21,#26272d)'">
           </div>
+          <!-- Badge TAC 3D exclusivo de implantes -->
+          <div style="position:absolute;top:1.2rem;right:1.2rem;z-index:5;background:#12141c;color:#fff;border:1.5px solid rgba(232,0,29,.6);border-radius:14px;padding:.6rem 1rem;display:flex;flex-direction:column;align-items:center;gap:.15rem;box-shadow:0 6px 20px rgba(0,0,0,.25);">
+            <i class="fas fa-cube" style="color:#e8001d;font-size:1.1rem;"></i>
+            <span style="font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.2;">Diagnóstico</span>
+            <span style="font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.2;color:#ff4d6a;">TAC 3D</span>
+          </div>
           <div class="stat-float">
             <div class="stat-float__n">+600</div>
             <div class="stat-float__l">implantes colocados</div>
@@ -2004,7 +2012,6 @@
         <div></div>
 
         <!-- Fila 2 -->
-        <div></div>
         <div class="tl-node"><div class="tl-dot">02</div></div>
         <div class="tl-right rv rv-d1">
           <div class="tl-card" style="margin-left:2rem">
@@ -2026,7 +2033,6 @@
         <div></div>
 
         <!-- Fila 4 -->
-        <div></div>
         <div class="tl-node"><div class="tl-dot">04</div></div>
         <div class="tl-right rv rv-d2">
           <div class="tl-card" style="margin-left:2rem">
@@ -2180,37 +2186,22 @@
       <div class="sh rv">
         <span class="sey">Opiniones reales</span>
         <h2 class="sh2" id="h-testi">Pacientes que recuperaron su diente</h2>
-        <p class="ssub">Reseñas reales de Google de nuestros pacientes</p>
+        <p class="ssub">Reseñas reales de Google</p>
       </div>
-      <div class="testi-grid">
-        <div class="testi-card rv">
-          <div class="testi-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testi-text">Excelente el trato recibido tanto por el personal de la clínica como por parte de la Dra. Hitachi. Buenos profesionales.</p>
-          <div class="testi-author">
-            <div class="testi-av">C</div>
-            <div>
-              <div class="testi-name">Cristina Cruz Martinez</div>
-              <div class="testi-role">Feb 2026</div>
-            </div>
-            <span class="testi-badge">✓ Google</span>
-          </div>
-        </div>
-        <div class="testi-card rv rv-d1">
-          <div class="testi-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="testi-text">Mi experiencia ha sido genial. Desde el principio hasta el final de mi tratamiento. La doctora tiene unas manos de oro.</p>
-          <div class="testi-author">
-            <div class="testi-av">J</div>
-            <div>
-              <div class="testi-name">janina soto castro</div>
-              <div class="testi-role">Oct 2025</div>
-            </div>
-            <span class="testi-badge">✓ Google</span>
-          </div>
-        </div>
+      <div class="reviews-google-badge rv">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span>4.9 ★ · 35 reseñas en Google</span>
+        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener noreferrer">Ver todas →</a>
+      </div>
+    </div>
+    <div class="reviews-track-wrapper">
+      <div class="reviews-track">
+        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">J</div><div class="review-info"><h4>janina soto castro</h4><div class="review-date">Oct 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Mi experiencia ha sido genial. Desde el principio hasta el final de mi tratamiento. La doctora tiene unas manos de oro.</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">C</div><div class="review-info"><h4>Cristina Cruz Martinez</h4><div class="review-date">Feb 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente el trato recibido tanto por el personal de la clínica como por parte de la Dra. Hitachi. Buenos profesionales.</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">Y</div><div class="review-info"><h4>Yamileth Ventura</h4><div class="review-date">Sept 2024</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Me e echo unos implantes, y son muy profesionales con lo que hacen, encantada con su trabajo, la atención muy buena, los recomiendo son los mejores 👍</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">L</div><div class="review-info"><h4>LUIS PALACIOS</h4><div class="review-date">Feb 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente atencion muy profesional en todo</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">E</div><div class="review-info"><h4>Eduard Ulises Quiñonez</h4><div class="review-date">Ago 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Es un sitio excelente, estoy muy contento con el trato que le han dado a mi caso y el trato con los clientes es maravilloso 👏😁 lo recomiendo.</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">T</div><div class="review-info"><h4>tania ramos</h4><div class="review-date">Ene 2024</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente centro, la atención, el personal es súper amable y atento, todas sus prácticas 100% profesionales, y el ambiente muy tranquilo, recomendadisimos!</p></div>
       </div>
     </div>
   </section>
