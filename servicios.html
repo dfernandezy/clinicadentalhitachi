@@ -315,6 +315,14 @@
             }
         }
 
+        @media (max-width: 768px) {
+            /* iOS/Android fix: background-attachment:fixed causa zoom borroso en móvil */
+            .servicios-hero {
+                background-attachment: scroll;
+                background-position: center top;
+            }
+        }
+
         @media (max-width: 576px) {
             .servicios-hero {
                 padding: 180px 20px 80px;
