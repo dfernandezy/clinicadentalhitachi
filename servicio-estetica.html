@@ -11,6 +11,116 @@
   <link rel="canonical" href="https://clinicadentalhitachi.com/servicio-estetica.html">
   <link rel="icon" type="image/png" href="images/logo.webp">
 
+  <!-- Schema.org: MedicalBusiness + Service + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Dentist",
+        "@id": "https://clinicadentalhitachi.com/#organization",
+        "name": "Clínica Dental Dra. Hitachi",
+        "url": "https://clinicadentalhitachi.com",
+        "logo": "https://clinicadentalhitachi.com/images/logo.webp",
+        "image": "https://clinicadentalhitachi.com/images/maquinaria.jpg",
+        "telephone": "+34622819008",
+        "email": "info@clinicahitachi.es",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Rosa de Alejandría, 24",
+          "addressLocality": "L'Hospitalet de Llobregat",
+          "addressRegion": "Barcelona",
+          "postalCode": "08904",
+          "addressCountry": "ES"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.3584,
+          "longitude": 2.1028
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:30",
+            "closes": "20:00"
+          }
+        ],
+        "priceRange": "€€",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Efectivo, Tarjeta, Financiación"
+      },
+      {
+        "@type": "MedicalProcedure",
+        "@id": "https://clinicadentalhitachi.com/servicio-estetica.html#service",
+        "name": "Estética Dental en L'Hospitalet de Llobregat",
+        "alternateName": ["carillas dentales", "blanqueamiento dental", "diseño de sonrisa", "carillas porcelana"],
+        "description": "Carillas de porcelana, blanqueamiento profesional y diseño de sonrisa en L'Hospitalet de Llobregat, cerca de Can Vidalet. Resultados naturales y personalizados.",
+        "url": "https://clinicadentalhitachi.com/servicio-estetica.html",
+        "procedureType": "https://schema.org/TherapeuticProcedure",
+        "preparation": "Valoración estética personalizada y análisis digital de la sonrisa",
+        "provider": {
+          "@id": "https://clinicadentalhitachi.com/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://clinicadentalhitachi.com/servicio-estetica.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://clinicadentalhitachi.com/index.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Servicios",
+            "item": "https://clinicadentalhitachi.com/servicios.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Estética Dental",
+            "item": "https://clinicadentalhitachi.com/servicio-estetica.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://clinicadentalhitachi.com/servicio-estetica.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto duran las carillas dentales de porcelana?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Las carillas de porcelana tienen una durabilidad de entre 10 y 20 años con un cuidado adecuado. Son resistentes a las manchas y mantienen su color natural con el tiempo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿El blanqueamiento dental daña el esmalte?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El blanqueamiento profesional supervisado por nuestros dentistas es seguro y no daña el esmalte. Utilizamos productos homologados y controlamos el proceso en cada sesión."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta el diseño de sonrisa en L'Hospitalet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El coste depende del tratamiento personalizado. Ofrecemos financiación adaptada y presupuesto gratuito sin compromiso. Llámanos al 622 819 008."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -1807,6 +1917,13 @@
   </header>
 
   <!-- ═══════════ HERO ═══════════ -->
+  <nav aria-label="Ruta de navegación" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+    <ol>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li aria-current="page">Estética Dental</li>
+    </ol>
+  </nav>
   <section class="hero" id="hero" aria-label="Implantes dentales en L'Hospitalet">
     <div class="hero-mesh" aria-hidden="true"></div>
 
