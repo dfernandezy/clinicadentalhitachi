@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e8001d">
+  <title>Nuestro Equipo | Clínica Dental Dra. Hitachi – L'Hospitalet de Llobregat</title>
+  <meta name="description" content="Conoce a los profesionales de la Clínica Dental Dra. Hitachi en L'Hospitalet de Llobregat. Un equipo especializado, cercano y comprometido con tu salud dental.">
+  <link rel="canonical" href="https://clinicadentalhitachi.com/equipo.html">
+  <link rel="icon" type="image/png" href="images/logo.webp">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://clinicadentalhitachi.com/equipo.html">
+  <meta property="og:title" content="Nuestro Equipo | Clínica Dental Dra. Hitachi">
+  <meta property="og:description" content="Conoce a los profesionales de la Clínica Dental Dra. Hitachi en L'Hospitalet de Llobregat.">
+  <meta property="og:image" content="https://clinicadentalhitachi.com/images/doctorahitachi.jpg">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Dentist",
+        "@id": "https://clinicadentalhitachi.com/#organization",
+        "name": "Clínica Dental Dra. Hitachi",
+        "url": "https://clinicadentalhitachi.com",
+        "telephone": "+34622819008",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Rosa de Alejandría, 24",
+          "addressLocality": "L'Hospitalet de Llobregat",
+          "addressRegion": "Barcelona",
+          "postalCode": "08904",
+          "addressCountry": "ES"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://clinicadentalhitachi.com/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Nuestro Equipo", "item": "https://clinicadentalhitachi.com/equipo.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icons-linear.css">
+  <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-responsive.css">
+  <link rel="stylesheet" href="footer.css">
+
+  <!-- Scripts -->
+  <script src="js/jquery.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/menuscript.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── HEADER ── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      z-index: 9999;
+    }
+    header nav.headermenu ul li {
+      float: left !important;
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      margin-right: 30px !important;
+      font-family: 'Poppins', sans-serif !important;
+      text-transform: uppercase !important;
+      padding: 0 !important;
+    }
+    header nav.headermenu ul li a {
+      display: block !important;
+      color: #000 !important;
+      text-decoration: none !important;
+      padding: 8px 15px !important;
+      background: transparent !important;
+      border-bottom: none !important;
+      border-radius: 0 !important;
+    }
+    header nav.headermenu ul li.active a {
+      background: #ff0000 !important;
+      color: #fff !important;
+      border-radius: 5px !important;
+    }
+    header .contact-info a { color: #000; }
+    @media(max-width:1200px) {
+      body { padding-top: 0 !important; }
+      .sitenav nav.headermenu ul li a { color: #fff !important; }
+      .sitenav nav.headermenu ul li.active a { color: #ff0000 !important; background: transparent !important; }
+      .eq-grid { position: relative; z-index: 1; }
+    }
+
+    /* ── HERO ── */
+    .eq-hero {
+      display: none;
+    }
+
+    /* ── GRID EQUIPO ── */
+    .eq-section {
+      padding: clamp(3.5rem, 7vw, 6rem) 1.5rem;
+      background: #f8f8f6;
+    }
+    .eq-section__header {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+    }
+    .eq-section__header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: .6rem;
+    }
+    .eq-section__header p {
+      color: #6b7280;
+      font-size: .97rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .eq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── CARD ── */
+    .eq-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      transition: box-shadow .28s ease, transform .28s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .eq-card:hover {
+      box-shadow: 0 14px 44px rgba(0,0,0,.14);
+      transform: translateY(-5px);
+    }
+    .eq-card--featured {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      max-width: 780px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    @media (max-width: 680px) {
+      .eq-card--featured { 
+        flex-direction: column;
+        max-width: 100%;
+        grid-column: auto;
+      }
+    }
+
+    .eq-card__img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .eq-card--featured .eq-card__img-wrap {
+      flex: 0 0 42%;
+      aspect-ratio: unset;
+      min-height: 360px;
+    }
+    @media (max-width: 680px) {
+      .eq-card--featured .eq-card__img-wrap { min-height: 280px; aspect-ratio: 4/3; }
+    }
+    .eq-card__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform .45s ease;
+    }
+    .eq-card:hover .eq-card__img-wrap img {
+      transform: scale(1.05);
+    }
+    .eq-card__badge {
+      position: absolute;
+      top: .9rem;
+      left: .9rem;
+      background: #e8001d;
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .25rem .7rem;
+      border-radius: 50px;
+    }
+    .eq-card__hint {
+      position: absolute;
+      bottom: .9rem;
+      right: .9rem;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 500;
+      padding: .3rem .7rem;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      pointer-events: none;
+    }
+
+    .eq-card__body {
+      padding: 1.5rem 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .eq-card--featured .eq-card__body {
+      justify-content: center;
+      gap: .75rem;
+    }
+    .eq-card__role {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #e8001d;
+    }
+    .eq-card__name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1.2;
+    }
+    .eq-card--featured .eq-card__name {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    }
+    .eq-card__excerpt {
+      font-size: .88rem;
+      color: #6b7280;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .eq-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: .5rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: #e8001d;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color .2s;
+      width: fit-content;
+    }
+    .eq-card:hover .eq-card__cta {
+      border-color: #e8001d;
+    }
+
+    /* ── MODAL ── */
+    .eq-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,15,20,.65);
+      backdrop-filter: blur(6px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .eq-modal-overlay.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .eq-modal {
+      background: #fff;
+      border-radius: 24px;
+      max-width: 780px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: row;
+      box-shadow: 0 24px 80px rgba(0,0,0,.25);
+      transform: scale(.94) translateY(20px);
+      transition: transform .32s cubic-bezier(.34,1.56,.64,1);
+      position: relative;
+    }
+    .eq-modal-overlay.is-open .eq-modal {
+      transform: scale(1) translateY(0);
+    }
+    @media (max-width: 640px) {
+      .eq-modal { flex-direction: column; }
+    }
+    .eq-modal__img {
+      flex: 0 0 38%;
+      position: relative;
+      min-height: 320px;
+    }
+    .eq-modal__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 24px 0 0 24px;
+    }
+    @media (max-width: 640px) {
+      .eq-modal__img { min-height: 220px; }
+      .eq-modal__img img { border-radius: 24px 24px 0 0; }
+    }
+    .eq-modal__role-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: #e8001d;
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .25rem .7rem;
+      border-radius: 50px;
+    }
+    .eq-modal__content {
+      flex: 1;
+      padding: 2rem 2rem 2rem 1.75rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .eq-modal__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.08);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1a1a1a;
+      font-size: 1rem;
+      transition: background .2s;
+      z-index: 2;
+    }
+    .eq-modal__close:hover { background: rgba(0,0,0,.16); }
+    .eq-modal__role {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #e8001d;
+    }
+    .eq-modal__name {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+    }
+    .eq-modal__divider {
+      width: 40px;
+      height: 3px;
+      background: #e8001d;
+      border-radius: 2px;
+    }
+    .eq-modal__bio {
+      font-size: .92rem;
+      color: #4a4a55;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .eq-modal__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .25rem;
+    }
+    .eq-modal__tag {
+      background: #f3f3f1;
+      color: #3a3a44;
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      border: 1px solid #e5e7eb;
+    }
+    .eq-modal__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .75rem 1.75rem;
+      background: #e8001d;
+      color: #fff;
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 600;
+      width: fit-content;
+      margin-top: .5rem;
+      transition: background .25s, transform .25s;
+      box-shadow: 0 4px 16px rgba(232,0,29,.3);
+    }
+    .eq-modal__cta:hover {
+      background: #b5001a;
+      transform: translateY(-2px);
+    }
+
+    /* ── CTA FINAL ── */
+    .eq-cta {
+      background: linear-gradient(135deg, #e8001d 0%, #b5001a 100%);
+      padding: clamp(3.5rem, 7vw, 6rem) 1.5rem;
+      text-align: center;
+    }
+    .eq-cta__inner {
+      max-width: 580px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .eq-cta h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+    }
+    .eq-cta p {
+      color: rgba(255,255,255,.78);
+      font-size: clamp(.92rem, 1.5vw, 1.05rem);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .eq-cta__btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+      justify-content: center;
+      margin-top: .5rem;
+    }
+    .eq-cta__btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .85rem 2rem;
+      background: #fff;
+      color: #e8001d;
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0,0,0,.18);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .eq-cta__btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,.24);
+    }
+    .eq-cta__btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .85rem 2rem;
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,.6);
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 600;
+      transition: background .25s, border-color .25s, transform .25s;
+    }
+    .eq-cta__btn-secondary:hover {
+      background: rgba(255,255,255,.12);
+      border-color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up:nth-child(2) { transition-delay: .08s; }
+    .fade-up:nth-child(3) { transition-delay: .16s; }
+    .fade-up:nth-child(4) { transition-delay: .24s; }
+    .fade-up:nth-child(5) { transition-delay: .32s; }
+    .fade-up:nth-child(6) { transition-delay: .40s; }
+
+    /* ── WHATSAPP ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 9998;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+      transition: transform .25s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="container psr">
+      <div class="header_default">
+        <div class="site-branding">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo Clínica Dental Dra. Hitachi" class="logo-1" width="70px">
+            <img src="images/logo.webp" alt="Logo Clínica Dental Dra. Hitachi" class="logo-2" width="70px">
+          </a>
+        </div>
+        <div class="header-right">
+          <div class="site-navwrap">
+            <div class="navicons">
+              <a href="javascript:void(0);" class="navshow"><span class="lnr lnr-menu"></span></a>
+              <a href="javascript:void(0);" class="navhide"><span class="lnr lnr-cross"></span></a>
+            </div>
+            <div class="sitenav" id="sitenav">
+              <div class="navwrap">
+                <div class="navouter">
+                  <nav class="headermenu leftmenu" id="headnav" role="navigation">
+                    <ul>
+                      <li><a href="index.html">Inicio</a></li>
+                      <li><a href="nosotros.html">Nosotros</a></li>
+                      <li class="active"><a href="equipo.html">Equipo</a></li>
+                      <li><a href="servicios.html">Servicios</a></li>
+                      <li><a href="instalaciones.html">Instalaciones</a></li>
+                      <li><a href="contacto.html">Contacto</a></li>
+                      <li class="blog"><a href="blog.html">Blog</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-info">
+            <a href="tel:+34622819008"><i class="fa-solid fa-phone-volume"></i></a>
+            <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+            <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ HERO ══ -->
+  <section class="eq-hero">
+    <div class="eq-hero__eyebrow">CLÍNICA DENTAL DRA. HITACHI</div>
+    <h1>El equipo que cuida<br><em>tu sonrisa</em></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Profesionales comprometidos con tu salud dental en L'Hospitalet de Llobregat.</p>
+  </section>
+
+  <!-- ══ GRID EQUIPO ══ -->
+  <section class="eq-section" aria-labelledby="eq-heading">
+    <div class="eq-section__header">
+      <h2 id="eq-heading">Nuestros profesionales</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Haz clic en cada profesional para conocer su trayectoria.</p>
+    </div>
+
+    <div class="eq-grid">
+
+      <!-- ── DRA. HITACHI (destacada) ── -->
+      <article class="eq-card eq-card--featured fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Vivian Hitachi" data-member="hitachi">
+        <div class="eq-card__img-wrap">
+          <img src="images/doctorahitachi.jpg" alt="Dra. Vivian Hitachi A. – Directora y Cirujana Dental" width="420" height="560" loading="eager">
+          <span class="eq-card__badge">Fundadora</span>
+          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
+        </div>
+        <div class="eq-card__body">
+          <span class="eq-card__role">Directora &amp; Cirujana Dental</span>
+          <h2 class="eq-card__name">Dra. Vivian Hitachi A.</h2>
+          <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Conocer su trayectoria</span>
+        </div>
+      </article>
+
+      <!-- ── DRA. ANA MOLINA ── -->
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Ana Molina" data-member="molina">
+        <div class="eq-card__img-wrap">
+          <img src="images/dentista3.webp" alt="Dra. Ana Molina G. – Odontóloga General" width="400" height="530" loading="lazy">
+          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
+        </div>
+        <div class="eq-card__body">
+          <span class="eq-card__role">Odontóloga General</span>
+          <h3 class="eq-card__name">Dra. Ana Molina G.</h3>
+          <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
+        </div>
+      </article>
+
+      <!-- ── DRA. MARTA LUQUE ── -->
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Marta Luque" data-member="luque">
+        <div class="eq-card__img-wrap">
+          <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R. – Ortodoncista" width="400" height="530" loading="lazy">
+          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
+        </div>
+        <div class="eq-card__body">
+          <span class="eq-card__role">Ortodoncista</span>
+          <h3 class="eq-card__name">Dra. Marta Luque R.</h3>
+          <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
+        </div>
+      </article>
+
+      <!-- ── ANA TERRAZAS ── -->
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Ana Terrazas" data-member="terrazas">
+        <div class="eq-card__img-wrap">
+          <img src="images/dentista4.webp" alt="Ana Terrazas Q. – Auxiliar de Clínica" width="400" height="530" loading="lazy">
+          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
+        </div>
+        <div class="eq-card__body">
+          <span class="eq-card__role">Auxiliar de Clínica</span>
+          <h3 class="eq-card__name">Ana Terrazas Q.</h3>
+          <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
+        </div>
+      </article>
+
+      <!-- ── KATHY ALONSO ── -->
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Kathy Alonso" data-member="alonso">
+        <div class="eq-card__img-wrap">
+          <img src="images/dentista1.webp" alt="Kathy Alonso A. – Higienista Dental" width="400" height="530" loading="lazy">
+          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
+        </div>
+        <div class="eq-card__body">
+          <span class="eq-card__role">Higienista Dental</span>
+          <h3 class="eq-card__name">Kathy Alonso A.</h3>
+          <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
+        </div>
+      </article>
+
+      <!-- ── HERMAN MENACHO ── -->
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Herman Menacho" data-member="menacho">
+        <div class="eq-card__img-wrap">
+          <img src="images/dentista5.webp" alt="Herman Menacho L. – Administrador y Recepcionista" width="400" height="530" loading="lazy">
+          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
+        </div>
+        <div class="eq-card__body">
+          <span class="eq-card__role">Recepción y Administración</span>
+          <h3 class="eq-card__name">Herman Menacho L.</h3>
+          <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ CTA FINAL ══ -->
+  <section class="eq-cta">
+    <div class="eq-cta__inner">
+      <h2>¿Quieres conocernos en persona?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ven sin compromiso.</p>
+      <div class="eq-cta__btns">
+        <a href="contacto.html" class="eq-cta__btn-primary">
+          <i class="fas fa-calendar-check"></i> Pedir cita
+        </a>
+        <a href="tel:+34622819008" class="eq-cta__btn-secondary">
+          <i class="fas fa-phone"></i> 622 819 008
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer__brand">
+        <a href="index.html" aria-label="Ir al inicio">
+          <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42" loading="lazy" />
+        </a>
+        <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
+        <address class="footer__contact">
+          <a href="tel:+34622819008">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+            622 819 008
+          </a>
+          <a href="tel:+34931479829">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+            931 479 829
+          </a>
+          <a href="mailto:info@clinicahitachi.es">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+            info@clinicahitachi.es
+          </a>
+          <span>
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+            Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
+          </span>
+          <span style="font-size:0.75rem; color:#aaa; margin-top:4px; display:block;">Reg. Sanitario: E08704494</span>
+        </address>
+      </div>
+      <nav class="footer__nav" aria-label="Navegación del pie de página">
+        <h3>Clinica Hitachi</h3>
+        <ul role="list">
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="equipo.html">Nuestro equipo</a></li>
+          <li><a href="instalaciones.html">Instalaciones</a></li>
+          <li><a href="blog.html">Blog dental</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__nav" aria-label="Información Legal">
+        <h3>Información Legal</h3>
+        <ul role="list">
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+        </ul>
+      </nav>
+      <div class="footer__hours">
+        <h3>Horario</h3>
+        <dl>
+          <div>
+            <dt>Lunes – Viernes</dt>
+            <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
+          </div>
+          <div>
+            <dt>Sábados y Domingos</dt>
+            <dd>Cerrado</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
+        <p>Diseñado con <span aria-label="amor" role="img">♥</span> en Barcelona</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/34622819008?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20al%20equipo%20y%20pedir%20cita"
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ══ MODALES de cada profesional ══ -->
+
+  <!-- Modal: Dra. Hitachi -->
+  <div class="eq-modal-overlay" id="modal-hitachi" role="dialog" aria-modal="true" aria-labelledby="mname-hitachi">
+    <div class="eq-modal">
+      <button class="eq-modal__close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="eq-modal__img">
+        <img src="images/doctorahitachi.jpg" alt="Dra. Vivian Hitachi A.">
+        <span class="eq-modal__role-badge">Fundadora</span>
+      </div>
+      <div class="eq-modal__content">
+        <span class="eq-modal__role">Directora &amp; Cirujana Dental</span>
+        <h2 class="eq-modal__name" id="mname-hitachi">Dra. Vivian Hitachi A.</h2>
+        <div class="eq-modal__divider"></div>
+        <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="eq-modal__bio">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <div class="eq-modal__tags">
+          <span class="eq-modal__tag">Cirugía Dental</span>
+          <span class="eq-modal__tag">Implantología</span>
+          <span class="eq-modal__tag">Endodoncia</span>
+          <span class="eq-modal__tag">+20 años experiencia</span>
+        </div>
+        <a href="contacto.html" class="eq-modal__cta"><i class="fas fa-calendar-plus"></i> Pedir cita</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Dra. Ana Molina -->
+  <div class="eq-modal-overlay" id="modal-molina" role="dialog" aria-modal="true" aria-labelledby="mname-molina">
+    <div class="eq-modal">
+      <button class="eq-modal__close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="eq-modal__img">
+        <img src="images/dentista3.webp" alt="Dra. Ana Molina G.">
+      </div>
+      <div class="eq-modal__content">
+        <span class="eq-modal__role">Odontóloga General</span>
+        <h2 class="eq-modal__name" id="mname-molina">Dra. Ana Molina G.</h2>
+        <div class="eq-modal__divider"></div>
+        <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="eq-modal__tags">
+          <span class="eq-modal__tag">Odontología General</span>
+          <span class="eq-modal__tag">Prevención</span>
+          <span class="eq-modal__tag">Empastes</span>
+          <span class="eq-modal__tag">Periodoncia</span>
+        </div>
+        <a href="contacto.html" class="eq-modal__cta"><i class="fas fa-calendar-plus"></i> Pedir cita</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Dra. Marta Luque -->
+  <div class="eq-modal-overlay" id="modal-luque" role="dialog" aria-modal="true" aria-labelledby="mname-luque">
+    <div class="eq-modal">
+      <button class="eq-modal__close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="eq-modal__img">
+        <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R.">
+      </div>
+      <div class="eq-modal__content">
+        <span class="eq-modal__role">Ortodoncista</span>
+        <h2 class="eq-modal__name" id="mname-luque">Dra. Marta Luque R.</h2>
+        <div class="eq-modal__divider"></div>
+        <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="eq-modal__tags">
+          <span class="eq-modal__tag">Ortodoncia</span>
+          <span class="eq-modal__tag">Invisalign</span>
+          <span class="eq-modal__tag">Brackets</span>
+          <span class="eq-modal__tag">Ortopedia Dentofacial</span>
+        </div>
+        <a href="contacto.html" class="eq-modal__cta"><i class="fas fa-calendar-plus"></i> Pedir cita</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Ana Terrazas -->
+  <div class="eq-modal-overlay" id="modal-terrazas" role="dialog" aria-modal="true" aria-labelledby="mname-terrazas">
+    <div class="eq-modal">
+      <button class="eq-modal__close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="eq-modal__img">
+        <img src="images/dentista4.webp" alt="Ana Terrazas Q.">
+      </div>
+      <div class="eq-modal__content">
+        <span class="eq-modal__role">Auxiliar de Clínica</span>
+        <h2 class="eq-modal__name" id="mname-terrazas">Ana Terrazas Q.</h2>
+        <div class="eq-modal__divider"></div>
+        <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="eq-modal__tags">
+          <span class="eq-modal__tag">Auxiliar de Clínica</span>
+          <span class="eq-modal__tag">Asistencia Quirúrgica</span>
+          <span class="eq-modal__tag">Esterilización</span>
+        </div>
+        <a href="contacto.html" class="eq-modal__cta"><i class="fas fa-calendar-plus"></i> Pedir cita</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Kathy Alonso -->
+  <div class="eq-modal-overlay" id="modal-alonso" role="dialog" aria-modal="true" aria-labelledby="mname-alonso">
+    <div class="eq-modal">
+      <button class="eq-modal__close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="eq-modal__img">
+        <img src="images/dentista1.webp" alt="Kathy Alonso A.">
+      </div>
+      <div class="eq-modal__content">
+        <span class="eq-modal__role">Higienista Dental</span>
+        <h2 class="eq-modal__name" id="mname-alonso">Kathy Alonso A.</h2>
+        <div class="eq-modal__divider"></div>
+        <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="eq-modal__tags">
+          <span class="eq-modal__tag">Higiene Dental</span>
+          <span class="eq-modal__tag">Periodoncia</span>
+          <span class="eq-modal__tag">Educación Preventiva</span>
+          <span class="eq-modal__tag">Blanqueamiento</span>
+        </div>
+        <a href="contacto.html" class="eq-modal__cta"><i class="fas fa-calendar-plus"></i> Pedir cita</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Herman Menacho -->
+  <div class="eq-modal-overlay" id="modal-menacho" role="dialog" aria-modal="true" aria-labelledby="mname-menacho">
+    <div class="eq-modal">
+      <button class="eq-modal__close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="eq-modal__img">
+        <img src="images/dentista5.webp" alt="Herman Menacho L.">
+      </div>
+      <div class="eq-modal__content">
+        <span class="eq-modal__role">Recepción y Administración</span>
+        <h2 class="eq-modal__name" id="mname-menacho">Herman Menacho L.</h2>
+        <div class="eq-modal__divider"></div>
+        <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="eq-modal__tags">
+          <span class="eq-modal__tag">Administración</span>
+          <span class="eq-modal__tag">Atención al Paciente</span>
+          <span class="eq-modal__tag">Gestión de Citas</span>
+        </div>
+        <a href="contacto.html" class="eq-modal__cta"><i class="fas fa-calendar-plus"></i> Pedir cita</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Año en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Cerrar menú móvil al cargar
+    window.addEventListener('load', () => {
+      const sitenav = document.getElementById('sitenav');
+      if (sitenav) sitenav.style.display = 'none';
+    });
+
+    // ── Scroll reveal
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    fadeEls.forEach(el => revealObs.observe(el));
+
+    // ── Modal logic
+    const cards = document.querySelectorAll('.eq-card[data-member]');
+    cards.forEach(card => {
+      const open = () => {
+        const overlay = document.getElementById('modal-' + card.dataset.member);
+        if (!overlay) return;
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        overlay.querySelector('.eq-modal__close').focus();
+      };
+      card.addEventListener('click', open);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    });
+
+    document.querySelectorAll('.eq-modal-overlay').forEach(overlay => {
+      const close = () => {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      };
+      overlay.querySelector('.eq-modal__close').addEventListener('click', close);
+      overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('is-open')) close(); });
+    });
+  </script>
+
+</body>
+</html>
