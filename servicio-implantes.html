@@ -127,11 +127,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icons-linear.css">
   <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style-responsive.css">
   <link rel="stylesheet" href="index-enhancements.css">
   <link rel="stylesheet" href="footer.css">
+  <script defer src="js/jquery.js"></script>
+  <script defer src="js/scripts.js"></script>
+  <script defer src="js/menuscript.js"></script>
 
   <style>
     /* ─────────────────────────────────────────
@@ -167,7 +171,6 @@
     .s--ink3,
     .final-cta,
     .site-footer,
-    .sitenav,
     .service-card,
     .testimonial-card,
     .why-item,
@@ -175,6 +178,15 @@
       background-color: var(--white) !important;
       color: var(--ink) !important;
     }
+
+    /* Sitenav override — texto blanco sobre fondo oscuro */
+    .sitenav,
+    .sitenav * {
+      background: transparent !important;
+      color: #fff !important;
+    }
+
+
 
     .hero-mesh,
     .services-hero__right::before,
@@ -201,13 +213,7 @@
       color: var(--red) !important;
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
+
 
     html {
       scroll-behavior: smooth;
@@ -232,12 +238,7 @@
       color: inherit
     }
 
-    /* Hide dark-theme elements */
-    .cur,
-    .cur-f,
-    #spb {
-      display: none
-    }
+
 
     /* ─────────────────────────────────────────
    HEADER — light white style
@@ -285,11 +286,28 @@
     }
 
     .logo-1 {
-      display: block
+      display: none
     }
 
     .logo-2 {
       display: none
+    }
+
+    .logo-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    .logo-name-line1,
+    .logo-name-line2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #cc0000;
+      letter-spacing: 0.1px;
+      white-space: nowrap;
     }
 
     .header-right {
@@ -345,15 +363,6 @@
 
     .navicons {
       display: none
-    }
-
-    #navShow,
-    #navHide {
-      font-size: 1.5rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: var(--ink)
     }
 
     /* ─────────────────────────────────────────
@@ -1595,71 +1604,6 @@
         display: flex !important;
       }
 
-      .sitenav {
-        position: fixed;
-        inset: 0;
-        background: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity .3s;
-        z-index: 990;
-      }
-
-      .sitenav.open {
-        opacity: 1;
-        pointer-events: all
-      }
-
-      .headermenu ul {
-        flex-direction: column;
-        gap: .25rem;
-        text-align: center
-      }
-
-      .headermenu ul li a {
-        color: #1a1a1a !important;
-        font-size: 1.1rem !important;
-        font-weight: 700 !important;
-        text-transform: none !important;
-        letter-spacing: 0 !important;
-        padding: .4rem 1rem !important;
-        display: block !important;
-      }
-
-      .sitenav .headermenu,
-      .sitenav .headermenu ul {
-        width: 100% !important;
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: .5rem !important;
-      }
-
-      .sitenav .headermenu ul li {
-        width: 100% !important;
-        text-align: center !important;
-      }
-
-      .sitenav .headermenu ul li a {
-        color: #1a1a1a !important;
-        font-size: 1.1rem !important;
-        font-weight: 700 !important;
-        text-transform: none !important;
-        letter-spacing: 0 !important;
-        padding: .5rem 2rem !important;
-        display: block !important;
-        text-align: center !important;
-      }
-
-      .headermenu ul li a:hover {
-        color: var(--red) !important;
-        background: none
-      }
-
       .contact-info {
         display: none
       }
@@ -1667,6 +1611,10 @@
       .hero {
         grid-template-columns: 1fr;
         min-height: auto;
+      }
+
+      .sitenav {
+        background: rgba(0, 0, 0, 0.95) !important;
       }
 
       .hero-right {
@@ -1729,9 +1677,15 @@
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem
       }
+
+      /* Quitar blur en header solo en móvil */
+      header {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
     }
 
-    @media(max-width:600px){
+    @media(max-width:600px) {
       .hero-left {
         padding: 5.5rem 1.25rem 3rem;
       }
@@ -1764,24 +1718,28 @@
         gap: .5rem;
       }
 
-      .timeline{
-        grid-template-columns:1fr;
-        grid-auto-rows:auto;
-        gap:1rem;
+      .timeline {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1rem;
       }
-      .timeline::before{ display:none; }
+
+      .timeline::before {
+        display: none;
+      }
 
       .tl-left,
       .tl-right,
       .tl-node,
       .tl-empty {
-        grid-column:1 !important;
-        width:100%;
+        grid-column: 1 !important;
+        width: 100%;
       }
 
-      .tl-left, .tl-right {
-        text-align:left;
-        justify-content:flex-start;
+      .tl-left,
+      .tl-right {
+        text-align: left;
+        justify-content: flex-start;
       }
 
       .tl-card {
@@ -1789,11 +1747,27 @@
         margin: .6rem 0;
       }
 
-      .benefits-grid{grid-template-columns:1fr}
-      .footer-inner{grid-template-columns:1fr}
-      .footer-bottom .container{flex-direction:column;gap:.4rem;text-align:center}
-      .s{padding:5rem 0}
-      .fcta{padding:6rem 0}
+      .benefits-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom .container {
+        flex-direction: column;
+        gap: .4rem;
+        text-align: center
+      }
+
+      .s {
+        padding: 5rem 0
+      }
+
+      .fcta {
+        padding: 6rem 0
+      }
     }
 
     .sh2,
@@ -1847,76 +1821,14 @@
     }
 
     /* ── FIX MENÚ MÓVIL ── */
-    @media(max-width:900px) {
-      .sitenav {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-        z-index: 9999 !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        transition: opacity .3s ease !important;
-      }
 
-      .sitenav.open {
-        opacity: 1 !important;
-        pointer-events: all !important;
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-      }
 
-      .sitenav .headermenu ul li a {
-        color: #1a1a1a !important;
-        font-size: 1.1rem !important;
-        font-weight: 700 !important;
-        text-transform: none !important;
-        letter-spacing: 0 !important;
-        padding: .4rem 1rem !important;
-        display: block !important;
-      }
+    @media (min-width: 901px) {
 
-      .sitenav .headermenu,
-      .sitenav .headermenu ul {
-        width: 100% !important;
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: .5rem !important;
-      }
-
-      .sitenav .headermenu ul li {
-        width: 100% !important;
-        text-align: center !important;
-      }
-
-      .sitenav .headermenu ul li a {
-        color: #1a1a1a !important;
-        font-size: 1.1rem !important;
-        font-weight: 700 !important;
-        text-transform: none !important;
-        letter-spacing: 0 !important;
-        padding: .5rem 2rem !important;
-        display: block !important;
-        text-align: center !important;
-      }
-
-      .sitenav .headermenu ul li.active>a,
-      .sitenav .headermenu ul li.blog>a {
-        color: #e8001d !important;
-      }
-
-      .sitenav .headermenu ul li a:hover {
-        color: #e8001d !important;
+      .headermenu ul li.active>a,
+      .headermenu.leftmenu ul li.active>a {
+        color: #fff !important;
+        background: var(--red) !important;
       }
     }
   </style>
@@ -1924,46 +1836,59 @@
 
 <body>
 
-  <div id="spb"></div>
-  <div class="cur" id="cur"></div>
-  <div class="cur-f" id="curf"></div>
 
   <!-- ═══════════ HEADER ═══════════ -->
-  <header id="hdr">
-    <div class="container">
+  <header>
+    <div class="container psr">
       <div class="header_default">
         <div class="site-branding">
           <a href="index.html" class="logo">
-            <img src="images/logo.webp" alt="Clínica Dental Dra. Hitachi" class="logo-1" width="68">
-            <img src="images/logo.webp" alt="" class="logo-2" width="68">
+            <img src="images/logo.webp" alt="Clínica Dental Dra. Hitachi A." width="55">
+            <span class="logo-name">
+              <span class="logo-name-line1">Clínica Dental</span>
+              <span class="logo-name-line2">Dra. Hitachi A.</span>
+            </span>
           </a>
         </div>
         <div class="header-right">
           <div class="site-navwrap">
             <div class="navicons">
-              <button id="navShow" aria-label="Abrir menú">&#9776;</button>
-              <button id="navHide" style="display:none" aria-label="Cerrar menú">&#x2715;</button>
+              <a href="javascript:void;" class="navshow">
+                <span class="lnr lnr-menu"></span>
+              </a>
+              <a href="javascript:void;" class="navhide">
+                <span class="lnr lnr-cross"></span>
+              </a>
             </div>
             <div class="sitenav" id="sitenav">
-              <span class="close-menu" onclick="closeMenu()">&times;</span>
-              <nav class="headermenu leftmenu" role="navigation">
-                <ul>
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="nosotros.html">Nosotros</a></li>
-                  <li class="active"><a href="servicios.html">Servicios</a></li>
-                  <li><a href="instalaciones.html">Instalaciones</a></li>
-                  <li><a href="contacto.html">Contacto</a></li>
-                  <li class="blog"><a href="blog.html">Blog</a></li>
-                </ul>
-              </nav>
+              <div class="navwrap">
+                <div class="navouter">
+                  <nav class="headermenu leftmenu" id="headnav" role="navigation">
+                    <ul>
+                      <li><a href="index.html">Inicio</a></li>
+                      <li><a href="nosotros.html">Nosotros</a></li>
+                      <li class="active"><a href="servicios.html">Servicios</a></li>
+                      <li><a href="instalaciones.html">Instalaciones</a></li>
+                      <li><a href="contacto.html">Contacto</a></li>
+                      <li class="blog"><a href="blog.html">Blog</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
             </div>
           </div>
           <div class="contact-info">
-            <a href="tel:+34622819008" aria-label="Llamar"><i class="fa-solid fa-phone-volume"></i></a>
-            <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ubicación"><i
-                class="fa-solid fa-location-dot"></i></a>
-            <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Facebook"><i
-                class="fa-brands fa-facebook-f"></i></a>
+            <a href="tel:+34622819008" aria-label="Llamar a la clínica">
+              <i class="fa-solid fa-phone-volume"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"
+              aria-label="Ver ubicación en Google Maps">
+              <i class="fa-solid fa-location-dot"></i>
+            </a>
+            <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"
+              aria-label="Visitar página de Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -1991,7 +1916,8 @@
         <span class="stroke">vida</span>
       </h1>
       <p class="hero-sub">
-        Recupera tu diente perdido con implantes de titanio de alta calidad. Carga inmediata disponible: sal con dientes fijos el mismo día.
+        Recupera tu diente perdido con implantes de titanio de alta calidad. Carga inmediata disponible: sal con dientes
+        fijos el mismo día.
       </p>
       <div class="hero-ctas">
         <a href="contacto.html" class="btn-r">
@@ -2018,7 +1944,7 @@
           style="position:absolute;top:1rem;left:1rem;z-index:3;background:rgba(255,255,255,.95);border:1px solid rgba(232,0,29,.35);border-radius:50%;padding:.45rem;display:flex;align-items:center;justify-content:center;">
           <img src="images/logo.webp" alt="Logo Hitachi" width="44" height="44" style="display:block;" />
         </div>
-        <video class="hero-video" controls muted autoplay loop playsinline
+        <video class="hero-video" controls muted autoplay loop playsinline poster="images/dentista.webp"
           style="width:100%;height:auto;border-radius:18px;object-fit:cover;display:block;">
           <source src="images/video-trabajo-02.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de vídeo.
@@ -2038,15 +1964,18 @@
       <div class="what-grid">
         <div class="what-media rv">
           <div class="what-img-wrap">
-            <img src="images/empastes-centrodentalhitachi.jpg"
-              alt="Implante dental en Clínica Hitachi"
+            <img src="images/empastes-centrodentalhitachi.jpg" alt="Implante dental en Clínica Hitachi"
               onerror="this.parentElement.style.background='linear-gradient(135deg,#1c1d21,#26272d)'">
           </div>
           <!-- Badge TAC 3D exclusivo de implantes -->
-          <div style="position:absolute;top:1.2rem;right:1.2rem;z-index:5;background:#12141c;color:#fff;border:1.5px solid rgba(232,0,29,.6);border-radius:14px;padding:.6rem 1rem;display:flex;flex-direction:column;align-items:center;gap:.15rem;box-shadow:0 6px 20px rgba(0,0,0,.25);">
+          <div
+            style="position:absolute;top:1.2rem;right:1.2rem;z-index:5;background:#12141c;color:#fff;border:1.5px solid rgba(232,0,29,.6);border-radius:14px;padding:.6rem 1rem;display:flex;flex-direction:column;align-items:center;gap:.15rem;box-shadow:0 6px 20px rgba(0,0,0,.25);">
             <i class="fas fa-cube" style="color:#e8001d;font-size:1.1rem;"></i>
-            <span style="font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.2;">Diagnóstico</span>
-            <span style="font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.2;color:#ff4d6a;">TAC 3D</span>
+            <span
+              style="font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.2;">Diagnóstico</span>
+            <span
+              style="font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1.2;color:#ff4d6a;">TAC
+              3D</span>
           </div>
           <div class="stat-float">
             <div class="stat-float__n">+600</div>
@@ -2058,9 +1987,12 @@
           </div>
         </div>
         <div class="what-content rv rv-d2">
-          <p class="what-lead">Un implante de titanio es la solución más parecida a un diente natural que existe hoy en odontología.</p>
+          <p class="what-lead">Un implante de titanio es la solución más parecida a un diente natural que existe hoy en
+            odontología.</p>
           <p class="what-body">
-            Se ancla directamente en el hueso maxilar y actúa como raíz artificial sobre la que se coloca una corona de porcelana a medida. Sin afectar a los dientes vecinos, sin prótesis removibles y con una durabilidad que puede ser de por vida.
+            Se ancla directamente en el hueso maxilar y actúa como raíz artificial sobre la que se coloca una corona de
+            porcelana a medida. Sin afectar a los dientes vecinos, sin prótesis removibles y con una durabilidad que
+            puede ser de por vida.
           </p>
           <ul class="check-list">
             <li>Titanio biocompatible: el cuerpo lo acepta como tejido propio</li>
@@ -2087,21 +2019,24 @@
           <div class="type-num">01</div>
           <div class="type-icon"><i class="fas fa-tooth"></i></div>
           <h3 class="type-h">Implante unitario</h3>
-          <p class="type-p">Reemplaza un solo diente perdido con una raíz de titanio y una corona de porcelana. La opción más habitual: resultados estéticos y funcionales excelentes a largo plazo.</p>
+          <p class="type-p">Reemplaza un solo diente perdido con una raíz de titanio y una corona de porcelana. La
+            opción más habitual: resultados estéticos y funcionales excelentes a largo plazo.</p>
           <span class="type-tag"><i class="fas fa-check"></i> Caso más frecuente</span>
         </div>
         <div class="type-card rv rv-d1">
           <div class="type-num">02</div>
           <div class="type-icon"><i class="fas fa-layer-group"></i></div>
           <h3 class="type-h">Puente sobre implantes</h3>
-          <p class="type-p">Dos o más implantes sostienen un puente fijo cuando faltan varios dientes consecutivos. Sin necesidad de desgastar dientes naturales vecinos.</p>
+          <p class="type-p">Dos o más implantes sostienen un puente fijo cuando faltan varios dientes consecutivos. Sin
+            necesidad de desgastar dientes naturales vecinos.</p>
           <span class="type-tag"><i class="fas fa-check"></i> Alta estabilidad</span>
         </div>
         <div class="type-card rv rv-d2">
           <div class="type-num">03</div>
           <div class="type-icon"><i class="fas fa-teeth-open"></i></div>
           <h3 class="type-h">All-on-4 / All-on-6</h3>
-          <p class="type-p">Boca completa fija sobre 4 ó 6 implantes estratégicamente colocados. La solución definitiva para quienes han perdido todos o casi todos los dientes. Saldrás de quirófano con dientes fijos.</p>
+          <p class="type-p">Boca completa fija sobre 4 ó 6 implantes estratégicamente colocados. La solución definitiva
+            para quienes han perdido todos o casi todos los dientes. Saldrás de quirófano con dientes fijos.</p>
           <span class="type-tag"><i class="fas fa-bolt"></i> Carga inmediata</span>
         </div>
       </div>
@@ -2123,19 +2058,25 @@
           <div class="tl-card" style="margin-right:2rem">
             <div class="tl-step">Paso 01</div>
             <h3 class="tl-h">Exploración y diagnóstico</h3>
-            <p class="tl-p">Revisión completa, radiografía panorámica y valoración del hueso disponible. Te explicamos opciones y presupuesto sin compromiso.</p>
+            <p class="tl-p">Revisión completa, radiografía panorámica y valoración del hueso disponible. Te explicamos
+              opciones y presupuesto sin compromiso.</p>
           </div>
         </div>
-        <div class="tl-node"><div class="tl-dot">01</div></div>
+        <div class="tl-node">
+          <div class="tl-dot">01</div>
+        </div>
         <div></div>
 
         <!-- Fila 2 -->
-        <div class="tl-node"><div class="tl-dot">02</div></div>
+        <div class="tl-node">
+          <div class="tl-dot">02</div>
+        </div>
         <div class="tl-right rv rv-d1">
           <div class="tl-card" style="margin-left:2rem">
             <div class="tl-step">Paso 02</div>
             <h3 class="tl-h">Planificación 3D</h3>
-            <p class="tl-p">Escáner cone beam (CBCT), planificación con software implantológico y fabricación de guía quirúrgica digital. Cero improvisación en quirófano.</p>
+            <p class="tl-p">Escáner cone beam (CBCT), planificación con software implantológico y fabricación de guía
+              quirúrgica digital. Cero improvisación en quirófano.</p>
           </div>
         </div>
 
@@ -2144,19 +2085,25 @@
           <div class="tl-card" style="margin-right:2rem">
             <div class="tl-step">Paso 03</div>
             <h3 class="tl-h">Cirugía de colocación</h3>
-            <p class="tl-p">Intervención mínimamente invasiva con anestesia local. Duración media 45–60 minutos por implante. La mayoría de pacientes vuelven al trabajo al día siguiente.</p>
+            <p class="tl-p">Intervención mínimamente invasiva con anestesia local. Duración media 45–60 minutos por
+              implante. La mayoría de pacientes vuelven al trabajo al día siguiente.</p>
           </div>
         </div>
-        <div class="tl-node"><div class="tl-dot">03</div></div>
+        <div class="tl-node">
+          <div class="tl-dot">03</div>
+        </div>
         <div></div>
 
         <!-- Fila 4 -->
-        <div class="tl-node"><div class="tl-dot">04</div></div>
+        <div class="tl-node">
+          <div class="tl-dot">04</div>
+        </div>
         <div class="tl-right rv rv-d2">
           <div class="tl-card" style="margin-left:2rem">
             <div class="tl-step">Paso 04</div>
             <h3 class="tl-h">Osteointegración</h3>
-            <p class="tl-p">El titanio se fusiona con el hueso en 2–4 meses. Durante este período llevás una corona provisional estética. Seguimiento incluido en cada revisión.</p>
+            <p class="tl-p">El titanio se fusiona con el hueso en 2–4 meses. Durante este período llevás una corona
+              provisional estética. Seguimiento incluido en cada revisión.</p>
           </div>
         </div>
 
@@ -2165,7 +2112,8 @@
           <div class="tl-card" style="margin-right:2rem">
             <div class="tl-step">Paso 05</div>
             <h3 class="tl-h">Corona definitiva</h3>
-            <p class="tl-p">Colocamos la corona de porcelana personalizada. Color, forma y tamaño a juego perfecto con tus dientes naturales. ¡Ya puedes lucir tu sonrisa completa!</p>
+            <p class="tl-p">Colocamos la corona de porcelana personalizada. Color, forma y tamaño a juego perfecto con
+              tus dientes naturales. ¡Ya puedes lucir tu sonrisa completa!</p>
           </div>
         </div>
         <div class="tl-node">
@@ -2191,22 +2139,26 @@
         <div class="benefit-box rv">
           <div class="benefit-num" data-target="25" data-suffix="+">25+</div>
           <div class="benefit-h">Años de durabilidad</div>
-          <div class="benefit-p">Con una higiene correcta y revisiones periódicas, un implante puede durar toda la vida. Es la solución más longeva del mercado.</div>
+          <div class="benefit-p">Con una higiene correcta y revisiones periódicas, un implante puede durar toda la vida.
+            Es la solución más longeva del mercado.</div>
         </div>
         <div class="benefit-box rv rv-d1">
           <div class="benefit-num" data-target="98" data-suffix="%">98%</div>
           <div class="benefit-h">Tasa de éxito</div>
-          <div class="benefit-p">Los implantes de titanio tienen la mayor tasa de éxito de todos los tratamientos restauradores en odontología moderna.</div>
+          <div class="benefit-p">Los implantes de titanio tienen la mayor tasa de éxito de todos los tratamientos
+            restauradores en odontología moderna.</div>
         </div>
         <div class="benefit-box rv rv-d2">
           <div class="benefit-num" data-target="1" data-suffix="h">1h</div>
           <div class="benefit-h">Duración de la cirugía</div>
-          <div class="benefit-p">La colocación es rápida y con anestesia local. Muchos pacientes vuelven a su actividad normal al día siguiente.</div>
+          <div class="benefit-p">La colocación es rápida y con anestesia local. Muchos pacientes vuelven a su actividad
+            normal al día siguiente.</div>
         </div>
         <div class="benefit-box rv rv-d3">
           <div class="benefit-num" data-target="0" data-suffix="">0</div>
           <div class="benefit-h">Dientes tallados</div>
-          <div class="benefit-p">A diferencia del puente convencional, el implante no requiere desgastar los dientes sanos vecinos. Tu boca queda intacta.</div>
+          <div class="benefit-p">A diferencia del puente convencional, el implante no requiere desgastar los dientes
+            sanos vecinos. Tu boca queda intacta.</div>
         </div>
       </div>
     </div>
@@ -2229,7 +2181,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              No. La cirugía se realiza con anestesia local y es completamente indolora durante la intervención. Después puede haber una leve molestia similar a una extracción que se controla fácilmente con analgésicos estándar. La mayoría de pacientes quedan sorprendidos de lo sencillo que ha sido.
+              No. La cirugía se realiza con anestesia local y es completamente indolora durante la intervención. Después
+              puede haber una leve molestia similar a una extracción que se controla fácilmente con analgésicos
+              estándar. La mayoría de pacientes quedan sorprendidos de lo sencillo que ha sido.
             </div>
           </div>
         </div>
@@ -2241,7 +2195,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Un implante convencional (cirugía + osteointegración + corona definitiva) toma entre 3 y 6 meses. En los casos de carga inmediata (All-on-4), puedes salir del quirófano con dientes fijos provisionales el mismo día de la intervención.
+              Un implante convencional (cirugía + osteointegración + corona definitiva) toma entre 3 y 6 meses. En los
+              casos de carga inmediata (All-on-4), puedes salir del quirófano con dientes fijos provisionales el mismo
+              día de la intervención.
             </div>
           </div>
         </div>
@@ -2253,7 +2209,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              En muchos casos la respuesta es sí, incluso cuando el paciente cree que no. Con nuestro escáner 3D evaluamos el volumen óseo exacto. Si hay deficiencia, existen técnicas de regeneración ósea que lo resuelven. Solo un diagnóstico personalizado puede determinarlo con certeza.
+              En muchos casos la respuesta es sí, incluso cuando el paciente cree que no. Con nuestro escáner 3D
+              evaluamos el volumen óseo exacto. Si hay deficiencia, existen técnicas de regeneración ósea que lo
+              resuelven. Solo un diagnóstico personalizado puede determinarlo con certeza.
             </div>
           </div>
         </div>
@@ -2265,7 +2223,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Fumar reduce las tasas de éxito del implante, especialmente durante la osteointegración. Recomendamos no fumar al menos 2 semanas antes y 2 meses después de la cirugía. Aun así, muchos pacientes fumadores tienen implantes exitosos siguiendo el protocolo adecuado.
+              Fumar reduce las tasas de éxito del implante, especialmente durante la osteointegración. Recomendamos no
+              fumar al menos 2 semanas antes y 2 meses después de la cirugía. Aun así, muchos pacientes fumadores tienen
+              implantes exitosos siguiendo el protocolo adecuado.
             </div>
           </div>
         </div>
@@ -2277,7 +2237,9 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Exactamente igual que tus dientes naturales: cepillado, hilo dental e irrigador. Revisiones anuales en clínica. Sin cremas adhesivas ni cuidados extraordinarios. Es la gran ventaja frente a las prótesis removibles.
+              Exactamente igual que tus dientes naturales: cepillado, hilo dental e irrigador. Revisiones anuales en
+              clínica. Sin cremas adhesivas ni cuidados extraordinarios. Es la gran ventaja frente a las prótesis
+              removibles.
             </div>
           </div>
         </div>
@@ -2289,7 +2251,8 @@
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Sí. Ofrecemos planes de financiación flexibles sin intereses para que el coste nunca sea un obstáculo para tu salud. Consúltanos en la primera visita y te diseñamos un plan de pago adaptado a ti.
+              Sí. Ofrecemos planes de financiación flexibles sin intereses para que el coste nunca sea un obstáculo para
+              tu salud. Consúltanos en la primera visita y te diseñamos un plan de pago adaptado a ti.
             </div>
           </div>
         </div>
@@ -2307,7 +2270,20 @@
         <p class="ssub">Reseñas reales de Google</p>
       </div>
       <div class="reviews-google-badge rv">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+            fill="#4285F4" />
+          <path
+            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+            fill="#34A853" />
+          <path
+            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+            fill="#FBBC05" />
+          <path
+            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+            fill="#EA4335" />
+        </svg>
         <span>4.9 ★ · 35 reseñas en Google</span>
         <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener noreferrer">Ver todas →</a>
       </div>
@@ -2315,45 +2291,476 @@
     <div class="reviews-track-wrapper" style="margin-top:2rem;">
       <div class="reviews-track">
         <!-- 18 reseñas únicas + duplicado para loop infinito -->
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">J</div><div class="review-info"><h4>janina soto castro</h4><div class="review-date">Oct 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Mi experiencia ha sido genial. Desde el principio hasta el final de mi tratamiento. La doctora tiene unas manos de oro.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">C</div><div class="review-info"><h4>Cristina Cruz Martinez</h4><div class="review-date">Feb 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente el trato recibido tanto por el personal de la clínica como por parte de la Dra. Hitachi. Buenos profesionales.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">Y</div><div class="review-info"><h4>Yamileth Ventura</h4><div class="review-date">Sept 2024</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Me e echo unos implantes, y son muy profesionales con lo que hacen, encantada con su trabajo, la atención muy buena, los recomiendo son los mejores 👍</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">L</div><div class="review-info"><h4>LUIS PALACIOS</h4><div class="review-date">Feb 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente atencion muy profesional en todo</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">E</div><div class="review-info"><h4>Eduard Ulises Quiñonez</h4><div class="review-date">Ago 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Es un sitio excelente, estoy muy contento con el trato que le han dado a mi caso y el trato con los clientes es maravilloso 👏😁 lo recomiendo.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">T</div><div class="review-info"><h4>tania ramos</h4><div class="review-date">Ene 2024</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente centro, la atención, el personal es súper amable y atento, todas sus prácticas 100% profesionales, y el ambiente muy tranquilo, recomendadisimos!</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">F</div><div class="review-info"><h4>Fatima Campos</h4><div class="review-date">Sep 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Satisfecha con el excelente trabajo 👍</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">H</div><div class="review-info"><h4>Hugo.F. S.J</h4><div class="review-date">Sep 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelentes profesionales. Los recomiendo.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#4285F4">C</div><div class="review-info"><h4>Carmen Arnez</h4><div class="review-date">Ago 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Todas las veces que he ido, excelente atención y sobretodo honestidad!!! Gracias por la gran profesionalidad.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">C</div><div class="review-info"><h4>Cristina Aynes Lopez</h4><div class="review-date">Ago 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente atención y trato. Ya llevo varios años, y espero no tener que buscar otro centro. Todo excelente, tanto en atención como en tratamientos.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">A</div><div class="review-info"><h4>adolfo maunagoitia</h4><div class="review-date">Ene 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Un gran equipo y magnífica atención en todo momento.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">B</div><div class="review-info"><h4>Beatriz Aguilar</h4><div class="review-date">Dic 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Atención personalizada y muy atentos todo el procedimiento impecable me agrado mucho que me atendieran y muy recomendable</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">M</div><div class="review-info"><h4>Miriam Luisa</h4><div class="review-date">Nov 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Un equipo muy profesional, y la doctora tiene unas manos de santo, mi experiencia es y ha sido excelente</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">D</div><div class="review-info"><h4>Dolly Neira</h4><div class="review-date">Oct 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Recomiendo mucho este centro odontológico, personal capacitado profesionalmente, tienen un excelente servicio.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#4285F4">M</div><div class="review-info"><h4>Maria Urbina</h4><div class="review-date">Mar 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Mi experiencia fue muy positiva, no tengo ninguna queja personal muy amable y profesional, instalaciones muy limpias gracias por su atención</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#4285F4">R</div><div class="review-info"><h4>Rudy Saucedo</h4><div class="review-date">Jun 2022</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente, muy buenos profesionales y los precios maravillosos. La atención es buenísima. 100% recomendable</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">I</div><div class="review-info"><h4>ines olivan</h4><div class="review-date">Jun 2023</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Sois maravillosos, la empatía os hace grandes, mil gracias por la atención recibida, os recomiendo 100x100 ♥️🌹😘</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">I</div><div class="review-info"><h4>Iam</h4><div class="review-date">Nov 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Super recomendadísimo, siempre lo recomiendo porque es la única clínica en Barcelona en la que he quedado satisfecha.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#4285F4">M</div><div class="review-info"><h4>Maribel Sandres</h4><div class="review-date">Ene 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Muy buen equipo amables precios a alcance de nuestros bolsillos los recomiendo</p></div>
-        <!-- Duplicado para loop infinito -->
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">J</div><div class="review-info"><h4>janina soto castro</h4><div class="review-date">Oct 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Mi experiencia ha sido genial. Desde el principio hasta el final de mi tratamiento. La doctora tiene unas manos de oro.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">C</div><div class="review-info"><h4>Cristina Cruz Martinez</h4><div class="review-date">Feb 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente el trato recibido tanto por el personal de la clínica como por parte de la Dra. Hitachi. Buenos profesionales.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">Y</div><div class="review-info"><h4>Yamileth Ventura</h4><div class="review-date">Sept 2024</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Me e echo unos implantes, y son muy profesionales con lo que hacen, encantada con su trabajo, la atención muy buena, los recomiendo son los mejores 👍</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">L</div><div class="review-info"><h4>LUIS PALACIOS</h4><div class="review-date">Feb 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente atencion muy profesional en todo</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">E</div><div class="review-info"><h4>Eduard Ulises Quiñonez</h4><div class="review-date">Ago 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Es un sitio excelente, estoy muy contento con el trato que le han dado a mi caso y el trato con los clientes es maravilloso 👏😁 lo recomiendo.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">T</div><div class="review-info"><h4>tania ramos</h4><div class="review-date">Ene 2024</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente centro, la atención, el personal es súper amable y atento, todas sus prácticas 100% profesionales, y el ambiente muy tranquilo, recomendadisimos!</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">F</div><div class="review-info"><h4>Fatima Campos</h4><div class="review-date">Sep 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Satisfecha con el excelente trabajo 👍</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">H</div><div class="review-info"><h4>Hugo.F. S.J</h4><div class="review-date">Sep 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelentes profesionales. Los recomiendo.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#4285F4">C</div><div class="review-info"><h4>Carmen Arnez</h4><div class="review-date">Ago 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Todas las veces que he ido, excelente atención y sobretodo honestidad!!! Gracias por la gran profesionalidad.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">C</div><div class="review-info"><h4>Cristina Aynes Lopez</h4><div class="review-date">Ago 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente atención y trato. Ya llevo varios años, y espero no tener que buscar otro centro. Todo excelente, tanto en atención como en tratamientos.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">A</div><div class="review-info"><h4>adolfo maunagoitia</h4><div class="review-date">Ene 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Un gran equipo y magnífica atención en todo momento.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#34A853">B</div><div class="review-info"><h4>Beatriz Aguilar</h4><div class="review-date">Dic 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Atención personalizada y muy atentos todo el procedimiento impecable me agrado mucho que me atendieran y muy recomendable</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">M</div><div class="review-info"><h4>Miriam Luisa</h4><div class="review-date">Nov 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Un equipo muy profesional, y la doctora tiene unas manos de santo, mi experiencia es y ha sido excelente</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">D</div><div class="review-info"><h4>Dolly Neira</h4><div class="review-date">Oct 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Recomiendo mucho este centro odontológico, personal capacitado profesionalmente, tienen un excelente servicio.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#4285F4">M</div><div class="review-info"><h4>Maria Urbina</h4><div class="review-date">Mar 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Mi experiencia fue muy positiva, no tengo ninguna queja personal muy amable y profesional, instalaciones muy limpias gracias por su atención</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#4285F4">R</div><div class="review-info"><h4>Rudy Saucedo</h4><div class="review-date">Jun 2022</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Excelente, muy buenos profesionales y los precios maravillosos. La atención es buenísima. 100% recomendable</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#FBBC05">I</div><div class="review-info"><h4>ines olivan</h4><div class="review-date">Jun 2023</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Sois maravillosos, la empatía os hace grandes, mil gracias por la atención recibida, os recomiendo 100x100 ♥️🌹😘</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#EA4335">I</div><div class="review-info"><h4>Iam</h4><div class="review-date">Nov 2025</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Super recomendadísimo, siempre lo recomiendo porque es la única clínica en Barcelona en la que he quedado satisfecha.</p></div>
-        <div class="review-card"><div class="review-header"><div class="review-avatar-letter" style="background:#4285F4">M</div><div class="review-info"><h4>Maribel Sandres</h4><div class="review-date">Ene 2026</div></div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="review-stars">★★★★★</div><p class="review-text">Muy buen equipo amables precios a alcance de nuestros bolsillos los recomiendo</p></div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#34A853">J</div>
+            <div class="review-info">
+              <h4>janina soto castro</h4>
+              <div class="review-date">Oct 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Mi experiencia ha sido genial. Desde el principio hasta el final de mi tratamiento. La
+            doctora tiene unas manos de oro.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#34A853">C</div>
+            <div class="review-info">
+              <h4>Cristina Cruz Martinez</h4>
+              <div class="review-date">Feb 2026</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Excelente el trato recibido tanto por el personal de la clínica como por parte de la
+            Dra. Hitachi. Buenos profesionales.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#FBBC05">Y</div>
+            <div class="review-info">
+              <h4>Yamileth Ventura</h4>
+              <div class="review-date">Sept 2024</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Me e echo unos implantes, y son muy profesionales con lo que hacen, encantada con su
+            trabajo, la atención muy buena, los recomiendo son los mejores 👍</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#EA4335">L</div>
+            <div class="review-info">
+              <h4>LUIS PALACIOS</h4>
+              <div class="review-date">Feb 2026</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Excelente atencion muy profesional en todo</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#EA4335">E</div>
+            <div class="review-info">
+              <h4>Eduard Ulises Quiñonez</h4>
+              <div class="review-date">Ago 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Es un sitio excelente, estoy muy contento con el trato que le han dado a mi caso y el
+            trato con los clientes es maravilloso 👏😁 lo recomiendo.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#FBBC05">T</div>
+            <div class="review-info">
+              <h4>tania ramos</h4>
+              <div class="review-date">Ene 2024</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Excelente centro, la atención, el personal es súper amable y atento, todas sus
+            prácticas 100% profesionales, y el ambiente muy tranquilo, recomendadisimos!</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#EA4335">F</div>
+            <div class="review-info">
+              <h4>Fatima Campos</h4>
+              <div class="review-date">Sep 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Satisfecha con el excelente trabajo 👍</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#FBBC05">H</div>
+            <div class="review-info">
+              <h4>Hugo.F. S.J</h4>
+              <div class="review-date">Sep 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Excelentes profesionales. Los recomiendo.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#4285F4">C</div>
+            <div class="review-info">
+              <h4>Carmen Arnez</h4>
+              <div class="review-date">Ago 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Todas las veces que he ido, excelente atención y sobretodo honestidad!!! Gracias por la
+            gran profesionalidad.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#34A853">C</div>
+            <div class="review-info">
+              <h4>Cristina Aynes Lopez</h4>
+              <div class="review-date">Ago 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Excelente atención y trato. Ya llevo varios años, y espero no tener que buscar otro
+            centro. Todo excelente, tanto en atención como en tratamientos.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#EA4335">A</div>
+            <div class="review-info">
+              <h4>adolfo maunagoitia</h4>
+              <div class="review-date">Ene 2026</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Un gran equipo y magnífica atención en todo momento.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#34A853">B</div>
+            <div class="review-info">
+              <h4>Beatriz Aguilar</h4>
+              <div class="review-date">Dic 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Atención personalizada y muy atentos todo el procedimiento impecable me agrado mucho
+            que me atendieran y muy recomendable</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#FBBC05">M</div>
+            <div class="review-info">
+              <h4>Miriam Luisa</h4>
+              <div class="review-date">Nov 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Un equipo muy profesional, y la doctora tiene unas manos de santo, mi experiencia es y
+            ha sido excelente</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#FBBC05">D</div>
+            <div class="review-info">
+              <h4>Dolly Neira</h4>
+              <div class="review-date">Oct 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Recomiendo mucho este centro odontológico, personal capacitado profesionalmente, tienen
+            un excelente servicio.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#4285F4">M</div>
+            <div class="review-info">
+              <h4>Maria Urbina</h4>
+              <div class="review-date">Mar 2026</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Mi experiencia fue muy positiva, no tengo ninguna queja personal muy amable y
+            profesional, instalaciones muy limpias gracias por su atención</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#4285F4">R</div>
+            <div class="review-info">
+              <h4>Rudy Saucedo</h4>
+              <div class="review-date">Jun 2022</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Excelente, muy buenos profesionales y los precios maravillosos. La atención es
+            buenísima. 100% recomendable</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#FBBC05">I</div>
+            <div class="review-info">
+              <h4>ines olivan</h4>
+              <div class="review-date">Jun 2023</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Sois maravillosos, la empatía os hace grandes, mil gracias por la atención recibida, os
+            recomiendo 100x100 ♥️🌹😘</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#EA4335">I</div>
+            <div class="review-info">
+              <h4>Iam</h4>
+              <div class="review-date">Nov 2025</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Super recomendadísimo, siempre lo recomiendo porque es la única clínica en Barcelona en
+            la que he quedado satisfecha.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar-letter" style="background:#4285F4">M</div>
+            <div class="review-info">
+              <h4>Maribel Sandres</h4>
+              <div class="review-date">Ene 2026</div>
+            </div><svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Muy buen equipo amables precios a alcance de nuestros bolsillos los recomiendo</p>
+        </div>
       </div><!-- /.reviews-track -->
     </div><!-- /.reviews-track-wrapper -->
   </section>
@@ -2385,102 +2792,102 @@
   </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
-    <footer class="site-footer" role="contentinfo">
-        <div class="container footer-inner">
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
 
-            <div class="footer__brand">
-                <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
-                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
-                        loading="lazy" />
-                </a>
-                <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
-                <address class="footer__contact">
-                    <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                        622 819 008
-                    </a>
-                    <a href="tel:+34931479829" aria-label="Llamar al fijo de la clínica: 931 479 829">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                        931 479 829
-                    </a>
-                    <a href="mailto:info@clinicahitachi.es" aria-label="Enviar email a info@clinicahitachi.es">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
-                        info@clinicahitachi.es
-                    </a>
-                    <span>
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
-                    </span>
-                    <span style="font-size:0.75rem; color:#aaa; margin-top:4px; display:block;">
-                        Reg. Sanitario: E08704494
-                    </span>
-                </address>
-            </div>
+      <div class="footer__brand">
+        <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
+          <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
+            loading="lazy" />
+        </a>
+        <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
+        <address class="footer__contact">
+          <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            622 819 008
+          </a>
+          <a href="tel:+34931479829" aria-label="Llamar al fijo de la clínica: 931 479 829">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            931 479 829
+          </a>
+          <a href="mailto:info@clinicahitachi.es" aria-label="Enviar email a info@clinicahitachi.es">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            info@clinicahitachi.es
+          </a>
+          <span>
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
+          </span>
+          <span style="font-size:0.75rem; color:#aaa; margin-top:4px; display:block;">
+            Reg. Sanitario: E08704494
+          </span>
+        </address>
+      </div>
 
-            <nav class="footer__nav" aria-label="Navegación del pie de página">
-                <h3>Clinica Hitachi</h3>
-                <ul role="list">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="nosotros.html">Nuestro equipo</a></li>
-                    <li><a href="instalaciones.html">Instalaciones</a></li>
-                    <li><a href="blog.html">Blog dental</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+      <nav class="footer__nav" aria-label="Navegación del pie de página">
+        <h3>Clinica Hitachi</h3>
+        <ul role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="nosotros.html">Nuestro equipo</a></li>
+          <li><a href="instalaciones.html">Instalaciones</a></li>
+          <li><a href="blog.html">Blog dental</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
 
-            <nav class="footer__nav" aria-label="Información Legal">
-                <h3>Información Legal</h3>
-                <ul role="list">
-                    <li><a href="aviso-legal.html">Aviso legal</a></li>
-                    <li><a href="privacidad.html">Privacidad</a></li>
-                </ul>
-            </nav>
+      <nav class="footer__nav" aria-label="Información Legal">
+        <h3>Información Legal</h3>
+        <ul role="list">
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+        </ul>
+      </nav>
 
-            <div class="footer__hours">
-                <h3>Horario</h3>
-                <dl>
-                    <div>
-                        <dt>Lunes – Viernes</dt>
-                        <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
-                    </div>
-                    <div>
-                        <dt>Sábados y Domingos</dt>
-                        <dd>Cerrado</dd>
-                    </div>
-                </dl>
-            </div>
+      <div class="footer__hours">
+        <h3>Horario</h3>
+        <dl>
+          <div>
+            <dt>Lunes – Viernes</dt>
+            <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
+          </div>
+          <div>
+            <dt>Sábados y Domingos</dt>
+            <dd>Cerrado</dd>
+          </div>
+        </dl>
+      </div>
 
-        </div>
+    </div>
 
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; <span id="yr"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
-                <p>Diseñado con <span aria-label="amor" role="img">♥</span> en Barcelona</p>
-            </div>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="yr"></span> Clínica Dental Dra. Hitachi. Todos los derechos reservados.</p>
+        <p>Diseñado con <span aria-label="amor" role="img">♥</span> en Barcelona</p>
+      </div>
+    </div>
+  </footer>
 
   <a href="https://wa.me/34622819008?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20implantes%20dentales"
     class="whatsapp-float" target="_blank" aria-label="WhatsApp">
@@ -2503,45 +2910,10 @@
     }, { passive: true });
 
     // Header style on scroll (changes when over light sections)
-    const hdr = document.getElementById('hdr');
-    const lightSections = document.querySelectorAll('.s--smoke, .fcta');
-    function updateHeader() {
-      let isLight = false;
-      lightSections.forEach(sec => {
-        const r = sec.getBoundingClientRect();
-        if (r.top <= 68 && r.bottom > 68) isLight = true;
-      });
-      hdr.classList.toggle('light-bg', isLight);
-    }
-    window.addEventListener('scroll', updateHeader, { passive: true });
-
     // Scroll to top
     const stt = document.getElementById('stt');
     window.addEventListener('scroll', () => stt.classList.toggle('visible', window.scrollY > 600), { passive: true });
     stt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Mobile nav
-    const navShow = document.getElementById('navShow');
-    const navHide = document.getElementById('navHide');
-    const nav = document.getElementById('sitenav');
-    navShow.addEventListener('click', () => {
-      nav.classList.add('open');
-      navShow.style.display = 'none';
-      navHide.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    });
-    navHide.addEventListener('click', closeNav);
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-    function closeNav() {
-      nav.classList.remove('open');
-      navHide.style.display = 'none';
-      navShow.style.display = 'block';
-      document.body.style.overflow = '';
-    }
-
-    function closeMenu() {
-      document.querySelector('.sitenav').style.display = 'none';
-    }
 
     // Reveal on scroll
     const obs = new IntersectionObserver(entries => {
@@ -2568,7 +2940,7 @@
         mx = e.clientX; my = e.clientY;
         if (cur) { cur.style.left = mx + 'px'; cur.style.top = my + 'px'; }
       });
-      (function tick(){
+      (function tick() {
         fx += (mx - fx) * .13;
         fy += (my - fy) * .13;
         if (curf) { curf.style.left = fx + 'px'; curf.style.top = fy + 'px'; }
@@ -2594,7 +2966,7 @@
           const target = +el.dataset.target;
           const suffix = el.dataset.suffix || '';
           let start = null;
-          (function step(ts){
+          (function step(ts) {
             if (!start) start = ts;
             const prog = Math.min((ts - start) / 1600, 1);
             const eased = 1 - Math.pow(1 - prog, 3);
@@ -2605,7 +2977,7 @@
         });
         counterObs.unobserve(e.target);
       });
-    }, {threshold:.5});
+    }, { threshold: .5 });
     document.querySelectorAll('.benefits-grid').forEach(g => counterObs.observe(g));
   </script>
 </body>
