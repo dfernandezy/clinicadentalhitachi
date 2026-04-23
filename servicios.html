@@ -79,7 +79,7 @@
             background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 0, 0, 0.35)),
                 url('images/limpiezadental.webp') no-repeat center center;
             background-size: cover;
-            background-attachment: fixed;
+            background-attachment: scroll;
             background-position: center;
             text-align: center;
             color: white;
@@ -315,14 +315,6 @@
             }
         }
 
-        @media (max-width: 768px) {
-            /* iOS/Android fix: background-attachment:fixed causa zoom borroso en móvil */
-            .servicios-hero {
-                background-attachment: scroll;
-                background-position: center top;
-            }
-        }
-
         @media (max-width: 576px) {
             .servicios-hero {
                 padding: 180px 20px 80px;
@@ -359,8 +351,8 @@
             <div class="header_default">
                 <div class="site-branding">
                     <a href="index.html" class="logo">
-                        <img src="images/logo.webp" alt="Logo" class="logo-1" width="70px">
-                        <img src="images/logo.webp" alt="Logo" class="logo-2" width="70px">
+                        <img loading="lazy" src="images/logo.webp" alt="Logo" class="logo-1" width="70px">
+                        <img loading="lazy" src="images/logo.webp" alt="Logo" class="logo-2" width="70px">
                     </a>
                 </div>
                 <div class="header-right">
@@ -413,7 +405,7 @@
                 <!-- Estética Dental -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Estética Dental">
+                        <img loading="lazy" src="images/blanqueamiento-centrodentalhitachi.jpg" alt="Estética Dental">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Estética Dental</p>
@@ -435,7 +427,7 @@
                 <!-- Prótesis Dental -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/empastes-centrodentalhitachi.jpg" alt="Prótesis Dental">
+                        <img loading="lazy" src="images/empastes-centrodentalhitachi.jpg" alt="Prótesis Dental">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Prótesis Dental</p>
@@ -457,7 +449,7 @@
                 <!-- Implantes Dentales -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/blanqueamientomujer.webp" alt="Implantes Dentales">
+                        <img loading="lazy" src="images/blanqueamientomujer.webp" alt="Implantes Dentales">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Implantes Dentales</p>
@@ -479,7 +471,7 @@
                 <!-- Limpieza -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza Dental">
+                        <img loading="lazy" src="images/limpiezadental-CentrodentalHitachi.jpg" alt="Limpieza Dental">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Odontología General</p>
@@ -502,7 +494,7 @@
                 <!-- Ortodoncia -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia">
+                        <img loading="lazy" src="images/brackets-centrodentalhitachi.jpg" alt="Ortodoncia">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Ortodoncia</p>
@@ -515,38 +507,18 @@
                             <li>Financiación disponible</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-estetica.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
+                            <a href="contacto.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
                             <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Implantes -->
-                <div class="servicio-card">
-                    <div class="servicio-imagen">
-                        <img src="images/radio.png" alt="Implantes">
-                    </div>
-                    <div class="servicio-content">
-                        <p class="servicio-categoria">Cirugía Dental</p>
-                        <h3>Implantes Dentales</h3>
-                        <p>Recupera tus dientes con implantes de titanio de última generación.</p>
-                        <ul class="servicio-lista">
-                            <li>Implantes de titanio</li>
-                            <li>Carga inmediata</li>
-                            <li>Estética natural</li>
-                            <li>Garantía profesional</li>
-                        </ul>
-                        <div class="servicio-buttons">
-                            <a href="servicio-implantes.html" class="btn-servicio">Ver Página <i class="fas fa-arrow-right"></i></a>
-                            <a href="tel:+34622819008" class="btn-servicio">Llamar <i class="fas fa-phone"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <!-- Implantes (duplicado eliminado) -->
 
                 <!-- Endodoncia -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/equipo_de_Ortopantomografia.png" alt="Endodoncia">
+                        <img loading="lazy" src="images/equipo_de_Ortopantomografia.png" alt="Endodoncia">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Tratamientos</p>
@@ -559,7 +531,7 @@
                             <li>Alta tecnología</li>
                         </ul>
                         <div class="servicio-buttons">
-                            <a href="servicio-implantes.html" class="btn-servicio">Pedir cita <i
+                            <a href="contacto.html" class="btn-servicio">Pedir cita <i
                                     class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -568,7 +540,7 @@
                 <!-- Urgencias -->
                 <div class="servicio-card">
                     <div class="servicio-imagen">
-                        <img src="images/atencióninmediata.jpg" alt="Urgencias">
+                        <img loading="lazy" src="images/atencióninmediata.jpg" alt="Urgencias">
                     </div>
                     <div class="servicio-content">
                         <p class="servicio-categoria">Urgencias</p>
@@ -704,34 +676,37 @@
     <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Animaciones del hero (sin ScrollTrigger, se ejecutan al cargar)
-        gsap.from('.servicios-hero h1', { y: 30, opacity: 0, duration: 0.8 });
-        gsap.from('.servicios-hero p', { y: 20, opacity: 0, duration: 0.8, delay: 0.2 });
-
-        // Animaciones de las tarjetas SOLO cuando sean visibles
-        gsap.utils.toArray('.servicio-card').forEach((card, i) => {
-            gsap.fromTo(card,
-                { y: 50, opacity: 0 }, // Estado inicial
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    delay: i * 0.1,
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 85%',
-                        toggleActions: 'play none none none' // Solo se ejecuta una vez
-                    }
-                }
-            );
-        });
-
-        // Botón scroll to top
+        // Botón scroll to top — funciona siempre, independiente de GSAP
         const scrollBtn = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 500));
+            scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
+
+        // Animaciones GSAP — solo se activan si GSAP cargó correctamente desde CDN
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.from('.servicios-hero h1', { y: 30, opacity: 0, duration: 0.8 });
+            gsap.from('.servicios-hero p', { y: 20, opacity: 0, duration: 0.8, delay: 0.2 });
+
+            gsap.utils.toArray('.servicio-card').forEach((card, i) => {
+                gsap.fromTo(card,
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        delay: i * 0.1,
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 85%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            });
+        }
     </script>
 </body>
 
