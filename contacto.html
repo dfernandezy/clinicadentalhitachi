@@ -12,7 +12,16 @@
         content="clínica dental L'Hospitalet, dentista Barcelona, implantes dentales, carillas dentales, blanqueamiento dental, prótesis dental, Clínica Dental Hitachi">
     <link rel="canonical" href="https://clinicadentalhitachi.com/contacto.html">
     <link rel="icon" type="image/png" href="images/logo.webp">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K012QMEWN3">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'G-K012QMEWN3');
+    </script>
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://clinicadentalhitachi.com/contacto.html">
@@ -101,657 +110,837 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <style>
-    /* ══════════════════════════════════════════
+        /* ══════════════════════════════════════════
        RESET & BASE
     ══════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9f8f6;
-      color: #1a1a1a;
-      overflow-x: hidden;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9f8f6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
 
-    /* ══════════════════════════════════════════
+        /* ══════════════════════════════════════════
        HEADER (fondo blanco en página interna)
     ══════════════════════════════════════════ */
-    header {
-      background: #fff;
-      border-bottom: 1px solid #eee;
-    }
-    header nav.headermenu ul li a { color: #000; }
-    header .contact-info a { color: #000; }
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
 
-    /* ══════════════════════════════════════════
+        header nav.headermenu ul li a {
+            color: #000;
+        }
+
+        header .contact-info a {
+            color: #000;
+        }
+
+        /* ══════════════════════════════════════════
        PROGRESS BAR
     ══════════════════════════════════════════ */
-    .c-progress {
-      position: fixed; top: 0; left: 0; height: 3px;
-      background: #e8001d; width: 0; z-index: 9999;
-      transition: width .1s linear;
-    }
+        .c-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #e8001d;
+            width: 0;
+            z-index: 9999;
+            transition: width .1s linear;
+        }
 
-    /* ══════════════════════════════════════════
+        /* ══════════════════════════════════════════
        HERO — full-bleed image + overlay split
     ══════════════════════════════════════════ */
-    .c-hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      /* Empuja el contenido por debajo del header fijo */
-      padding-top: 80px;
-    }
+        .c-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            /* Empuja el contenido por debajo del header fijo */
+            padding-top: 80px;
+        }
 
-    /* Imagen de fondo — cubre todo el hero */
-    .c-hero__bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .c-hero__bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-    }
-    /* Overlay oscuro: opaco en la izquierda, se abre a la derecha dejando ver la foto */
-    .c-hero__bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(10,10,10,0.97) 0%,
-        rgba(10,10,10,0.93) 38%,
-        rgba(10,10,10,0.55) 62%,
-        rgba(10,10,10,0.15) 100%
-      );
-    }
+        /* Imagen de fondo — cubre todo el hero */
+        .c-hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
 
-    /* Panel de contenido — centrado, más aire */
-    .c-hero__left {
-      position: relative;
-      z-index: 2;
-      width: 60%;
-      max-width: 720px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(3rem,6vw,6rem) clamp(3rem,7vw,8rem);
-    }
+        .c-hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
 
-    .c-hero__eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: #e8e8e8;
-      margin-bottom: 1.6rem;
-    }
-    .c-hero__eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px; height: 2px;
-      background: #e8001d;
-      flex-shrink: 0;
-    }
+        /* Overlay oscuro: opaco en la izquierda, se abre a la derecha dejando ver la foto */
+        .c-hero__bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                    rgba(10, 10, 10, 0.97) 0%,
+                    rgba(10, 10, 10, 0.93) 38%,
+                    rgba(10, 10, 10, 0.55) 62%,
+                    rgba(10, 10, 10, 0.15) 100%);
+        }
 
-    .c-hero__h1 {
-      font-size: clamp(2.6rem, 5vw, 4.6rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -.03em;
-      color: #fff;
-      margin-bottom: 1.4rem;
-    }
-    .c-hero__h1 em {
-      font-style: normal;
-      color: #fff;
-      text-shadow:
-        2px 2px 0 #e8001d,
-        -1px -1px 0 #c0001a,
-        3px 3px 12px rgba(232,0,29,.5);
-    }
+        /* Panel de contenido — centrado, más aire */
+        .c-hero__left {
+            position: relative;
+            z-index: 2;
+            width: 60%;
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(3rem, 6vw, 6rem) clamp(3rem, 7vw, 8rem);
+        }
 
-    .c-hero__sub {
-      font-size: clamp(.92rem, 1.4vw, 1.05rem);
-      color: rgba(255,255,255,.65);
-      line-height: 1.75;
-      max-width: 440px;
-      margin-bottom: 2.4rem;
-    }
+        .c-hero__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: #e8e8e8;
+            margin-bottom: 1.6rem;
+        }
 
-    .c-hero__ctas {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 2.8rem;
-    }
+        .c-hero__eyebrow::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: #e8001d;
+            flex-shrink: 0;
+        }
 
-    .btn-cta-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 28px;
-      background: #e8001d;
-      color: #fff;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: .95rem;
-      text-decoration: none;
-      transition: transform .25s, box-shadow .25s;
-      box-shadow: 0 8px 28px rgba(232,0,29,.4);
-      white-space: nowrap;
-      font-family: 'Poppins', sans-serif;
-    }
-    .btn-cta-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 36px rgba(232,0,29,.55);
-      color: #fff;
-    }
+        .c-hero__h1 {
+            font-size: clamp(2.6rem, 5vw, 4.6rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -.03em;
+            color: #fff;
+            margin-bottom: 1.4rem;
+        }
 
-    .btn-cta-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border: 2px solid rgba(255,255,255,.3);
-      color: #fff;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: .95rem;
-      text-decoration: none;
-      transition: border-color .25s, background .25s;
-      white-space: nowrap;
-      font-family: 'Poppins', sans-serif;
-      backdrop-filter: blur(6px);
-    }
-    .btn-cta-ghost:hover {
-      border-color: rgba(255,255,255,.8);
-      background: rgba(255,255,255,.1);
-      color: #fff;
-    }
+        .c-hero__h1 em {
+            font-style: normal;
+            color: #fff;
+            text-shadow:
+                2px 2px 0 #e8001d,
+                -1px -1px 0 #c0001a,
+                3px 3px 12px rgba(232, 0, 29, .5);
+        }
 
-    /* Trust chips */
-    .c-hero__trust {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .trust-chip {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: .78rem;
-      color: rgba(255,255,255,.5);
-      font-weight: 500;
-    }
-    .trust-chip i { color: #e8001d; font-size: .8rem; }
+        .c-hero__sub {
+            font-size: clamp(.92rem, 1.4vw, 1.05rem);
+            color: rgba(255, 255, 255, .65);
+            line-height: 1.75;
+            max-width: 440px;
+            margin-bottom: 2.4rem;
+        }
 
-    /* ══════════════════════════════════════════
+        .c-hero__ctas {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 2.8rem;
+        }
+
+        .btn-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            background: #e8001d;
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: .95rem;
+            text-decoration: none;
+            transition: transform .25s, box-shadow .25s;
+            box-shadow: 0 8px 28px rgba(232, 0, 29, .4);
+            white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(232, 0, 29, .55);
+            color: #fff;
+        }
+
+        .btn-cta-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border: 2px solid rgba(255, 255, 255, .3);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: .95rem;
+            text-decoration: none;
+            transition: border-color .25s, background .25s;
+            white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
+            backdrop-filter: blur(6px);
+        }
+
+        .btn-cta-ghost:hover {
+            border-color: rgba(255, 255, 255, .8);
+            background: rgba(255, 255, 255, .1);
+            color: #fff;
+        }
+
+        /* Trust chips */
+        .c-hero__trust {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .trust-chip {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: .78rem;
+            color: rgba(255, 255, 255, .5);
+            font-weight: 500;
+        }
+
+        .trust-chip i {
+            color: #e8001d;
+            font-size: .8rem;
+        }
+
+        /* ══════════════════════════════════════════
        STATS STRIP
     ══════════════════════════════════════════ */
-    .c-stats {
-      background: #fff;
-      border-bottom: 1px solid #efefef;
-    }
-    .c-stats__inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .c-stat {
-      padding: 2rem 1.5rem;
-      text-align: center;
-      border-right: 1px solid #f0f0f0;
-    }
-    .c-stat:last-child { border-right: none; }
-    .c-stat__number {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 800;
-      color: #e8001d;
-      letter-spacing: -.03em;
-      line-height: 1;
-    }
-    .c-stat__label {
-      font-size: .8rem;
-      color: #888;
-      margin-top: .4rem;
-      font-weight: 500;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
+        .c-stats {
+            background: #fff;
+            border-bottom: 1px solid #efefef;
+        }
 
-    /* ══════════════════════════════════════════
+        .c-stats__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .c-stat {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .c-stat:last-child {
+            border-right: none;
+        }
+
+        .c-stat__number {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            color: #e8001d;
+            letter-spacing: -.03em;
+            line-height: 1;
+        }
+
+        .c-stat__label {
+            font-size: .8rem;
+            color: #888;
+            margin-top: .4rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+
+        /* ══════════════════════════════════════════
        MAIN SECTION — Form + Map
     ══════════════════════════════════════════ */
-    .c-main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 7rem 2rem;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
+        .c-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 7rem 2rem;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
 
-    /* Form card */
-    .c-form-card {
-      background: #fff;
-      border-radius: 28px;
-      padding: clamp(2rem, 4vw, 3.5rem);
-      box-shadow: 0 2px 40px rgba(0,0,0,.06);
-      border: 1px solid #efefef;
-      position: sticky;
-      top: 100px;
-    }
+        /* Form card */
+        .c-form-card {
+            background: #fff;
+            border-radius: 28px;
+            padding: clamp(2rem, 4vw, 3.5rem);
+            box-shadow: 0 2px 40px rgba(0, 0, 0, .06);
+            border: 1px solid #efefef;
+            position: sticky;
+            top: 100px;
+        }
 
-    .c-form-card__tag {
-      display: inline-block;
-      background: #fff0f0;
-      color: #e8001d;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      padding: .35rem .9rem;
-      border-radius: 50px;
-      margin-bottom: 1.2rem;
-    }
+        .c-form-card__tag {
+            display: inline-block;
+            background: #fff0f0;
+            color: #e8001d;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            padding: .35rem .9rem;
+            border-radius: 50px;
+            margin-bottom: 1.2rem;
+        }
 
-    .c-form-card h2 {
-      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-      font-weight: 800;
-      letter-spacing: -.03em;
-      line-height: 1.15;
-      margin-bottom: .6rem;
-    }
-    .c-form-card__sub {
-      font-size: .9rem;
-      color: #888;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
+        .c-form-card h2 {
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -.03em;
+            line-height: 1.15;
+            margin-bottom: .6rem;
+        }
 
-    /* Floating label inputs */
-    .c-field {
-      position: relative;
-      margin-bottom: 1.2rem;
-    }
-    .c-field input,
-    .c-field textarea,
-    .c-field select {
-      width: 100%;
-      padding: 1.1rem 1.1rem .5rem;
-      border: 1.5px solid #e5e5e5;
-      border-radius: 14px;
-      font-size: .95rem;
-      font-family: 'Poppins', sans-serif;
-      background: #fafafa;
-      color: #1a1a1a;
-      transition: border-color .2s, box-shadow .2s, background .2s;
-      outline: none;
-      box-sizing: border-box;
-      appearance: none;
-    }
-    .c-field input:focus,
-    .c-field textarea:focus,
-    .c-field select:focus {
-      border-color: #e8001d;
-      background: #fff;
-      box-shadow: 0 0 0 4px rgba(232,0,29,.07);
-    }
-    .c-field label {
-      position: absolute;
-      top: 50%;
-      left: 1.1rem;
-      transform: translateY(-50%);
-      font-size: .9rem;
-      color: #aaa;
-      pointer-events: none;
-      transition: all .18s ease;
-      font-weight: 500;
-      background: transparent;
-    }
-    .c-field textarea ~ label { top: 1.1rem; transform: none; }
-    .c-field input:focus ~ label,
-    .c-field input:not(:placeholder-shown) ~ label,
-    .c-field select:focus ~ label,
-    .c-field select:valid ~ label,
-    .c-field textarea:focus ~ label,
-    .c-field textarea:not(:placeholder-shown) ~ label {
-      top: .42rem;
-      font-size: .7rem;
-      color: #e8001d;
-      letter-spacing: .05em;
-      transform: none;
-    }
-    .c-field textarea {
-      min-height: 100px;
-      resize: vertical;
-      padding-top: 1.5rem;
-      line-height: 1.5;
-    }
-    .c-field select { cursor: pointer; padding: .85rem 1.1rem; }
+        .c-form-card__sub {
+            font-size: .9rem;
+            color: #888;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
 
-    /* Checkbox */
-    .c-check {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin: 1.2rem 0;
-    }
-    .c-check input[type="checkbox"] {
-      width: 18px; height: 18px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      accent-color: #e8001d;
-      cursor: pointer;
-    }
-    .c-check label {
-      font-size: .83rem;
-      color: #999;
-      line-height: 1.6;
-    }
-    .c-check label a { color: #e8001d; text-decoration: underline; }
+        /* Floating label inputs */
+        .c-field {
+            position: relative;
+            margin-bottom: 1.2rem;
+        }
 
-    /* Submit button */
-    .c-submit {
-      width: 100%;
-      padding: 1.1rem;
-      background: #e8001d;
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      font-size: 1rem;
-      font-weight: 700;
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: transform .25s, box-shadow .25s;
-      box-shadow: 0 8px 24px rgba(232,0,29,.28);
-      letter-spacing: .02em;
-    }
-    .c-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 32px rgba(232,0,29,.4);
-    }
-    .c-submit:active { transform: translateY(0); }
+        .c-field input,
+        .c-field textarea,
+        .c-field select {
+            width: 100%;
+            padding: 1.1rem 1.1rem .5rem;
+            border: 1.5px solid #e5e5e5;
+            border-radius: 14px;
+            font-size: .95rem;
+            font-family: 'Poppins', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            transition: border-color .2s, box-shadow .2s, background .2s;
+            outline: none;
+            box-sizing: border-box;
+            appearance: none;
+        }
 
-    /* Call shortcut inside form */
-    .c-form-divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 1.2rem 0;
-      color: #ccc;
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .c-form-divider::before,
-    .c-form-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #efefef;
-    }
+        .c-field input:focus,
+        .c-field textarea:focus,
+        .c-field select:focus {
+            border-color: #e8001d;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(232, 0, 29, .07);
+        }
 
-    .c-call-btn {
-      width: 100%;
-      padding: 1rem;
-      border: 2px solid #1a1a1a;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: .95rem;
-      font-weight: 700;
-      font-family: 'Poppins', sans-serif;
-      color: #1a1a1a;
-      text-decoration: none;
-      transition: background .2s, color .2s;
-    }
-    .c-call-btn:hover {
-      background: #1a1a1a;
-      color: #fff;
-    }
-    .c-call-btn i { color: #e8001d; }
+        .c-field label {
+            position: absolute;
+            top: 50%;
+            left: 1.1rem;
+            transform: translateY(-50%);
+            font-size: .9rem;
+            color: #aaa;
+            pointer-events: none;
+            transition: all .18s ease;
+            font-weight: 500;
+            background: transparent;
+        }
 
-    /* ──────────────────────────────
+        .c-field textarea~label {
+            top: 1.1rem;
+            transform: none;
+        }
+
+        .c-field input:focus~label,
+        .c-field input:not(:placeholder-shown)~label,
+        .c-field select:focus~label,
+        .c-field select:valid~label,
+        .c-field textarea:focus~label,
+        .c-field textarea:not(:placeholder-shown)~label {
+            top: .42rem;
+            font-size: .7rem;
+            color: #e8001d;
+            letter-spacing: .05em;
+            transform: none;
+        }
+
+        .c-field textarea {
+            min-height: 100px;
+            resize: vertical;
+            padding-top: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .c-field select {
+            cursor: pointer;
+            padding: .85rem 1.1rem;
+        }
+
+        /* Checkbox */
+        .c-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 1.2rem 0;
+        }
+
+        .c-check input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            accent-color: #e8001d;
+            cursor: pointer;
+        }
+
+        .c-check label {
+            font-size: .83rem;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .c-check label a {
+            color: #e8001d;
+            text-decoration: underline;
+        }
+
+        /* Submit button */
+        .c-submit {
+            width: 100%;
+            padding: 1.1rem;
+            background: #e8001d;
+            color: #fff;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform .25s, box-shadow .25s;
+            box-shadow: 0 8px 24px rgba(232, 0, 29, .28);
+            letter-spacing: .02em;
+        }
+
+        .c-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px rgba(232, 0, 29, .4);
+        }
+
+        .c-submit:active {
+            transform: translateY(0);
+        }
+
+        /* Call shortcut inside form */
+        .c-form-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 1.2rem 0;
+            color: #ccc;
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        .c-form-divider::before,
+        .c-form-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #efefef;
+        }
+
+        .c-call-btn {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #1a1a1a;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: .95rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+
+        .c-call-btn:hover {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .c-call-btn i {
+            color: #e8001d;
+        }
+
+        /* ──────────────────────────────
        Right column — info blocks
     ────────────────────────────── */
-    .c-info-col {
-      display: flex;
-      flex-direction: column;
-      gap: 2.4rem;
-    }
+        .c-info-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+        }
 
-    .c-info-col__heading {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 800;
-      letter-spacing: -.03em;
-      line-height: 1.15;
-      color: #1a1a1a;
-    }
-    .c-info-col__heading span { color: #e8001d; }
+        .c-info-col__heading {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -.03em;
+            line-height: 1.15;
+            color: #1a1a1a;
+        }
 
-    .c-info-col__desc {
-      font-size: .95rem;
-      color: #888;
-      line-height: 1.8;
-      margin-top: .8rem;
-    }
+        .c-info-col__heading span {
+            color: #e8001d;
+        }
 
-    /* Info cards */
-    .c-info-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 1.6rem 1.8rem;
-      border: 1px solid #efefef;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.2rem;
-      transition: box-shadow .25s, transform .25s;
-    }
-    .c-info-card:hover {
-      box-shadow: 0 10px 32px rgba(0,0,0,.07);
-      transform: translateY(-3px);
-    }
-    .c-info-card__icon {
-      width: 48px; height: 48px;
-      min-width: 48px;
-      border-radius: 14px;
-      background: #fff0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #e8001d;
-      font-size: 1.2rem;
-    }
-    .c-info-card__body h4 {
-      font-size: .88rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: .3rem;
-      letter-spacing: -.01em;
-    }
-    .c-info-card__body p,
-    .c-info-card__body a {
-      font-size: .88rem;
-      color: #888;
-      line-height: 1.6;
-      text-decoration: none;
-    }
-    .c-info-card__body a:hover { color: #e8001d; }
-    .c-info-card__body strong { color: #1a1a1a; }
+        .c-info-col__desc {
+            font-size: .95rem;
+            color: #888;
+            line-height: 1.8;
+            margin-top: .8rem;
+        }
 
-    /* Map */
-    .c-map {
-      border-radius: 20px;
-      overflow: hidden;
-      height: 260px;
-      border: 1px solid #efefef;
-    }
-    .c-map iframe { width: 100%; height: 100%; border: none; }
+        /* Info cards */
+        .c-info-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 1.6rem 1.8rem;
+            border: 1px solid #efefef;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            transition: box-shadow .25s, transform .25s;
+        }
 
-    /* Review strip */
-    .c-reviews {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .c-reviews__heading {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: #bbb;
-    }
-    .c-review-card {
-      background: #fff;
-      border: 1px solid #efefef;
-      border-radius: 16px;
-      padding: 1.2rem 1.4rem;
-    }
-    .c-review-card__stars { color: #f59e0b; font-size: .85rem; margin-bottom: .5rem; }
-    .c-review-card__text { font-size: .85rem; color: #555; line-height: 1.6; font-style: italic; }
-    .c-review-card__author { font-size: .78rem; font-weight: 700; color: #1a1a1a; margin-top: .5rem; }
+        .c-info-card:hover {
+            box-shadow: 0 10px 32px rgba(0, 0, 0, .07);
+            transform: translateY(-3px);
+        }
 
-    /* ══════════════════════════════════════════
+        .c-info-card__icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 14px;
+            background: #fff0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e8001d;
+            font-size: 1.2rem;
+        }
+
+        .c-info-card__body h4 {
+            font-size: .88rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: .3rem;
+            letter-spacing: -.01em;
+        }
+
+        .c-info-card__body p,
+        .c-info-card__body a {
+            font-size: .88rem;
+            color: #888;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .c-info-card__body a:hover {
+            color: #e8001d;
+        }
+
+        .c-info-card__body strong {
+            color: #1a1a1a;
+        }
+
+        /* Map */
+        .c-map {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 260px;
+            border: 1px solid #efefef;
+        }
+
+        .c-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Review strip */
+        .c-reviews {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .c-reviews__heading {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #bbb;
+        }
+
+        .c-review-card {
+            background: #fff;
+            border: 1px solid #efefef;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+        }
+
+        .c-review-card__stars {
+            color: #f59e0b;
+            font-size: .85rem;
+            margin-bottom: .5rem;
+        }
+
+        .c-review-card__text {
+            font-size: .85rem;
+            color: #555;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .c-review-card__author {
+            font-size: .78rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-top: .5rem;
+        }
+
+        /* ══════════════════════════════════════════
        FLOATING MOBILE CTA
     ══════════════════════════════════════════ */
-    .c-sticky-cta {
-      display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: #fff;
-      border-top: 1px solid #efefef;
-      padding: 1rem 1.5rem;
-      z-index: 888;
-      gap: 12px;
-    }
-    .c-sticky-cta a {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: .9rem;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: .9rem;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-    }
-    .c-sticky-cta__call {
-      background: #e8001d;
-      color: #fff !important;
-    }
-    .c-sticky-cta__form {
-      background: #f0f0f0;
-      color: #1a1a1a !important;
-    }
+        .c-sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 1px solid #efefef;
+            padding: 1rem 1.5rem;
+            z-index: 888;
+            gap: 12px;
+        }
 
-    /* ══════════════════════════════════════════
+        .c-sticky-cta a {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: .9rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: .9rem;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .c-sticky-cta__call {
+            background: #e8001d;
+            color: #fff !important;
+        }
+
+        .c-sticky-cta__form {
+            background: #f0f0f0;
+            color: #1a1a1a !important;
+        }
+
+        /* ══════════════════════════════════════════
        SEO STRIP
     ══════════════════════════════════════════ */
-    .c-seo-strip {
-      background: #fff;
-      border-top: 1px solid #efefef;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .c-seo-strip__inner { max-width: 900px; margin: 0 auto; }
-    .c-seo-strip h2 { font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: .8rem; }
-    .c-seo-strip p { font-size: .9rem; color: #888; line-height: 1.8; margin-bottom: 1.4rem; }
-    .c-seo-links {
-      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
-    }
-    .c-seo-links a {
-      padding: .5rem 1.4rem;
-      border: 1.5px solid #e8001d;
-      border-radius: 50px;
-      color: #e8001d;
-      font-size: .85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .2s, color .2s;
-    }
-    .c-seo-links a:hover { background: #e8001d; color: #fff; }
+        .c-seo-strip {
+            background: #fff;
+            border-top: 1px solid #efefef;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
 
-    /* ══════════════════════════════════════════
+        .c-seo-strip__inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .c-seo-strip h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: .8rem;
+        }
+
+        .c-seo-strip p {
+            font-size: .9rem;
+            color: #888;
+            line-height: 1.8;
+            margin-bottom: 1.4rem;
+        }
+
+        .c-seo-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .c-seo-links a {
+            padding: .5rem 1.4rem;
+            border: 1.5px solid #e8001d;
+            border-radius: 50px;
+            color: #e8001d;
+            font-size: .85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+
+        .c-seo-links a:hover {
+            background: #e8001d;
+            color: #fff;
+        }
+
+        /* ══════════════════════════════════════════
        REVEAL UTILITY — visible por defecto, anima al entrar
     ══════════════════════════════════════════ */
-    .js-reveal {
-      opacity: 1;
-      transform: none;
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    /* Solo aplica el estado inicial si JS está listo */
-    .js-ready .js-reveal {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    .js-ready .js-reveal.in {
-      opacity: 1;
-      transform: none;
-    }
+        .js-reveal {
+            opacity: 1;
+            transform: none;
+            transition: opacity .6s ease, transform .6s ease;
+        }
 
-    /* ══════════════════════════════════════════
+        /* Solo aplica el estado inicial si JS está listo */
+        .js-ready .js-reveal {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .js-ready .js-reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ══════════════════════════════════════════
        RESPONSIVE
     ══════════════════════════════════════════ */
-    @media (max-width: 1024px) {
-      .c-hero { min-height: 100vh; padding-top: 70px; }
-      .c-hero__left { width: 70%; }
-      .c-hero__bg::after {
-        background: linear-gradient(
-          to right,
-          rgba(10,10,10,0.96) 0%,
-          rgba(10,10,10,0.90) 50%,
-          rgba(10,10,10,0.5) 80%,
-          rgba(10,10,10,0.2) 100%
-        );
-      }
-      .c-main { grid-template-columns: 1fr; gap: 3rem; }
-      .c-form-card { position: static; }
-      .c-stats__inner { grid-template-columns: repeat(2,1fr); }
-      .c-stat:nth-child(2) { border-right: none; }
-    }
+        @media (max-width: 1024px) {
+            .c-hero {
+                min-height: 100vh;
+                padding-top: 70px;
+            }
 
-    @media (max-width: 640px) {
-      .c-hero { min-height: 100vh; padding-top: 65px; }
-      .c-hero__left {
-        width: 100%;
-        max-width: 100%;
-        margin-left: 0;
-        padding: 2rem 1.4rem 3.5rem;
-      }
-      .c-hero__bg::after {
-        background: rgba(10,10,10,0.82);
-      }
-      .c-hero__h1 { font-size: 2.3rem; }
-      .c-hero__ctas { flex-direction: column; }
-      .btn-cta-primary, .btn-cta-ghost { justify-content: center; text-align: center; }
-      .c-stats__inner { grid-template-columns: repeat(2,1fr); }
-      .c-main { padding: 4rem 1.2rem 5rem; }
-      .c-sticky-cta { display: flex; }
-      body { padding-bottom: 80px; }
-    }
+            .c-hero__left {
+                width: 70%;
+            }
+
+            .c-hero__bg::after {
+                background: linear-gradient(to right,
+                        rgba(10, 10, 10, 0.96) 0%,
+                        rgba(10, 10, 10, 0.90) 50%,
+                        rgba(10, 10, 10, 0.5) 80%,
+                        rgba(10, 10, 10, 0.2) 100%);
+            }
+
+            .c-main {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .c-form-card {
+                position: static;
+            }
+
+            .c-stats__inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .c-stat:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .c-hero {
+                min-height: 100vh;
+                padding-top: 65px;
+            }
+
+            .c-hero__left {
+                width: 100%;
+                max-width: 100%;
+                margin-left: 0;
+                padding: 2rem 1.4rem 3.5rem;
+            }
+
+            .c-hero__bg::after {
+                background: rgba(10, 10, 10, 0.82);
+            }
+
+            .c-hero__h1 {
+                font-size: 2.3rem;
+            }
+
+            .c-hero__ctas {
+                flex-direction: column;
+            }
+
+            .btn-cta-primary,
+            .btn-cta-ghost {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .c-stats__inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .c-main {
+                padding: 4rem 1.2rem 5rem;
+            }
+
+            .c-sticky-cta {
+                display: flex;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+        }
     </style>
 </head>
 
@@ -765,8 +954,10 @@
             <div class="header_default">
                 <div class="site-branding">
                     <a href="index.html" class="logo">
-                        <img src="images/logo.webp" alt="Logo Clínica Dental Hitachi L'Hospitalet" class="logo-1" width="70px" loading="lazy">
-                        <img src="images/logo.webp" alt="Logo Clínica Dental Hitachi L'Hospitalet" class="logo-2" width="70px" loading="lazy">
+                        <img src="images/logo.webp" alt="Logo Clínica Dental Hitachi L'Hospitalet" class="logo-1"
+                            width="70px" loading="lazy">
+                        <img src="images/logo.webp" alt="Logo Clínica Dental Hitachi L'Hospitalet" class="logo-2"
+                            width="70px" loading="lazy">
                     </a>
                 </div>
                 <div class="header-right">
@@ -793,9 +984,12 @@
                         </div>
                     </div>
                     <div class="contact-info">
-                        <a href="tel:+34622819008" aria-label="Llamar a Clínica Dental Hitachi"><i class="fa-solid fa-phone-volume"></i></a>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" aria-label="Ver ubicación en Google Maps"><i class="fa-solid fa-location-dot"></i></a>
-                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank" aria-label="Facebook Clínica Dental Hitachi"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="tel:+34622819008" aria-label="Llamar a Clínica Dental Hitachi"><i
+                                class="fa-solid fa-phone-volume"></i></a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"
+                            aria-label="Ver ubicación en Google Maps"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"
+                            aria-label="Facebook Clínica Dental Hitachi"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -807,7 +1001,8 @@
 
         <!-- Imagen de fondo -->
         <div class="c-hero__bg">
-            <img src="images/recepcionhitachi.jpg" alt="Recepción Clínica Dental Hitachi" id="heroImg" fetchpriority="high">
+            <img src="images/recepcionhitachi.jpg" alt="Recepción Clínica Dental Hitachi" id="heroImg"
+                fetchpriority="high">
         </div>
 
         <!-- Contenido -->
@@ -817,7 +1012,8 @@
                 Tu mejor sonrisa<br>empieza con<br><em>una llamada</em>
             </h1>
             <p class="c-hero__sub">
-                Implantes, estética y prótesis dental. Desde 2018 cuidando tu salud bucal en L'Hospitalet. Primera visita sin compromiso.
+                Implantes, estética y prótesis dental. Desde 2018 cuidando tu salud bucal en L'Hospitalet. Primera
+                visita sin compromiso.
             </p>
             <div class="c-hero__ctas">
                 <a href="tel:+34622819008" class="btn-cta-primary">
@@ -875,15 +1071,18 @@
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
                 <!-- Mensaje de éxito (oculto por defecto) -->
-                <div id="formSuccess" style="display:none; background:#f0fdf4; border:1.5px solid #22c55e; border-radius:14px; padding:1.4rem 1.6rem; margin-bottom:1.2rem; text-align:center;">
+                <div id="formSuccess"
+                    style="display:none; background:#f0fdf4; border:1.5px solid #22c55e; border-radius:14px; padding:1.4rem 1.6rem; margin-bottom:1.2rem; text-align:center;">
                     <div style="font-size:1.8rem; margin-bottom:.5rem;">✅</div>
                     <p style="font-weight:700; color:#15803d; margin:0 0 .3rem;">¡Mensaje enviado!</p>
                     <p style="font-size:.88rem; color:#166534; margin:0;">Te contactaremos en menos de 24h.</p>
                 </div>
                 <!-- Mensaje de error (oculto por defecto) -->
-                <div id="formError" style="display:none; background:#fff1f2; border:1.5px solid #f43f5e; border-radius:14px; padding:1.2rem 1.6rem; margin-bottom:1.2rem; text-align:center;">
+                <div id="formError"
+                    style="display:none; background:#fff1f2; border:1.5px solid #f43f5e; border-radius:14px; padding:1.2rem 1.6rem; margin-bottom:1.2rem; text-align:center;">
                     <p style="font-weight:700; color:#be123c; margin:0 0 .3rem;">Algo ha fallado</p>
-                    <p style="font-size:.88rem; color:#9f1239; margin:0;">Por favor llámanos al <a href="tel:+34622819008" style="color:#e8001d; font-weight:700;">622 819 008</a></p>
+                    <p style="font-size:.88rem; color:#9f1239; margin:0;">Por favor llámanos al <a
+                            href="tel:+34622819008" style="color:#e8001d; font-weight:700;">622 819 008</a></p>
                 </div>
 
                 <div class="c-field">
@@ -946,7 +1145,8 @@
                     Estamos aquí<br>para <span>cuidarte</span>
                 </h2>
                 <p class="c-info-col__desc">
-                    Clínica Dental Hitachi, especialistas en implantes, estética dental y prótesis en L'Hospitalet de Llobregat — a 10 minutos del centro de Barcelona. Abrimos en 2018.
+                    Clínica Dental Hitachi, especialistas en implantes, estética dental y prótesis en L'Hospitalet de
+                    Llobregat — a 10 minutos del centro de Barcelona. Abrimos en 2018.
                 </p>
             </div>
 
@@ -980,7 +1180,8 @@
                     <p>
                         Calle Rosa de Alejandría Nº24, Local 3<br>
                         08906 L'Hospitalet de Llobregat<br>
-                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener">Ver en Google Maps →</a>
+                        <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank" rel="noopener">Ver en Google
+                            Maps →</a>
                     </p>
                 </div>
             </div>
@@ -989,8 +1190,7 @@
             <div class="c-map js-reveal">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.0886626956396!2d2.1180394!3d41.3631594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4992c5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sCarrer%20de%20la%20Rosa%20d'Alexandria%2C%2024%2C%2008906%20L'Hospitalet%20de%20Llobregat%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1234567890123!5m2!1ses!2ses"
-                    title="Ubicación Clínica Dental Hitachi"
-                    allowfullscreen="" loading="lazy">
+                    title="Ubicación Clínica Dental Hitachi" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
 
@@ -999,12 +1199,14 @@
                 <p class="c-reviews__heading">Lo que dicen nuestros pacientes</p>
                 <div class="c-review-card">
                     <div class="c-review-card__stars">★★★★★</div>
-                    <p class="c-review-card__text">"Llevo 10 años yendo y nunca me han fallado. La Dra. Hitachi es increíble, muy profesional y cercana."</p>
+                    <p class="c-review-card__text">"Llevo 10 años yendo y nunca me han fallado. La Dra. Hitachi es
+                        increíble, muy profesional y cercana."</p>
                     <p class="c-review-card__author">— María G., L'Hospitalet</p>
                 </div>
                 <div class="c-review-card">
                     <div class="c-review-card__stars">★★★★★</div>
-                    <p class="c-review-card__text">"Me pusieron los implantes y el resultado es espectacular. El trato fue excelente desde el primer momento."</p>
+                    <p class="c-review-card__text">"Me pusieron los implantes y el resultado es espectacular. El trato
+                        fue excelente desde el primer momento."</p>
                     <p class="c-review-card__author">— Carlos M., Barcelona</p>
                 </div>
             </div>
@@ -1017,7 +1219,9 @@
         <div class="c-seo-strip__inner">
             <h2>Especialistas en Salud Dental en L'Hospitalet de Llobregat</h2>
             <p>
-                En <strong>Clínica Dental Dra. Hitachi</strong> ofrecemos <strong>implantes dentales</strong>, <strong>carillas y blanqueamiento</strong>, <strong>prótesis dental</strong> y más. Desde 2018 cuidando la sonrisa de Barcelona con tecnología TAC 3D.
+                En <strong>Clínica Dental Dra. Hitachi</strong> ofrecemos <strong>implantes dentales</strong>,
+                <strong>carillas y blanqueamiento</strong>, <strong>prótesis dental</strong> y más. Desde 2018 cuidando
+                la sonrisa de Barcelona con tecnología TAC 3D.
             </p>
             <div class="c-seo-links">
                 <a href="servicio-implantes.html">🦷 Implantes Dentales</a>
@@ -1033,27 +1237,49 @@
         <div class="container footer-inner">
             <div class="footer__brand">
                 <a href="index.html" aria-label="Ir al inicio – Clínica Dental Dra. Hitachi">
-                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42" loading="lazy" />
+                    <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
+                        loading="lazy" />
                 </a>
                 <p>Tu sonrisa, nuestra pasión. Desde 2018 cuidando la salud bucal de L'Hospitalet y Barcelona.</p>
                 <address class="footer__contact">
                     <a href="tel:+34622819008" aria-label="Llamar a la clínica: 622 819 008">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         622 819 008
                     </a>
                     <a href="tel:+34931479829" aria-label="Llamar al fijo: 931 479 829">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         931 479 829
                     </a>
                     <a href="mailto:info@clinicahitachi.es">
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
                         info@clinicahitachi.es
                     </a>
                     <span>
-                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
                         Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
                     </span>
-                    <span style="font-size:.75rem;color:#aaa;margin-top:4px;display:block;">Reg. Sanitario: E08704494</span>
+                    <span style="font-size:.75rem;color:#aaa;margin-top:4px;display:block;">Reg. Sanitario:
+                        E08704494</span>
                 </address>
             </div>
             <nav class="footer__nav" aria-label="Navegación del pie de página">
@@ -1077,8 +1303,14 @@
             <div class="footer__hours">
                 <h3>Horario</h3>
                 <dl>
-                    <div><dt>Lunes – Viernes</dt><dd>9:30 – 13:30 / 16:00 – 20:00</dd></div>
-                    <div><dt>Sábados y Domingos</dt><dd>Cerrado</dd></div>
+                    <div>
+                        <dt>Lunes – Viernes</dt>
+                        <dd>9:30 – 13:30 / 16:00 – 20:00</dd>
+                    </div>
+                    <div>
+                        <dt>Sábados y Domingos</dt>
+                        <dd>Cerrado</dd>
+                    </div>
                 </dl>
             </div>
         </div>
@@ -1091,9 +1323,9 @@
     </footer>
 
     <!-- WhatsApp flotante -->
-    <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita"
-       id="whatsappBtn" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-       aria-label="Contactar por WhatsApp con Clínica Dental Hitachi">
+    <a href="https://wa.me/34622819008?text=Hola%2C%20quisiera%20pedir%20una%20cita" id="whatsappBtn"
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp con Clínica Dental Hitachi">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -1107,124 +1339,124 @@
     </div>
 
     <script>
-    // ── Formulario Formspree (AJAX, sin recarga) ──────
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('.c-submit');
-            const successEl = document.getElementById('formSuccess');
-            const errorEl = document.getElementById('formError');
-            // Estado cargando
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-            try {
-                const res = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: new FormData(contactForm),
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (res.ok) {
-                    contactForm.reset();
-                    if (successEl) { successEl.style.display = 'block'; }
-                    if (errorEl)   { errorEl.style.display   = 'none';  }
-                    btn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
-                    btn.style.background = '#22c55e';
-                } else {
-                    throw new Error('Error en el envío');
+        // ── Formulario Formspree (AJAX, sin recarga) ──────
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = contactForm.querySelector('.c-submit');
+                const successEl = document.getElementById('formSuccess');
+                const errorEl = document.getElementById('formError');
+                // Estado cargando
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                try {
+                    const res = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: new FormData(contactForm),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (res.ok) {
+                        contactForm.reset();
+                        if (successEl) { successEl.style.display = 'block'; }
+                        if (errorEl) { errorEl.style.display = 'none'; }
+                        btn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+                        btn.style.background = '#22c55e';
+                    } else {
+                        throw new Error('Error en el envío');
+                    }
+                } catch {
+                    if (errorEl) { errorEl.style.display = 'block'; }
+                    if (successEl) { successEl.style.display = 'none'; }
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar solicitud de cita';
+                    btn.style.background = '';
                 }
-            } catch {
-                if (errorEl)   { errorEl.style.display   = 'block'; }
-                if (successEl) { successEl.style.display = 'none';  }
-                btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar solicitud de cita';
-                btn.style.background = '';
-            }
-        });
-    }
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    // ── Progress bar ─────────────────────────────────
-    const cProgress = document.getElementById('cProgress');
-    window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-        if (cProgress) cProgress.style.width = (scrolled * 100) + '%';
-    });
-
-    // ── Scroll-to-top button ─────────────────────────
-    const scrollBtn = document.getElementById('scrollToTop');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.classList.toggle('visible', window.scrollY > 500);
-        });
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    }
-
-    // ── Scroll reveal (Intersection Observer) ────────
-    const reveals = document.querySelectorAll('.js-reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => revealObserver.observe(el));
-    // Fallback: si algún elemento ya está en viewport al cargar, lo mostramos igualmente
-    setTimeout(() => {
-        document.querySelectorAll('.js-reveal:not(.in)').forEach(el => el.classList.add('in'));
-    }, 600);
-    reveals.forEach(el => revealObserver.observe(el));
-
-    // ── Counter animation ─────────────────────────────
-    const counters = document.querySelectorAll('.c-stat__number[data-target]');
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            const el = entry.target;
-            const target = parseInt(el.dataset.target, 10);
-            const suffix = el.dataset.suffix || (target >= 90 ? '%' : '+');
-            let current = 0;
-            const step = Math.ceil(target / 60);
-            const timer = setInterval(() => {
-                current = Math.min(current + step, target);
-                el.textContent = current + suffix;
-                if (current >= target) clearInterval(timer);
-            }, 22);
-            counterObserver.unobserve(el);
-        });
-    }, { threshold: 0.5 });
-    counters.forEach(el => counterObserver.observe(el));
-
-    // ── Hero image subtle zoom on load ───────────────
-    const heroImg = document.getElementById('heroImg');
-    if (heroImg) {
-        const applyZoom = () => { heroImg.style.transform = 'scale(1.05)'; heroImg.style.transition = 'transform 10s ease'; };
-        heroImg.complete ? applyZoom() : heroImg.addEventListener('load', applyZoom);
-    }
-
-    // ── GSAP enhancements (if available) ─────────────
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Hero entrance
-        gsap.from('.c-hero__eyebrow', { y: 20, opacity: 0, duration: .6, delay: .1 });
-        gsap.from('.c-hero__h1',      { y: 30, opacity: 0, duration: .7, delay: .2 });
-        gsap.from('.c-hero__sub',     { y: 20, opacity: 0, duration: .6, delay: .35 });
-        gsap.from('.c-hero__ctas',    { y: 20, opacity: 0, duration: .6, delay: .5 });
-        gsap.from('.c-hero__trust',   { y: 15, opacity: 0, duration: .5, delay: .65 });
-
-        // Info cards stagger on scroll
-        gsap.utils.toArray('.c-info-card').forEach((card, i) => {
-            gsap.from(card, {
-                y: 30, opacity: 0, duration: .55,
-                delay: i * .08,
-                scrollTrigger: { trigger: card, start: 'top 88%' }
             });
+        }
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // ── Progress bar ─────────────────────────────────
+        const cProgress = document.getElementById('cProgress');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            if (cProgress) cProgress.style.width = (scrolled * 100) + '%';
         });
-    }
+
+        // ── Scroll-to-top button ─────────────────────────
+        const scrollBtn = document.getElementById('scrollToTop');
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => {
+                scrollBtn.classList.toggle('visible', window.scrollY > 500);
+            });
+            scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
+
+        // ── Scroll reveal (Intersection Observer) ────────
+        const reveals = document.querySelectorAll('.js-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => revealObserver.observe(el));
+        // Fallback: si algún elemento ya está en viewport al cargar, lo mostramos igualmente
+        setTimeout(() => {
+            document.querySelectorAll('.js-reveal:not(.in)').forEach(el => el.classList.add('in'));
+        }, 600);
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // ── Counter animation ─────────────────────────────
+        const counters = document.querySelectorAll('.c-stat__number[data-target]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.dataset.target, 10);
+                const suffix = el.dataset.suffix || (target >= 90 ? '%' : '+');
+                let current = 0;
+                const step = Math.ceil(target / 60);
+                const timer = setInterval(() => {
+                    current = Math.min(current + step, target);
+                    el.textContent = current + suffix;
+                    if (current >= target) clearInterval(timer);
+                }, 22);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(el => counterObserver.observe(el));
+
+        // ── Hero image subtle zoom on load ───────────────
+        const heroImg = document.getElementById('heroImg');
+        if (heroImg) {
+            const applyZoom = () => { heroImg.style.transform = 'scale(1.05)'; heroImg.style.transition = 'transform 10s ease'; };
+            heroImg.complete ? applyZoom() : heroImg.addEventListener('load', applyZoom);
+        }
+
+        // ── GSAP enhancements (if available) ─────────────
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Hero entrance
+            gsap.from('.c-hero__eyebrow', { y: 20, opacity: 0, duration: .6, delay: .1 });
+            gsap.from('.c-hero__h1', { y: 30, opacity: 0, duration: .7, delay: .2 });
+            gsap.from('.c-hero__sub', { y: 20, opacity: 0, duration: .6, delay: .35 });
+            gsap.from('.c-hero__ctas', { y: 20, opacity: 0, duration: .6, delay: .5 });
+            gsap.from('.c-hero__trust', { y: 15, opacity: 0, duration: .5, delay: .65 });
+
+            // Info cards stagger on scroll
+            gsap.utils.toArray('.c-info-card').forEach((card, i) => {
+                gsap.from(card, {
+                    y: 30, opacity: 0, duration: .55,
+                    delay: i * .08,
+                    scrollTrigger: { trigger: card, start: 'top 88%' }
+                });
+            });
+        }
     </script>
 
 </body>
