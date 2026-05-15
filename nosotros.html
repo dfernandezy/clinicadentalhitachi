@@ -230,10 +230,10 @@
         }
 
         .valores-grid {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 40px;
         }
 
@@ -324,6 +324,8 @@
 
         .team-member {
             transition: transform 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .team-member:hover {
@@ -356,6 +358,10 @@
 
         .team-member-info {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
         }
 
         .team-member-info h3 {
@@ -379,6 +385,7 @@
             color: #666;
             line-height: 1.7;
             font-family: 'Poppins', sans-serif;
+            flex: 1;
         }
 
         .team-member-link {
@@ -529,7 +536,8 @@
             }
 
             .valores-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .equipo-grid {
@@ -671,21 +679,9 @@
             </div>
 
             <div class="valor-card">
-                <div class="icono"><i class="fas fa-heart-pulse"></i></div>
-                <h4>Empatía y cuidado</h4>
-                <p>Entendemos tus miedos y necesidades. Trabajamos para que cada visita sea una experiencia positiva.</p>
-            </div>
-
-            <div class="valor-card">
                 <div class="icono"><i class="fas fa-file-invoice"></i></div>
                 <h4>Transparencia total</h4>
                 <p>Presupuestos claros sin letra pequeña. Siempre sabrás qué tratamiento necesitas y cuánto cuesta.</p>
-            </div>
-
-            <div class="valor-card">
-                <div class="icono"><i class="fas fa-microscope"></i></div>
-                <h4>Innovación constante</h4>
-                <p>Invertimos en las últimas tecnologías para ofrecerte tratamientos más rápidos, precisos y cómodos.</p>
             </div>
 
             <div class="valor-card">
