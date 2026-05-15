@@ -252,8 +252,26 @@
         }
 
         .valor-card .icono {
-            font-size: 4rem;
-            margin-bottom: 25px;
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #e8001d, #b5001a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            box-shadow: 0 6px 20px rgba(232, 0, 29, 0.28);
+        }
+
+        .valor-card:hover .icono {
+            transform: scale(1.12) rotate(-6deg);
+            box-shadow: 0 10px 28px rgba(232, 0, 29, 0.42);
+        }
+
+        .valor-card .icono i {
+            font-size: 1.6rem;
+            color: #fff;
         }
 
         .valor-card h4 {
@@ -361,6 +379,24 @@
             color: #666;
             line-height: 1.7;
             font-family: 'Poppins', sans-serif;
+        }
+
+        .team-member-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #e8001d;
+            text-decoration: none;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color 0.2s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .team-member-link:hover {
+            border-color: #e8001d;
         }
 
         /* CTA Final */
@@ -623,39 +659,37 @@
         </p>
         <div class="valores-grid">
             <div class="valor-card">
-                <div class="icono">🤝</div>
+                <div class="icono"><i class="fas fa-hands-holding"></i></div>
                 <h4>Cercanía y confianza</h4>
                 <p>Te tratamos como familia. Aquí no eres un número, eres parte de nuestra comunidad dental.</p>
             </div>
 
             <div class="valor-card">
-                <div class="icono">⭐</div>
+                <div class="icono"><i class="fas fa-award"></i></div>
                 <h4>Excelencia profesional</h4>
                 <p>Formación continua y tecnología de última generación para ofrecerte el mejor tratamiento.</p>
             </div>
 
             <div class="valor-card">
-                <div class="icono">💚</div>
+                <div class="icono"><i class="fas fa-heart-pulse"></i></div>
                 <h4>Empatía y cuidado</h4>
-                <p>Entendemos tus miedos y necesidades. Trabajamos para que cada visita sea una experiencia positiva.
-                </p>
+                <p>Entendemos tus miedos y necesidades. Trabajamos para que cada visita sea una experiencia positiva.</p>
             </div>
 
             <div class="valor-card">
-                <div class="icono">🎯</div>
+                <div class="icono"><i class="fas fa-file-invoice"></i></div>
                 <h4>Transparencia total</h4>
                 <p>Presupuestos claros sin letra pequeña. Siempre sabrás qué tratamiento necesitas y cuánto cuesta.</p>
             </div>
 
             <div class="valor-card">
-                <div class="icono">🔬</div>
+                <div class="icono"><i class="fas fa-microscope"></i></div>
                 <h4>Innovación constante</h4>
-                <p>Invertimos en las últimas tecnologías para ofrecerte tratamientos más rápidos, precisos y cómodos.
-                </p>
+                <p>Invertimos en las últimas tecnologías para ofrecerte tratamientos más rápidos, precisos y cómodos.</p>
             </div>
 
             <div class="valor-card">
-                <div class="icono">🌟</div>
+                <div class="icono"><i class="fas fa-tooth"></i></div>
                 <h4>Pasión por nuestro trabajo</h4>
                 <p>Amamos lo que hacemos y se nota. Cada sonrisa que transformamos es nuestra mayor recompensa.</p>
             </div>
@@ -681,6 +715,9 @@
                         Fundadora y alma de la clínica. Especialista en cirugía dental con
                         años de experiencia. Su pasión es hacer que te sientas seguro y bien cuidado.
                     </p>
+                    <a href="equipo.html" class="team-member-link">
+                        <i class="fas fa-arrow-right"></i> Ver perfil completo
+                    </a>
                 </div>
             </div>
 
@@ -693,9 +730,12 @@
                     <h3>Dra. Meyleen Morales Cabrera</h3>
                     <p class="cargo">Periodoncia · Cirugía · Estética Dental</p>
                     <p>
-                        Especialista en periodoncia, cirugía dental y estética. Su precisión y cuidado
-                        hacen que cada tratamiento sea una experiencia cómoda y segura.
+                        Especialista en periodoncia, cirugía dental y estética, con 14 años
+                        de experiencia. Precisión y trato cercano en cada tratamiento.
                     </p>
+                    <a href="equipo.html" class="team-member-link">
+                        <i class="fas fa-arrow-right"></i> Ver perfil completo
+                    </a>
                 </div>
             </div>
 
@@ -711,6 +751,9 @@
                         Experta en tratamientos generales y preventivos. Su enfoque calmado y paciente
                         hace que hasta los más nerviosos se sientan tranquilos.
                     </p>
+                    <a href="equipo.html" class="team-member-link">
+                        <i class="fas fa-arrow-right"></i> Ver perfil completo
+                    </a>
                 </div>
             </div>
 
@@ -726,6 +769,9 @@
                         Especialista en ortodoncia e Invisalign. Le encanta ver cómo las sonrisas
                         se transforman y la confianza de sus pacientes crece día a día.
                     </p>
+                    <a href="equipo.html" class="team-member-link">
+                        <i class="fas fa-arrow-right"></i> Ver perfil completo
+                    </a>
                 </div>
             </div>
 
@@ -741,6 +787,9 @@
                         La persona que te recibirá con una sonrisa y se asegurará de que todo
                         esté perfecto durante tu tratamiento.
                     </p>
+                    <a href="equipo.html" class="team-member-link">
+                        <i class="fas fa-arrow-right"></i> Ver perfil completo
+                    </a>
                 </div>
             </div>
 
@@ -756,6 +805,9 @@
                         Especialista en limpiezas dentales y prevención. Sus manos expertas
                         y su trato amable harán que ames venir a tus revisiones.
                     </p>
+                    <a href="equipo.html" class="team-member-link">
+                        <i class="fas fa-arrow-right"></i> Ver perfil completo
+                    </a>
                 </div>
             </div>
 
@@ -771,6 +823,9 @@
                         La primera voz que escucharás al llamar. Organiza tu cita, resuelve tus dudas
                         y hace que todo fluya sin complicaciones.
                     </p>
+                    <a href="equipo.html" class="team-member-link">
+                        <i class="fas fa-arrow-right"></i> Ver perfil completo
+                    </a>
                 </div>
             </div>
         </div>
