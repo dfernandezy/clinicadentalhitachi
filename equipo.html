@@ -155,6 +155,18 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+    @media (max-width: 900px) {
+      .eq-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+    @media (max-width: 540px) {
+      .eq-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
 
     /* ── CARD ── */
     .eq-card {
@@ -528,6 +540,7 @@
     .fade-up:nth-child(4) { transition-delay: .24s; }
     .fade-up:nth-child(5) { transition-delay: .32s; }
     .fade-up:nth-child(6) { transition-delay: .40s; }
+    .fade-up:nth-child(7) { transition-delay: .48s; }
 
     /* ── WHATSAPP ── */
     .whatsapp-float {
@@ -628,6 +641,20 @@
         </div>
       </article>
 
+      <!-- ── DRA. MEYLEEN MORALES ── -->
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Meyleen Morales Cabrera" data-member="morales">
+        <div class="eq-card__img-wrap">
+          <img src="images/meyleenmoralescabrera.JPG" alt="Dra. Meyleen Morales Cabrera – Periodoncia, Cirugía y Estética Dental" width="400" height="530" loading="lazy">
+          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
+        </div>
+        <div class="eq-card__body">
+          <span class="eq-card__role">Periodoncia · Cirugía · Estética Dental</span>
+          <h3 class="eq-card__name">Dra. Meyleen Morales Cabrera</h3>
+          <p class="eq-card__excerpt">Especialista en periodoncia, cirugía dental y estética. Su precisión y cuidado hacen que cada tratamiento sea una experiencia cómoda y segura.</p>
+          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
+        </div>
+      </article>
+
       <!-- ── DRA. ANA MOLINA ── -->
       <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Ana Molina" data-member="molina">
         <div class="eq-card__img-wrap">
@@ -656,20 +683,6 @@
         </div>
       </article>
 
-      <!-- ── ANA TERRAZAS ── -->
-      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Ana Terrazas" data-member="terrazas">
-        <div class="eq-card__img-wrap">
-          <img src="images/dentista4.webp" alt="Ana Terrazas Q. – Auxiliar de Clínica" width="400" height="530" loading="lazy">
-          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
-        </div>
-        <div class="eq-card__body">
-          <span class="eq-card__role">Auxiliar de Clínica</span>
-          <h3 class="eq-card__name">Ana Terrazas Q.</h3>
-          <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
-        </div>
-      </article>
-
       <!-- ── KATHY ALONSO ── -->
       <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Kathy Alonso" data-member="alonso">
         <div class="eq-card__img-wrap">
@@ -679,6 +692,20 @@
         <div class="eq-card__body">
           <span class="eq-card__role">Higienista Dental</span>
           <h3 class="eq-card__name">Kathy Alonso A.</h3>
+          <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
+        </div>
+      </article>
+
+      <!-- ── ANA TERRAZAS ── -->
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Ana Terrazas" data-member="terrazas">
+        <div class="eq-card__img-wrap">
+          <img src="images/dentista4.webp" alt="Ana Terrazas Q. – Auxiliar de Clínica" width="400" height="530" loading="lazy">
+          <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
+        </div>
+        <div class="eq-card__body">
+          <span class="eq-card__role">Auxiliar de Clínica</span>
+          <h3 class="eq-card__name">Ana Terrazas Q.</h3>
           <p class="eq-card__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
           <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
         </div>
