@@ -6,15 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#e8001d">
   <title>Nuestro Equipo | Clínica Dental Dra. Hitachi – L'Hospitalet de Llobregat</title>
-  <meta name="description" content="Conoce a los profesionales de la Clínica Dental Dra. Hitachi en L'Hospitalet de Llobregat. Un equipo especializado, cercano y comprometido con tu salud dental.">
+  <meta name="description"
+    content="Conoce a los profesionales de la Clínica Dental Dra. Hitachi en L'Hospitalet de Llobregat. Un equipo especializado, cercano y comprometido con tu salud dental.">
   <link rel="canonical" href="https://clinicadentalhitachi.com/equipo.html">
   <link rel="icon" type="image/png" href="images/logo.webp">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18112028998"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18112028998');
+  </script>
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://clinicadentalhitachi.com/equipo.html">
   <meta property="og:title" content="Nuestro Equipo | Clínica Dental Dra. Hitachi">
-  <meta property="og:description" content="Conoce a los profesionales de la Clínica Dental Dra. Hitachi en L'Hospitalet de Llobregat.">
+  <meta property="og:description"
+    content="Conoce a los profesionales de la Clínica Dental Dra. Hitachi en L'Hospitalet de Llobregat.">
   <meta property="og:image" content="https://clinicadentalhitachi.com/images/doctorahitachi.jpg">
 
   <!-- Schema.org -->
@@ -51,7 +62,8 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="fonts/icons-linear.css">
   <link rel="stylesheet" href="fonts/icons-fontawesome/css/all.min.css">
 
@@ -70,17 +82,38 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       color: #1a1a1a;
       background: #fff;
       overflow-x: hidden;
     }
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
 
     /* ── HEADER ── */
     header {
@@ -89,6 +122,7 @@
       position: relative;
       z-index: 9999;
     }
+
     header nav.headermenu ul li {
       float: left !important;
       font-size: 15px !important;
@@ -98,6 +132,7 @@
       text-transform: uppercase !important;
       padding: 0 !important;
     }
+
     header nav.headermenu ul li a {
       display: block !important;
       color: #000 !important;
@@ -107,17 +142,35 @@
       border-bottom: none !important;
       border-radius: 0 !important;
     }
+
     header nav.headermenu ul li.active a {
       background: #ff0000 !important;
       color: #fff !important;
       border-radius: 5px !important;
     }
-    header .contact-info a { color: #000; }
+
+    header .contact-info a {
+      color: #000;
+    }
+
     @media(max-width:1200px) {
-      body { padding-top: 0 !important; }
-      .sitenav nav.headermenu ul li a { color: #fff !important; }
-      .sitenav nav.headermenu ul li.active a { color: #ff0000 !important; background: transparent !important; }
-      .eq-grid { position: relative; z-index: 1; }
+      body {
+        padding-top: 0 !important;
+      }
+
+      .sitenav nav.headermenu ul li a {
+        color: #fff !important;
+      }
+
+      .sitenav nav.headermenu ul li.active a {
+        color: #ff0000 !important;
+        background: transparent !important;
+      }
+
+      .eq-grid {
+        position: relative;
+        z-index: 1;
+      }
     }
 
     /* ── HERO ── */
@@ -130,17 +183,20 @@
       padding: clamp(3.5rem, 7vw, 6rem) 1.5rem;
       background: #f8f8f6;
     }
+
     .eq-section__header {
       text-align: center;
       max-width: 620px;
       margin: 0 auto clamp(2.5rem, 5vw, 4rem);
     }
+
     .eq-section__header h2 {
       font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 700;
       letter-spacing: -.02em;
       margin-bottom: .6rem;
     }
+
     .eq-section__header p {
       color: #6b7280;
       font-size: .97rem;
@@ -155,12 +211,14 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
     @media (max-width: 900px) {
       .eq-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
     }
+
     @media (max-width: 540px) {
       .eq-grid {
         grid-template-columns: 1fr;
@@ -173,15 +231,17 @@
       background: #fff;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .07);
       transition: box-shadow .28s ease, transform .28s ease;
       cursor: pointer;
       position: relative;
     }
+
     .eq-card:hover {
-      box-shadow: 0 14px 44px rgba(0,0,0,.14);
+      box-shadow: 0 14px 44px rgba(0, 0, 0, .14);
       transform: translateY(-5px);
     }
+
     .eq-card--featured {
       grid-column: 1 / -1;
       display: flex;
@@ -191,8 +251,9 @@
       margin: 0 auto;
       width: 100%;
     }
+
     @media (max-width: 680px) {
-      .eq-card--featured { 
+      .eq-card--featured {
         flex-direction: column;
         max-width: 100%;
         grid-column: auto;
@@ -204,14 +265,20 @@
       overflow: hidden;
       aspect-ratio: 3/4;
     }
+
     .eq-card--featured .eq-card__img-wrap {
       flex: 0 0 42%;
       aspect-ratio: unset;
       min-height: 360px;
     }
+
     @media (max-width: 680px) {
-      .eq-card--featured .eq-card__img-wrap { min-height: 280px; aspect-ratio: 4/3; }
+      .eq-card--featured .eq-card__img-wrap {
+        min-height: 280px;
+        aspect-ratio: 4/3;
+      }
     }
+
     .eq-card__img-wrap img {
       width: 100%;
       height: 100%;
@@ -219,9 +286,11 @@
       object-position: top center;
       transition: transform .45s ease;
     }
+
     .eq-card:hover .eq-card__img-wrap img {
       transform: scale(1.05);
     }
+
     .eq-card__badge {
       position: absolute;
       top: .9rem;
@@ -235,11 +304,12 @@
       padding: .25rem .7rem;
       border-radius: 50px;
     }
+
     .eq-card__hint {
       position: absolute;
       bottom: .9rem;
       right: .9rem;
-      background: rgba(0,0,0,.55);
+      background: rgba(0, 0, 0, .55);
       backdrop-filter: blur(6px);
       color: #fff;
       font-size: .72rem;
@@ -258,10 +328,12 @@
       flex-direction: column;
       gap: .5rem;
     }
+
     .eq-card--featured .eq-card__body {
       justify-content: center;
       gap: .75rem;
     }
+
     .eq-card__role {
       font-size: .72rem;
       font-weight: 700;
@@ -269,21 +341,25 @@
       text-transform: uppercase;
       color: #e8001d;
     }
+
     .eq-card__name {
       font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: -.01em;
       line-height: 1.2;
     }
+
     .eq-card--featured .eq-card__name {
       font-size: clamp(1.3rem, 2.5vw, 1.7rem);
     }
+
     .eq-card__excerpt {
       font-size: .88rem;
       color: #6b7280;
       line-height: 1.65;
       font-weight: 300;
     }
+
     .eq-card__cta {
       display: inline-flex;
       align-items: center;
@@ -296,6 +372,7 @@
       transition: border-color .2s;
       width: fit-content;
     }
+
     .eq-card:hover .eq-card__cta {
       border-color: #e8001d;
     }
@@ -304,7 +381,7 @@
     .eq-modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(15,15,20,.65);
+      background: rgba(15, 15, 20, .65);
       backdrop-filter: blur(6px);
       z-index: 10000;
       display: flex;
@@ -315,10 +392,12 @@
       pointer-events: none;
       transition: opacity .3s ease;
     }
+
     .eq-modal-overlay.is-open {
       opacity: 1;
       pointer-events: all;
     }
+
     .eq-modal {
       background: #fff;
       border-radius: 24px;
@@ -328,22 +407,28 @@
       overflow-y: auto;
       display: flex;
       flex-direction: row;
-      box-shadow: 0 24px 80px rgba(0,0,0,.25);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .25);
       transform: scale(.94) translateY(20px);
-      transition: transform .32s cubic-bezier(.34,1.56,.64,1);
+      transition: transform .32s cubic-bezier(.34, 1.56, .64, 1);
       position: relative;
     }
+
     .eq-modal-overlay.is-open .eq-modal {
       transform: scale(1) translateY(0);
     }
+
     @media (max-width: 640px) {
-      .eq-modal { flex-direction: column; }
+      .eq-modal {
+        flex-direction: column;
+      }
     }
+
     .eq-modal__img {
       flex: 0 0 38%;
       position: relative;
       min-height: 320px;
     }
+
     .eq-modal__img img {
       width: 100%;
       height: 100%;
@@ -351,10 +436,17 @@
       object-position: top center;
       border-radius: 24px 0 0 24px;
     }
+
     @media (max-width: 640px) {
-      .eq-modal__img { min-height: 220px; }
-      .eq-modal__img img { border-radius: 24px 24px 0 0; }
+      .eq-modal__img {
+        min-height: 220px;
+      }
+
+      .eq-modal__img img {
+        border-radius: 24px 24px 0 0;
+      }
     }
+
     .eq-modal__role-badge {
       position: absolute;
       top: 1rem;
@@ -368,6 +460,7 @@
       padding: .25rem .7rem;
       border-radius: 50px;
     }
+
     .eq-modal__content {
       flex: 1;
       padding: 2rem 2rem 2rem 1.75rem;
@@ -376,6 +469,7 @@
       flex-direction: column;
       gap: 1rem;
     }
+
     .eq-modal__close {
       position: absolute;
       top: 1rem;
@@ -383,7 +477,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(0,0,0,.08);
+      background: rgba(0, 0, 0, .08);
       border: none;
       cursor: pointer;
       display: flex;
@@ -394,7 +488,11 @@
       transition: background .2s;
       z-index: 2;
     }
-    .eq-modal__close:hover { background: rgba(0,0,0,.16); }
+
+    .eq-modal__close:hover {
+      background: rgba(0, 0, 0, .16);
+    }
+
     .eq-modal__role {
       font-size: .72rem;
       font-weight: 700;
@@ -402,30 +500,35 @@
       text-transform: uppercase;
       color: #e8001d;
     }
+
     .eq-modal__name {
       font-size: clamp(1.3rem, 3vw, 1.8rem);
       font-weight: 800;
       letter-spacing: -.02em;
       line-height: 1.15;
     }
+
     .eq-modal__divider {
       width: 40px;
       height: 3px;
       background: #e8001d;
       border-radius: 2px;
     }
+
     .eq-modal__bio {
       font-size: .92rem;
       color: #4a4a55;
       line-height: 1.75;
       font-weight: 300;
     }
+
     .eq-modal__tags {
       display: flex;
       flex-wrap: wrap;
       gap: .5rem;
       margin-top: .25rem;
     }
+
     .eq-modal__tag {
       background: #f3f3f1;
       color: #3a3a44;
@@ -435,6 +538,7 @@
       border-radius: 50px;
       border: 1px solid #e5e7eb;
     }
+
     .eq-modal__cta {
       display: inline-flex;
       align-items: center;
@@ -448,8 +552,9 @@
       width: fit-content;
       margin-top: .5rem;
       transition: background .25s, transform .25s;
-      box-shadow: 0 4px 16px rgba(232,0,29,.3);
+      box-shadow: 0 4px 16px rgba(232, 0, 29, .3);
     }
+
     .eq-modal__cta:hover {
       background: #b5001a;
       transform: translateY(-2px);
@@ -461,6 +566,7 @@
       padding: clamp(3.5rem, 7vw, 6rem) 1.5rem;
       text-align: center;
     }
+
     .eq-cta__inner {
       max-width: 580px;
       margin: 0 auto;
@@ -469,6 +575,7 @@
       align-items: center;
       gap: 1.1rem;
     }
+
     .eq-cta h2 {
       font-size: clamp(1.6rem, 3.5vw, 2.4rem);
       font-weight: 800;
@@ -476,12 +583,14 @@
       letter-spacing: -.02em;
       line-height: 1.15;
     }
+
     .eq-cta p {
-      color: rgba(255,255,255,.78);
+      color: rgba(255, 255, 255, .78);
       font-size: clamp(.92rem, 1.5vw, 1.05rem);
       font-weight: 300;
       line-height: 1.7;
     }
+
     .eq-cta__btns {
       display: flex;
       flex-wrap: wrap;
@@ -489,6 +598,7 @@
       justify-content: center;
       margin-top: .5rem;
     }
+
     .eq-cta__btn-primary {
       display: inline-flex;
       align-items: center;
@@ -499,13 +609,15 @@
       border-radius: 50px;
       font-size: .95rem;
       font-weight: 700;
-      box-shadow: 0 4px 20px rgba(0,0,0,.18);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .18);
       transition: transform .25s, box-shadow .25s;
     }
+
     .eq-cta__btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0,0,0,.24);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .24);
     }
+
     .eq-cta__btn-secondary {
       display: inline-flex;
       align-items: center;
@@ -513,14 +625,15 @@
       padding: .85rem 2rem;
       background: transparent;
       color: #fff;
-      border: 2px solid rgba(255,255,255,.6);
+      border: 2px solid rgba(255, 255, 255, .6);
       border-radius: 50px;
       font-size: .95rem;
       font-weight: 600;
       transition: background .25s, border-color .25s, transform .25s;
     }
+
     .eq-cta__btn-secondary:hover {
-      background: rgba(255,255,255,.12);
+      background: rgba(255, 255, 255, .12);
       border-color: #fff;
       transform: translateY(-2px);
     }
@@ -531,16 +644,35 @@
       transform: translateY(28px);
       transition: opacity .6s ease, transform .6s ease;
     }
+
     .fade-up.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .fade-up:nth-child(2) { transition-delay: .08s; }
-    .fade-up:nth-child(3) { transition-delay: .16s; }
-    .fade-up:nth-child(4) { transition-delay: .24s; }
-    .fade-up:nth-child(5) { transition-delay: .32s; }
-    .fade-up:nth-child(6) { transition-delay: .40s; }
-    .fade-up:nth-child(7) { transition-delay: .48s; }
+
+    .fade-up:nth-child(2) {
+      transition-delay: .08s;
+    }
+
+    .fade-up:nth-child(3) {
+      transition-delay: .16s;
+    }
+
+    .fade-up:nth-child(4) {
+      transition-delay: .24s;
+    }
+
+    .fade-up:nth-child(5) {
+      transition-delay: .32s;
+    }
+
+    .fade-up:nth-child(6) {
+      transition-delay: .40s;
+    }
+
+    .fade-up:nth-child(7) {
+      transition-delay: .48s;
+    }
 
     /* ── WHATSAPP ── */
     .whatsapp-float {
@@ -557,10 +689,13 @@
       justify-content: center;
       color: #fff;
       font-size: 1.6rem;
-      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
       transition: transform .25s;
     }
-    .whatsapp-float:hover { transform: scale(1.08); }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
   </style>
 </head>
 
@@ -602,8 +737,10 @@
           </div>
           <div class="contact-info">
             <a href="tel:+34622819008"><i class="fa-solid fa-phone-volume"></i></a>
-            <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
-            <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://maps.app.goo.gl/vjiaqXV7W7BeNNVz8" target="_blank"><i
+                class="fa-solid fa-location-dot"></i></a>
+            <a href="https://www.facebook.com/ClinicadentalDraHitachiA" target="_blank"><i
+                class="fa-brands fa-facebook-f"></i></a>
           </div>
         </div>
       </div>
@@ -614,7 +751,8 @@
   <section class="eq-hero">
     <div class="eq-hero__eyebrow">CLÍNICA DENTAL DRA. HITACHI</div>
     <h1>El equipo que cuida<br><em>tu sonrisa</em></h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Profesionales comprometidos con tu salud dental en L'Hospitalet de Llobregat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Profesionales comprometidos con tu salud dental en L'Hospitalet de Llobregat.</p>
   </section>
 
   <!-- ══ GRID EQUIPO ══ -->
@@ -627,9 +765,11 @@
     <div class="eq-grid">
 
       <!-- ── DRA. HITACHI (destacada) ── -->
-      <article class="eq-card eq-card--featured fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Vivian Hitachi" data-member="hitachi">
+      <article class="eq-card eq-card--featured fade-up" role="button" tabindex="0"
+        aria-label="Ver perfil de Dra. Vivian Hitachi" data-member="hitachi">
         <div class="eq-card__img-wrap">
-          <img src="images/doctorahitachi.jpg" alt="Dra. Vivian Hitachi A. – Directora y Cirujana Dental" width="420" height="560" loading="eager">
+          <img src="images/doctorahitachi.jpg" alt="Dra. Vivian Hitachi A. – Directora y Cirujana Dental" width="420"
+            height="560" loading="eager">
           <span class="eq-card__badge">Fundadora</span>
           <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
         </div>
@@ -642,23 +782,29 @@
       </article>
 
       <!-- ── DRA. MEYLEEN MORALES ── -->
-      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Meyleen Morales Cabrera" data-member="morales">
+      <article class="eq-card fade-up" role="button" tabindex="0"
+        aria-label="Ver perfil de Dra. Meyleen Morales Cabrera" data-member="morales">
         <div class="eq-card__img-wrap">
-          <img src="images/meyleenmoralescabrera.JPG" alt="Dra. Meyleen Morales Cabrera – Periodoncia, Cirugía y Estética Dental" width="400" height="530" loading="lazy">
+          <img src="images/meyleenmoralescabrera.JPG"
+            alt="Dra. Meyleen Morales Cabrera – Periodoncia, Cirugía y Estética Dental" width="400" height="530"
+            loading="lazy">
           <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
         </div>
         <div class="eq-card__body">
           <span class="eq-card__role">Periodoncia · Cirugía · Estética Dental</span>
           <h3 class="eq-card__name">Dra. Meyleen Morales Cabrera</h3>
-          <p class="eq-card__excerpt">14 años de experiencia. Graduada en 2012 en Caracas (Venezuela) y especializada en periodoncia, cirugía dental y estética.</p>
+          <p class="eq-card__excerpt">14 años de experiencia. Graduada en 2012 en Caracas (Venezuela) y especializada en
+            periodoncia, cirugía dental y estética.</p>
           <span class="eq-card__cta"><i class="fas fa-arrow-right"></i> Ver perfil</span>
         </div>
       </article>
 
       <!-- ── DRA. ANA MOLINA ── -->
-      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Ana Molina" data-member="molina">
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Ana Molina"
+        data-member="molina">
         <div class="eq-card__img-wrap">
-          <img src="images/dentista3.webp" alt="Dra. Ana Molina G. – Odontóloga General" width="400" height="530" loading="lazy">
+          <img src="images/dentista3.webp" alt="Dra. Ana Molina G. – Odontóloga General" width="400" height="530"
+            loading="lazy">
           <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
         </div>
         <div class="eq-card__body">
@@ -670,9 +816,11 @@
       </article>
 
       <!-- ── DRA. MARTA LUQUE ── -->
-      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Marta Luque" data-member="luque">
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Dra. Marta Luque"
+        data-member="luque">
         <div class="eq-card__img-wrap">
-          <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R. – Ortodoncista" width="400" height="530" loading="lazy">
+          <img src="images/dentistamarta.JPEG" alt="Dra. Marta Luque R. – Ortodoncista" width="400" height="530"
+            loading="lazy">
           <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
         </div>
         <div class="eq-card__body">
@@ -684,9 +832,11 @@
       </article>
 
       <!-- ── KATHY ALONSO ── -->
-      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Kathy Alonso" data-member="alonso">
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Kathy Alonso"
+        data-member="alonso">
         <div class="eq-card__img-wrap">
-          <img src="images/dentista1.webp" alt="Kathy Alonso A. – Higienista Dental" width="400" height="530" loading="lazy">
+          <img src="images/dentista1.webp" alt="Kathy Alonso A. – Higienista Dental" width="400" height="530"
+            loading="lazy">
           <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
         </div>
         <div class="eq-card__body">
@@ -698,9 +848,11 @@
       </article>
 
       <!-- ── ANA TERRAZAS ── -->
-      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Ana Terrazas" data-member="terrazas">
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Ana Terrazas"
+        data-member="terrazas">
         <div class="eq-card__img-wrap">
-          <img src="images/dentista4.webp" alt="Ana Terrazas Q. – Auxiliar de Clínica" width="400" height="530" loading="lazy">
+          <img src="images/dentista4.webp" alt="Ana Terrazas Q. – Auxiliar de Clínica" width="400" height="530"
+            loading="lazy">
           <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
         </div>
         <div class="eq-card__body">
@@ -712,9 +864,11 @@
       </article>
 
       <!-- ── HERMAN MENACHO ── -->
-      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Herman Menacho" data-member="menacho">
+      <article class="eq-card fade-up" role="button" tabindex="0" aria-label="Ver perfil de Herman Menacho"
+        data-member="menacho">
         <div class="eq-card__img-wrap">
-          <img src="images/dentista5.webp" alt="Herman Menacho L. – Administrador y Recepcionista" width="400" height="530" loading="lazy">
+          <img src="images/dentista5.webp" alt="Herman Menacho L. – Administrador y Recepcionista" width="400"
+            height="530" loading="lazy">
           <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
         </div>
         <div class="eq-card__body">
@@ -749,24 +903,45 @@
     <div class="container footer-inner">
       <div class="footer__brand">
         <a href="index.html" aria-label="Ir al inicio">
-          <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42" loading="lazy" />
+          <img src="images/logo.webp" alt="Logotipo Clínica Dental Dra. Hitachi" width="140" height="42"
+            loading="lazy" />
         </a>
         <p>Tu sonrisa, nuestra pasión. Más de 20 años cuidando la salud bucal de Barcelona.</p>
         <address class="footer__contact">
           <a href="tel:+34622819008">
-            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
             622 819 008
           </a>
           <a href="tel:+34931479829">
-            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
             931 479 829
           </a>
           <a href="mailto:info@clinicahitachi.es">
-            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
             info@clinicahitachi.es
           </a>
           <span>
-            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
             Calle Rosa de Alejandría Nº24, L'Hospitalet de Llobregat
           </span>
           <span style="font-size:0.75rem; color:#aaa; margin-top:4px; display:block;">Reg. Sanitario: E08704494</span>
@@ -953,8 +1128,11 @@
         <span class="eq-modal__role">Periodoncia · Cirugía · Estética Dental</span>
         <h2 class="eq-modal__name" id="mname-morales">Dra. Meyleen Morales Cabrera</h2>
         <div class="eq-modal__divider"></div>
-        <p class="eq-modal__bio">Se graduó en Odontología en 2012 en Caracas, Venezuela, acumulando desde entonces <strong>14 años de experiencia</strong> en el sector dental.</p>
-        <p class="eq-modal__bio">Especialista en periodoncia, cirugía dental y estética, combina precisión técnica con un trato cercano y tranquilizador que pone a sus pacientes en las mejores manos desde el primer momento.</p>
+        <p class="eq-modal__bio">Se graduó en Odontología en 2012 en Caracas, Venezuela, acumulando desde entonces
+          <strong>14 años de experiencia</strong> en el sector dental.
+        </p>
+        <p class="eq-modal__bio">Especialista en periodoncia, cirugía dental y estética, combina precisión técnica con
+          un trato cercano y tranquilizador que pone a sus pacientes en las mejores manos desde el primer momento.</p>
         <div class="eq-modal__tags">
           <span class="eq-modal__tag">Periodoncia</span>
           <span class="eq-modal__tag">Cirugía Dental</span>
@@ -1035,4 +1213,5 @@
   </script>
 
 </body>
+
 </html>
