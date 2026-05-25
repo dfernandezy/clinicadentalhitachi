@@ -9,7 +9,7 @@
 
     <meta name="theme-color" content="#ff0000">
     <link rel="apple-touch-icon" href="images/logo.webp">
-
+ 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18112028998"></script>
     <script>
@@ -200,16 +200,21 @@
             font-family: Georgia, 'Times New Roman', serif;
             font-style: italic;
             font-weight: 700;
-            font-size: 1rem;
-            color: #cc0000;
+            font-size: 1.1rem;
+            color: #f50d0d;
             letter-spacing: 0.1px;
             white-space: nowrap;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
 
-        header.fixed .logo-name-line1,
-        header.fixed .logo-name-line2 {
-            text-shadow: none;
+        /* Gradiente oscuro en la parte top del hero para que el logo rojo sea legible */
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 160px;
+            
+            z-index: 0;
+            pointer-events: none;
         }
 
         /* Mobile (≤1200px) */
@@ -361,7 +366,7 @@
                         prótesis, ortodoncia y mucho más.
                         Nuestro equipo profesional siempre dispuesto a brindarte la mejor atención y solución.
                     </p>
-                    <ul>
+                    <ul style="list-style:none; padding:0;">
                         <li>Profesionales altamente cualificados</li>
                         <li>Instalaciones modernas y equipamiento de última generación</li>
                         <li>Tratamientos personalizados</li>
@@ -2076,6 +2081,7 @@
 
     </script>
 
+<script src="js/cookies-consent.js"></script>
 </body>
 
 </html>

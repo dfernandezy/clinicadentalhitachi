@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../footer.css">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="blogresponsive.css">
+    <link rel="stylesheet" href="../fonts/icons-linear.css">
+
     <link rel="canonical" href="https://clinicadentalhitachi.com/blogpaginas/blog9.html">
     <style>
         html,
@@ -64,6 +66,10 @@
                     <a href="../blog.html" class="logo">
                         <h3>Dra. Hitachi A.<span>Blog</span></h3>
                     </a>
+                </div>
+                                <div class="navicons">
+                    <a href="javascript:void(0);" class="navshow"><span class="lnr lnr-menu"></span></a>
+                    <a href="javascript:void(0);" class="navhide" style="display:none;"><span class="lnr lnr-cross"></span></a>
                 </div>
                 <div class="sitenav" id="sitenav">
                     <div class="navwrap">
@@ -280,6 +286,36 @@
             </div>
         </div>
     </footer>
+    <script>
+    (function(){
+        var navshow = document.querySelector('.navshow');
+        var navhide = document.querySelector('.navhide');
+        var sitenav = document.querySelector('.sitenav');
+        if(navshow && navhide && sitenav){
+            navshow.addEventListener('click', function(){
+                sitenav.style.display = 'block';
+                navshow.style.display = 'none';
+                navhide.style.display = 'flex';
+                document.body.classList.add('disablescroll');
+            });
+            navhide.addEventListener('click', function(){
+                sitenav.style.display = 'none';
+                navhide.style.display = 'none';
+                navshow.style.display = 'flex';
+                document.body.classList.remove('disablescroll');
+            });
+            document.querySelectorAll('.headermenu a').forEach(function(a){
+                a.addEventListener('click', function(){
+                    sitenav.style.display = 'none';
+                    navhide.style.display = 'none';
+                    navshow.style.display = 'flex';
+                    document.body.classList.remove('disablescroll');
+                });
+            });
+        }
+    })();
+    </script>
+<script src="../js/cookies-consent.js"></script>
 </body>
 
 </html>
