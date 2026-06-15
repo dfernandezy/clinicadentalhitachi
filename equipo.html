@@ -71,6 +71,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style-responsive.css">
   <link rel="stylesheet" href="footer.css">
+    <script>!function(){if("scrollRestoration"in history)history.scrollRestoration="manual";if(sessionStorage.getItem("pt-nav")==="1"){try{window.scrollTo({top:0,left:0,behavior:"instant"})}catch(e){window.scrollTo(0,0)}}if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var b=location.pathname.indexOf("/blogpaginas/")!==-1?"../":"";var p=location.pathname;var ix=p==="/"||/\/index\.html?$/i.test(p)||p.endsWith("/");var first=ix&&!sessionStorage.getItem("pt-visited");if(!first)return;document.documentElement.classList.add("pt-loading");document.documentElement.insertAdjacentHTML("beforeend",'<div id="pt-curtain" class="pt-curtain is-active is-loading"><div class="pt-curtain__white"></div><div class="pt-curtain__red"></div><div class="pt-curtain__brand"><img class="pt-curtain__logo pt-curtain__logo--dark" src="'+b+'images/logo.webp" alt="" width="88" height="88"><img class="pt-curtain__logo pt-curtain__logo--white" src="'+b+'images/hitachilogowhite.png" alt="" width="100" height="100"><p class="pt-curtain__title">Cl\u00ednica Dental<br><strong>Hitachi</strong></p><div class="pt-curtain__progress"><span class="pt-curtain__progress-bar is-indeterminate"></span></div></div></div>')}();</script>
+    <link rel="stylesheet" href="page-transitions.css">
 
   <!-- Scripts -->
   <script src="js/jquery.js"></script>
@@ -285,6 +287,11 @@
       object-fit: cover;
       object-position: top center;
       transition: transform .45s ease;
+    }
+
+    .eq-card__img-wrap img.eq-img--left,
+    .eq-modal__img img.eq-img--left {
+      object-position: left center;
     }
 
     .eq-card:hover .eq-card__img-wrap img {
@@ -804,7 +811,7 @@
         data-member="molina">
         <div class="eq-card__img-wrap">
           <img src="images/dentista3.webp" alt="Dra. Ana Molina G. – Odontóloga General" width="400" height="530"
-            loading="lazy">
+            class="eq-img--left" loading="lazy">
           <span class="eq-card__hint"><i class="fas fa-mouse-pointer"></i> Ver perfil</span>
         </div>
         <div class="eq-card__body">
@@ -1026,7 +1033,7 @@
     <div class="eq-modal">
       <button class="eq-modal__close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
       <div class="eq-modal__img">
-        <img src="images/dentista3.webp" alt="Dra. Ana Molina G.">
+        <img src="images/dentista3.webp" alt="Dra. Ana Molina G." class="eq-img--left">
       </div>
       <div class="eq-modal__content">
         <span class="eq-modal__role">Odontóloga General</span>
@@ -1080,8 +1087,8 @@
         <span class="eq-modal__role">Auxiliar de Clínica</span>
         <h2 class="eq-modal__name" id="mname-terrazas">Ana Terrazas Q.</h2>
         <div class="eq-modal__divider"></div>
-        <!-- <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+        <p class="eq-modal__bio">Auxiliar de clínica con formación en asistencia quirúrgica, esterilización y protocolos de seguridad, garantizando un entorno seguro y profesional en cada tratamiento.</p>
+        <p class="eq-modal__bio">La persona que te recibirá con una sonrisa y se asegurará de que todo esté perfecto durante tu visita, cuidando cada detalle para que te sientas cómodo y bien atendido.</p>
         <div class="eq-modal__tags">
           <span class="eq-modal__tag">Auxiliar de Clínica</span>
           <span class="eq-modal__tag">Asistencia Quirúrgica</span>
@@ -1103,8 +1110,8 @@
         <span class="eq-modal__role">Higienista Dental</span>
         <h2 class="eq-modal__name" id="mname-alonso">Kathy Alonso A.</h2>
         <div class="eq-modal__divider"></div>
-        <!-- <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+        <p class="eq-modal__bio">Profesional especializada en higiene dental con amplia experiencia en prevención, educación y cuidado bucal integral para pacientes de todas las edades.</p>
+        <p class="eq-modal__bio">Especialista en limpiezas dentales y prevención. Sus manos expertas y su trato amable harán que ames venir a tus revisiones periódicas.</p>
         <div class="eq-modal__tags">
           <span class="eq-modal__tag">Higiene Dental</span>
           <span class="eq-modal__tag">Periodoncia</span>
@@ -1156,8 +1163,8 @@
         <span class="eq-modal__role">Recepción y Administración</span>
         <h2 class="eq-modal__name" id="mname-menacho">Herman Menacho L.</h2>
         <div class="eq-modal__divider"></div>
-        <!-- <p class="eq-modal__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p class="eq-modal__bio">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+        <p class="eq-modal__bio">Profesional dedicado a la atención al paciente y gestión administrativa, asegurando una experiencia cálida y eficiente desde el primer contacto.</p>
+        <p class="eq-modal__bio">La primera voz que escucharás al llamar. Organiza tu cita, resuelve tus dudas y hace que todo fluya sin complicaciones en la clínica.</p>
         <div class="eq-modal__tags">
           <span class="eq-modal__tag">Administración</span>
           <span class="eq-modal__tag">Atención al Paciente</span>
@@ -1212,6 +1219,7 @@
     });
   </script>
 
+<script src="js/page-transitions.js"></script>
 </body>
 
 </html>

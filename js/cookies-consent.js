@@ -193,10 +193,9 @@
     }
     adjustPadding();
     window.addEventListener('resize', adjustPadding);
-    // Mover foco al primer botón (accesibilidad)
+    // Mover foco al primer botón sin desplazar la página
     setTimeout(function () {
-      var first = banner.querySelector('button');
-      if (first) first.focus();
+      safeFocus(banner.querySelector('button'));
     }, 400);
   }
 
@@ -207,6 +206,15 @@
   }
 
   /* ── 7. Eventos ── */
+  function safeFocus(el) {
+    if (!el) return;
+    try {
+      el.focus({ preventScroll: true });
+    } catch (e) {
+      el.focus();
+    }
+  }
+
   function bindEvents() {
     document.getElementById('ck-accept').addEventListener('click', function () {
       save({ analytics: true, ads: true });
@@ -239,8 +247,7 @@
     banner.style.display = 'none';
     panel.style.display = 'block';
     setTimeout(function () {
-      var first = panel.querySelector('button:not(:disabled)');
-      if (first) first.focus();
+      safeFocus(panel.querySelector('button:not(:disabled)'));
     }, 50);
   }
 
@@ -248,8 +255,7 @@
     panel.style.display = 'none';
     banner.style.display = 'flex';
     setTimeout(function () {
-      var first = banner.querySelector('button');
-      if (first) first.focus();
+      safeFocus(banner.querySelector('button'));
     }, 50);
   }
 

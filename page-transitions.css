@@ -1,0 +1,276 @@
+/* ── Loader: hide content while curtain active ── */
+html.pt-loading body {
+  overflow: hidden;
+}
+
+html.pt-loading body > *:not(#pt-curtain) {
+  visibility: hidden;
+}
+
+/* ── Light page exit ── */
+html.pt-exiting body {
+  transition: opacity 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+/* ── Content fade-up (after loader or nav) — opacity only, no transform on body ── */
+html.pt-content-enter body {
+  visibility: visible;
+  animation: pt-content-fade-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+html.pt-scroll-lock {
+  overflow: hidden;
+}
+
+@keyframes pt-content-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Image fade-in on nav (no layout shift) ── */
+html.pt-img-fade img {
+  transition: opacity 0.45s ease;
+}
+
+html.pt-img-fade img:not(.pt-img-ready) {
+  opacity: 0;
+}
+
+html.pt-img-fade img.pt-img-ready {
+  opacity: 1;
+}
+
+/* ── Curtain (first-load index only) ── */
+#pt-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  pointer-events: none;
+  display: none;
+  overflow: hidden;
+}
+
+#pt-curtain.is-active {
+  display: block;
+  pointer-events: all;
+}
+
+#pt-curtain .pt-curtain__white,
+#pt-curtain .pt-curtain__red {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+#pt-curtain .pt-curtain__white {
+  background: #ffffff;
+  transform: translateX(-101%);
+  z-index: 1;
+}
+
+#pt-curtain .pt-curtain__red {
+  background: #e8001d;
+  transform: translateX(-101%);
+  z-index: 2;
+}
+
+#pt-curtain.is-loading .pt-curtain__white {
+  transform: translateX(0);
+  transition: none;
+}
+
+#pt-curtain.is-loading .pt-curtain__red {
+  transform: translateX(-101%);
+  transition: none;
+}
+
+#pt-curtain.is-loading.is-revealing .pt-curtain__white {
+  transform: translateX(101%);
+  transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#pt-curtain.is-revealing .pt-curtain__red {
+  transform: translateX(101%);
+  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ── Brand block ── */
+#pt-curtain .pt-curtain__brand {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  padding: 2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+#pt-curtain.is-active .pt-curtain__brand,
+#pt-curtain.is-loading .pt-curtain__brand {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#pt-curtain.is-revealing .pt-curtain__brand {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition-duration: 0.3s;
+}
+
+#pt-curtain .pt-curtain__logo {
+  width: 88px;
+  height: auto;
+  animation: pt-logo-breathe 2.4s ease-in-out infinite;
+}
+
+#pt-curtain .pt-curtain__logo--white {
+  display: none;
+  width: 100px;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.18));
+}
+
+#pt-curtain.is-loading .pt-curtain__logo--dark {
+  display: block;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.1));
+}
+
+#pt-curtain.is-loading .pt-curtain__logo--white {
+  display: none;
+}
+
+#pt-curtain.is-covering .pt-curtain__logo--dark,
+#pt-curtain.is-loading.is-revealing-red .pt-curtain__logo--dark {
+  display: none;
+}
+
+#pt-curtain.is-covering .pt-curtain__logo--white,
+#pt-curtain.is-loading.is-revealing-red .pt-curtain__logo--white {
+  display: block;
+}
+
+#pt-curtain .pt-curtain__title {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1.35;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+}
+
+#pt-curtain .pt-curtain__title strong {
+  display: block;
+  font-size: clamp(1.5rem, 4.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+#pt-curtain.is-loading .pt-curtain__title {
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+#pt-curtain.is-loading .pt-curtain__title strong {
+  color: #e8001d;
+}
+
+#pt-curtain.is-covering .pt-curtain__title,
+#pt-curtain.is-loading.is-revealing-red .pt-curtain__title {
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+}
+
+#pt-curtain.is-covering .pt-curtain__title strong,
+#pt-curtain.is-loading.is-revealing-red .pt-curtain__title strong {
+  color: #ffffff;
+}
+
+/* Brief red flash before reveal on first load */
+#pt-curtain.is-loading.is-revealing-red .pt-curtain__red {
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#pt-curtain.is-loading.is-revealing-red.is-revealing .pt-curtain__red {
+  transform: translateX(101%);
+  transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.05s;
+}
+
+/* ── Progress bar (first-load index) ── */
+#pt-curtain .pt-curtain__progress {
+  width: min(220px, 60vw);
+  height: 3px;
+  background: rgba(232, 0, 29, 0.15);
+  border-radius: 99px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleX(0.85);
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+#pt-curtain.is-loading .pt-curtain__progress {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+#pt-curtain .pt-curtain__progress-bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #e8001d 0%, #ff3b4d 100%);
+  border-radius: inherit;
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#pt-curtain.is-loading .pt-curtain__progress-bar.is-indeterminate {
+  width: 40%;
+  animation: pt-progress-slide 1.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes pt-logo-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes pt-progress-slide {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(320%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.pt-loading body > *:not(#pt-curtain),
+  html.pt-exiting body,
+  html.pt-content-enter body {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    visibility: visible !important;
+  }
+
+  html.pt-skeleton .pt-skeleton-wrap,
+  html.pt-img-fade img:not(.pt-img-ready) {
+    opacity: 1;
+  }
+
+  #pt-curtain {
+    display: none !important;
+  }
+}
