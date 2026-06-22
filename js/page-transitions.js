@@ -5,10 +5,9 @@
   var ASSET_BASE = location.pathname.indexOf('/blogpaginas/') !== -1 ? '../' : '';
   var LOGO_DARK = ASSET_BASE + 'images/logo.webp';
   var LOGO_WHITE = ASSET_BASE + 'images/hitachilogowhite.png';
-  var REVEAL_MS = 900;
-  var RED_FLASH_MS = 480;
+  var MIN_LOADER_MS = 1400;
   var EXIT_MS = 340;
-  var CONTENT_ENTER_MS = 500;
+  var CONTENT_ENTER_MS = 420;
   var navigating = false;
   var userScrolled = false;
   var curtain;
@@ -225,15 +224,148 @@
 
   function curtainMarkup() {
     return (
-      '<div class="pt-curtain__white"></div>' +
-      '<div class="pt-curtain__red"></div>' +
+      '<div class="pt-curtain__overlay"></div>' +
       '<div class="pt-curtain__brand">' +
+      '<div class="pt-curtain__logo-anchor">' +
+      '<div class="pt-curtain__ring" aria-hidden="true"></div>' +
       '<img class="pt-curtain__logo pt-curtain__logo--dark" src="' + LOGO_DARK + '" alt="" width="88" height="88">' +
       '<img class="pt-curtain__logo pt-curtain__logo--white" src="' + LOGO_WHITE + '" alt="" width="100" height="100">' +
+      '</div>' +
       '<p class="pt-curtain__title">Clínica Dental<br><strong>Hitachi</strong></p>' +
       '<div class="pt-curtain__progress"><span class="pt-curtain__progress-bar is-indeterminate"></span></div>' +
       '</div>'
     );
+  }
+
+  function getRevealOrigin(logoEl) {
+    var rect = logoEl.getBoundingClientRect();
+    return {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+      radius: Math.max(rect.width, rect.height) / 2
+    };
+  }
+
+  function applyMaskOrigin(overlay, origin) {
+    overlay.style.setProperty('--pt-cx', origin.x + 'px');
+    overlay.style.setProperty('--pt-cy', origin.y + 'px');
+  }
+
+  function freezeLoaderLogo(el) {
+    el.querySelectorAll('.pt-curtain__logo').forEach(function (img) {
+      img.style.animation = 'none';
+    });
+  }
+
+  function finishLoaderExit(el) {
+    el.classList.remove('is-active', 'is-revealing-circle', 'is-loading', 'is-logo-only');
+    document.documentElement.classList.remove('pt-revealing');
+    navigating = false;
+    return playContentEnter('loader');
+  }
+
+  function runLoaderExitTimeline() {
+    var el = ensureCurtain();
+    var overlay = el.querySelector('.pt-curtain__overlay');
+    var progress = el.querySelector('.pt-curtain__progress');
+    var title = el.querySelector('.pt-curtain__title');
+    var logo = el.querySelector('.pt-curtain__logo--dark') || el.querySelector('.pt-curtain__logo');
+    var logoAnchor = el.querySelector('.pt-curtain__logo-anchor');
+    var ring = el.querySelector('.pt-curtain__ring');
+
+    if (!overlay || !logo) {
+      document.documentElement.classList.remove('pt-loading', 'pt-revealing');
+      el.classList.remove('is-active', 'is-loading');
+      navigating = false;
+      return playContentEnter('loader');
+    }
+
+    freezeLoaderLogo(el);
+    setProgress(100);
+
+    var handoffDur = 0.3;
+    var revealDur = 0.75;
+    var revealAt = handoffDur;
+
+    if (typeof gsap === 'undefined') {
+      el.classList.add('is-logo-only');
+      el.classList.remove('is-loading');
+      document.documentElement.classList.remove('pt-loading');
+      document.documentElement.classList.add('pt-revealing');
+      return wait(700).then(function () {
+        return finishLoaderExit(el);
+      });
+    }
+
+    var chrome = [progress, title].filter(Boolean);
+    var endRadius = Math.ceil(Math.hypot(window.innerWidth, window.innerHeight));
+    var hole = { r: 0 };
+
+    return new Promise(function (resolve) {
+      var tl = gsap.timeline({
+        onComplete: function () {
+          finishLoaderExit(el).then(resolve);
+        }
+      });
+
+      tl.to(chrome, {
+        opacity: 0,
+        duration: handoffDur,
+        ease: 'power2.inOut'
+      }, 0);
+
+      if (logoAnchor) {
+        tl.to(logoAnchor, {
+          opacity: 0,
+          scale: 0.88,
+          duration: 0.12,
+          ease: 'power2.in'
+        }, revealAt - 0.12);
+      }
+
+      tl.add(function () {
+          el.classList.add('is-logo-only');
+          el.classList.remove('is-loading');
+          el.classList.add('is-revealing-circle');
+
+          var origin = getRevealOrigin(logo);
+          applyMaskOrigin(overlay, origin);
+
+          hole.r = Math.max(Math.round(origin.radius * 0.5), 4);
+          overlay.style.setProperty('--pt-hole', hole.r + 'px');
+
+          if (logoAnchor) {
+            gsap.set(logoAnchor, { opacity: 0, visibility: 'hidden', pointerEvents: 'none' });
+          }
+
+          document.documentElement.classList.remove('pt-loading');
+          document.documentElement.classList.add('pt-revealing');
+
+          if (ring) {
+            gsap.set(ring, { scale: 1, opacity: 0.48, transformOrigin: '50% 50%' });
+          }
+        }, revealAt)
+        .to(hole, {
+          r: endRadius,
+          duration: revealDur,
+          ease: 'power2.inOut',
+          onUpdate: function () {
+            overlay.style.setProperty('--pt-hole', Math.round(hole.r) + 'px');
+          }
+        }, revealAt);
+
+      if (ring) {
+        tl.to(ring, {
+          scale: function () {
+            return (endRadius / getRevealOrigin(logo).radius) * 1.02;
+          },
+          opacity: 0,
+          duration: revealDur,
+          ease: 'power2.out',
+          transformOrigin: '50% 50%'
+        }, revealAt);
+      }
+    });
   }
 
   function ensureCurtain() {
@@ -254,36 +386,32 @@
     return curtain;
   }
 
-  function onPageReady() {
+  function onPageReady(mode) {
     stabilizeScroll();
     guardScrollPosition();
-    window.dispatchEvent(new CustomEvent('pt:ready'));
+    window.dispatchEvent(new CustomEvent('pt:ready', { detail: { mode: mode || 'normal' } }));
   }
 
-  function playContentEnter() {
+  function playContentEnter(mode) {
     document.documentElement.classList.remove('pt-exiting', 'pt-loading', 'pt-skeleton');
     resetScroll();
+
+    if (mode === 'loader') {
+      onPageReady('loader');
+      return Promise.resolve();
+    }
+
+    if (mode === 'nav') {
+      document.documentElement.classList.add('pt-gsap-enter');
+      onPageReady('nav');
+      return Promise.resolve();
+    }
+
     document.documentElement.classList.add('pt-content-enter');
     return wait(CONTENT_ENTER_MS).then(function () {
       document.documentElement.classList.remove('pt-content-enter');
-      onPageReady();
+      onPageReady('normal');
     });
-  }
-
-  function playLoaderReveal() {
-    var el = ensureCurtain();
-    el.classList.add('is-revealing-red');
-    return wait(RED_FLASH_MS)
-      .then(function () {
-        el.classList.add('is-revealing');
-        return wait(REVEAL_MS);
-      })
-      .then(function () {
-        el.classList.remove('is-active', 'is-revealing', 'is-revealing-red', 'is-loading');
-        document.documentElement.classList.remove('pt-loading');
-        navigating = false;
-        return playContentEnter();
-      });
   }
 
   function handleFirstLoad() {
@@ -293,20 +421,19 @@
       document.documentElement.classList.add('pt-loading');
     }
 
-    preloadWithProgress(getCurrentPageImageUrls(), 5000)
-      .then(function () {
-        return wait(500);
-      })
-      .then(function () {
-        sessionStorage.setItem('pt-visited', '1');
-        return playLoaderReveal();
-      });
+    Promise.all([
+      preloadWithProgress(getCurrentPageImageUrls(), 5000),
+      wait(MIN_LOADER_MS)
+    ]).then(function () {
+      sessionStorage.setItem('pt-visited', '1');
+      return runLoaderExitTimeline();
+    });
   }
 
   function handleNavEnter() {
     sessionStorage.removeItem('pt-nav');
     resetScroll();
-    playContentEnter();
+    playContentEnter('nav');
   }
 
   function handlePageEnter() {
@@ -329,7 +456,7 @@
     }
 
     document.documentElement.classList.remove('pt-loading', 'pt-skeleton', 'pt-exiting');
-    onPageReady();
+    onPageReady('normal');
   }
 
   function prefetchTargetImages(url) {
@@ -394,9 +521,9 @@
     if (!event.persisted) return;
     navigating = false;
     if (curtain) {
-      curtain.classList.remove('is-active', 'is-covering', 'is-revealing', 'is-revealing-red', 'is-loading');
+      curtain.classList.remove('is-active', 'is-covering', 'is-revealing-circle', 'is-loading', 'is-logo-only');
     }
-    document.documentElement.classList.remove('pt-loading', 'pt-exiting', 'pt-content-enter', 'pt-scroll-lock', 'pt-skeleton');
+    document.documentElement.classList.remove('pt-loading', 'pt-exiting', 'pt-content-enter', 'pt-scroll-lock', 'pt-skeleton', 'pt-revealing');
     handlePageEnter();
   });
 

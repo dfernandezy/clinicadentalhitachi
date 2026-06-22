@@ -39,7 +39,7 @@
   style.textContent = [
     /* ── Banner: barra mínima en el fondo ── */
     '#ck-banner{',
-      'position:fixed;bottom:0;left:0;right:0;z-index:99999;',
+      'position:fixed;bottom:0;left:0;right:0;z-index:2147483647;',
       'background:rgba(255,255,255,.97);backdrop-filter:blur(6px);',
       'border-top:1px solid #e8e8e8;',
       'box-shadow:0 -2px 12px rgba(0,0,0,.07);',
@@ -68,7 +68,7 @@
     '#ck-manage:hover{color:#333;border-color:#ccc;}',
     /* Panel de configuración */
     '#ck-panel{',
-      'position:fixed;bottom:0;left:0;right:0;z-index:100000;',
+      'position:fixed;bottom:0;left:0;right:0;z-index:2147483647;',
       'background:#fff;border-top:2px solid #cc0000;',
       'box-shadow:0 -4px 24px rgba(0,0,0,.14);',
       'font-family:\'Poppins\',sans-serif;padding:20px 24px 18px;',
@@ -183,29 +183,8 @@
   ].join('');
 
   /* ── 6. Insertar en DOM cuando esté listo ── */
-  function insertBanner() {
-    document.body.appendChild(banner);
-    document.body.appendChild(panel);
-    bindEvents();
-    // Empujar el contenido para que el banner no tape el footer
-    function adjustPadding() {
-      document.body.style.paddingBottom = banner.offsetHeight + 'px';
-    }
-    adjustPadding();
-    window.addEventListener('resize', adjustPadding);
-    // Mover foco al primer botón sin desplazar la página
-    setTimeout(function () {
-      safeFocus(banner.querySelector('button'));
-    }, 400);
-  }
+  var resizeHandler;
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', insertBanner);
-  } else {
-    insertBanner();
-  }
-
-  /* ── 7. Eventos ── */
   function safeFocus(el) {
     if (!el) return;
     try {
@@ -215,6 +194,37 @@
     }
   }
 
+  function insertBanner() {
+    if (document.getElementById('ck-banner')) return;
+    document.body.appendChild(banner);
+    document.body.appendChild(panel);
+    bindEvents();
+    function adjustPadding() {
+      document.body.style.paddingBottom = banner.offsetHeight + 'px';
+    }
+    adjustPadding();
+    resizeHandler = adjustPadding;
+    window.addEventListener('resize', resizeHandler);
+    setTimeout(function () {
+      safeFocus(banner.querySelector('button'));
+    }, 400);
+  }
+
+  function scheduleBanner() {
+    if (document.documentElement.classList.contains('pt-loading')) {
+      window.addEventListener('pt:ready', insertBanner, { once: true });
+      return;
+    }
+    insertBanner();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scheduleBanner);
+  } else {
+    scheduleBanner();
+  }
+
+  /* ── 7. Eventos ── */
   function bindEvents() {
     document.getElementById('ck-accept').addEventListener('click', function () {
       save({ analytics: true, ads: true });
@@ -267,7 +277,9 @@
     applyConsent(prefs);
     // Restaurar el padding del body
     document.body.style.paddingBottom = '';
-    window.removeEventListener('resize', function(){});
+    if (resizeHandler) {
+      window.removeEventListener('resize', resizeHandler);
+    }
     // Ocultar banner y panel
     if (banner.parentNode) banner.parentNode.removeChild(banner);
     if (panel.parentNode) panel.parentNode.removeChild(panel);
